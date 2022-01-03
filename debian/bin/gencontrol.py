@@ -553,7 +553,6 @@ class Gencontrol(Base):
             build_debug = False
 
         if build_debug:
-            makeflags['DEBUG'] = True
             packages_own.extend(self.process_packages(
                 self.templates['control.image-dbg'], vars))
             if do_meta:
@@ -627,8 +626,6 @@ class Gencontrol(Base):
                                     arch, featureset, flavour))
         makeflags['KCONFIG'] = ' '.join(kconfig)
         makeflags['KCONFIG_OPTIONS'] = ''
-        if build_debug:
-            makeflags['KCONFIG_OPTIONS'] += ' -o DEBUG_INFO=y'
         if build_signed:
             makeflags['KCONFIG_OPTIONS'] += ' -o SECURITY_LOCKDOWN_LSM=y -o MODULE_SIG=y'
         # Add "salt" to fix #872263

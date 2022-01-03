@@ -442,6 +442,7 @@ linux (5.10.225-1) UNRELEASED; urgency=medium
   * lintian: Refresh lintian-overrides
   * d/bin/gencontrol.py, d/lib/python: Use classes for build restriction
     formulae
+  * d/bin/gencontrol.py, d/rules.real: Replace DEBUG variable with if_package
 
  -- Ben Hutchings <benh@debian.org>  Fri, 23 Aug 2024 16:44:34 +0200
 
