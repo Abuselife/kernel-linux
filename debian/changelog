@@ -439,6 +439,7 @@ linux (5.10.225-1) UNRELEASED; urgency=medium
   * debian/README.source: Tag signatures are automatically verified
   * d/bin/genorig.py, d/README.source: Only support Git as upstream
   * d/bin/genorig.py, d/README.source: Add support for remote upstream repos
+  * lintian: Refresh lintian-overrides
 
  -- Ben Hutchings <benh@debian.org>  Fri, 23 Aug 2024 16:44:34 +0200
 
