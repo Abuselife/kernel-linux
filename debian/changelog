@@ -436,6 +436,7 @@ linux (5.10.225-1) UNRELEASED; urgency=medium
   * Drop "netfilter: ipset: Add list flush to cancel_gc", included in 5.10.224
   * [rt] Update to 5.10.224-rt116
   * Bump ABI to 33
+  * debian/README.source: Tag signatures are automatically verified
 
  -- Ben Hutchings <benh@debian.org>  Fri, 23 Aug 2024 16:44:34 +0200
 
