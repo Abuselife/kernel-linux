@@ -437,6 +437,7 @@ linux (5.10.225-1) UNRELEASED; urgency=medium
   * [rt] Update to 5.10.224-rt116
   * Bump ABI to 33
   * debian/README.source: Tag signatures are automatically verified
+  * d/bin/genorig.py, d/README.source: Only support Git as upstream
 
  -- Ben Hutchings <benh@debian.org>  Fri, 23 Aug 2024 16:44:34 +0200
 
