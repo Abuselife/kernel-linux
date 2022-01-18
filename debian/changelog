@@ -447,6 +447,7 @@ linux (5.10.225-1) UNRELEASED; urgency=medium
   * d/salsa-ci.yml: Add CI config using some of the common pipeline
   * d/salsa-ci.yml, d/tests/python: Only run static checks in CI
   * d/salsa-ci.yml: Run kconfigeditor2 as kconfig static check
+  * d/salsa-ci.yml: Use per-release cache of orig tarballs
 
  -- Ben Hutchings <benh@debian.org>  Fri, 23 Aug 2024 16:44:34 +0200
 
