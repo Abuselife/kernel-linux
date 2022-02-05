@@ -451,6 +451,7 @@ linux (5.10.225-1) UNRELEASED; urgency=medium
   * d/bin/gencontrol_signed.py: Add support for pkg.linux.quick profile
   * lintian: Add lintian-overrides to linux-signed-* for non-issues
   * d/salsa-ci.yml: Don't disable signed code
+  * d/certs: Add certificate and key to enable test signing in CI
 
  -- Ben Hutchings <benh@debian.org>  Fri, 23 Aug 2024 16:44:34 +0200
 
