@@ -450,6 +450,7 @@ linux (5.10.225-1) UNRELEASED; urgency=medium
   * d/salsa-ci.yml: Use per-release cache of orig tarballs
   * d/bin/gencontrol_signed.py: Add support for pkg.linux.quick profile
   * lintian: Add lintian-overrides to linux-signed-* for non-issues
+  * d/salsa-ci.yml: Don't disable signed code
 
  -- Ben Hutchings <benh@debian.org>  Fri, 23 Aug 2024 16:44:34 +0200
 
