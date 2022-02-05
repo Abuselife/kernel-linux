@@ -156,6 +156,9 @@ class Gencontrol(Base):
                 raise RuntimeError("default-flavour %s for %s %s does not exist"
                                    % (self.default_flavour, arch, featureset))
 
+        self.quick_flavour = self.config.merge('base', arch, featureset) \
+                                        .get('quick-flavour')
+
     def do_flavour_setup(self, vars, makeflags, arch, featureset, flavour,
                          extra):
         super(Gencontrol, self).do_flavour_setup(vars, makeflags, arch,
@@ -177,6 +180,12 @@ class Gencontrol(Base):
                             flavour, vars, makeflags, extra):
         if not (self.config.merge('build', arch, featureset, flavour)
                 .get('signed-code', False)):
+            return
+
+        # In a quick build, only build the quick flavour (if any).
+        if 'pkg.linux.quick' in \
+           os.environ.get('DEB_BUILD_PROFILES', '').split() \
+           and flavour != self.quick_flavour:
             return
 
         image_suffix = '%(abiname)s%(localversion)s' % vars
