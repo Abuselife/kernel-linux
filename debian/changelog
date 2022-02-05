@@ -452,6 +452,7 @@ linux (5.10.225-1) UNRELEASED; urgency=medium
   * lintian: Add lintian-overrides to linux-signed-* for non-issues
   * d/salsa-ci.yml: Don't disable signed code
   * d/certs: Add certificate and key to enable test signing in CI
+  * d/salsa-ci.yml: Add jobs to build and test the signed packages
 
  -- Ben Hutchings <benh@debian.org>  Fri, 23 Aug 2024 16:44:34 +0200
 
