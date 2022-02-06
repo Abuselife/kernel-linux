@@ -278,6 +278,7 @@ class Gencontrol(Base):
         self.write_makefile(makefile,
                             name=(self.template_debian_dir + '/rules.gen'))
         self.write_files_json()
+        self.write_source_lintian_overrides()
 
     def write_changelog(self):
         # Copy the linux changelog, but:
@@ -372,6 +373,14 @@ linux-signed-@arch@ (@signedsourceversion@) @distribution@; urgency=@urgency@
 
         with codecs.open(self.template_top_dir + '/files.json', 'w') as f:
             json.dump(all_files, f)
+
+    def write_source_lintian_overrides(self):
+        os.makedirs(os.path.join(self.template_debian_dir, 'source'),
+                    exist_ok=True)
+        with open(os.path.join(self.template_debian_dir,
+                               'source/lintian-overrides'), 'w') as f:
+            f.write(self.substitute(self.templates['source.lintian-overrides'],
+                                    self.vars))
 
 
 if __name__ == '__main__':
