@@ -455,6 +455,7 @@ linux (5.10.225-1) UNRELEASED; urgency=medium
   * d/salsa-ci.yml: Add jobs to build and test the signed packages
   * d/tests: Remove obsolete dependencies of python test
   * d/tests: Add kbuild test that builds a trivial OOT module
+  * lintian: Update overrides for lintian 2.115
 
  -- Ben Hutchings <benh@debian.org>  Fri, 23 Aug 2024 16:44:34 +0200
 
