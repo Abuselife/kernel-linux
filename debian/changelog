@@ -457,6 +457,7 @@ linux (5.10.225-1) UNRELEASED; urgency=medium
   * d/tests: Add kbuild test that builds a trivial OOT module
   * lintian: Update overrides for lintian 2.115
   * d/tests: kbuild test case depends on python3
+  * d/tests: Run kbuild test with default flavour if quick flavour not defined
 
  -- Ben Hutchings <benh@debian.org>  Fri, 23 Aug 2024 16:44:34 +0200
 
