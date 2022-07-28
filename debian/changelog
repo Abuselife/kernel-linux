@@ -459,6 +459,8 @@ linux (5.10.225-1) UNRELEASED; urgency=medium
   * d/tests: kbuild test case depends on python3
   * d/tests: Run kbuild test with default flavour if quick flavour not defined
   * d/lib/python/debian_linux/debian.py: Add Architecture field to TestsControl
+  * d/tests: Restrict kbuild tests to architectures with default or quick
+    flavour
 
  -- Ben Hutchings <benh@debian.org>  Fri, 23 Aug 2024 16:44:34 +0200
 
