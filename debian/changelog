@@ -465,6 +465,7 @@ linux (5.10.225-1) UNRELEASED; urgency=medium
   * d/tests/kbuild: Make flavour lookup verbose
   * d/lib/python/debian_linux, d/templates: Use variable for binary package
     name
+  * lintian: Update overrides in linux-image-*-dbg for lintian 2.115
 
  -- Ben Hutchings <benh@debian.org>  Fri, 23 Aug 2024 16:44:34 +0200
 
