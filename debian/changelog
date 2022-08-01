@@ -466,6 +466,7 @@ linux (5.10.225-1) UNRELEASED; urgency=medium
   * d/lib/python/debian_linux, d/templates: Use variable for binary package
     name
   * lintian: Update overrides in linux-image-*-dbg for lintian 2.115
+  * [arm64] lintian: Override errors for vdso32.so in linux-image-*-dbg
 
  -- Ben Hutchings <benh@debian.org>  Fri, 23 Aug 2024 16:44:34 +0200
 
