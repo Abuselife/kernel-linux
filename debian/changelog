@@ -463,6 +463,8 @@ linux (5.10.225-1) UNRELEASED; urgency=medium
     flavour
   * d/tests/kbuild: Fix default-flavour lookup for arches with no featuresets
   * d/tests/kbuild: Make flavour lookup verbose
+  * d/lib/python/debian_linux, d/templates: Use variable for binary package
+    name
 
  -- Ben Hutchings <benh@debian.org>  Fri, 23 Aug 2024 16:44:34 +0200
 
