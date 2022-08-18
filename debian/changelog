@@ -462,6 +462,7 @@ linux (5.10.225-1) UNRELEASED; urgency=medium
   * d/tests: Restrict kbuild tests to architectures with default or quick
     flavour
   * d/tests/kbuild: Fix default-flavour lookup for arches with no featuresets
+  * d/tests/kbuild: Make flavour lookup verbose
 
  -- Ben Hutchings <benh@debian.org>  Fri, 23 Aug 2024 16:44:34 +0200
 
