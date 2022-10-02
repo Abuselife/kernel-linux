@@ -467,6 +467,7 @@ linux (5.10.225-1) UNRELEASED; urgency=medium
     name
   * lintian: Update overrides in linux-image-*-dbg for lintian 2.115
   * [arm64] lintian: Override errors for vdso32.so in linux-image-*-dbg
+  * d/salsa-ci.yml: Use !reference to include scripts from common pipeline
 
  -- Ben Hutchings <benh@debian.org>  Fri, 23 Aug 2024 16:44:34 +0200
 
