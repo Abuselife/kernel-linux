@@ -470,6 +470,9 @@ linux (5.10.225-1) UNRELEASED; urgency=medium
   * d/salsa-ci.yml: Use !reference to include scripts from common pipeline
   * d/salsa-ci.yml: Remove obsolete lintian error suppressions
 
+  [ Mateusz Łukasik ]
+  * d/salsa-ci.yml: Add linux-compiler-* packages to build-signed job artifacts
+
  -- Ben Hutchings <benh@debian.org>  Fri, 23 Aug 2024 16:44:34 +0200
 
 linux (5.10.223-1) bullseye-security; urgency=high
