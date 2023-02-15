@@ -474,6 +474,9 @@ linux (5.10.225-1) UNRELEASED; urgency=medium
   [ Mateusz Łukasik ]
   * d/salsa-ci.yml: Add linux-compiler-* packages to build-signed job artifacts
 
+  [ Martyn Welch ]
+  * Increase timeout of CI build stage to 3 hours to enable build to complete
+
  -- Ben Hutchings <benh@debian.org>  Fri, 23 Aug 2024 16:44:34 +0200
 
 linux (5.10.223-1) bullseye-security; urgency=high
