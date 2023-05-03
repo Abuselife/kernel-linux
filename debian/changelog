@@ -833,6 +833,8 @@ linux (6.1.94-1) UNRELEASED; urgency=medium
   [ Uwe Kleine-König ]
   * [arm*] Enable symbols in Raspberry Pi device trees for simplified overlay
     application.
+  * d/rules: Let blhc ignore perf tests binaries that are compiled without
+    fortification
 
   [ Salvatore Bonaccorso ]
   * Bump ABI to 22
