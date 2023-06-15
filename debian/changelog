@@ -1,3 +1,10 @@
+linux (6.11.5-1~bpo12+1) UNRELEASED; urgency=medium
+
+  * Rebuild for bookworm-backports:
+    - d/salsa-ci.yml: Set RELEASE to bookworm-backports
+
+ -- Ben Hutchings <benh@debian.org>  Mon, 11 Nov 2024 02:48:56 +0100
+
 linux (6.11.5-1) unstable; urgency=medium
 
   * New upstream stable update:
