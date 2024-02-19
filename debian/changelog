@@ -1,4 +1,4 @@
-linux (6.1.77-1) UNRELEASED; urgency=medium
+linux (6.1.78-1) UNRELEASED; urgency=medium
 
   * New upstream stable update:
     https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.1.77
@@ -188,6 +188,80 @@ linux (6.1.77-1) UNRELEASED; urgency=medium
     - gve: Fix use-after-free vulnerability
     - bonding: remove print in bond_verify_device_path
     - drm/amdgpu: Fix missing error code in 'gmc_v6/7/8/9_0_hw_init()'
+    https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.1.78
+    - ext4: regenerate buddy after block freeing failed if under fc replay
+    - [arm64] dmaengine: ti: k3-udma: Report short packet errors
+    - [arm64] dmaengine: fsl-qdma: Fix a memory leak related to the status queue
+      DMA
+    - [arm64] dmaengine: fsl-qdma: Fix a memory leak related to the queue
+      command DMA
+    - [arm64] phy: renesas: rcar-gen3-usb2: Fix returning wrong error code
+    - dmaengine: fix is_slave_direction() return false when DMA_DEV_TO_DEV
+    - [armhf] phy: ti: phy-omap-usb2: Fix NULL pointer dereference for SRP
+    - cifs: failure to add channel on iface should bump up weight
+    - [arm64] drm/msms/dp: fixed link clock divider bits be over written in BPC
+      unknown case
+    - [arm64] drm/msm/dp: return correct Colorimetry for
+      DP_TEST_DYNAMIC_RANGE_CEA case
+    - [arm64] drm/msm/dpu: check for valid hw_pp in
+      dpu_encoder_helper_phys_cleanup
+    - net: stmmac: xgmac: fix handling of DPP safety error for DMA channels
+    - wifi: mac80211: fix waiting for beacons logic
+    - netdevsim: avoid potential loop in nsim_dev_trap_report_work()
+    - net: atlantic: Fix DMA mapping for PTP hwts ring
+    - tunnels: fix out of bounds access when building IPv6 PMTU error
+    - atm: idt77252: fix a memleak in open_card_ubr0
+    - [armhf] hwmon: (aspeed-pwm-tacho) mutex for tach reading
+    - [x86] hwmon: (coretemp) Fix out-of-bounds memory access
+    - [x86] hwmon: (coretemp) Fix bogus core_id to attr name mapping
+    - inet: read sk->sk_family once in inet_recv_error()
+    - [x86] drm/i915/gvt: Fix uninitialized variable in handle_mmio()
+    - rxrpc: Fix response to PING RESPONSE ACKs to a dead call
+    - tipc: Check the bearer type before calling tipc_udp_nl_bearer_add()
+    - af_unix: Call kfree_skb() for dead unix_(sk)->oob_skb in GC.
+    - ppp_async: limit MRU to 64K
+    - selftests: cmsg_ipv6: repeat the exact packet
+    - netfilter: nft_compat: narrow down revision to unsigned 8-bits
+    - netfilter: nft_compat: reject unused compat flag
+    - netfilter: nft_compat: restrict match/target protocol to u16
+    - drm/amd/display: Implement bounds check for stream encoder creation in
+      DCN301
+    - netfilter: nft_ct: reject direction for ct id
+    - netfilter: nft_set_pipapo: store index in scratch maps
+    - netfilter: nft_set_pipapo: add helper to release pcpu scratch area
+    - netfilter: nft_set_pipapo: remove scratch_aligned pointer
+    - fs/ntfs3: Fix an NULL dereference bug
+    - scsi: core: Move scsi_host_busy() out of host lock if it is for
+      per-command
+    - blk-iocost: Fix an UBSAN shift-out-of-bounds warning
+    - fs: dlm: don't put dlm_local_addrs on heap (Closes: #1063338)
+    - mtd: parsers: ofpart: add workaround for #size-cells 0
+    - ALSA: usb-audio: Add delay quirk for MOTU M Series 2nd revision
+    - ALSA: usb-audio: Add a quirk for Yamaha YIT-W12TX transmitter
+    - ALSA: usb-audio: add quirk for RODE NT-USB+
+    - USB: serial: qcserial: add new usb-id for Dell Wireless DW5826e
+    - USB: serial: option: add Fibocom FM101-GL variant
+    - USB: serial: cp210x: add ID for IMST iM871A-USB
+    - [arm64,armhf] usb: dwc3: host: Set XHCI_SG_TRB_CACHE_SIZE_QUIRK
+    - [arm64,armhf] usb: host: xhci-plat: Add support for
+      XHCI_SG_TRB_CACHE_SIZE_QUIRK
+    - hrtimer: Report offline hrtimer enqueue
+    - Input: i8042 - fix strange behavior of touchpad on Clevo NS70PU
+    - Input: atkbd - skip ATKBD_CMD_SETLEDS when skipping ATKBD_CMD_GETID
+      (Closes: #1061521)
+    - io_uring/net: fix sr->len for IORING_OP_RECV with MSG_WAITALL and buffers
+    - Revert "ASoC: amd: Add new dmi entries for acp5x platform"
+    - vhost: use kzalloc() instead of kmalloc() followed by memset()
+      (CVE-2024-0340)
+    - RDMA/irdma: Fix support for 64k pages
+    - f2fs: add helper to check compression level (Closes: #1063422)
+    - block: treat poll queue enter similarly to timeouts
+    - clocksource: Skip watchdog check for large watchdog intervals
+    - net: stmmac: xgmac: use #define for string constants
+    - ALSA: usb-audio: Sort quirk table entries
+    - net: stmmac: xgmac: fix a typo of register name in DPP safety handling
+    - netfilter: nft_set_rbtree: skip end interval element from gc
+      (CVE-2024-26581)
 
   [ Salvatore Bonaccorso ]
   * Bump ABI to 19
