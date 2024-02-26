@@ -367,6 +367,9 @@ linux (5.10.210-1) UNRELEASED; urgency=medium
     - net: bcmgenet: Fix EEE implementation
     - PCI: dwc: Fix a 64bit bug in dw_pcie_ep_raise_msix_irq()
 
+  [ Salvatore Bonaccorso ]
+  * Bump ABI to 29
+
  -- Salvatore Bonaccorso <carnil@debian.org>  Mon, 26 Feb 2024 20:04:47 +0100
 
 linux (5.10.209-2) bullseye; urgency=medium
