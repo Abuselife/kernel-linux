@@ -1,4 +1,4 @@
-linux (5.10.210-1) UNRELEASED; urgency=medium
+linux (5.10.211-1) UNRELEASED; urgency=medium
 
   * New upstream stable update:
     https://www.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.10.210
@@ -366,6 +366,128 @@ linux (5.10.210-1) UNRELEASED; urgency=medium
       (CVE-2024-0607)
     - net: bcmgenet: Fix EEE implementation
     - PCI: dwc: Fix a 64bit bug in dw_pcie_ep_raise_msix_irq()
+    https://www.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.10.211
+    - net/sched: Retire CBQ qdisc
+    - net/sched: Retire ATM qdisc
+    - net/sched: Retire dsmark qdisc
+    - smb: client: fix OOB in receive_encrypted_standard() (CVE-2024-0565)
+    - smb: client: fix potential OOBs in smb2_parse_contexts() (CVE-2023-52434)
+    - smb: client: fix parsing of SMB3.1.1 POSIX create context
+    - sched/rt: sysctl_sched_rr_timeslice show default timeslice after reset
+    - userfaultfd: fix mmap_changing checking in mfill_atomic_hugetlb
+    - zonefs: Improve error handling
+    - sched/rt: Fix sysctl_sched_rr_timeslice intial value
+    - sched/rt: Disallow writing invalid values to sched_rt_period_us
+    - scsi: target: core: Add TMF to tmr_list handling
+    - [arm64] dmaengine: fsl-qdma: increase size of 'irq_name'
+    - wifi: cfg80211: fix missing interfaces when dumping
+    - wifi: mac80211: fix race condition on enabling fast-xmit
+    - fbdev: savage: Error out if pixclock equals zero
+    - fbdev: sis: Error out if pixclock equals zero
+    - spi: hisi-sfc-v3xx: Return IRQ_NONE if no interrupts were detected
+    - ahci: asm1166: correct count of reported ports
+    - ahci: add 43-bit DMA address quirk for ASMedia ASM1061 controllers
+    - ext4: avoid allocating blocks from corrupted group in
+      ext4_mb_try_best_found()
+    - ext4: avoid allocating blocks from corrupted group in
+      ext4_mb_find_by_goal()
+    - [armhf] dmaengine: ti: edma: Add some null pointer checks to the
+      edma_probe
+    - [arm64] regulator: pwm-regulator: Add validity checks in continuous
+      .get_voltage
+    - nvmet-tcp: fix nvme tcp ida memory leak
+    - [armhf] ASoC: sunxi: sun4i-spdif: Add support for Allwinner H616
+    - netfilter: conntrack: check SCTP_CID_SHUTDOWN_ACK for vtag setting in
+      sctp_new
+    - nvme-fc: do not wait in vain when unloading module
+    - nvmet-fcloop: swap the list_add_tail arguments
+    - nvmet-fc: release reference on target port
+    - nvmet-fc: abort command when there is no binding
+    - ext4: correct the hole length returned by ext4_map_blocks()
+    - Input: i8042 - add Fujitsu Lifebook U728 to i8042 quirk table
+    - efi: runtime: Fix potential overflow of soft-reserved region size
+    - efi: Don't add memblocks for soft-reserved memory
+    - [x86] hwmon: (coretemp) Enlarge per package core count limit
+    - scsi: lpfc: Use unsigned type for num_sge
+    - firewire: core: send bus reset promptly on gap count error
+    - virtio-blk: Ensure no requests in virtqueues before deleting vqs.
+    - [mips*] irqchip/mips-gic: Don't touch vl_map if a local interrupt is not
+      routable
+    - media: av7110: prevent underflow in write_ts_to_decoder()
+    - hvc/xen: prevent concurrent accesses to the shared ring
+    - [x86] uaccess: Implement macros for CMPXCHG on user addresses
+    - seccomp: Invalidate seccomp mode to catch death failures
+    - block: ataflop: fix breakage introduced at blk-mq refactoring
+    - [powerpc*] watchpoint: Workaround P10 DD1 issue with VSX-32 byte
+      instructions
+    - [powerpc*] watchpoints: Annotate atomic context in more places
+    - cifs: add a warning when the in-flight count goes negative
+    - mtd: spinand: macronix: Add support for MX35LFxGE4AD
+    - [x86] ASoC: Intel: boards: harden codec property handling
+    - [x86] ASoC: Intel: boards: get codec device with ACPI instead of bus
+      search
+    - [x86] ASoC: Intel: bytcr_rt5651: Drop reference count of ACPI device after
+      use
+    - task_stack, x86/cea: Force-inline stack helpers
+    - btrfs: tree-checker: check for overlapping extent items
+    - btrfs: introduce btrfs_lookup_match_dir
+    - btrfs: unify lookup return value when dir entry is missing
+    - btrfs: do not pin logs too early during renames
+    - lan743x: fix for potential NULL pointer dereference with bare card
+    - [x86] platform/x86: intel-vbtn: Support for tablet mode on HP Pavilion 13
+      x360 PC
+    - iwlwifi: mvm: do more useful queue sync accounting
+    - iwlwifi: mvm: write queue_sync_state only for sync
+    - jbd2: remove redundant buffer io error checks
+    - jbd2: recheck chechpointing non-dirty buffer
+    - jbd2: Fix wrongly judgement for buffer head removing while doing
+      checkpoint
+    - [x86] drop bogus "cc" clobber from __try_cmpxchg_user_asm()
+    - erofs: fix lz4 inplace decompression (CVE-2023-52497)
+    - [amd64] IB/hfi1: Fix sdma.h tx->num_descs off-by-one error
+    - [s390x] cio: fix invalid -EBUSY on ccw_device_start
+    - dm-crypt: don't modify the data when using authenticated encryption
+    - [arm64] KVM: arm64: vgic-its: Test for valid IRQ in MOVALL handler
+    - [arm64] KVM: arm64: vgic-its: Test for valid IRQ in
+      its_sync_lpi_pending_table()
+    - gtp: fix use-after-free and null-ptr-deref in gtp_genl_dump_pdp()
+    - PCI/MSI: Prevent MSI hardware interrupt number truncation
+    - l2tp: pass correct message length to ip6_append_data
+    - [x86] Revert "x86/ftrace: Use alternative RET encoding"
+    - [x86] text-patching: Make text_gen_insn() play nice with ANNOTATE_NOENDBR
+    - [x86] ibt,paravirt: Use text_gen_insn() for paravirt_patch()
+    - [x86] ftrace: Use alternative RET encoding
+    - [x86] returnthunk: Allow different return thunks
+    - [x86] Revert "x86/alternative: Make custom return thunk unconditional"
+    - [x86] alternative: Make custom return thunk unconditional
+    - usb: gadget: ncm: Avoid dropping datagrams of properly parsed NTBs
+    - mptcp: fix lockless access in subflow ULP diag
+    - [amd64] IB/hfi1: Fix a memleak in init_credit_return
+    - RDMA/bnxt_re: Return error for SRQ resize
+    - RDMA/srpt: Support specifying the srpt_service_guid parameter
+    - RDMA/qedr: Fix qedr_create_user_qp error flow
+    - [arm64] dts: rockchip: set num-cs property for spi on px30
+    - RDMA/srpt: fix function pointer cast warnings
+    - bpf, scripts: Correct GPL license name
+    - scsi: jazz_esp: Only build if SCSI core is builtin
+    - nouveau: fix function cast warnings
+    - ipv4: properly combine dev_base_seq and ipv4.dev_addr_genid
+    - ipv6: properly combine dev_base_seq and ipv6.dev_addr_genid
+    - afs: Increase buffer size in afs_update_volume_status()
+    - ipv6: sr: fix possible use-after-free and null-ptr-deref
+    - packet: move from strlcpy with unused retval to strscpy
+    - net: dev: Convert sa_data to flexible array in struct sockaddr
+    - [s390x] use the correct count for __iowrite64_copy()
+    - netfilter: nf_tables: set dormant flag on hook register failure
+    - drm/syncobj: make lockdep complain on WAIT_FOR_SUBMIT v3
+    - drm/syncobj: call drm_syncobj_fence_add_wait when WAIT_AVAILABLE flag is
+      set
+    - drm/amd/display: Fix memory leak in dm_sw_fini()
+    - block: ataflop: more blk-mq refactoring fixes
+    - fs/aio: Restrict kiocb_set_cancel_fn() to I/O submitted via libaio
+    - arp: Prevent overflow in arp_req_get().
+    - ext4: regenerate buddy after block freeing failed if under fc replay
+      (CVE-2024-26601)
 
   [ Salvatore Bonaccorso ]
   * Bump ABI to 29
