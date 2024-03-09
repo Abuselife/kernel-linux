@@ -1,7 +1,7 @@
 From: Thomas Gleixner <tglx@linutronix.de>
 Date: Sun, 17 Jul 2011 21:56:42 +0200
-Subject: [PATCH 116/354] trace: Add migrate-disabled counter to tracing output
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=686984a694ba79b89fbe3839fe563036cf9428af
+Subject: [PATCH 116/353] trace: Add migrate-disabled counter to tracing output
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=2277c66339853c7fb02ceb093e3baa4a8ab3068d
 
 Signed-off-by: Thomas Gleixner <tglx@linutronix.de>
 ---
@@ -25,7 +25,7 @@ index 93a1b5497bdf..963c19f03bef 100644
  
  #define TRACE_EVENT_TYPE_MAX						\
 diff --git a/kernel/trace/trace.c b/kernel/trace/trace.c
-index b43d681b072f..61fdbe0ddeb1 100644
+index e6b2d443bab9..0881502e1af1 100644
 --- a/kernel/trace/trace.c
 +++ b/kernel/trace/trace.c
 @@ -2165,6 +2165,8 @@ tracing_generic_entry_update(struct trace_entry *entry, unsigned long flags,
@@ -65,7 +65,7 @@ index ed39d3ec202e..b13fc846d2b2 100644
  	return ret;
  }
 diff --git a/kernel/trace/trace_output.c b/kernel/trace/trace_output.c
-index 62015d62dd6f..9255100cf9fa 100644
+index 43fb832d26d2..469c07b2c895 100644
 --- a/kernel/trace/trace_output.c
 +++ b/kernel/trace/trace_output.c
 @@ -494,6 +494,11 @@ int trace_print_lat_fmt(struct trace_seq *s, struct trace_entry *entry)

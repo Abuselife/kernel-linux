@@ -1,7 +1,7 @@
 From: Peter Zijlstra <peterz@infradead.org>
 Date: Mon, 7 Jan 2019 13:52:31 +0100
-Subject: [PATCH 011/354] sched/fair: Robustify CFS-bandwidth timer locking
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=3d179a735692f4f5484e6a3bddee1363a64b9015
+Subject: [PATCH 011/353] sched/fair: Robustify CFS-bandwidth timer locking
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=f22f5092eccdda21f3505921dff2f19de5d1a3dc
 
 Traditionally hrtimer callbacks were run with IRQs disabled, but with
 the introduction of HRTIMER_MODE_SOFT it is possible they run from

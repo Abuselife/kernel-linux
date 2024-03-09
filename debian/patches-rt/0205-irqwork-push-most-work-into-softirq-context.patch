@@ -1,7 +1,7 @@
 From: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
 Date: Tue, 23 Jun 2015 15:32:51 +0200
-Subject: [PATCH 205/354] irqwork: push most work into softirq context
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=c6b1607475d4cf0886055d4d8275d94053a4eb16
+Subject: [PATCH 205/353] irqwork: push most work into softirq context
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=3ae91d493879e6e04ef1fe206e1fd2679e4bd3fb
 
 Initially we defered all irqwork into softirq because we didn't want the
 latency spikes if perf or another user was busy and delayed the RT task.
@@ -234,7 +234,7 @@ index 02e85cd233d4..208af1181bf5 100644
  
  	init_dl_bw(&rd->dl_bw);
 diff --git a/kernel/time/tick-sched.c b/kernel/time/tick-sched.c
-index 562d015b2401..ce873626893d 100644
+index 7f9a8188fe73..ea039f3b7d86 100644
 --- a/kernel/time/tick-sched.c
 +++ b/kernel/time/tick-sched.c
 @@ -241,6 +241,7 @@ static void nohz_full_kick_func(struct irq_work *work)

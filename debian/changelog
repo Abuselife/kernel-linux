@@ -289,6 +289,9 @@ linux (4.19.307-1) UNRELEASED; urgency=medium
 
   [ Ben Hutchings ]
   * Bump ABI to 27
+  * [rt] Update to 4.19.307-rt133:
+    - Drop "crypto: scompress - serialize RT percpu scratch buffer access
+      with a local lock", redundant with changes in 4.19.306
 
  -- Ben Hutchings <benh@debian.org>  Fri, 08 Mar 2024 23:08:32 +0100
 
