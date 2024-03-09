@@ -287,6 +287,9 @@ linux (4.19.307-1) UNRELEASED; urgency=medium
     - netfilter: nf_tables: fix pointer math issue in nft_byteorder_eval()
       (CVE-2024-0607)
 
+  [ Ben Hutchings ]
+  * Bump ABI to 27
+
  -- Ben Hutchings <benh@debian.org>  Fri, 08 Mar 2024 23:08:32 +0100
 
 linux (4.19.304-1) buster-security; urgency=high
