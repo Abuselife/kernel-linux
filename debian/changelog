@@ -1,4 +1,4 @@
-linux (5.10.211-1) UNRELEASED; urgency=medium
+linux (5.10.212-1) UNRELEASED; urgency=medium
 
   * New upstream stable update:
     https://www.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.10.210
@@ -488,6 +488,45 @@ linux (5.10.211-1) UNRELEASED; urgency=medium
     - arp: Prevent overflow in arp_req_get().
     - ext4: regenerate buddy after block freeing failed if under fc replay
       (CVE-2024-26601)
+    https://www.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.10.212
+    - [x86] platform/x86: touchscreen_dmi: Allow partial (prefix) matches for
+      ACPI names
+    - crypto: virtio/akcipher - Fix stack overflow on memcpy
+    - netlink: Fix kernel-infoleak-after-free in __skb_datagram_iter
+    - net: ip_tunnel: prevent perpetual headroom growth
+    - tun: Fix xdp_rxq_info's queue_index when detaching
+    - ipv6: fix potential "struct net" leak in inet6_rtm_getaddr()
+    - lan78xx: enable auto speed configuration for LAN7850 if no EEPROM is
+      detected
+    - net: usb: dm9601: fix wrong return value in dm9601_mdio_read
+    - Bluetooth: Avoid potential use-after-free in hci_error_reset
+    - Bluetooth: hci_event: Fix wrongly recorded wakeup BD_ADDR
+    - Bluetooth: hci_event: Fix handling of HCI_EV_IO_CAPA_REQUEST
+    - Bluetooth: Enforce validation on max value of connection interval
+    - netfilter: nf_tables: allow NFPROTO_INET in nft_(match/target)_validate()
+    - rtnetlink: fix error logic of IFLA_BRIDGE_FLAGS writing back
+    - efi/capsule-loader: fix incorrect allocation size
+    - ALSA: Drop leftover snd-rtctimer stuff from Makefile
+    - afs: Fix endless loop in directory parsing
+    - tomoyo: fix UAF write bug in tomoyo_write_control() (CVE-2024-26622)
+    - gtp: fix use-after-free and null-ptr-deref in gtp_newlink()
+    - wifi: nl80211: reject iftype change with mesh ID change
+    - btrfs: dev-replace: properly validate device names
+    - [arm64] dmaengine: fsl-qdma: fix SoC may hang on 16 byte unaligned read
+    - [arm64] dmaengine: fsl-qdma: init irq after reg initialization
+    - mmc: core: Fix eMMC initialization with 1-bit bus connection
+    - [arm64] mmc: sdhci-xenon: add timeout for PHY init complete
+    - [arm64] mmc: sdhci-xenon: fix PHY init clock stability
+    - [arm64] pmdomain: qcom: rpmhpd: Fix enabled_corner aggregation
+    - [x86] cpu/intel: Detect TME keyid bits before setting MTRR mask registers
+    - mptcp: fix possible deadlock in subflow diag
+    - ext4: avoid bb_free and bb_fragments inconsistency in mb_free_blocks()
+    - cachefiles: fix memory leak in cachefiles_add_cache()
+    - fs,hugetlb: fix NULL pointer dereference in hugetlbs_fill_super
+      (CVE-2024-0841)
+    - gpiolib: Fix the error path order in gpiochip_add_data_with_key()
+    - gpio: fix resource unwinding order in error path
+    - mptcp: fix double-free on socket dismantle
 
   [ Salvatore Bonaccorso ]
   * Bump ABI to 29
