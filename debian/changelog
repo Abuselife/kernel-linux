@@ -1,4 +1,4 @@
-linux (4.19.307-1) UNRELEASED; urgency=medium
+linux (4.19.309-1) UNRELEASED; urgency=medium
 
   * New upstream stable update:
     https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.19.305
@@ -286,6 +286,71 @@ linux (4.19.307-1) UNRELEASED; urgency=medium
     - lsm: new security_file_ioctl_compat() hook
     - netfilter: nf_tables: fix pointer math issue in nft_byteorder_eval()
       (CVE-2024-0607)
+    https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.19.308
+    - net/sched: Retire CBQ qdisc
+    - net/sched: Retire ATM qdisc
+    - net/sched: Retire dsmark qdisc
+    - [arm*] stmmac: no need to check return value of debugfs_create functions
+    - [arm*] net: stmmac: fix notifier registration (regression in 4.19.283)
+    - memcg: add refcnt for pcpu stock to avoid UAF problem in
+      drain_all_stock()
+    - nilfs2: replace WARN_ONs for invalid DAT metadata block requests
+    - userfaultfd: fix mmap_changing checking in mfill_atomic_hugetlb
+    - sched/rt: sysctl_sched_rr_timeslice show default timeslice after reset
+    - sched/rt: Disallow writing invalid values to sched_rt_period_us
+    - scsi: target: core: Add TMF to tmr_list handling
+    - wifi: cfg80211: fix missing interfaces when dumping
+    - wifi: mac80211: fix race condition on enabling fast-xmit
+    - [x86] fbdev: savage: Error out if pixclock equals zero
+    - [x86] fbdev: sis: Error out if pixclock equals zero
+    - ahci: asm1166: correct count of reported ports
+    - ext4: avoid allocating blocks from corrupted group in
+      ext4_mb_try_best_found()
+    - ext4: avoid allocating blocks from corrupted group in
+      ext4_mb_find_by_goal()
+    - [arm64] regulator: pwm-regulator: Add validity checks in continuous
+      .get_voltage
+    - [x86] hwmon: (coretemp) Enlarge per package core count limit
+    - firewire: core: send bus reset promptly on gap count error
+    - virtio-blk: Ensure no requests in virtqueues before deleting vqs.
+    - [amd64] IB/hfi1: Fix sdma.h tx->num_descs off-by-one error (regression in
+      4.19.291)
+    - mm: memcontrol: switch to rcu protection in drain_all_stock()
+    - dm-crypt: don't modify the data when using authenticated encryption
+    - gtp: fix use-after-free and null-ptr-deref in gtp_genl_dump_pdp()
+    - l2tp: pass correct message length to ip6_append_data (regression in
+      4.19.296)
+    - usb: gadget: ncm: Avoid dropping datagrams of properly parsed NTBs
+    - usb: roles: don't get/set_role() when usb_role_switch is unregistered
+    - [amd64] IB/hfi1: Fix a memleak in init_credit_return
+    - RDMA/bnxt_re: Return error for SRQ resize
+    - RDMA/srpt: Support specifying the srpt_service_guid parameter
+    - RDMA/ulp: Use dev_name instead of ibdev->name
+    - RDMA/srpt: Make debug output more detailed
+    - ipv6: sr: fix possible use-after-free and null-ptr-deref
+    - PCI/MSI: Prevent MSI hardware interrupt number truncation
+    - [arm*] KVM: arm64: vgic-its: Test for valid IRQ in
+      its_sync_lpi_pending_table()
+    - [arm*] KVM: arm64: vgic-its: Test for valid IRQ in MOVALL handler
+    - fs/aio: Restrict kiocb_set_cancel_fn() to I/O submitted via libaio
+    https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.19.309
+    - netlink: Fix kernel-infoleak-after-free in __skb_datagram_iter
+    - tun: Fix xdp_rxq_info's queue_index when detaching
+    - lan78xx: enable auto speed configuration for LAN7850 if no EEPROM is
+      detected
+    - net: usb: dm9601: fix wrong return value in dm9601_mdio_read (regression
+      in 4.19.297)
+    - Bluetooth: Avoid potential use-after-free in hci_error_reset
+    - Bluetooth: hci_event: Fix handling of HCI_EV_IO_CAPA_REQUEST (regression
+      in 4.19.297)
+    - Bluetooth: Enforce validation on max value of connection interval
+      (regression in 4.19.76)
+    - efi/capsule-loader: fix incorrect allocation size
+    - gtp: fix use-after-free and null-ptr-deref in gtp_newlink()
+    - wifi: nl80211: reject iftype change with mesh ID change
+    - btrfs: dev-replace: properly validate device names
+    - mmc: core: Fix eMMC initialization with 1-bit bus connection
+    - cachefiles: fix memory leak in cachefiles_add_cache()
 
   [ Ben Hutchings ]
   * Bump ABI to 27
