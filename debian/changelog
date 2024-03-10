@@ -357,6 +357,7 @@ linux (4.19.309-1) UNRELEASED; urgency=medium
   * [rt] Update to 4.19.307-rt133:
     - Drop "crypto: scompress - serialize RT percpu scratch buffer access
       with a local lock", redundant with changes in 4.19.306
+  * ovl: fail on invalid uid/gid mapping at copy up (CVE-2023-0386)
 
  -- Ben Hutchings <benh@debian.org>  Fri, 08 Mar 2024 23:08:32 +0100
 
