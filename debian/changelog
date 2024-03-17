@@ -1,4 +1,4 @@
-linux (6.1.81-1) UNRELEASED; urgency=medium
+linux (6.1.82-1) UNRELEASED; urgency=medium
 
   * New upstream stable update:
     https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.1.77
@@ -838,6 +838,64 @@ linux (6.1.81-1) UNRELEASED; urgency=medium
     - bpf: Derive source IP addr via bpf_*_fib_lookup()
     - [x86] efistub: Give up if memory attribute protocol returns an error
     - xen/events: close evtchn after mapping cleanup
+    https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.1.82
+    - ceph: switch to corrected encoding of max_xattr_size in mdsmap
+    - net: lan78xx: fix runtime PM count underflow on link stop
+    - ixgbe: {dis, en}able irqs in ixgbe_txrx_ring_{dis, en}able
+    - i40e: disable NAPI right after disabling irqs when handling xsk_pool
+    - ice: reorder disabling IRQ and NAPI in ice_qp_dis
+    - tracing/net_sched: Fix tracepoints that save qdisc_dev() as a string
+    - geneve: make sure to pull inner header in geneve_rx()
+    - ice: virtchnl: stop pretending to support RSS over AQ or registers
+    - net: ice: Fix potential NULL pointer dereference in ice_bridge_setlink()
+    - igc: avoid returning frame twice in XDP_REDIRECT
+    - net/ipv6: avoid possible UAF in ip6_route_mpath_notify()
+    - cpumap: Zero-initialise xdp_rxq_info struct before running XDP program
+    - net: dsa: microchip: fix register write order in ksz8_ind_write8()
+    - net/rds: fix WARNING in rds_conn_connect_if_down
+    - netfilter: nft_ct: fix l3num expectations with inet pseudo family
+    - netfilter: nf_conntrack_h323: Add protection for bmp length out of range
+    - erofs: apply proper VMA alignment for memory mapped files on THP
+    - netrom: Fix a data-race around sysctl_netrom_default_path_quality
+    - netrom: Fix a data-race around
+      sysctl_netrom_obsolescence_count_initialiser
+    - netrom: Fix data-races around sysctl_netrom_network_ttl_initialiser
+    - netrom: Fix a data-race around sysctl_netrom_transport_timeout
+    - netrom: Fix a data-race around sysctl_netrom_transport_maximum_tries
+    - netrom: Fix a data-race around sysctl_netrom_transport_acknowledge_delay
+    - netrom: Fix a data-race around sysctl_netrom_transport_busy_delay
+    - netrom: Fix a data-race around
+      sysctl_netrom_transport_requested_window_size
+    - netrom: Fix a data-race around sysctl_netrom_transport_no_activity_timeout
+    - netrom: Fix a data-race around sysctl_netrom_routing_control
+    - netrom: Fix a data-race around sysctl_netrom_link_fails_count
+    - netrom: Fix data-races around sysctl_net_busy_read
+    - [s390x] KVM: s390: add stat counter for shadow gmap events
+    - [s390x] KVM: s390: vsie: fix race during shadow creation
+    - drm/amd/display: Fix uninitialized variable usage in core_link_
+      'read_dpcd() & write_dpcd()' functions
+    - nfp: flower: add goto_chain_index for ct entry
+    - nfp: flower: add hardware offload check for post ct entry
+    - readahead: avoid multiple marked readahead pages
+    - xhci: process isoc TD properly when there was a transaction error mid TD.
+    - xhci: handle isoc Babble and Buffer Overrun events properly
+    - drm/amdgpu: Reset IH OVERFLOW_CLEAR bit
+    - [x86] Mitigate Register File Data Sampling (RFDS) vulnerability
+      (CVE-2023-28746):
+      + [x86] mmio: Disable KVM mitigation when X86_FEATURE_CLEAR_CPU_BUF is set
+      + Documentation/hw-vuln: Add documentation for RFDS
+      + [x86] rfds: Mitigate Register File Data Sampling (RFDS)
+      + [x86] KVM/x86: Export RFDS_NO and RFDS_CLEAR to guests
+    - drm/amd/display: Wrong colorimetry workaround
+    - drm/amd/display: Fix MST Null Ptr for RV
+    - getrusage: add the "signal_struct *sig" local variable
+    - getrusage: move thread_group_cputime_adjusted() outside of
+      lock_task_sighand()
+    - getrusage: use __for_each_thread()
+    - getrusage: use sig->stats_lock rather than lock_task_sighand()
+    - fs/proc: do_task_stat: use __for_each_thread()
+    - fs/proc: do_task_stat: use sig->stats_lock to gather the threads/children
+      stats
 
   [ Salvatore Bonaccorso ]
   * Bump ABI to 19
