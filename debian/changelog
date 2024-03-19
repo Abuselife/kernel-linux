@@ -1,4 +1,4 @@
-linux (5.10.212-1) UNRELEASED; urgency=medium
+linux (5.10.213-1) UNRELEASED; urgency=medium
 
   * New upstream stable update:
     https://www.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.10.210
@@ -527,6 +527,69 @@ linux (5.10.212-1) UNRELEASED; urgency=medium
     - gpiolib: Fix the error path order in gpiochip_add_data_with_key()
     - gpio: fix resource unwinding order in error path
     - mptcp: fix double-free on socket dismantle
+    https://www.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.10.213
+    - [arm64,armhf] mmc: mmci: stm32: use a buffer for unaligned DMA requests
+    - [arm64,armhf] mmc: mmci: stm32: fix DMA API overlapping mappings warning
+    - lan78xx: Fix white space and style issues
+    - lan78xx: Add missing return code checks
+    - lan78xx: Fix partial packet errors on suspend/resume
+    - lan78xx: Fix race conditions in suspend/resume handling
+    - net: lan78xx: fix runtime PM count underflow on link stop
+    - ixgbe: {dis, en}able irqs in ixgbe_txrx_ring_{dis, en}able
+    - i40e: disable NAPI right after disabling irqs when handling xsk_pool
+    - tracing/net_sched: Fix tracepoints that save qdisc_dev() as a string
+    - geneve: make sure to pull inner header in geneve_rx()
+    - net: ice: Fix potential NULL pointer dereference in ice_bridge_setlink()
+    - net/ipv6: avoid possible UAF in ip6_route_mpath_notify()
+    - cpumap: Zero-initialise xdp_rxq_info struct before running XDP program
+    - net/rds: fix WARNING in rds_conn_connect_if_down
+    - netfilter: nft_ct: fix l3num expectations with inet pseudo family
+    - netfilter: nf_conntrack_h323: Add protection for bmp length out of range
+    - netrom: Fix a data-race around sysctl_netrom_default_path_quality
+    - netrom: Fix a data-race around
+      sysctl_netrom_obsolescence_count_initialiser
+    - netrom: Fix data-races around sysctl_netrom_network_ttl_initialiser
+    - netrom: Fix a data-race around sysctl_netrom_transport_timeout
+    - netrom: Fix a data-race around sysctl_netrom_transport_maximum_tries
+    - netrom: Fix a data-race around sysctl_netrom_transport_acknowledge_delay
+    - netrom: Fix a data-race around sysctl_netrom_transport_busy_delay
+    - netrom: Fix a data-race around
+      sysctl_netrom_transport_requested_window_size
+    - netrom: Fix a data-race around sysctl_netrom_transport_no_activity_timeout
+    - netrom: Fix a data-race around sysctl_netrom_routing_control
+    - netrom: Fix a data-race around sysctl_netrom_link_fails_count
+    - netrom: Fix data-races around sysctl_net_busy_read
+    - xhci: remove extra loop in interrupt context
+    - xhci: prevent double-fetch of transfer and transfer event TRBs
+    - xhci: process isoc TD properly when there was a transaction error mid TD.
+    - xhci: handle isoc Babble and Buffer Overrun events properly
+    - net: Change sock_getsockopt() to take the sk ptr instead of the sock ptr
+    - bpf: net: Change sk_getsockopt() to take the sockptr_t argument
+    - lsm: make security_socket_getpeersec_stream() sockptr_t safe
+    - lsm: fix default return value of the socket_getpeersec_*() hooks
+    - ext4: make ext4_es_insert_extent() return void
+    - ext4: refactor ext4_da_map_blocks()
+    - ext4: convert to exclusive lock while inserting delalloc extents
+    - [x86] Drivers: hv: vmbus: Add vmbus_requestor data structure for VMBus
+      hardening
+    - [x86] hv_netvsc: Use vmbus_requestor to generate transaction IDs for VMBus
+      hardening
+    - [x86] hv_netvsc: Wait for completion on request SWITCH_DATA_PATH
+    - [x86] hv_netvsc: Process NETDEV_GOING_DOWN on VF hot remove
+    - [x86] hv_netvsc: Make netvsc/VF binding check both MAC and serial number
+    - [x86] hv_netvsc: use netif_is_bond_master() instead of open code
+    - [x86] hv_netvsc: Register VF in netvsc_probe if NET_DEVICE_REGISTER missed
+    - mm/hugetlb: change hugetlb_reserve_pages() to type bool
+    - mm: hugetlb pages should not be reserved by shmat() if SHM_NORESERVE
+    - getrusage: add the "signal_struct *sig" local variable
+    - getrusage: move thread_group_cputime_adjusted() outside of
+      lock_task_sighand()
+    - getrusage: use __for_each_thread()
+    - getrusage: use sig->stats_lock rather than lock_task_sighand()
+    - [x86] Drivers: hv: vmbus: Drop error message when 'No request id
+      available'
+    - regmap: allow to define reg_update_bits for no bus configuration
+    - regmap: Add bulk read/write callbacks into regmap_config
 
   [ Salvatore Bonaccorso ]
   * Bump ABI to 29
