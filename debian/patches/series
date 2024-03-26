@@ -72,6 +72,7 @@ bugfix/powerpc/powerpc-boot-fix-missing-crc32poly.h-when-building-with-kernel_xz
 bugfix/arm64/arm64-acpi-Add-fixup-for-HPE-m400-quirks.patch
 bugfix/alpha/alpha-fix-missing-symbol-versions-for-str-n-cat-cpy.patch
 bugfix/x86/x86-efistub-Clear-decompressor-BSS-in-native-EFI-ent.patch
+bugfix/x86/x86-efistub-Don-t-clear-BSS-twice-in-mixed-mode.patch
 
 # Arch features
 features/arm64/dt-bindings-rockchip-Add-Hardkernel-ODROID-M1-board.patch
