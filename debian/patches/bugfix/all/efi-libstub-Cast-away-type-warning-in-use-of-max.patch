@@ -1,0 +1,30 @@
+From: Ard Biesheuvel <ardb@kernel.org>
+Date: Tue, 26 Mar 2024 11:15:25 +0100
+Subject: efi/libstub: Cast away type warning in use of max()
+Origin: https://git.kernel.org/pub/scm/linux/kernel/git/efi/efi.git/commit?id=07263d8a5a2cea66a3f10d930fea60ce49c7dc3b
+
+Add a missing (u64) cast to alloc_min, which is passed into
+efi_random_alloc() as unsigned long, while efi_physical_addr_t is u64.
+
+Fixes: 3cb4a4827596abc82e ("efi/libstub: fix efi_random_alloc() ...")
+Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
+---
+ drivers/firmware/efi/libstub/randomalloc.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/drivers/firmware/efi/libstub/randomalloc.c b/drivers/firmware/efi/libstub/randomalloc.c
+index 7e1852859550..fa81528150fe 100644
+--- a/drivers/firmware/efi/libstub/randomalloc.c
++++ b/drivers/firmware/efi/libstub/randomalloc.c
+@@ -120,7 +120,7 @@ efi_status_t efi_random_alloc(unsigned long size,
+ 			continue;
+ 		}
+ 
+-		target = round_up(max(md->phys_addr, alloc_min), align) + target_slot * align;
++		target = round_up(max(md->phys_addr, (u64)alloc_min), align) + target_slot * align;
+ 		pages = size / EFI_PAGE_SIZE;
+ 
+ 		status = efi_bs_call(allocate_pages, EFI_ALLOCATE_ADDRESS,
+-- 
+2.43.0
+
