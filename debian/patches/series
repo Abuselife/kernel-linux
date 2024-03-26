@@ -71,6 +71,8 @@ bugfix/arm/arm-mm-export-__sync_icache_dcache-for-xen-privcmd.patch
 bugfix/powerpc/powerpc-boot-fix-missing-crc32poly.h-when-building-with-kernel_xz.patch
 bugfix/arm64/arm64-acpi-Add-fixup-for-HPE-m400-quirks.patch
 bugfix/alpha/alpha-fix-missing-symbol-versions-for-str-n-cat-cpy.patch
+bugfix/x86/x86-efistub-Clear-decompressor-BSS-in-native-EFI-ent.patch
+bugfix/x86/x86-efistub-Don-t-clear-BSS-twice-in-mixed-mode.patch
 
 # Arch features
 features/arm64/dt-bindings-rockchip-Add-Hardkernel-ODROID-M1-board.patch
@@ -103,6 +105,9 @@ features/arm64/quartz64/arm64-dts-rockchip-Add-SOQuartz-Model-A-baseboard.patch
 # Miscellaneous bug fixes
 bugfix/all/disable-some-marvell-phys.patch
 bugfix/all/fs-add-module_softdep-declarations-for-hard-coded-cr.patch
+bugfix/all/efi-fix-panic-in-kdump-kernel.patch
+bugfix/all/efi-libstub-fix-efi_random_alloc-to-allocate-memory-.patch
+bugfix/all/efi-libstub-Cast-away-type-warning-in-use-of-max.patch
 
 # Miscellaneous features
 
