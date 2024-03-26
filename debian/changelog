@@ -904,6 +904,8 @@ linux (6.1.82-1) UNRELEASED; urgency=medium
   * [x86] efistub: Clear decompressor BSS in native EFI entrypoint
   * [x86] efistub: Don't clear BSS twice in mixed mode
   * efi: fix panic in kdump kernel
+  * efi/libstub: fix efi_random_alloc() to allocate memory at alloc_min or
+    higher address
 
  -- Salvatore Bonaccorso <carnil@debian.org>  Fri, 09 Feb 2024 20:55:10 +0100
 
