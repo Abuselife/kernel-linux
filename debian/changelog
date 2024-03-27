@@ -913,6 +913,8 @@ linux (6.1.82-1) UNRELEASED; urgency=medium
     (CVE-2023-6270)
   * wifi: ath10k: fix NULL pointer dereference in
     ath10k_wmi_tlv_op_pull_mgmt_tx_compl_ev() (CVE-2023-7042)
+  * Bluetooth: rfcomm: Fix null-ptr-deref in rfcomm_check_security
+    (CVE-2024-22099)
 
  -- Salvatore Bonaccorso <carnil@debian.org>  Fri, 09 Feb 2024 20:55:10 +0100
 
