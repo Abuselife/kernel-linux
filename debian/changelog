@@ -42,12 +42,13 @@ linux (6.1.82-1) UNRELEASED; urgency=medium
     - [s390x] vfio-ap: fix sysfs status attribute for AP queue devices
     - [s390x] ptrace: handle setting of fpc register correctly
     - [s390x] KVM: s390: fix setting of fpc register
-    - SUNRPC: Fix a suspicious RCU usage warning
+    - SUNRPC: Fix a suspicious RCU usage warning (CVE-2023-52623)
     - ecryptfs: Reject casefold directory inodes
     - ext4: fix inconsistent between segment fstrim and full fstrim
     - ext4: unify the type of flexbg_size to unsigned int
     - ext4: remove unnecessary check from alloc_flex_gd()
     - ext4: avoid online resizing failures due to oversized flex bg
+      (CVE-2023-52622)
     - wifi: rt2x00: restart beacon queue when hardware reset
     - wifi: rt2x00: correct wrong BBP register in RxDCOC calibration
     - [arm64] soc: xilinx: Fix for call trace due to the usage of
@@ -64,6 +65,7 @@ linux (6.1.82-1) UNRELEASED; urgency=medium
     - wifi: ath11k: fix race due to setting ATH11K_FLAG_EXT_IRQ_ENABLED too
       early
     - bpf: Check rcu_read_lock_trace_held() before calling bpf map helpers
+      (CVE-2023-52621)
     - scsi: libfc: Don't schedule abort twice
     - scsi: libfc: Fix up timeout error in fc_fcp_rec_error()
     - bpf: Set uattr->batch.count as zero before batched update or deletion
