@@ -909,6 +909,8 @@ linux (6.1.82-1) UNRELEASED; urgency=medium
   * efi/libstub: fix efi_random_alloc() to allocate memory at alloc_min or
     higher address
   * efi/libstub: Cast away type warning in use of max()
+  * aoe: fix the potential use-after-free problem in aoecmd_cfg_pkts
+    (CVE-2023-6270)
 
  -- Salvatore Bonaccorso <carnil@debian.org>  Fri, 09 Feb 2024 20:55:10 +0100
 
