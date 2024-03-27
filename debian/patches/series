@@ -125,6 +125,10 @@ features/all/db-mok-keyring/trust-machine-keyring-by-default.patch
 # Security fixes
 debian/i386-686-pae-pci-set-pci-nobios-by-default.patch
 debian/ntfs-mark-it-as-broken.patch
+bugfix/all/aoe-fix-the-potential-use-after-free-problem-in-aoec.patch
+bugfix/all/wifi-ath10k-fix-NULL-pointer-dereference-in-ath10k_w.patch
+bugfix/all/Bluetooth-rfcomm-Fix-null-ptr-deref-in-rfcomm_check_.patch
+bugfix/all/sr9800-Add-check-for-usbnet_get_endpoints.patch
 
 # Fix exported symbol versions
 bugfix/all/module-disable-matching-missing-version-crc.patch
