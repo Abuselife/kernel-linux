@@ -916,6 +916,7 @@ linux (6.1.82-1) UNRELEASED; urgency=medium
   * Bluetooth: rfcomm: Fix null-ptr-deref in rfcomm_check_security
     (CVE-2024-22099)
   * sr9800: Add check for usbnet_get_endpoints (CVE-2024-26651)
+  * [rt] Update to 6.1.82-rt27
 
  -- Salvatore Bonaccorso <carnil@debian.org>  Fri, 09 Feb 2024 20:55:10 +0100
 
