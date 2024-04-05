@@ -699,6 +699,7 @@ linux (6.1.84-1) UNRELEASED; urgency=medium
   * Bump ABI to 20
   * Refresh "efi: Lock down the kernel if booted in secure boot mode" (context
     changes in 6.1.84)
+  * [rt] Refresh "serial: 8250: implement write_atomic"
 
  -- Salvatore Bonaccorso <carnil@debian.org>  Mon, 01 Apr 2024 21:14:46 +0200
 
