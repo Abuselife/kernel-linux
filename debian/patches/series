@@ -103,9 +103,6 @@ features/arm64/quartz64/arm64-dts-rockchip-Add-SOQuartz-Model-A-baseboard.patch
 # Miscellaneous bug fixes
 bugfix/all/disable-some-marvell-phys.patch
 bugfix/all/fs-add-module_softdep-declarations-for-hard-coded-cr.patch
-bugfix/all/efi-fix-panic-in-kdump-kernel.patch
-bugfix/all/efi-libstub-fix-efi_random_alloc-to-allocate-memory-.patch
-bugfix/all/efi-libstub-Cast-away-type-warning-in-use-of-max.patch
 
 # Miscellaneous features
 
