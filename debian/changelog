@@ -828,6 +828,8 @@ linux (5.10.214-1) UNRELEASED; urgency=medium
   [ Salvatore Bonaccorso ]
   * Bump ABI to 29
   * [rt] Refresh "sched/vtime: Consolidate IRQ time accounting"
+  * scripts: kernel-doc: Fix syntax error due to undeclared args variable
+    (Closes: #1064035)
 
  -- Salvatore Bonaccorso <carnil@debian.org>  Mon, 26 Feb 2024 20:04:47 +0100
 
