@@ -837,6 +837,8 @@ linux (6.1.85-1) UNRELEASED; urgency=medium
     changes in 6.1.84)
   * [rt] Refresh "serial: 8250: implement write_atomic"
   * Refresh "x86: Make x32 syscall support conditional on a kernel parameter"
+  * tty: n_gsm: require CAP_NET_ADMIN to attach N_GSM0710 ldisc
+    (Closes: #1068770)
 
  -- Salvatore Bonaccorso <carnil@debian.org>  Mon, 01 Apr 2024 21:14:46 +0200
 
