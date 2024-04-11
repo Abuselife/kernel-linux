@@ -576,32 +576,6 @@ index 8efe31448df3..975c16267196 100644
  	int irq;
  
  	if (port->flags & UPF_FOURPORT) {
-@@ -1377,8 +1418,12 @@ static void autoconfig_irq(struct uart_8250_port *up)
- 		inb_p(ICP);
- 	}
- 
--	if (uart_console(port))
-+	is_console = uart_console(port);
-+
-+	if (is_console) {
- 		console_lock();
-+		printk_cpu_sync_get_irqsave(flags);
-+	}
- 
- 	/* forget possible initially masked and pending IRQ */
- 	probe_irq_off(probe_irq_on());
-@@ -1410,8 +1455,10 @@ static void autoconfig_irq(struct uart_8250_port *up)
- 	if (port->flags & UPF_FOURPORT)
- 		outb_p(save_ICP, ICP);
- 
--	if (uart_console(port))
-+	if (is_console) {
-+		printk_cpu_sync_put_irqrestore(flags);
- 		console_unlock();
-+	}
- 
- 	port->irq = (irq > 0) ? irq : 0;
- }
 @@ -1424,7 +1471,7 @@ static void serial8250_stop_rx(struct uart_port *port)
  
  	up->ier &= ~(UART_IER_RLSI | UART_IER_RDI);
