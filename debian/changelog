@@ -842,6 +842,7 @@ linux (6.1.85-1) UNRELEASED; urgency=medium
   * Revert "scsi: sd: usb_storage: uas: Access media prior to querying device
     properties" (Closes: #1068675)
   * Revert "scsi: core: Add struct for args to execution functions"
+  * scsi: sd: usb_storage: uas: Access media prior to querying device properties
 
  -- Salvatore Bonaccorso <carnil@debian.org>  Mon, 01 Apr 2024 21:14:46 +0200
 
