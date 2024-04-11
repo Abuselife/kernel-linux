@@ -104,6 +104,7 @@ features/arm64/quartz64/arm64-dts-rockchip-Add-SOQuartz-Model-A-baseboard.patch
 bugfix/all/disable-some-marvell-phys.patch
 bugfix/all/fs-add-module_softdep-declarations-for-hard-coded-cr.patch
 bugfix/all/Revert-scsi-sd-usb_storage-uas-Access-media-prior-to.patch
+bugfix/all/Revert-scsi-core-Add-struct-for-args-to-execution-fu.patch
 
 # Miscellaneous features
 
