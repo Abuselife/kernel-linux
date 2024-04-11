@@ -839,6 +839,10 @@ linux (6.1.85-1) UNRELEASED; urgency=medium
   * Refresh "x86: Make x32 syscall support conditional on a kernel parameter"
   * tty: n_gsm: require CAP_NET_ADMIN to attach N_GSM0710 ldisc
     (Closes: #1068770)
+  * Revert "scsi: sd: usb_storage: uas: Access media prior to querying device
+    properties" (Closes: #1068675)
+  * Revert "scsi: core: Add struct for args to execution functions"
+  * scsi: sd: usb_storage: uas: Access media prior to querying device properties
 
  -- Salvatore Bonaccorso <carnil@debian.org>  Mon, 01 Apr 2024 21:14:46 +0200
 
