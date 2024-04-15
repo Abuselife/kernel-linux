@@ -1,3 +1,97 @@
+linux (6.1.86-1) UNRELEASED; urgency=medium
+
+  * New upstream stable update:
+    https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.1.86
+    - amdkfd: use calloc instead of kzalloc to avoid integer overflow
+      (CVE-2024-26817)
+    - wifi: ath9k: fix LNA selection in ath_ant_try_scan()
+    - bnx2x: Fix firmware version string character counts
+    - wifi: rtw89: pci: enlarge RX DMA buffer to consider size of RX descriptor
+    - [x86] VMCI: Fix memcpy() run-time warning in dg_dispatch_as_host()
+    - wifi: iwlwifi: pcie: Add the PCI device id for new hardware
+    - panic: Flush kernel log buffer at the end
+    - cpuidle: Avoid potential overflow in integer multiplication
+    - [arm64] dts: rockchip: fix rk3328 hdmi ports node
+    - [arm64] dts: rockchip: fix rk3399 hdmi ports node
+    - ionic: set adminq irq affinity
+    - net: skbuff: add overflow debug check to pull/push helpers
+    - wifi: brcmfmac: Add DMI nvram filename quirk for ACEPC W5 Pro
+    - pstore/zone: Add a null pointer check to the psz_kmsg_read
+    - net: pcs: xpcs: Return EINVAL in the internal methods
+    - dma-direct: Leak pages on dma_set_decrypted() failure
+    - wifi: ath11k: decrease MHI channel buffer length to 8KB
+    - cpufreq: Don't unregister cpufreq cooling on CPU hotplug
+    - btrfs: handle chunk tree lookup error in btrfs_relocate_sys_chunks()
+    - btrfs: export: handle invalid inode or root reference in
+      btrfs_get_parent()
+    - btrfs: send: handle path ref underflow in header iterate_inode_ref()
+    - ice: use relative VSI index for VFs instead of PF VSI number
+    - net/smc: reduce rtnl pressure in smc_pnet_create_pnetids_list()
+    - Bluetooth: btintel: Fix null ptr deref in btintel_read_version
+    - Bluetooth: btmtk: Add MODULE_FIRMWARE() for MT7922
+    - [arm64,armhf] drm/vc4: don't check if plane->state->fb == state->fb
+    - Input: synaptics-rmi4 - fail probing if memory allocation for "phys" fails
+    - drm: panel-orientation-quirks: Add quirk for GPD Win Mini
+    - pinctrl: renesas: checker: Limit cfg reg enum checks to provided IDs
+    - sysv: don't call sb_bread() with pointers_lock held
+    - scsi: lpfc: Fix possible memory leak in lpfc_rcv_padisc()
+    - isofs: handle CDs with bad root inode but good Joliet root directory
+    - ASoC: Intel: common: DMI remap for rebranded Intel NUC M15 (LAPRC710)
+      laptops
+    - rcu-tasks: Repair RCU Tasks Trace quiescence check
+    - Julia Lawall reported this null pointer dereference, this should fix it.
+    - media: sta2x11: fix irq handler cast
+    - ALSA: firewire-lib: handle quirk to calculate payload quadlets as data
+      block counter
+    - ext4: add a hint for block bitmap corrupt state in mb_groups
+    - ext4: forbid commit inconsistent quota data when errors=remount-ro
+    - drm/amd/display: Fix nanosec stat overflow
+    - drm/amd/amdgpu: Fix potential ioremap() memory leaks in
+      amdgpu_device_init()
+    - SUNRPC: increase size of rpc_wait_queue.qlen from unsigned short to
+      unsigned int
+    - Revert "ACPI: PM: Block ASUS B1400CEAE from suspend to idle by default"
+    - libperf evlist: Avoid out-of-bounds access
+    - input/touchscreen: imagis: Correct the maximum touch area value
+    - block: prevent division by zero in blk_rq_stat_sum()
+    - RDMA/cm: add timeout to cm_destroy_id wait
+    - Input: imagis - use FIELD_GET where applicable
+    - Input: allocate keycode for Display refresh rate toggle
+    - platform/x86: touchscreen_dmi: Add an extra entry for a variant of the
+      Chuwi Vi8 tablet
+    - [x86] perf/x86/amd/lbr: Discard erroneous branch entries
+    - ring-buffer: use READ_ONCE() to read cpu_buffer->commit_page in concurrent
+      environment
+    - bus: mhi: host: Add MHI_PM_SYS_ERR_FAIL state
+    - usb: gadget: uvc: mark incomplete frames with UVC_STREAM_ERR
+    - [x86] thunderbolt: Keep the domain powered when USB4 port is in redrive
+      mode
+    - usb: typec: tcpci: add generic tcpci fallback compatible
+    - usb: sl811-hcd: only defined function checkdone if QUIRK2 is defined
+    - thermal/of: Assume polling-delay(-passive) 0 when absent
+    - ASoC: soc-core.c: Skip dummy codec when adding platforms
+    - fbdev: viafb: fix typo in hw_bitblt_1 and hw_bitblt_2
+    - io_uring: clear opcode specific data for an early failure
+    - drivers/nvme: Add quirks for device 126f:2262
+    - fbmon: prevent division by zero in fb_videomode_from_videomode()
+    - netfilter: nf_tables: release batch on table validation from abort path
+    - netfilter: nf_tables: release mutex after nft_gc_seq_end from abort path
+      (CVE-2024-26925)
+    - netfilter: nf_tables: discard table flag update with pending basechain
+      deletion
+    - gcc-plugins/stackleak: Avoid .head.text section
+    - virtio: reenable config if freezing device failed
+    - randomize_kstack: Improve entropy diffusion
+    - [x86] platform/x86: intel-vbtn: Update tablet mode switch at end of probe
+    - Bluetooth: btintel: Fixe build regression
+    - net: mpls: error out if inner headers are not set
+    - [x86] VMCI: Fix possible memcpy() run-time warning in
+      vmci_datagram_invoke_guest_handler()
+    - Revert "drm/amd/amdgpu: Fix potential ioremap() memory leaks in
+      amdgpu_device_init()"
+
+ -- Salvatore Bonaccorso <carnil@debian.org>  Mon, 15 Apr 2024 16:09:04 +0200
+
 linux (6.1.85-1) bookworm-security; urgency=high
 
   * New upstream stable update:
