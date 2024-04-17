@@ -1,4 +1,4 @@
-linux (6.1.86-1) UNRELEASED; urgency=medium
+linux (6.1.87-1) UNRELEASED; urgency=medium
 
   * New upstream stable update:
     https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.1.86
@@ -89,6 +89,71 @@ linux (6.1.86-1) UNRELEASED; urgency=medium
       vmci_datagram_invoke_guest_handler()
     - Revert "drm/amd/amdgpu: Fix potential ioremap() memory leaks in
       amdgpu_device_init()"
+    https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.1.87
+    - smb3: fix Open files on server counter going negative
+    - ata: libata-scsi: Fix ata_scsi_dev_rescan() error path
+    - batman-adv: Avoid infinite loop trying to resize local TT
+    - ring-buffer: Only update pages_touched when a new page is touched
+    - Bluetooth: Fix memory leak in hci_req_sync_complete()
+    - drm/amd/pm: fixes a random hang in S4 for SMU v13.0.4/11
+    - PM: s2idle: Make sure CPUs will wakeup directly on resume
+    - media: cec: core: remove length check of Timer Status
+    - Revert "drm/qxl: simplify qxl_fence_wait" (Closes: #1054514)
+    - nouveau: fix function cast warning
+    - scsi: hisi_sas: Modify the deadline for ata_wait_after_reset()
+    - scsi: qla2xxx: Fix off by one in qla_edif_app_getstats()
+    - net: openvswitch: fix unwanted error log on timeout policy probing
+    - u64_stats: fix u64_stats_init() for lockdep when used repeatedly in one
+      file
+    - xsk: validate user input for XDP_{UMEM|COMPLETION}_FILL_RING
+    - geneve: fix header validation in geneve[6]_xmit_skb
+    - bnxt_en: Reset PTP tx_avail after possible firmware reset
+    - af_unix: Clear stale u->oob_skb.
+    - ipv6: fib: hide unused 'pn' variable
+    - ipv4/route: avoid unused-but-set-variable warning
+    - ipv6: fix race condition between ipv6_get_ifaddr and ipv6_del_addr
+    - Bluetooth: SCO: Fix not validating setsockopt user input
+    - Bluetooth: L2CAP: Fix not validating setsockopt user input
+    - netfilter: complete validation of user input
+    - net/mlx5: Properly link new fs rules into the tree
+    - net/mlx5e: Fix mlx5e_priv_init() cleanup flow
+    - net/mlx5e: HTB, Fix inconsistencies with QoS SQs number
+    - af_unix: Do not use atomic ops for unix_sk(sk)->inflight.
+    - af_unix: Fix garbage collector racing against connect() (CVE-2024-26923)
+    - net: ena: Fix potential sign extension issue
+    - net: ena: Wrong missing IO completions check order
+    - net: ena: Fix incorrect descriptor free behavior
+    - tracing: hide unused ftrace_event_id_fops
+    - [amd64] iommu/vt-d: Allocate local memory for page request queue
+    - btrfs: qgroup: correctly model root qgroup rsv in convert
+    - btrfs: record delayed inode root in transaction
+    - btrfs: qgroup: convert PREALLOC to PERTRANS after record_root_in_trans
+    - io_uring/net: restore msg_control on sendzc retry
+    - kprobes: Fix possible use-after-free issue on kprobe registration
+    - [x86] drm/i915/vrr: Disable VRR when using bigjoiner
+    - drm/ast: Fix soft lockup
+    - drm/client: Fully protect modes[] with dev->mode_config.mutex
+    - vhost: Add smp_rmb() in vhost_vq_avail_empty()
+    - vhost: Add smp_rmb() in vhost_enable_notify()
+    - [x86] perf/x86: Fix out of range data
+    - [x86] cpu: Actually turn off mitigations by default for
+      SPECULATION_MITIGATIONS=n
+    - [x86] apic: Force native_apic_mem_read() to use the MOV instruction
+    - irqflags: Explicitly ignore lockdep_hrtimer_exit() argument
+    - [x86] bugs: Fix return type of spectre_bhi_state()
+    - [x86] bugs: Fix BHI documentation
+    - [x86] bugs: Cache the value of MSR_IA32_ARCH_CAPABILITIES
+    - [x86] bugs: Rename various 'ia32_cap' variables to 'x86_arch_cap_msr'
+    - [x86] bugs: Fix BHI handling of RRSBA
+    - [x86] bugs: Clarify that syscall hardening isn't a BHI mitigation
+    - [x86] bugs: Remove CONFIG_BHI_MITIGATION_AUTO and spectre_bhi=auto
+    - [x86] bugs: Replace CONFIG_SPECTRE_BHI_{ON,OFF} with
+      CONFIG_MITIGATION_SPECTRE_BHI
+    - [x86] drm/i915/cdclk: Fix CDCLK programming order when pipes are active
+    - [x86] drm/i915: Disable port sync when bigjoiner is used
+    - drm/amdgpu: Reset dGPU if suspend got aborted
+    - drm/amdgpu: always force full reset for SOC21
+    - drm/amd/display: fix disable otg wa logic in DCN316
 
   [ Salvatore Bonaccorso ]
   * Bump ABI to 21
