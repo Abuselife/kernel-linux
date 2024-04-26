@@ -1,4 +1,4 @@
-linux (4.19.311-1) UNRELEASED; urgency=medium
+linux (4.19.312-1) UNRELEASED; urgency=medium
 
   * New upstream stable update:
     https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.19.305
@@ -284,15 +284,11 @@ linux (4.19.311-1) UNRELEASED; urgency=medium
     - ext4: fix double-free of blocks due to wrong extents moved_len
       (CVE-2024-26704)
     - ring-buffer: Clean ring_buffer_poll_wait() error return
-    - [amd64] x86/mm/ident_map: Use gbpages only where full GB page should be
-      mapped.
     - ALSA: hda/conexant: Add quirk for SWS JS201D
     - nilfs2: fix data corruption in dsync block recovery for small block sizes
       (CVE-2024-26697)
     - nilfs2: fix hang in nilfs_lookup_dirty_data_buffers() (CVE-2024-26696)
     - pmdomain: core: Move the unused cleanup to a _sync initcall
-    - Revert "md/raid5: Wait for MD_SB_CHANGE_PENDING in raid5d" (regression in
-      4.19.262)
     - sched/membarrier: reduce the ability to hammer on sys_membarrier
       (CVE-2024-26602)
     - nilfs2: fix potential bug in end_buffer_async_write (CVE-2024-26685)
@@ -316,7 +312,6 @@ linux (4.19.311-1) UNRELEASED; urgency=medium
     - wifi: mac80211: fix race condition on enabling fast-xmit (CVE-2024-26779)
     - [x86] fbdev: savage: Error out if pixclock equals zero (CVE-2024-26778)
     - [x86] fbdev: sis: Error out if pixclock equals zero (CVE-2024-26777)
-    - ahci: asm1166: correct count of reported ports
     - ext4: avoid allocating blocks from corrupted group in
       ext4_mb_try_best_found() (CVE-2024-26773)
     - ext4: avoid allocating blocks from corrupted group in
@@ -539,6 +534,176 @@ linux (4.19.311-1) UNRELEASED; urgency=medium
       (CVE-2024-27028)
     - crypto: af_alg - Fix regression on empty requests
     - crypto: af_alg - Work around empty control messages without MSG_MORE
+    https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.19.312
+    - [x86] cpu: Support AMD Automatic IBRS
+    - [x86] bugs: Use sysfs_emit()
+    - timer/trace: Replace deprecated vsprintf pointer extension %pf by %ps
+    - timer/trace: Improve timer tracing
+    - timers: Prepare support for PREEMPT_RT
+    - timers: Use del_timer_sync() even on UP
+    - timers: Rename del_timer_sync() to timer_delete_sync()
+    - wifi: brcmfmac: Fix use-after-free bug in brcmf_cfg80211_detach
+      (CVE-2023-47233)
+    - media: xc4000: Fix atomicity violation in xc4000_get_frequency
+      (CVE-2024-24861)
+    - [x86] KVM: Always flush async #PF workqueue when vCPU is being destroyed
+      (CVE-2024-26976)
+    - [x86] crypto: qat - fix double free during reset
+    - [x86] crypto: qat - resolve race condition during AER recovery
+      (CVE-2024-26974)
+    - fat: fix uninitialized field in nostale filehandles (CVE-2024-26973)
+    - ubifs: Set page uptodate in the correct place (CVE-2024-35821)
+    - ubi: Check for too small LEB size in VTBL code (CVE-2024-25739)
+    - ubi: correct the calculation of fastmap size
+    - PM: suspend: Set mem_sleep_current during kernel command line setup
+    - [arm64] clk: qcom: gcc-ipq8074: fix terminating of frequency table arrays
+      (CVE-2024-26969)
+    - [armhf] clk: qcom: mmcc-apq8084: fix terminating of frequency table
+      arrays (CVE-2024-26966)
+    - [armhf] clk: qcom: mmcc-msm8974: fix terminating of frequency table
+      arrays (CVE-2024-26965)
+    - USB: serial: ftdi_sio: add support for GMC Z216C Adapter IR-USB
+    - USB: serial: add device ID for VeriFone adapter
+    - USB: serial: cp210x: add ID for MGP Instruments PDS100
+    - USB: serial: option: add MeiG Smart SLM320 product
+    - USB: serial: cp210x: add pid/vid for TDK NC0110013M and MM0110113M
+    - PM: sleep: wakeirq: fix wake irq warning in system suspend (regression in
+      4.19.291)
+    - fuse: don't unhash root (regression in 4.19.226)
+    - PCI: Drop pci_device_remove() test of pci_dev->driver
+    - PCI/PM: Drain runtime-idle callbacks before driver removal
+      (CVE-2024-35809)
+    - dm-raid: fix lockdep waring in "pers->hot_add_disk"
+    - mmc: core: Fix switch on gp3 partition
+    - hwmon: (amc6821) add of_match table
+    - ext4: fix corruption during on-line resize (CVE-2024-35807)
+    - speakup: Fix 8bit characters from direct synth
+    - soc: fsl: qbman: Always disable interrupts when taking cgr_lock
+      (CVE-2024-35806)
+    - soc: fsl: qbman: Use raw spinlock for cgr_lock (CVE-2024-35819)
+    - [armhf] drm/imx/ipuv3: do not return negative values from .get_modes()
+    - [arm*] drm/vc4: hdmi: do not return negative values from .get_modes()
+    - [x86] memtest: use {READ,WRITE}_ONCE in memory scanning
+    - nilfs2: fix failure to detect DAT corruption in btree and direct mappings
+      (CVE-2024-26956)
+    - nilfs2: use a more common logging style
+    - nilfs2: prevent kernel bug at submit_bh_wbc() (CVE-2024-26955)
+    - [x86] CPU/AMD: Update the Zenbleed microcode revisions
+    - [x86] comedi: comedi_test: Prevent timers rescheduling during deletion
+    - netfilter: nf_tables: disallow anonymous set with timeout flag
+      (CVE-2024-26642)
+    - netfilter: nf_tables: reject constant set with timeout
+    - xfrm: Avoid clang fortify warning in copy_to_user_tmpl()
+    - ALSA: hda/realtek - Fix headset Mic no show at resume back for Lenovo
+      ALC897 platform
+    - USB: usb-storage: Prevent divide-by-0 error in isd200_ata_command
+      (CVE-2024-27059)
+    - usb: gadget: ncm: Fix handling of zero block length packets (regression
+      in 4.19.297) (CVE-2024-35825)
+    - usb: port: Don't try to peer unused USB ports based on location
+    - vt: fix unicode buffer corruption when deleting characters
+      (CVE-2024-35823)
+    - vt: fix memory overlapping when deleting chars in the buffer
+      (CVE-2022-48627)
+    - mm/memory-failure: fix an incorrect use of tail pages
+    - mm/migrate: set swap entry values of THP tail pages properly.
+    - wifi: mac80211: check/clear fast rx for non-4addr sta VLAN changes
+      (CVE-2024-35789)
+    - usb: cdc-wdm: close race between read and workqueue
+    - fs/aio: Check IOCB_AIO_RW before the struct aio_kiocb conversion
+      (CVE-2024-35815)
+    - printk: Update @console_may_schedule in console_trylock_spinning()
+    - btrfs: allocate btrfs_ioctl_defrag_range_args on stack
+    - Revert "loop: Check for overflow while configuring loop"
+    - loop: Call loop_config_discard() only after new config is applied
+    - loop: Remove sector_t truncation checks
+    - loop: Factor out setting loop device size
+    - loop: Refactor loop_set_status() size calculation
+    - loop: properly observe rotational flag of underlying device
+    - perf/core: Fix reentry problem in perf_output_read_group()
+    - efivarfs: Request at most 512 bytes for variable names
+    - loop: Factor out configuring loop from status
+    - loop: Check for overflow while configuring loop
+    - loop: loop_set_status_from_info() check before assignment
+    - usb: dwc2: host: Fix remote wakeup from hibernation
+    - usb: dwc2: host: Fix hibernation flow
+    - usb: dwc2: host: Fix ISOC flow in DDMA mode
+    - usb: dwc2: gadget: LPM flow fix
+    - usb: udc: remove warning when queue disabled ep (CVE-2024-35822)
+    - scsi: qla2xxx: Fix command flush on cable pull (CVE-2024-26931)
+    - [x86] cpu: Enable STIBP on AMD if Automatic IBRS is enabled
+    - scsi: lpfc: Correct size for wqe for memset()
+    - USB: core: Fix deadlock in usb_deauthorize_interface() (CVE-2024-26934)
+    - nfc: nci: Fix uninit-value in nci_dev_up and nci_ntf_packet
+      (CVE-2024-35915)
+    - mptcp: add sk_stop_timer_sync helper
+    - tcp: properly terminate timers for kernel sockets (CVE-2024-35910)
+    - r8169: fix issue caused by buggy BIOS on certain boards with RTL8168d
+    - Bluetooth: hci_event: set the conn encrypted before conn establishes
+    - Bluetooth: Fix TOCTOU in HCI debugfs implementation (CVE-2024-24857,
+      CVE-2024-24858)
+    - netfilter: nf_tables: disallow timeout for anonymous sets
+      (CVE-2023-52620)
+    - net/rds: fix possible cp null dereference (CVE-2024-35902)
+    - mm, vmscan: prevent infinite loop for costly GFP_NOIO |
+      __GFP_RETRY_MAYFAIL allocations
+    - netfilter: nf_tables: Fix potential data-race in
+      __nft_flowtable_type_get() (CVE-2024-35898)
+    - net/sched: act_skbmod: prevent kernel-infoleak (CVE-2024-35893)
+    - [arm*] net: stmmac: fix rx queue priority assignment
+    - ipv6: Fix infinite recursion in fib6_dump_done(). (CVE-2024-35886)
+    - i40e: fix vf may be used uninitialized in this function warning
+      (regression in 4.19.264) (CVE-2024-36020)
+    - initramfs: factor out a helper to populate the initrd image
+    - fs: add a vfs_fchown helper
+    - fs: add a vfs_fchmod helper
+    - initramfs: switch initramfs unpacking to struct file based APIs
+    - init: open /initrd.image with O_LARGEFILE
+    - erspan: Add type I version 0 support.
+    - erspan: make sure erspan_base_hdr is present in skb->head
+      (CVE-2024-35888)
+    - ASoC: ops: Fix wraparound for mask in snd_soc_get_volsw
+    - ata: sata_sx4: fix pdc20621_get_from_dimm() on 64-bit
+    - [x86] ALSA: hda/realtek: Update Panasonic CF-SZ6 quirk to support headset
+      with microphone
+    - wifi: ath9k: fix LNA selection in ath_ant_try_scan()
+    - [x86] VMCI: Fix memcpy() run-time warning in dg_dispatch_as_host()
+      (CVE-2024-35944)
+    - [arm64] dts: rockchip: fix rk3399 hdmi ports node
+    - btrfs: handle chunk tree lookup error in btrfs_relocate_sys_chunks()
+      (CVE-2024-35936)
+    - btrfs: export: handle invalid inode or root reference in
+      btrfs_get_parent()
+    - btrfs: send: handle path ref underflow in header iterate_inode_ref()
+      (CVE-2024-35935)
+    - Bluetooth: btintel: Fix null ptr deref in btintel_read_version
+      (CVE-2024-35933)
+    - Input: synaptics-rmi4 - fail probing if memory allocation for "phys"
+      fails
+    - sysv: don't call sb_bread() with pointers_lock held (CVE-2023-52699)
+    - scsi: lpfc: Fix possible memory leak in lpfc_rcv_padisc()
+      (CVE-2024-35930)
+    - isofs: handle CDs with bad root inode but good Joliet root directory
+    - [i386] drm/amd/display: Fix nanosec stat overflow
+    - SUNRPC: increase size of rpc_wait_queue.qlen from unsigned short to
+      unsigned int
+    - block: prevent division by zero in blk_rq_stat_sum() (CVE-2024-35925)
+    - Input: allocate keycode for Display refresh rate toggle
+    - [x86] fbdev: viafb: fix typo in hw_bitblt_1 and hw_bitblt_2
+    - fbmon: prevent division by zero in fb_videomode_from_videomode()
+      (CVE-2024-35922)
+    - tty: n_gsm: require CAP_NET_ADMIN to attach N_GSM0710 ldisc
+      (CVE-2023-52880)
+    - virtio: reenable config if freezing device failed
+    - x86/mm/pat: fix VM_PAT handling in COW mappings (CVE-2024-35877)
+    - Bluetooth: btintel: Fixe build regression
+    - [x86] VMCI: Fix possible memcpy() run-time warning in
+      vmci_datagram_invoke_guest_handler()
+    - erspan: Check IFLA_GRE_ERSPAN_VER is set.
+    - ip_gre: do not report erspan version on GRE interface
+    - initramfs: fix populate_initrd_image() section mismatch
+    - [amd64] amdkfd: use calloc instead of kzalloc to avoid integer overflow
+      (CVE-2024-26817)
 
   [ Ben Hutchings ]
   * Bump ABI to 27
@@ -546,6 +711,7 @@ linux (4.19.311-1) UNRELEASED; urgency=medium
     - Drop "crypto: scompress - serialize RT percpu scratch buffer access
       with a local lock", redundant with changes in 4.19.306
   * ovl: fail on invalid uid/gid mapping at copy up (CVE-2023-0386)
+  * [rt] Drop patches to timer subsystem that were included in 4.19.312
 
  -- Ben Hutchings <benh@debian.org>  Fri, 08 Mar 2024 23:08:32 +0100
 

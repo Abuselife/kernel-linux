@@ -48,6 +48,7 @@ Link: https://lore.kernel.org/r/87lfea7gw8.fsf@nanos.tec.linutronix.de
 Cc: stable@vger.kernel.org
 Signed-off-by: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
 Signed-off-by: Daniel Wagner <wagi@monom.org>
+[bwh: Adjusted context to apply after Linux 4.19.312]
 ---
  kernel/time/timer.c | 6 ++++--
  1 file changed, 4 insertions(+), 2 deletions(-)
@@ -70,13 +71,13 @@ index b859ecf6424b..603985720f54 100644
 @@ -1458,14 +1460,14 @@ static void expire_timers(struct timer_base *base, struct hlist_head *head)
  		if (timer->flags & TIMER_IRQSAFE) {
  			raw_spin_unlock(&base->lock);
- 			call_timer_fn(timer, fn);
+ 			call_timer_fn(timer, fn, baseclk);
 -			base->running_timer = NULL;
  			raw_spin_lock(&base->lock);
 +			base->running_timer = NULL;
  		} else {
  			raw_spin_unlock_irq(&base->lock);
- 			call_timer_fn(timer, fn);
+ 			call_timer_fn(timer, fn, baseclk);
 +			raw_spin_lock_irq(&base->lock);
  			base->running_timer = NULL;
  			timer_sync_wait_running(base);
