@@ -1,4 +1,4 @@
-linux (4.19.309-1) UNRELEASED; urgency=medium
+linux (4.19.311-1) UNRELEASED; urgency=medium
 
   * New upstream stable update:
     https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.19.305
@@ -373,6 +373,172 @@ linux (4.19.309-1) UNRELEASED; urgency=medium
     - btrfs: dev-replace: properly validate device names (CVE-2024-26791)
     - mmc: core: Fix eMMC initialization with 1-bit bus connection
     - cachefiles: fix memory leak in cachefiles_add_cache() (CVE-2024-26840)
+    https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.19.310
+    - lan78xx: Add missing return code checks
+    - lan78xx: Fix partial packet errors on suspend/resume
+    - lan78xx: Fix race conditions in suspend/resume handling
+    - net: lan78xx: fix runtime PM count underflow on link stop
+    - net: move definition of pcpu_lstats to header file
+    - geneve: make sure to pull inner header in geneve_rx() (CVE-2024-26857)
+    - net/ipv6: avoid possible UAF in ip6_route_mpath_notify() (CVE-2024-26852)
+    - net/rds: fix WARNING in rds_conn_connect_if_down (CVE-2024-27024)
+    - netfilter: nf_conntrack_h323: Add protection for bmp length out of range
+      (CVE-2024-26851)
+    - [x86] netrom: Fix data-races around sysctl variables (CVE-2024-27419)
+    - btrfs: ref-verify: free ref cache before clearing mount opt
+    - [x86] Input: i8042 - fix strange behavior of touchpad on Clevo NS70PU
+    - [x86] hv_netvsc: Make netvsc/VF binding check both MAC and serial number
+    - [x86] hv_netvsc: use netif_is_bond_master() instead of open code
+    - [x86] hv_netvsc: Register VF in netvsc_probe if NET_DEVICE_REGISTER
+      missed (CVE-2024-26820)
+    - y2038: rusage: use __kernel_old_timeval
+    - getrusage: move thread_group_cputime_adjusted() outside of
+      lock_task_sighand()
+    - getrusage: use __for_each_thread()
+    - getrusage: use sig->stats_lock rather than lock_task_sighand()
+    https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.19.311
+    - ASoC: rt5645: Make LattePanda board DMI match more precise
+    - [x86] xen: Add some null pointer checking to smp.c
+    - block: sed-opal: handle empty atoms when parsing response
+    - dm-verity, dm-crypt: align "struct bvec_iter" correctly
+    - scsi: mpt3sas: Prevent sending diag_reset when the controller is ready
+    - Bluetooth: rfcomm: Fix null-ptr-deref in rfcomm_check_security
+      (CVE-2024-22099, CVE-2024-26903)
+    - firewire: core: use long bus reset on gap count error
+    - [x86] ASoC: Intel: bytcr_rt5640: Add an extra entry for the Chuwi Vi8
+      tablet
+    - [i386] Input: gpio_keys_polled - suppress deferred probe error for gpio
+    - crypto: algif_aead - fix uninitialized ctx->init
+    - crypto: af_alg - make some functions static
+    - crypto: algif_aead - Only wake up when ctx->more is zero
+    - do_sys_name_to_handle(): use kzalloc() to fix kernel-infoleak
+      (CVE-2024-26901)
+    - md: switch to ->check_events for media change notifications
+    - block: add a new set_read_only method
+    - md: implement ->set_read_only to hook into BLKROSET processing
+    - md: Don't clear MD_CLOSING when the raid is about to stop
+    - aoe: fix the potential use-after-free problem in aoecmd_cfg_pkts
+      (CVE-2023-6270)
+    - timekeeping: Fix cross-timestamp interpolation on counter wrap
+    - timekeeping: Fix cross-timestamp interpolation corner case decision
+    - [arm*] timekeeping: Fix cross-timestamp interpolation for non-x86
+    - wifi: ath10k: fix NULL pointer dereference in
+      ath10k_wmi_tlv_op_pull_mgmt_tx_compl_ev() (CVE-2023-7042)
+    - b43: dma: Fix use true/false for bool type variable
+    - wifi: b43: Stop/wake correct queue in DMA Tx path when QoS is disabled
+      (CVE-2023-52644)
+    - wifi: b43: Stop/wake correct queue in PIO Tx path when QoS is disabled
+    - b43: main: Fix use true/false for bool type
+    - wifi: b43: Stop correct queue in DMA worker when QoS is disabled
+    - wifi: b43: Disable QoS for bcm4331
+    - wifi: mwifiex: debugfs: Drop unnecessary error check for
+      debugfs_create_dir()
+    - sock_diag: annotate data-races around sock_diag_handlers[family]
+    - af_unix: Annotate data-race of gc_in_progress in wait_for_unix_gc().
+    - wifi: libertas: fix some memleaks in lbs_allocate_cmd_buffer()
+      (CVE-2024-35828)
+    - ACPI: processor_idle: Fix memory leak in acpi_processor_power_exit()
+      (CVE-2024-26894)
+    - [amd64] iommu/amd: Mark interrupt as managed
+    - wifi: brcmsmac: avoid function pointer casts
+    - ACPI: scan: Fix device check notification handling
+    - [x86] relocs: Ignore relocations in .notes section (CVE-2024-26816)
+    - SUNRPC: fix some memleaks in gssx_dec_option_array (CVE-2024-27388)
+    - [armhf] mmc: wmt-sdmmc: remove an incorrect release_mem_region() call in
+      the .remove function
+    - igb: move PEROUT and EXTTS isr logic to separate functions
+    - igb: Fix missing time sync events
+    - Bluetooth: Remove superfluous call to hci_conn_check_pending()
+    - Bluetooth: hci_core: Fix possible buffer overflow (CVE-2024-26889)
+    - sr9800: Add check for usbnet_get_endpoints (CVE-2024-26651)
+    - [armhf,i386] bpf: Fix hashtab overflow check on 32-bit arches
+      (CVE-2024-26884)
+    - [armhf,i386] bpf: Fix stackmap overflow check on 32-bit arches
+      (CVE-2024-26883)
+    - ipv6: fib6_rules: flush route cache when rule is changed
+    - tcp: fix incorrect parameter validation in the do_tcp_getsockopt()
+      function
+    - l2tp: fix incorrect parameter validation in the pppol2tp_getsockopt()
+      function
+    - udp: fix incorrect parameter validation in the udp_lib_getsockopt()
+      function
+    - net/x25: fix incorrect parameter validation in the x25_getsockopt()
+      function
+    - nfp: flower: handle acti_netdevs allocation failure (CVE-2024-27046)
+    - dm raid: fix false positive for requeue needed during reshape
+    - dm: call the resume method on internal suspend (CVE-2024-26880)
+    - [arm*] drm/tegra: dsi: Add missing check for of_find_device_by_node
+      (CVE-2023-52650)
+    - [arm*] gpu: host1x: mipi: Update tegra_mipi_request() to be node based
+    - [arm*] drm/tegra: dsi: Make use of the helper function dev_err_probe()
+    - [arm*] drm/tegra: dsi: Fix some error handling paths in tegra_dsi_probe()
+    - [arm*] drm/tegra: dsi: Fix missing pm_runtime_disable() in the error
+      handling path of tegra_dsi_probe()
+    - [arm*] drm/rockchip: inno_hdmi: Fix video timing
+    - drm: Don't treat 0 as -1 in drm_fixp2int_ceil
+    - [arm*] drm/rockchip: lvds: do not overwrite error code
+    - [arm*] drm/rockchip: lvds: do not print scary message when probing defer
+    - media: tc358743: register v4l2 async device only after successful setup
+      (CVE-2024-35830)
+    - perf evsel: Fix duplicate initialization of data->id in
+      evsel__parse_sample()
+    - media: v4l2-tpg: fix some memleaks in tpg_alloc (CVE-2024-27078)
+    - media: v4l2-mem2mem: fix a memleak in v4l2_m2m_register_entity
+      (CVE-2024-27077)
+    - media: dvbdev: remove double-unlock
+    - media: dvbdev: Fix memleak in dvb_register_device
+    - media: dvbdev: fix error logic at dvb_register_device()
+    - media: dvb-core: Fix use-after-free due to race at dvb_register_device()
+    - media: edia: dvbdev: fix a use-after-free (CVE-2024-27043)
+    - [arm64] clk: qcom: reset: Allow specifying custom reset delay
+    - [arm64] clk: qcom: reset: support resetting multiple bits
+    - [arm64] clk: qcom: reset: Commonize the de/assert functions
+    - [arm64] clk: qcom: reset: Ensure write completion on reset de/assertion
+    - quota: check time limit when back out space/inode change
+    - quota: simplify drop_dquot_ref()
+    - quota: Fix potential NULL pointer dereference (CVE-2024-26878)
+    - quota: Fix rcu annotations of inode dquot pointers
+    - perf thread_map: Free strlist on normal path in
+      thread_map__new_by_tid_str()
+    - drm/radeon/ni: Fix wrong firmware size logging in ni_init_microcode()
+    - ALSA: seq: fix function cast warnings
+    - media: go7007: add check of return value of go7007_read_addr()
+    - media: pvrusb2: fix pvr2_stream_callback casts
+    - [arm64] firmware: qcom: scm: Add WLAN VMID for Qualcomm SCM interface
+    - [arm64] clk: qcom: dispcc-sdm845: Adjust internal GDSC wait times
+    - PCI: Mark 3ware-9650SE Root Port Extended Tags as broken
+    - [arm64] clk: hisilicon: hi3519: Release the correct number of gates in
+      hi3519_clk_unregister()
+    - [arm*] drm/tegra: put drm_gem_object ref on error in tegra_fb_create
+    - [arm*] mfd: syscon: Call of_node_put() only when of_parse_phandle() takes
+      a ref
+    - [arm*] crypto: arm - Rename functions to avoid conflict with
+      crypto/sha256.h
+    - [arm*] crypto: arm/sha - fix function cast warnings
+    - drm/amdgpu: Fix missing break in ATOM_ARG_IMM Case of atom_get_src_int()
+    - media: pvrusb2: fix uaf in pvr2_context_set_notify (CVE-2024-26875)
+    - media: dvb-frontends: avoid stack overflow warnings with clang
+      (CVE-2024-27075)
+    - media: go7007: fix a memleak in go7007_load_encoder (CVE-2024-27074)
+    - [arm*] drm/mediatek: Fix a null pointer crash in
+      mtk_drm_crtc_finish_page_flip (CVE-2024-26874)
+    - ALSA: usb-audio: Stop parsing channels bits when all channels are found.
+      (CVE-2024-27436)
+    - scsi: csiostor: Avoid function pointer casts
+    - scsi: bfa: Fix function pointer type mismatch for hcb_qe->cbfn
+    - net: sunrpc: Fix an off by one in rpc_sockaddr2uaddr()
+    - NFS: Fix an off by one in root_nfs_cat()
+    - [arm64] clk: qcom: gdsc: Add support to update GDSC transition delay
+    - [armhf] tty: serial: samsung: fix tx_empty() to return TIOCSER_TEMT
+    - kconfig: fix infinite loop when expanding a macro at the end of file
+    - serial: 8250_exar: Don't remove GPIO device on suspend
+    - hsr: Fix uninit-value access in hsr_get_node() (CVE-2024-26863)
+    - rds: introduce acquire/release ordering in acquire/release_in_xmit()
+    - net/bnx2x: Prevent access to a freed page in page_pool (CVE-2024-26859)
+    - spi: spi-mt65xx: Fix NULL pointer access in interrupt handler
+      (CVE-2024-27028)
+    - crypto: af_alg - Fix regression on empty requests
+    - crypto: af_alg - Work around empty control messages without MSG_MORE
 
   [ Ben Hutchings ]
   * Bump ABI to 27
