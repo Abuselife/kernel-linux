@@ -1,4 +1,4 @@
-linux (6.1.87-1) UNRELEASED; urgency=medium
+linux (6.1.88-1) UNRELEASED; urgency=medium
 
   * New upstream stable update:
     https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.1.86
@@ -154,6 +154,137 @@ linux (6.1.87-1) UNRELEASED; urgency=medium
     - drm/amdgpu: Reset dGPU if suspend got aborted
     - drm/amdgpu: always force full reset for SOC21
     - drm/amd/display: fix disable otg wa logic in DCN316
+    https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.1.88
+    - drm/vmwgfx: Enable DMA mappings with SEV
+    - drm/amdgpu: fix incorrect active rb bitmap for gfx11
+    - drm/amdgpu: fix incorrect number of active RBs for gfx11
+    - drm/amd/display: Do not recursively call manual trigger programming
+    - io_uring: Fix io_cqring_wait() not restoring sigmask on get_timespec64()
+      failure
+    - SUNRPC: Fix rpcgss_context trace event acceptor field
+    - random: handle creditable entropy from atomic process context
+    - net: usb: ax88179_178a: avoid writing the mac address before first reading
+    - [x86] drm/i915/vma: Fix UAF on destroy against retire race
+    - [x86] efi: Drop EFI stub .bss from .data section
+    - [x86] efi: Disregard setup header of loaded image
+    - [x86] efistub: Reinstate soft limit for initrd loading
+    - [x86] efi: Drop alignment flags from PE section headers
+    - [x86] boot: Remove the 'bugger off' message
+    - [x86] boot: Omit compression buffer from PE/COFF image memory footprint
+    - [x86] boot: Drop redundant code setting the root device
+    - [x86] boot: Drop references to startup_64
+    - [x86] boot: Grab kernel_info offset from zoffset header directly
+    - [x86] boot: Set EFI handover offset directly in header asm
+    - [x86] boot: Define setup size in linker script
+    - [x86] boot: Derive file size from _edata symbol
+    - [x86] boot: Construct PE/COFF .text section from assembler
+    - [x86] boot: Drop PE/COFF .reloc section
+    - [x86] boot: Split off PE/COFF .data section
+    - [x86] boot: Increase section and file alignment to 4k/512
+    - [x86] efistub: Use 1:1 file:memory mapping for PE/COFF .compat section
+    - [x86] mm: Remove P*D_PAGE_MASK and P*D_PAGE_SIZE macros
+    - [x86] head/64: Add missing __head annotation to startup_64_load_idt()
+    - [x86] head/64: Move the __head definition to <asm/init.h>
+    - [x86] sme: Move early SME kernel encryption handling into .head.text
+    - [x86] sev: Move early startup code into .head.text section
+    - [x86] efistub: Remap kernel text read-only before dropping NX attribute
+    - netfilter: nf_tables: Fix potential data-race in __nft_expr_type_get()
+    - netfilter: nf_tables: Fix potential data-race in __nft_obj_type_get()
+    - netfilter: br_netfilter: skip conntrack input hook for promisc packets
+    - netfilter: nft_set_pipapo: do not free live element (CVE-2024-26924)
+    - netfilter: flowtable: validate pppoe header
+    - netfilter: flowtable: incorrect pppoe tuple
+    - af_unix: Call manage_oob() for every skb in unix_stream_read_generic().
+    - af_unix: Don't peek OOB data without MSG_OOB.
+    - net/mlx5: Lag, restore buckets number to default after hash LAG
+      deactivation
+    - net/mlx5e: Prevent deadlock while disabling aRFS
+    - ice: tc: allow zero flags in parsing tc flower
+    - tun: limit printing rate when illegal packet received by tun dev
+    - [arm64] net: ethernet: ti: am65-cpsw-nuss: cleanup DMA Channels before
+      using them
+    - RDMA/rxe: Fix the problem "mutex_destroy missing"
+    - RDMA/cm: Print the old state when cm_destroy_id gets timeout
+    - RDMA/mlx5: Fix port number for counter query in multi-port configuration
+    - [s390x] qdio: handle deferred cc1
+    - [s390x] cio: fix race condition during online processing
+    - drm: nv04: Fix out of bounds access
+    - [armhf] omap2: n8x0: stop instantiating codec platform data
+    - PCI: Avoid FLR for SolidRun SNET DPU rev 1
+    - HID: kye: Sort kye devices
+    - usb: pci-quirks: Reduce the length of a spinlock section in
+      usb_amd_find_chipset_info()
+    - PCI: Delay after FLR of Solidigm P44 Pro NVMe
+    - [x86] quirks: Include linux/pnp.h for arch_pnpbios_disabled()
+    - [x86] thunderbolt: Log function name of the called quirk
+    - [x86] thunderbolt: Add debug log for link controller power quirk
+    - PCI: Execute quirk_enable_clear_retrain_link() earlier
+    - ALSA: scarlett2: Move USB IDs out from device_info struct
+    - ALSA: scarlett2: Add support for Clarett 8Pre USB
+    - ASoC: ti: Convert Pandora ASoC to GPIO descriptors
+    - ALSA: scarlett2: Default mixer driver to enabled
+    - ALSA: scarlett2: Add correct product series name to messages
+    - ALSA: scarlett2: Add Focusrite Clarett+ 2Pre and 4Pre support
+    - ALSA: scarlett2: Add Focusrite Clarett 2Pre and 4Pre USB support
+    - PCI/DPC: Use FIELD_GET()
+    - PCI: Simplify pcie_capability_clear_and_set_word() to ..._clear_word()
+    - ALSA: scarlett2: Rename scarlett_gen2 to scarlett2
+    - drm: panel-orientation-quirks: Add quirk for Lenovo Legion Go
+    - usb: xhci: Add timeout argument in address_device USB HCD callback
+    - usb: new quirk to reduce the SET_ADDRESS request timeout
+    - clk: Remove prepare_lock hold assertion in __clk_release()
+    - clk: Print an info line before disabling unused clocks
+    - clk: Initialize struct clk_core kref earlier
+    - clk: Get runtime PM before walking tree during disable_unused
+    - clk: remove unnecessary (void*) conversions
+    - clk: Show active consumers of clocks in debugfs
+    - clk: Get runtime PM before walking tree for clk_summary
+    - [x86] bugs: Fix BHI retpoline check
+    - [x86] cpufeatures: Fix dependencies for GFNI, VAES, and VPCLMULQDQ
+    - ALSA: hda/realtek - Enable audio jacks of Haier Boyue G42 with ALC269VC
+    - [arm*] binder: check offset alignment in binder_get_object()
+      (CVE-2024-26926)
+    - [x86] thunderbolt: Avoid notify PM core about runtime PM resume
+    - [x86] thunderbolt: Fix wake configurations after device unplug
+    - [x86] comedi: vmk80xx: fix incomplete endpoint checking
+    - [armhf] serial: stm32: Return IRQ_NONE in the ISR if no handling happend
+    - [armhf] serial: stm32: Reset .throttled state in .startup()
+    - USB: serial: option: add Fibocom FM135-GL variants
+    - USB: serial: option: add support for Fibocom FM650/FG650
+    - USB: serial: option: add Lonsung U8300/U9300 product
+    - USB: serial: option: support Quectel EM060K sub-models
+    - USB: serial: option: add Rolling RW101-GL and RW135-GL support
+    - USB: serial: option: add Telit FN920C04 rmnet compositions
+    - Revert "usb: cdc-wdm: close race between read and workqueue"
+    - [arm64,armhf] usb: dwc2: host: Fix dereference issue in DDMA completion
+      flow.
+    - usb: Disable USB3 LPM at shutdown
+    - usb: gadget: f_ncm: Fix UAF ncm object at re-bind after usb ep transport
+      error
+    - mei: me: disable RPL-S on SPS and IGN firmwares
+    - speakup: Avoid crash on very long word
+    - fs: sysfs: Fix reference leak in sysfs_break_active_protection()
+    - [x86] KVM: x86: Snapshot if a vCPU's vendor model is AMD vs. Intel
+      compatible
+    - [x86] KVM: x86/pmu: Disable support for adaptive PEBS
+    - [x86] KVM: x86/pmu: Do not mask LVTPC when handling a PMI on AMD platforms
+    - [arm64] hibernate: Fix level3 translation fault in swsusp_save()
+    - init/main.c: Fix potential static_command_line memory overflow
+    - mm/memory-failure: fix deadlock when hugetlb_optimize_vmemmap is enabled
+    - drm/amdgpu: validate the parameters of bo mapping operations more clearly
+      (CVE-2024-26922)
+    - drm/vmwgfx: Sort primary plane formats by order of preference
+    - drm/vmwgfx: Fix crtc's atomic check conditional
+    - nouveau: fix instmem race condition around ptr stores
+    - bootconfig: use memblock_free_late to free xbc memory to buddy
+    - nilfs2: fix OOB in nilfs_set_de_type
+    - net: dsa: introduce preferred_default_local_cpu_port and use on MT7530
+    - ksmbd: fix slab-out-of-bounds in smb2_allocate_rsp_buf
+    - ksmbd: validate request buffer size in smb2_allocate_rsp_buf()
+    - ksmbd: clear RENAME_NOREPLACE before calling vfs_rename
+    - ksmbd: common: use struct_group_attr instead of struct_group for
+      network_open_info
+    - PCI/ASPM: Fix deadlock when enabling ASPM (CVE-2024-26605)
 
   [ Salvatore Bonaccorso ]
   * Bump ABI to 21
