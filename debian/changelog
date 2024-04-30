@@ -1,4 +1,4 @@
-linux (6.1.88-1) UNRELEASED; urgency=medium
+linux (6.1.89-1) UNRELEASED; urgency=medium
 
   * New upstream stable update:
     https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.1.86
@@ -285,6 +285,8 @@ linux (6.1.88-1) UNRELEASED; urgency=medium
     - ksmbd: common: use struct_group_attr instead of struct_group for
       network_open_info
     - PCI/ASPM: Fix deadlock when enabling ASPM (CVE-2024-26605)
+    https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.1.89
+    - Revert "ASoC: ti: Convert Pandora ASoC to GPIO descriptors"
 
   [ Salvatore Bonaccorso ]
   * Bump ABI to 21
