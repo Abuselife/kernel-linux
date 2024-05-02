@@ -1,4 +1,4 @@
-linux (5.10.215-1) UNRELEASED; urgency=medium
+linux (5.10.216-1) UNRELEASED; urgency=medium
 
   * New upstream stable update:
     https://www.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.10.210
@@ -1124,6 +1124,124 @@ linux (5.10.215-1) UNRELEASED; urgency=medium
     - scsi: sd: Fix wrong zone_write_granularity value during revalidate
     - [x86] retpoline: Add NOENDBR annotation to the SRSO dummy return thunk
     - [x86] head/64: Re-enable stack protection
+    https://www.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.10.216
+    - batman-adv: Avoid infinite loop trying to resize local TT
+    - Bluetooth: Fix memory leak in hci_req_sync_complete()
+    - media: cec: core: remove length check of Timer Status
+    - nouveau: fix function cast warning
+    - net: openvswitch: fix unwanted error log on timeout policy probing
+    - u64_stats: fix u64_stats_init() for lockdep when used repeatedly in one
+      file
+    - xsk: validate user input for XDP_{UMEM|COMPLETION}_FILL_RING
+    - geneve: fix header validation in geneve[6]_xmit_skb
+    - ipv6: fib: hide unused 'pn' variable
+    - ipv4/route: avoid unused-but-set-variable warning
+    - ipv6: fix race condition between ipv6_get_ifaddr and ipv6_del_addr
+    - Bluetooth: SCO: Fix not validating setsockopt user input
+    - netfilter: complete validation of user input
+    - net/mlx5: Properly link new fs rules into the tree
+    - af_unix: Do not use atomic ops for unix_sk(sk)->inflight.
+    - af_unix: Fix garbage collector racing against connect() (CVE-2024-26923)
+    - net: ena: Fix potential sign extension issue
+    - net: ena: Wrong missing IO completions check order
+    - net: ena: Fix incorrect descriptor free behavior
+    - [amd64] iommu/vt-d: Allocate local memory for page request queue
+    - [arm64] mailbox: imx: fix suspend failue
+    - btrfs: qgroup: correctly model root qgroup rsv in convert
+    - drm/client: Fully protect modes[] with dev->mode_config.mutex
+    - vhost: Add smp_rmb() in vhost_vq_avail_empty()
+    - [x86] cpu: Actually turn off mitigations by default for
+      SPECULATION_MITIGATIONS=n
+    - [x86] apic: Force native_apic_mem_read() to use the MOV instruction
+    - irqflags: Explicitly ignore lockdep_hrtimer_exit() argument
+    - btrfs: record delayed inode root in transaction
+    - kprobes: Fix possible use-after-free issue on kprobe registration
+    - Revert "tracing/trigger: Fix to return error if failed to alloc snapshot"
+    - netfilter: nf_tables: Fix potential data-race in __nft_expr_type_get()
+      (CVE-2024-27020)
+    - netfilter: nft_set_pipapo: do not free live element (CVE-2024-26924)
+    - tun: limit printing rate when illegal packet received by tun dev
+      (CVE-2024-27013)
+    - RDMA/rxe: Fix the problem "mutex_destroy missing"
+    - RDMA/cm: Print the old state when cm_destroy_id gets timeout
+    - RDMA/mlx5: Fix port number for counter query in multi-port configuration
+    - drm: nv04: Fix out of bounds access (CVE-2024-27008)
+    - drm/panel: visionox-rm69299: don't unregister DSI device
+    - clk: Remove prepare_lock hold assertion in __clk_release()
+    - clk: Mark 'all_lists' as const
+    - clk: remove extra empty line
+    - clk: Print an info line before disabling unused clocks
+    - clk: Initialize struct clk_core kref earlier
+    - clk: Get runtime PM before walking tree during disable_unused
+      (CVE-2024-27004)
+    - [x86] cpufeatures: Fix dependencies for GFNI, VAES, and VPCLMULQDQ
+    - [arm*] binder: check offset alignment in binder_get_object()
+      (CVE-2024-26926)
+    - [x86] thunderbolt: Avoid notify PM core about runtime PM resume
+    - [x86] thunderbolt: Fix wake configurations after device unplug
+    - [x86] comedi: vmk80xx: fix incomplete endpoint checking (CVE-2024-27001)
+    - USB: serial: option: add Fibocom FM135-GL variants
+    - USB: serial: option: add support for Fibocom FM650/FG650
+    - USB: serial: option: add Lonsung U8300/U9300 product
+    - USB: serial: option: support Quectel EM060K sub-models
+    - USB: serial: option: add Rolling RW101-GL and RW135-GL support
+    - USB: serial: option: add Telit FN920C04 rmnet compositions
+    - Revert "usb: cdc-wdm: close race between read and workqueue"
+    - usb: dwc2: host: Fix dereference issue in DDMA completion flow.
+      (CVE-2024-26997)
+    - usb: Disable USB3 LPM at shutdown
+    - mei: me: disable RPL-S on SPS and IGN firmwares
+    - speakup: Avoid crash on very long word (CVE-2024-26994)
+    - fs: sysfs: Fix reference leak in sysfs_break_active_protection()
+      (CVE-2024-26993)
+    - init/main.c: Fix potential static_command_line memory overflow
+      (CVE-2024-26988)
+    - drm/amdgpu: validate the parameters of bo mapping operations more clearly
+      (CVE-2024-26922)
+    - nouveau: fix instmem race condition around ptr stores (CVE-2024-26984)
+    - nilfs2: fix OOB in nilfs_set_de_type (CVE-2024-26981)
+    - wifi: iwlwifi: mvm: remove old PASN station when adding a new one
+    - vxlan: drop packets from invalid src-address
+    - ipv4: check for NULL idev in ip_route_use_hint()
+    - net: usb: ax88179_178a: stop lying about skb->truesize
+    - net: gtp: Fix Use-After-Free in gtp_dellink
+    - ipvs: Fix checksumming on GSO of SCTP packets
+    - net: openvswitch: Fix Use-After-Free in ovs_ct_exit
+    - netfilter: nf_tables: honor table dormant flag from netdev release event
+      path
+    - i40e: Do not use WQ_MEM_RECLAIM flag for workqueue
+    - i40e: Report MFS in decimal base instead of hex
+    - iavf: Fix TC config comparison with existing adapter TC config
+    - net: ethernet: ti: am65-cpts: Fix PTPv1 message type on TX packets
+    - af_unix: Suppress false-positive lockdep splat for spin_lock() in
+      __unix_gc().
+    - serial: core: Provide port lock wrappers
+    - Revert "crypto: api - Disallow identical driver names"
+    - net/mlx5e: Fix a race in command alloc flow
+    - tracing: Show size of requested perf buffer
+    - tracing: Increase PERF_MAX_TRACE_SIZE to handle Sentinel1 and docker
+      together
+    - PM / devfreq: Fix buffer overflow in trans_stat_show (CVE-2023-52614)
+    - Bluetooth: Fix type of len in {l2cap,sco}_sock_getsockopt_old()
+    - Bluetooth: btusb: Add Realtek RTL8852BE support ID 0x0bda:0x4853
+    - btrfs: fix information leak in btrfs_ioctl_logical_to_ino()
+    - cpu: Re-enable CPU mitigations by default for !X86 architectures
+    - drm/amdgpu/sdma5.2: use legacy HDP flush for SDMA2/3
+    - drm/amdgpu: Fix leak when GPU memory allocation fails
+    - irqchip/gic-v3-its: Prevent double free on error
+    - ethernet: Add helper for assigning packet type when dest address does not
+      match device address
+    - net: b44: set pause params only when interface is up
+    - stackdepot: respect __GFP_NOLOCKDEP allocation flag
+    - mtd: diskonchip: work around ubsan link failure
+    - tcp: Clean up kernel listener's reqsk in inet_twsk_purge()
+    - tcp: Fix NEW_SYN_RECV handling in inet_twsk_purge()
+    - [x86] idma64: Don't try to serve interrupts when device is powered off
+    - i2c: smbus: fix NULL function pointer dereference
+    - HID: i2c-hid: remove I2C_HID_READ_PENDING flag to prevent lock-up
+    - bounds: Use the right number of bits for power-of-two CONFIG_NR_CPUS
+    - udp: preserve the connected status if only UDP cmsg
+    - serial: core: fix kernel-doc for uart_port_unlock_irqrestore()
 
   [ Salvatore Bonaccorso ]
   * Bump ABI to 29
