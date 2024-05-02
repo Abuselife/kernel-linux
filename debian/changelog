@@ -1250,6 +1250,7 @@ linux (5.10.216-1) UNRELEASED; urgency=medium
   * [rt] Refresh "u64_stats: Disable preemption on 32bit-UP/SMP with RT during
     updates"
   * drivers/tty: Disable N_GSM
+  * tipc: fix UAF in error path
 
  -- Salvatore Bonaccorso <carnil@debian.org>  Mon, 26 Feb 2024 20:04:47 +0100
 
