@@ -1247,6 +1247,8 @@ linux (5.10.216-1) UNRELEASED; urgency=medium
   * Bump ABI to 29
   * [rt] Refresh "sched/vtime: Consolidate IRQ time accounting"
   * [rt] Update to 5.10.215-rt107
+  * [rt] Refresh "u64_stats: Disable preemption on 32bit-UP/SMP with RT during
+    updates"
 
  -- Salvatore Bonaccorso <carnil@debian.org>  Mon, 26 Feb 2024 20:04:47 +0100
 
