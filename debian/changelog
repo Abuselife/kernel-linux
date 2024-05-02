@@ -1,4 +1,4 @@
-linux (6.1.89-1) UNRELEASED; urgency=medium
+linux (6.1.90-1) UNRELEASED; urgency=medium
 
   * New upstream stable update:
     https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.1.86
@@ -287,10 +287,87 @@ linux (6.1.89-1) UNRELEASED; urgency=medium
     - PCI/ASPM: Fix deadlock when enabling ASPM (CVE-2024-26605)
     https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.1.89
     - Revert "ASoC: ti: Convert Pandora ASoC to GPIO descriptors"
+    https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.1.90
+    - smb: client: fix rename(2) regression against samba
+    - cifs: reinstate original behavior again for forceuid/forcegid
+    - [amd64] HID: intel-ish-hid: ipc: Fix dev_err usage with uninitialized
+      dev->devc
+    - HID: logitech-dj: allow mice to use all types of reports
+    - wifi: iwlwifi: mvm: remove old PASN station when adding a new one
+    - wifi: iwlwifi: mvm: return uid from iwl_mvm_build_scan_cmd
+    - vxlan: drop packets from invalid src-address
+    - icmp: prevent possible NULL dereferences from icmp_build_probe()
+    - bridge/br_netlink.c: no need to return void function
+    - bnxt_en: refactor reset close code
+    - bnxt_en: Fix the PCI-AER routines
+    - NFC: trf7970a: disable all regulators on removal
+    - ax25: Fix netdev refcount issue
+    - net: make SK_MEMORY_PCPU_RESERV tunable
+    - net: fix sk_memory_allocated_{add|sub} vs softirqs
+    - ipv4: check for NULL idev in ip_route_use_hint()
+    - net: usb: ax88179_178a: stop lying about skb->truesize
+    - net: gtp: Fix Use-After-Free in gtp_dellink
+    - Bluetooth: MGMT: Fix failing to MGMT_OP_ADD_UUID/MGMT_OP_REMOVE_UUID
+    - Bluetooth: hci_sync: Using hci_cmd_sync_submit when removing Adv Monitor
+    - Bluetooth: qca: set power_ctrl_enabled on NULL returned by
+      gpiod_get_optional()
+    - ipvs: Fix checksumming on GSO of SCTP packets
+    - net: openvswitch: Fix Use-After-Free in ovs_ct_exit
+    - eth: bnxt: fix counting packets discarded due to OOM and netpoll
+    - netfilter: nf_tables: honor table dormant flag from netdev release event
+      path
+    - i40e: Do not use WQ_MEM_RECLAIM flag for workqueue
+    - i40e: Report MFS in decimal base instead of hex
+    - iavf: Fix TC config comparison with existing adapter TC config
+    - net: ethernet: ti: am65-cpts: Fix PTPv1 message type on TX packets
+    - af_unix: Suppress false-positive lockdep splat for spin_lock() in
+      __unix_gc().
+    - cifs: Replace remaining 1-element arrays (Closes: #1069102, #1069092)
+    - Revert "crypto: api - Disallow identical driver names"
+    - virtio_net: Do not send RSS key if it is not supported
+    - fork: defer linking file vma until vma is fully initialized
+      (CVE-2024-27022)
+    - [x86] cpu: Fix check for RDPKRU in __show_regs()
+    - Bluetooth: Fix type of len in {l2cap,sco}_sock_getsockopt_old()
+    - Bluetooth: btusb: Add Realtek RTL8852BE support ID 0x0bda:0x4853
+    - Bluetooth: qca: fix NULL-deref on non-serdev suspend
+    - [arm64] mmc: sdhci-msm: pervent access to suspended controller
+    - smb: client: Fix struct_group() usage in __packed structs
+    - smb3: fix lock ordering potential deadlock in cifs_sync_mid_result
+    - HID: i2c-hid: remove I2C_HID_READ_PENDING flag to prevent lock-up
+    - btrfs: fix information leak in btrfs_ioctl_logical_to_ino()
+    - cpu: Re-enable CPU mitigations by default for !X86 architectures
+    - drm/amdgpu/sdma5.2: use legacy HDP flush for SDMA2/3
+    - drm/amdgpu: Fix leak when GPU memory allocation fails
+    - irqchip/gic-v3-its: Prevent double free on error
+    - ACPI: CPPC: Use access_width over bit_width for system memory accesses
+    - ACPI: CPPC: Fix bit_offset shift in MASK_VAL() macro
+    - ACPI: CPPC: Fix access width used for PCC registers
+    - ethernet: Add helper for assigning packet type when dest address does not
+      match device address
+    - net: b44: set pause params only when interface is up
+    - stackdepot: respect __GFP_NOLOCKDEP allocation flag
+    - fbdev: fix incorrect address computation in deferred IO
+    - udp: preserve the connected status if only UDP cmsg
+    - mtd: diskonchip: work around ubsan link failure
+    - [x86] tdx: Preserve shared bit on mprotect()
+    - [x86] idma64: Don't try to serve interrupts when device is powered off
+    - [arm64,armhf] phy: marvell: a3700-comphy: Fix out of bounds read
+    - [arm64,armhf] phy: marvell: a3700-comphy: Fix hardcoded array size
+    - [arm64] phy: rockchip-snps-pcie3: fix bifurcation on rk3588
+    - [arm64] phy: rockchip-snps-pcie3: fix clearing PHP_GRF_PCIESEL_CON bits
+    - [amd64] dmaengine: idxd: Fix oops during rmmod on single-CPU platforms
+    - i2c: smbus: fix NULL function pointer dereference
+    - bounds: Use the right number of bits for power-of-two CONFIG_NR_CPUS
+    - macsec: Enable devices to advertise whether they update sk_buff md_dst
+      during offloads
+    - macsec: Detect if Rx skb is macsec-related for offloading devices that
+      update md_dst
+    - net/mlx5e: Advertise mlx5 ethernet driver updates sk_buff md_dst for
+      MACsec
 
   [ Salvatore Bonaccorso ]
   * Bump ABI to 21
-  * cifs: Replace remaining 1-element arrays (Closes: #1069102, #1069092)
 
  -- Salvatore Bonaccorso <carnil@debian.org>  Mon, 15 Apr 2024 16:09:04 +0200
 
