@@ -1,4 +1,4 @@
-linux (5.10.216-1) UNRELEASED; urgency=medium
+linux (5.10.216-1) bullseye-security; urgency=high
 
   * New upstream stable update:
     https://www.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.10.210
@@ -1253,7 +1253,7 @@ linux (5.10.216-1) UNRELEASED; urgency=medium
   * tipc: fix UAF in error path
   * tipc: fix a possible memleak in tipc_buf_append
 
- -- Salvatore Bonaccorso <carnil@debian.org>  Mon, 26 Feb 2024 20:04:47 +0100
+ -- Salvatore Bonaccorso <carnil@debian.org>  Fri, 03 May 2024 14:40:24 +0200
 
 linux (5.10.209-2) bullseye; urgency=medium
 
