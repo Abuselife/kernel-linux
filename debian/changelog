@@ -368,6 +368,7 @@ linux (6.1.90-1) UNRELEASED; urgency=medium
 
   [ Salvatore Bonaccorso ]
   * Bump ABI to 21
+  * drivers/tty: Disable N_GSM
 
  -- Salvatore Bonaccorso <carnil@debian.org>  Mon, 15 Apr 2024 16:09:04 +0200
 
