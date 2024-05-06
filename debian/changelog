@@ -1,9 +1,9 @@
-linux (6.1.90-1~bpo11+1) UNRELEASED; urgency=medium
+linux (6.1.90-1~bpo11+1) bullseye-backports; urgency=medium
 
   * Rebuild for bullseye-backports:
     - Set ABI to 0.deb11.21
 
- -- Ben Hutchings <benh@debian.org>  Sun, 05 May 2024 23:04:45 +0200
+ -- Ben Hutchings <benh@debian.org>  Mon, 06 May 2024 16:52:31 +0200
 
 linux (6.1.90-1) bookworm-security; urgency=high
 
