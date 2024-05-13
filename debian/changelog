@@ -115,6 +115,11 @@ linux (6.8.8-1~exp1) UNRELEASED; urgency=medium
   * [arm64,armhf] Enable SND_SOC_WM8804_I2C for the hifiberry-digi raspberry
     hat.
 
+  [ Bastian Blank ]
+  * Use special directories for cross headers in linux-libc-dev-cross:
+    - Move linux-libc-dev-*-cross provides to new package.
+    - Add linux-libc-dev-* provides to linux-libc-dev.
+
  -- Diederik de Haas <didi.debian@cknow.org>  Wed, 24 Apr 2024 10:47:12 +0200
 
 linux (6.7.12-1) unstable; urgency=medium
