@@ -147,7 +147,21 @@ class Gencontrol(Base):
             for package in self.bundle.add('libc-dev', (), libcdev_makeflags, vars):
                 package.setdefault('Provides').extend([
                     PackageRelationGroup(
-                        f'{package["Package"]}-{arch}-cross (= ${{binary:Version}})'
+                        f'{package["Package"]}-{arch} (= ${{binary:Version}})'
+                    )
+                    for arch in sorted(libcdev_debianarches)
+                ])
+
+            for package in self.bundle.add('libc-dev-cross', (), libcdev_makeflags, vars):
+                package.setdefault('Provides').extend([
+                    PackageRelationGroup(
+                        f'{package["Package"].replace("-cross", "")}-{arch}-cross (= ${{binary:Version}})'
+                    )
+                    for arch in sorted(libcdev_debianarches)
+                ])
+                package.setdefault('Replaces').extend([
+                    PackageRelationGroup(
+                        f'{package["Package"].replace("-cross", "")}-{arch}-cross'
                     )
                     for arch in sorted(libcdev_debianarches)
                 ])

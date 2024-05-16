@@ -371,6 +371,23 @@ binary_libc-dev: $(STAMPS_DIR)/build_libc-dev
 
 	$(dh_binary_post)
 
+build_libc-dev-cross: $(STAMPS_DIR)/build_libc-dev
+
+binary_libc-dev-cross: DIR = $(BUILD_DIR)/build_libc-dev/output
+binary_libc-dev-cross: OUT_DIR = debian/$(PACKAGE_NAME)/usr/include
+binary_libc-dev-cross: $(STAMPS_DIR)/build_libc-dev
+	$(dh_binary_pre)
+
+# Generate symlink farms for every supported multiarch identifier
+# /usr/*/include is API of the -cross packages
+	for spec in $(ALL_LIBCDEV_MULTIARCHES); do \
+		IFS=: read -r MULTIARCH KERNELARCH <<< "$$spec"; \
+		dh_link --all $$(find $(DIR)/usr/include -type f -name '*.h' -printf "usr/include/%P usr/$$MULTIARCH/include/%P\\n");  \
+		dh_link --all $$(find $(DIR)/usr/lib/linux/uapi/$$KERNELARCH/asm -type f -name '*.h' -printf "usr/lib/linux/uapi/$$KERNELARCH/asm/%P usr/$$MULTIARCH/include/asm/%P\\n");  \
+	done
+
+	$(dh_binary_post)
+
 build_support:
 
 binary_support: PACKAGE_ROOT = /usr/share/$(PACKAGE_NAME)
