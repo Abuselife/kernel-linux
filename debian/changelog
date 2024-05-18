@@ -237,6 +237,9 @@ linux (6.1.91-1) UNRELEASED; urgency=medium
   * [arm*] Enable symbols in Raspberry Pi device trees for simplified overlay
     application.
 
+  [ Salvatore Bonaccorso ]
+  * Bump ABI to 22
+
  -- Uwe Kleine-König <ukleinek@debian.org>  Tue, 07 May 2024 11:51:55 +0200
 
 linux (6.1.90-1) bookworm-security; urgency=high
