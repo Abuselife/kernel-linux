@@ -1,8 +1,8 @@
-From f1716f944ced619ad1133abb71131f86dbe7f971 Mon Sep 17 00:00:00 2001
+From 4060c42f8d972b4580c9877289cb28af4ff31e49 Mon Sep 17 00:00:00 2001
 From: Thomas Gleixner <tglx@linutronix.de>
 Date: Fri, 8 Jul 2011 20:25:16 +0200
 Subject: [PATCH 51/64] Add localversion for -RT release
-Origin: https://www.kernel.org/pub/linux/kernel/projects/rt/6.1/older/patches-6.1.82-rt27.tar.xz
+Origin: https://www.kernel.org/pub/linux/kernel/projects/rt/6.1/older/patches-6.1.90-rt30.tar.xz
 
 Signed-off-by: Thomas Gleixner <tglx@linutronix.de>
 ---

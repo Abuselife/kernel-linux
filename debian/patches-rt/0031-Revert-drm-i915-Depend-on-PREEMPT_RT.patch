@@ -1,8 +1,8 @@
-From 5fc818d42a7885adfbba6a3e5a9e6a70a4a10848 Mon Sep 17 00:00:00 2001
+From 9b349da3ff574981783a7ddb2687ec4621414d5e Mon Sep 17 00:00:00 2001
 From: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
 Date: Mon, 21 Feb 2022 17:59:14 +0100
 Subject: [PATCH 31/64] Revert "drm/i915: Depend on !PREEMPT_RT."
-Origin: https://www.kernel.org/pub/linux/kernel/projects/rt/6.1/older/patches-6.1.82-rt27.tar.xz
+Origin: https://www.kernel.org/pub/linux/kernel/projects/rt/6.1/older/patches-6.1.90-rt30.tar.xz
 
 Once the known issues are addressed, it should be safe to enable the
 driver.
