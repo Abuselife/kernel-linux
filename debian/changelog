@@ -109,6 +109,9 @@ linux (5.10.217-1) UNRELEASED; urgency=medium
     - keys: Fix overwrite of key expiration on instantiation
     - md: fix kmemleak of rdev->serial (CVE-2024-26900)
 
+  [ Salvatore Bonaccorso ]
+  * Bump ABI to 30
+
  -- Salvatore Bonaccorso <carnil@debian.org>  Sat, 18 May 2024 17:51:53 +0200
 
 linux (5.10.216-1) bullseye-security; urgency=high
