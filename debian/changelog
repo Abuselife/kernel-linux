@@ -1,4 +1,4 @@
-linux (5.10.218-1) UNRELEASED; urgency=medium
+linux (5.10.218-1) bullseye-security; urgency=high
 
   * New upstream stable update:
     https://www.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.10.217
@@ -130,7 +130,7 @@ linux (5.10.218-1) UNRELEASED; urgency=medium
   [ Salvatore Bonaccorso ]
   * Bump ABI to 30
 
- -- Salvatore Bonaccorso <carnil@debian.org>  Sat, 18 May 2024 17:51:53 +0200
+ -- Salvatore Bonaccorso <carnil@debian.org>  Sat, 01 Jun 2024 11:24:36 +0200
 
 linux (5.10.216-1) bullseye-security; urgency=high
 
