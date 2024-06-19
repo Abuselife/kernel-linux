@@ -1,4 +1,4 @@
-linux (6.1.93-1) UNRELEASED; urgency=medium
+linux (6.1.94-1) UNRELEASED; urgency=medium
 
   * New upstream stable update:
     https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.1.91
@@ -741,6 +741,94 @@ linux (6.1.93-1) UNRELEASED; urgency=medium
     - hwmon: (shtc1) Fix property misspelling
     - ALSA: timer: Set lower bound of start tick time
     - net: ena: Fix DMA syncing in XDP path when SWIOTLB is on
+    https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.1.94
+    - drm: Check output polling initialized before disabling (CVE-2024-35927)
+    - drm: Check polling initialized before enabling in
+      drm_helper_probe_single_connector_modes
+    - Bluetooth: btrtl: Add missing MODULE_FIRMWARE declarations
+    - maple_tree: fix allocation in mas_sparse_area()
+    - maple_tree: fix mas_empty_area_rev() null pointer dereference
+      (CVE-2024-36891)
+    - mmc: core: Do not force a retune before RPMB switch
+    - afs: Don't cross .backup mountpoint from backup volume
+    - nilfs2: fix use-after-free of timer for log writer thread (CVE-2024-38583)
+    - [x86] drm/i915/audio: Fix audio time stamp programming for DP
+    - mptcp: avoid some duplicate code in socket option handling
+    - mptcp: cleanup SOL_TCP handling
+    - mptcp: fix full TCP keep-alive support
+    - vxlan: Fix regression when dropping packets due to invalid src addresses
+    - scripts/gdb: fix SB_* constants parsing
+    - f2fs: fix to do sanity check on i_xattr_nid in sanity_check_inode()
+    - media: lgdt3306a: Add a check against null-pointer-def
+    - drm/amdgpu: add error handle to avoid out-of-bounds
+    - bcache: fix variable length array abuse in btree_iter
+    - wifi: rtw89: correct aSIFSTime for 6GHz band
+    - ata: pata_legacy: make legacy_exit() work again
+    - thermal/drivers/qcom/lmh: Check for SCM availability at probe
+    - [arm64] soc: qcom: rpmh-rsc: Enhance check for VRM in-flight request
+    - ACPI: resource: Do IRQ override on TongFang GXxHRXx and GMxHGxx
+    - [arm64] tegra: Correct Tegra132 I2C alias
+    - [arm64] dts: qcom: qcs404: fix bluetooth device address
+    - md/raid5: fix deadlock that raid5d() wait for itself to clear
+      MD_SB_CHANGE_PENDING
+    - wifi: rtw89: pci: correct TX resource checking for PCI DMA channel of
+      firmware command
+    - wifi: rtl8xxxu: Fix the TX power of RTL8192CU, RTL8723AU
+    - wifi: rtlwifi: rtl8192de: Fix 5 GHz TX power
+    - wifi: rtlwifi: rtl8192de: Fix low speed with WPA3-SAE
+    - wifi: rtlwifi: rtl8192de: Fix endianness issue in RX path
+    - [arm64] dts: hi3798cv200: fix the size of GICR
+    - media: mc: Fix graph walk in media_pipeline_start
+    - media: mc: mark the media devnode as registered from the, start
+    - media: mxl5xx: Move xpt structures off stack
+    - media: v4l2-core: hold videodev_lock until dev reg, finishes
+    - mmc: core: Add mmc_gpiod_set_cd_config() function
+    - mmc: sdhci: Add support for "Tuning Error" interrupts
+    - mmc: sdhci-acpi: Sort DMI quirks alphabetically
+    - mmc: sdhci-acpi: Fix Lenovo Yoga Tablet 2 Pro 1380 sdcard slot not working
+    - mmc: sdhci-acpi: Disable write protect detection on Toshiba WT10-A
+    - mmc: sdhci-acpi: Add quirk to enable pull-up on the card-detect GPIO on
+      Asus T100TA
+    - fbdev: savage: Handle err return when savagefb_check_var failed
+    - drm/amdgpu/atomfirmware: add intergrated info v2.3 table
+    - 9p: add missing locking around taking dentry fid list
+    - drm/amd: Fix shutdown (again) on some SMU v13.0.4/11 platforms
+    - [arm64] KVM: arm64: Fix AArch32 register narrowing on userspace write
+    - [arm64] KVM: arm64: Allow AArch32 PSTATE.M to be restored as System mode
+    - [arm64] KVM: arm64: AArch32: Fix spurious trapping of conditional
+      instructions
+    - crypto: ecdsa - Fix module auto-load on add-key
+    - crypto: ecrdsa - Fix module auto-load on add_key
+    - [x86] crypto: qat - Fix ADF_DEV_RESET_SYNC memory leak
+    - mm: fix race between __split_huge_pmd_locked() and GUP-fast
+    - scsi: core: Handle devices which return an unusually large VPD page count
+    - net/ipv6: Fix route deleting failure when metric equals 0
+    - net/9p: fix uninit-value in p9_client_rpc()
+    - kmsan: do not wipe out origin when doing partial unpoisoning
+    - cpufreq: amd-pstate: Fix the inconsistency in max frequency units
+    - [x86] intel_th: pci: Add Meteor Lake-S CPU support
+    - mm/cma: drop incorrect alignment check in cma_init_reserved_mem
+    - mm/hugetlb: pass correct order_per_bit to cma_declare_contiguous_nid
+    - watchdog: rti_wdt: Set min_hw_heartbeat_ms to accommodate a safety margin
+    - kdb: Fix buffer overflow during tab-complete
+    - kdb: Use format-strings rather than '\0' injection in kdb_read()
+    - kdb: Fix console handling when editing and tab-completing commands
+    - kdb: Merge identical case statements in kdb_read()
+    - kdb: Use format-specifiers rather than memset() for padding in kdb_read()
+    - net: fix __dst_negative_advice() race (CVE-2024-36971)
+    - ext4: set type of ac_groups_linear_remaining to __u32 to avoid overflow
+    - ext4: fix mb_cache_entry's e_refcnt leak in ext4_xattr_block_cache_find()
+    - [s390x] ap: Fix crash in AP internal function modify_bitmap()
+    - [s390x] cpacf: Split and rework cpacf query functions
+    - [s390x] cpacf: Make use of invalid opcode produce a link error
+    - i3c: master: svc: fix invalidate IBI type and miss call client IBI handler
+    - EDAC/igen6: Convert PCIBIOS_* return codes to errnos
+    - nfs: fix undefined behavior in nfs_block_bits()
+    - NFS: Fix READ_PLUS when server doesn't support OP_READ_PLUS
+    - btrfs: fix crash on racing fsync and size-extending write into prealloc
+    - [powerpc*] bpf: enforce full ordering for ATOMIC operations with BPF_FETCH
+    - smb: client: fix deadlock in smb2_find_smb_tcon()
+    - smp: Provide 'setup_max_cpus' definition on UP too
 
   [ Uwe Kleine-König ]
   * [arm*] Enable symbols in Raspberry Pi device trees for simplified overlay
