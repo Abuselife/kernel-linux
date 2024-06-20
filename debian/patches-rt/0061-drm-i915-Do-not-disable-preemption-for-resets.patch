@@ -1,8 +1,8 @@
-From 8dd355f3dd91d5c6be93b2229a590e0d5cebcd37 Mon Sep 17 00:00:00 2001
+From 5a0028797910777fb06ea31286a2f408862acf04 Mon Sep 17 00:00:00 2001
 From: Tvrtko Ursulin <tvrtko.ursulin@intel.com>
 Date: Fri, 18 Aug 2023 22:45:25 -0400
 Subject: [PATCH 61/64] drm/i915: Do not disable preemption for resets
-Origin: https://www.kernel.org/pub/linux/kernel/projects/rt/6.1/older/patches-6.1.82-rt27.tar.xz
+Origin: https://www.kernel.org/pub/linux/kernel/projects/rt/6.1/older/patches-6.1.90-rt30.tar.xz
 
 [commit 40cd2835ced288789a685aa4aa7bc04b492dcd45 in linux-rt-devel]
 
