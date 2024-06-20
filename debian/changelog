@@ -837,6 +837,7 @@ linux (6.1.94-1) UNRELEASED; urgency=medium
   [ Salvatore Bonaccorso ]
   * Bump ABI to 22
   * [rt] Update to 6.1.90-rt30
+  * net/sched: taprio: always validate TCA_TAPRIO_ATTR_PRIOMAP (CVE-2024-36974)
 
  -- Uwe Kleine-König <ukleinek@debian.org>  Tue, 07 May 2024 11:51:55 +0200
 
