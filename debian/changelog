@@ -303,6 +303,9 @@ linux (5.10.219-1) UNRELEASED; urgency=medium
     - [arm64] RDMA/hns: Use mutex instead of spinlock for ida allocation
     - [arm64] RDMA/hns: Fix CQ and QP cache affinity
 
+  [ Salvatore Bonaccorso ]
+  * Bump ABI to 31
+
  -- Salvatore Bonaccorso <carnil@debian.org>  Thu, 20 Jun 2024 20:30:59 +0200
 
 linux (5.10.218-1) bullseye-security; urgency=high
