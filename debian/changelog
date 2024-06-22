@@ -1089,6 +1089,7 @@ linux (5.10.220-1) UNRELEASED; urgency=medium
 
   [ Salvatore Bonaccorso ]
   * Bump ABI to 31
+  * Refresh "fanotify: Taint on use of FANOTIFY_ACCESS_PERMISSIONS"
 
  -- Salvatore Bonaccorso <carnil@debian.org>  Thu, 20 Jun 2024 20:30:59 +0200
 
