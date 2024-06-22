@@ -33,11 +33,9 @@ Signed-off-by: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
  net/sunrpc/svc_xprt.c | 4 ++--
  1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/net/sunrpc/svc_xprt.c b/net/sunrpc/svc_xprt.c
-index 06e503466c32c..16bd1278a9890 100644
 --- a/net/sunrpc/svc_xprt.c
 +++ b/net/sunrpc/svc_xprt.c
-@@ -422,7 +422,7 @@ void svc_xprt_do_enqueue(struct svc_xprt *xprt)
+@@ -448,7 +448,7 @@
  	if (test_and_set_bit(XPT_BUSY, &xprt->xpt_flags))
  		return;
  
@@ -46,7 +44,7 @@ index 06e503466c32c..16bd1278a9890 100644
  	pool = svc_pool_for_cpu(xprt->xpt_server, cpu);
  
  	atomic_long_inc(&pool->sp_stats.packets);
-@@ -446,7 +446,7 @@ void svc_xprt_do_enqueue(struct svc_xprt *xprt)
+@@ -472,7 +472,7 @@
  	rqstp = NULL;
  out_unlock:
  	rcu_read_unlock();
@@ -54,7 +52,4 @@ index 06e503466c32c..16bd1278a9890 100644
 +	put_cpu_light();
  	trace_svc_xprt_do_enqueue(xprt, rqstp);
  }
- EXPORT_SYMBOL_GPL(svc_xprt_do_enqueue);
--- 
-2.44.0
-
+ EXPORT_SYMBOL_GPL(svc_xprt_enqueue);
