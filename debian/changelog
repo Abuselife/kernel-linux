@@ -238,6 +238,7 @@ linux (6.1.95-1) UNRELEASED; urgency=medium
 
   [ Salvatore Bonaccorso ]
   * [rt] Drop "drm/i915/gt: Queue and wait for the irq_work item."
+  *  Bump ABI to 23
 
  -- Salvatore Bonaccorso <carnil@debian.org>  Sat, 22 Jun 2024 10:55:52 +0200
 
