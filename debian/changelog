@@ -236,6 +236,9 @@ linux (6.1.95-1) UNRELEASED; urgency=medium
     - i2c: designware: Fix the functionality flags of the slave-only interface
     - zap_pid_ns_processes: clear TIF_NOTIFY_SIGNAL along with TIF_SIGPENDING
 
+  [ Salvatore Bonaccorso ]
+  * [rt] Drop "drm/i915/gt: Queue and wait for the irq_work item."
+
  -- Salvatore Bonaccorso <carnil@debian.org>  Sat, 22 Jun 2024 10:55:52 +0200
 
 linux (6.1.94-1) bookworm; urgency=medium

@@ -25,7 +25,6 @@
 0025-drm-i915-Don-t-check-for-atomic-context-on-PREEMPT_R.patch
 0026-drm-i915-Disable-tracing-points-on-PREEMPT_RT.patch
 0027-drm-i915-skip-DRM_I915_LOW_LEVEL_TRACEPOINTS-with-NO.patch
-0028-drm-i915-gt-Queue-and-wait-for-the-irq_work-item.patch
 0029-drm-i915-gt-Use-spin_lock_irq-instead-of-local_irq_d.patch
 0030-drm-i915-Drop-the-irqs_disabled-check.patch
 0031-Revert-drm-i915-Depend-on-PREEMPT_RT.patch
