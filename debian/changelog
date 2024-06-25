@@ -181,7 +181,7 @@ linux (4.19.309-1) UNRELEASED; urgency=medium
       4.19.99) (CVE-2021-33630)
     - audit: Send netlink ACK before setting connection in auditd_set
     - [x86] ACPI: video: Add quirk for the Colorful X15 AT 23 Laptop
-    - ACPI: extlog: fix NULL pointer dereference check (CVE-2023-52605)
+    - ACPI: extlog: fix NULL pointer dereference check
     - FS:JFS:UBSAN:array-index-out-of-bounds in dbAdjTree (CVE-2023-52604)
     - UBSAN: array-index-out-of-bounds in dtSplitRoot (CVE-2023-52603)
     - jfs: fix slab-out-of-bounds Read in dtSearch (CVE-2023-52602)
