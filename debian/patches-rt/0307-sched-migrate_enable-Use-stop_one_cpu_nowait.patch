@@ -1,7 +1,7 @@
 From: Scott Wood <swood@redhat.com>
 Date: Sat, 12 Oct 2019 01:52:14 -0500
-Subject: [PATCH 307/353] sched: migrate_enable: Use stop_one_cpu_nowait()
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=4a20c99f985035506f0b1e0ef367e9b02e08a761
+Subject: [PATCH 307/351] sched: migrate_enable: Use stop_one_cpu_nowait()
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=574c023cdc50ebae508ce49f3bd7a855fde90082
 
 [ Upstream commit 6b39a1fa8c53cae08dc03afdae193b7d3a78a173 ]
 

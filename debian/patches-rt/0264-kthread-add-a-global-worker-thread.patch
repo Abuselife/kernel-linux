@@ -1,7 +1,7 @@
 From: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
 Date: Tue, 12 Feb 2019 15:09:38 +0100
-Subject: [PATCH 264/353] kthread: add a global worker thread.
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=49b7c2c5f102a9fdfed391d8edbc040d81995051
+Subject: [PATCH 264/351] kthread: add a global worker thread.
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=6476d3b478f5e21112ad888425d5a4af6be0b4f5
 
 [ Upstream commit 0532e87d9d44795221aa921ba7024bde689cc894 ]
 
@@ -28,7 +28,7 @@ Signed-off-by: Steven Rostedt (VMware) <rostedt@goodmis.org>
  create mode 100644 include/linux/kthread-cgroup.h
 
 diff --git a/drivers/block/loop.c b/drivers/block/loop.c
-index 2e6c3f658894..2ba7391c4560 100644
+index 860dac8b3f9a..c5e7cc319398 100644
 --- a/drivers/block/loop.c
 +++ b/drivers/block/loop.c
 @@ -70,7 +70,7 @@

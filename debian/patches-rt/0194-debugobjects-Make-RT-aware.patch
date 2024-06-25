@@ -1,7 +1,7 @@
 From: Thomas Gleixner <tglx@linutronix.de>
 Date: Sun, 17 Jul 2011 21:41:35 +0200
-Subject: [PATCH 194/353] debugobjects: Make RT aware
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=7d73c1db387ac8245fc42f60c9ad5f9f4d2c96bb
+Subject: [PATCH 194/351] debugobjects: Make RT aware
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=645a3bd230f516fd0361b125e6599c4b1bd44398
 
 Avoid filling the pool / allocating memory with irqs off().
 

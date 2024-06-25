@@ -1,7 +1,7 @@
 From: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
 Date: Tue, 19 Feb 2019 16:59:15 +0100
-Subject: [PATCH 183/353] hrtimer: Don't lose state in cpu_chill()
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=25966e0a086338f3f872e48e08e2eacb6c7f3552
+Subject: [PATCH 183/351] hrtimer: Don't lose state in cpu_chill()
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=797fc4d921d4b7783d461c65e7bbf9057409157d
 
 In cpu_chill() the state is set to TASK_UNINTERRUPTIBLE and a timer is
 programmed. On return the state is always TASK_RUNNING which means we

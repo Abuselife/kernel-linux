@@ -1,7 +1,7 @@
 From: Thomas Gleixner <tglx@linutronix.de>
 Date: Fri, 10 Jun 2011 11:04:15 +0200
-Subject: [PATCH 129/353] rtmutex: Handle the various new futex race conditions
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=0a9945ff2f1e9bfa3158c02ea9ba50507f22f2ed
+Subject: [PATCH 129/351] rtmutex: Handle the various new futex race conditions
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=6c21d5f674066a60fc5b68afcfc3578cbdd8d6c3
 
 RT opens a few new interesting race conditions in the rtmutex/futex
 combo due to futex hash bucket lock being a 'sleeping' spinlock and

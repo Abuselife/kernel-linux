@@ -1,7 +1,7 @@
 From: Thomas Gleixner <tglx@linutronix.de>
 Date: Fri, 26 Oct 2012 18:50:54 +0100
-Subject: [PATCH 235/353] sched: Add support for lazy preemption
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=34f2877175da42864e013c571a45edb382e4e4c2
+Subject: [PATCH 235/351] sched: Add support for lazy preemption
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=b1a92f6c2e5302d601860f39dda57db9a2132522
 
 It has become an obsession to mitigate the determinism vs. throughput
 loss of RT. Looking at the mainline semantics of preemption points
@@ -215,7 +215,7 @@ index 62dbecfe9132..57a3d99dc067 100644
  #ifndef CONFIG_HAVE_ARCH_WITHIN_STACK_FRAMES
  static inline int arch_within_stack_frames(const void * const stack,
 diff --git a/include/linux/trace_events.h b/include/linux/trace_events.h
-index 963c19f03bef..61011ac41b41 100644
+index bf639caa7b60..8991e31cc974 100644
 --- a/include/linux/trace_events.h
 +++ b/include/linux/trace_events.h
 @@ -64,6 +64,7 @@ struct trace_entry {
@@ -529,7 +529,7 @@ index 637c408fb2dc..87a05bb90124 100644
  extern void init_rt_bandwidth(struct rt_bandwidth *rt_b, u64 period, u64 runtime);
  
 diff --git a/kernel/trace/trace.c b/kernel/trace/trace.c
-index 0881502e1af1..0cafe14f7961 100644
+index 615ce8ed9854..a888d0ca3f7e 100644
 --- a/kernel/trace/trace.c
 +++ b/kernel/trace/trace.c
 @@ -2153,6 +2153,7 @@ tracing_generic_entry_update(struct trace_entry *entry, unsigned long flags,

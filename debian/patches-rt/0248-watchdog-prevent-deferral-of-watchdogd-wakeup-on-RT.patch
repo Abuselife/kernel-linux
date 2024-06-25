@@ -1,7 +1,7 @@
 From: Julia Cartwright <julia@ni.com>
 Date: Fri, 28 Sep 2018 21:03:51 +0000
-Subject: [PATCH 248/353] watchdog: prevent deferral of watchdogd wakeup on RT
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=3eb41c1441a986cf907a383b9016ccbad8316c86
+Subject: [PATCH 248/351] watchdog: prevent deferral of watchdogd wakeup on RT
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=d62644fa333340bcaa94dd5d6a0ea8faecd62ce3
 
 When PREEMPT_RT_FULL is enabled, all hrtimer expiry functions are
 deferred for execution into the context of ktimersoftd unless otherwise

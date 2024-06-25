@@ -1,7 +1,7 @@
 From: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
 Date: Fri, 19 Aug 2022 11:24:38 +0200
-Subject: [PATCH 340/353] random: Bring back the local_locks
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=c0e095914eb2cf54207b769671418c4e41a05cb0
+Subject: [PATCH 340/351] random: Bring back the local_locks
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=c309f6efac94e510b3f3fddcc1b913b5118241e4
 
 As part of the backports the random code lost its local_lock_t type and
 the whole operation became a local_irq_{disable|enable}() simply because

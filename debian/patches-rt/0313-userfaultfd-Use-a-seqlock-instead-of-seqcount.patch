@@ -1,7 +1,7 @@
 From: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
 Date: Wed, 18 Dec 2019 12:25:09 +0100
-Subject: [PATCH 313/353] userfaultfd: Use a seqlock instead of seqcount
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=5e290f8cf8b6eef55cc7334818745bf1bfcaf3bd
+Subject: [PATCH 313/351] userfaultfd: Use a seqlock instead of seqcount
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=f3dc3b0d90f369d00f8c314cfb2cfaac73f24966
 
 [ Upstream commit dc952a564d02997330654be9628bbe97ba2a05d3 ]
 

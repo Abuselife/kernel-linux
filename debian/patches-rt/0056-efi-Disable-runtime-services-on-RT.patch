@@ -1,7 +1,7 @@
 From: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
 Date: Thu, 26 Jul 2018 15:03:16 +0200
-Subject: [PATCH 056/353] efi: Disable runtime services on RT
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=7cc0cb9b03adf5d07c7ae7bd9ad152ebadfb3d90
+Subject: [PATCH 056/351] efi: Disable runtime services on RT
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=64075e58a362de7053371b13a8917776585dad8f
 
 Based on meassurements the EFI functions get_variable /
 get_next_variable take up to 2us which looks okay.

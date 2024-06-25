@@ -1,8 +1,8 @@
 From: Julien Grall <julien.grall@arm.com>
 Date: Wed, 21 Aug 2019 10:24:08 +0100
-Subject: [PATCH 292/353] hrtimer: Don't grab the expiry lock for non-soft
+Subject: [PATCH 292/351] hrtimer: Don't grab the expiry lock for non-soft
  hrtimer
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=4889fc45d08c68e6e8305d8479cce871ed62e582
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=dd90f24ea3becb6ee7d4bd650d91153b59726ab3
 
 [ Upstream commit fd420354bea2f57c11f3de191dffdeea76531e76 ]
 

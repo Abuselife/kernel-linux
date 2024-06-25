@@ -1,7 +1,7 @@
 From: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
 Date: Wed, 14 Aug 2019 16:38:43 +0200
-Subject: [PATCH 288/353] dma-buf: Use seqlock_t instread disabling preemption
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=de701f5ec13687e6b4f5c1c52ea89a28fe1ab9ab
+Subject: [PATCH 288/351] dma-buf: Use seqlock_t instread disabling preemption
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=1fa493347dfabc8401ce9837c8f003a835a60b1d
 
 [ Upstream commit 240610aa31094f51f299f06eb8dae8d4cd8d4500 ]
 
@@ -208,10 +208,10 @@ index 49ab09468ba1..f11d58492216 100644
  		}
  	}
 diff --git a/drivers/gpu/drm/amd/amdgpu/amdgpu_amdkfd_gpuvm.c b/drivers/gpu/drm/amd/amdgpu/amdgpu_amdkfd_gpuvm.c
-index 4488aad64643..f22feb25eba9 100644
+index e15f9da25c7d..b34e3524b5be 100644
 --- a/drivers/gpu/drm/amd/amdgpu/amdgpu_amdkfd_gpuvm.c
 +++ b/drivers/gpu/drm/amd/amdgpu/amdgpu_amdkfd_gpuvm.c
-@@ -261,11 +261,9 @@ static int amdgpu_amdkfd_remove_eviction_fence(struct amdgpu_bo *bo,
+@@ -277,11 +277,9 @@ static int amdgpu_amdkfd_remove_eviction_fence(struct amdgpu_bo *bo,
  	}
  
  	/* Install the new fence list, seqcount provides the barriers */

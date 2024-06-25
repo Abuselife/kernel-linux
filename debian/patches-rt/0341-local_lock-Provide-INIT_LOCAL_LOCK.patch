@@ -1,7 +1,7 @@
 From: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
 Date: Fri, 21 Oct 2022 15:55:39 +0200
-Subject: [PATCH 341/353] local_lock: Provide INIT_LOCAL_LOCK().
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=416c2824d5135639bb31f3c53abed92725983241
+Subject: [PATCH 341/351] local_lock: Provide INIT_LOCAL_LOCK().
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=9174dfa5aed3b7286a0f5231eea46a7e67db5ef7
 
 The original code was using INIT_LOCAL_LOCK() and I tried to sneak
 around it and forgot that this code also needs to compile on !RT

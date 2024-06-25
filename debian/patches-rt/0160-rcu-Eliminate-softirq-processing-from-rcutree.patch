@@ -1,7 +1,7 @@
 From: "Paul E. McKenney" <paulmck@linux.vnet.ibm.com>
 Date: Mon, 4 Nov 2013 13:21:10 -0800
-Subject: [PATCH 160/353] rcu: Eliminate softirq processing from rcutree
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=39e0c31d2c3c1692ca4508e3bef98131e04c583b
+Subject: [PATCH 160/351] rcu: Eliminate softirq processing from rcutree
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=d5d9538ad1c67086aa760d4284af6cd7fb001824
 
 Running RCU out of softirq is a problem for some workloads that would
 like to manage RCU core processing independently of other softirq work,

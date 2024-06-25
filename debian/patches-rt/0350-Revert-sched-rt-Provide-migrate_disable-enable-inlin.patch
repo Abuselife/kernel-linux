@@ -1,8 +1,8 @@
 From: Daniel Wagner <wagi@monom.org>
 Date: Thu, 7 Dec 2023 15:54:10 +0100
-Subject: [PATCH 352/353] Revert "sched/rt: Provide migrate_disable/enable()
+Subject: [PATCH 350/351] Revert "sched/rt: Provide migrate_disable/enable()
  inlines"
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=296f6b50f53cba51d50fc6ce52533843cc7dc6e5
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=2d58a9d4c5c036f845b74b0c1dee8cca6eaa2df4
 
 This reverts commit 56e8949825226341d28dd5156b3d0057684ff669.
 

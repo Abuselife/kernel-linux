@@ -1,7 +1,7 @@
 From: Daniel Wagner <daniel.wagner@bmw-carit.de>
 Date: Fri, 11 Jul 2014 15:26:11 +0200
-Subject: [PATCH 093/353] work-simple: Simple work queue implemenation
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=11d317226d9f7fe7ab11cac44dd7ce22d0e2b7fc
+Subject: [PATCH 093/351] work-simple: Simple work queue implemenation
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=34763f5295a115d053a32c8ebfc5804e89fee508
 
 Provides a framework for enqueuing callbacks from irq context
 PREEMPT_RT_FULL safe. The callbacks are executed in kthread context.

@@ -1,7 +1,7 @@
 From: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
 Date: Tue, 4 Feb 2020 13:29:50 +0100
-Subject: [PATCH 317/353] locallock: Include header for the `current' macro
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=62e9ad1d20e246d3d71bfb787446d8c18bef604f
+Subject: [PATCH 317/351] locallock: Include header for the `current' macro
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=3e76845db3edf725fb0c6c8ba9e5a7bc4ab8d9c1
 
 [ Upstream commit e693075a5fd852043fa8d2b0467e078d9e5cb782 ]
 

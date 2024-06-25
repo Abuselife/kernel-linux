@@ -1,8 +1,8 @@
 From: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
 Date: Fri, 21 Feb 2020 18:15:15 +0100
-Subject: [PATCH 319/353] tracing: make preempt_lazy and migrate_disable
+Subject: [PATCH 319/351] tracing: make preempt_lazy and migrate_disable
  counter smaller
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=c1fd2bf787f88d23aca6c9f4cc70e33cbcee4040
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=1c83533085168b6a4706310637ab9ec299098208
 
 [ Upstream commit dd430bf5ecb40f9a89679c85868826475d71de54 ]
 
@@ -22,7 +22,7 @@ Signed-off-by: Steven Rostedt (VMware) <rostedt@goodmis.org>
  2 files changed, 3 insertions(+), 4 deletions(-)
 
 diff --git a/include/linux/trace_events.h b/include/linux/trace_events.h
-index 61011ac41b41..98e59711a391 100644
+index 8991e31cc974..d8b5b1917486 100644
 --- a/include/linux/trace_events.h
 +++ b/include/linux/trace_events.h
 @@ -62,8 +62,7 @@ struct trace_entry {
@@ -36,7 +36,7 @@ index 61011ac41b41..98e59711a391 100644
  };
  
 diff --git a/kernel/trace/trace_events.c b/kernel/trace/trace_events.c
-index b13fc846d2b2..fc5c032d4b66 100644
+index 32ffcfbc1d34..0c7e0f1687ee 100644
 --- a/kernel/trace/trace_events.c
 +++ b/kernel/trace/trace_events.c
 @@ -189,8 +189,8 @@ static int trace_define_common_fields(void)

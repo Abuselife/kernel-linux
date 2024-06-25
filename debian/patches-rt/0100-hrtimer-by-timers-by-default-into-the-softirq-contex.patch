@@ -1,8 +1,8 @@
 From: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
 Date: Fri, 3 Jul 2009 08:44:31 -0500
-Subject: [PATCH 100/353] hrtimer: by timers by default into the softirq
+Subject: [PATCH 100/351] hrtimer: by timers by default into the softirq
  context
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=eaf341187b65bab733fb1efc175ca94598492c6f
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=15673a2ee7761519e8e8a180b79ff5a33223e1fe
 
 We can't have hrtimers callbacks running in hardirq context on RT. Therefore
 the timers are deferred to the softirq context by default.
@@ -65,7 +65,7 @@ index 25b2e4c61956..cd22ea0252ca 100644
  
  /*
 diff --git a/kernel/events/core.c b/kernel/events/core.c
-index 1f215aa8f30d..164a2912d4a3 100644
+index ef422d1326a8..3ef03897fff4 100644
 --- a/kernel/events/core.c
 +++ b/kernel/events/core.c
 @@ -1108,7 +1108,7 @@ static void __perf_mux_hrtimer_init(struct perf_cpu_context *cpuctx, int cpu)
@@ -77,7 +77,7 @@ index 1f215aa8f30d..164a2912d4a3 100644
  	timer->function = perf_mux_hrtimer_handler;
  }
  
-@@ -9382,7 +9382,7 @@ static void perf_swevent_init_hrtimer(struct perf_event *event)
+@@ -9391,7 +9391,7 @@ static void perf_swevent_init_hrtimer(struct perf_event *event)
  	if (!is_sampling_event(event))
  		return;
  
@@ -129,7 +129,7 @@ index 3f6a613be8c3..802471dbb24d 100644
  	cfs_b->distribute_running = 0;
  }
 diff --git a/kernel/sched/rt.c b/kernel/sched/rt.c
-index 0768ba9d2860..41e73baf41ab 100644
+index 18b3443ec543..5b796d51e6ba 100644
 --- a/kernel/sched/rt.c
 +++ b/kernel/sched/rt.c
 @@ -45,8 +45,8 @@ void init_rt_bandwidth(struct rt_bandwidth *rt_b, u64 period, u64 runtime)

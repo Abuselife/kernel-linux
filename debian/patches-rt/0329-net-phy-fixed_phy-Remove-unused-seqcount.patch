@@ -1,7 +1,7 @@
 From: "Ahmed S. Darwish" <a.darwish@linutronix.de>
 Date: Wed, 10 Jun 2020 12:53:00 +0200
-Subject: [PATCH 329/353] net: phy: fixed_phy: Remove unused seqcount
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=2785dbe3b78f8e47652c14b91e7c9905ac1f233c
+Subject: [PATCH 329/351] net: phy: fixed_phy: Remove unused seqcount
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=e4717c5df23e6b0be386e15e81f2254770743dc4
 
 [ Upstream commit 6554eac9ef2bd1c968886b31cc7266b49258a463 ]
 

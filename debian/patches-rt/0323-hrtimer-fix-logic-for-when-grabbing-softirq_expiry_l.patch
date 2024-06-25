@@ -1,8 +1,8 @@
 From: Rasmus Villemoes <rasmus.villemoes@prevas.dk>
 Date: Tue, 28 Apr 2020 16:40:26 +0200
-Subject: [PATCH 323/353] hrtimer: fix logic for when grabbing
+Subject: [PATCH 323/351] hrtimer: fix logic for when grabbing
  softirq_expiry_lock can be elided
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=de7c86e2dd257289175e509ae8e1381f6ca09206
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=e5d46c433958c24fb9ab303bf6a2375c02b5e8c0
 
 Commit
 

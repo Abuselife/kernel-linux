@@ -1,7 +1,7 @@
 From: Thomas Gleixner <tglx@linutronix.de>
 Date: Wed, 19 Jul 2017 17:31:20 +0200
-Subject: [PATCH 226/353] cpu/hotplug: Implement CPU pinning
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=094ba1487d5353b21689eba968629946e790d2b0
+Subject: [PATCH 226/351] cpu/hotplug: Implement CPU pinning
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=135bd2df1fb26f0959f12d2c6a0e064147290759
 
 Signed-off-by: Thomas Gleixner <tglx@linutronix.de>
 ---

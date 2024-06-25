@@ -1,7 +1,7 @@
 From: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
 Date: Wed, 29 May 2019 18:52:27 +0200
-Subject: [PATCH 283/353] workqueue: rework
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=21736687e7d250d0e1551f0689ac995ef8a423fa
+Subject: [PATCH 283/351] workqueue: rework
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=488054e2cba78167467250a2620357b0208f4a49
 
 [ Upstream commit d15a862f24df983458533aebd6fa207ecdd1095a ]
 
@@ -65,7 +65,7 @@ index aa40960ef4c0..732913d4966c 100644
  	/*
  	 * Init percpu_ref in atomic mode so that it's faster to shutdown.
 diff --git a/drivers/block/loop.c b/drivers/block/loop.c
-index 2ba7391c4560..2e6c3f658894 100644
+index c5e7cc319398..860dac8b3f9a 100644
 --- a/drivers/block/loop.c
 +++ b/drivers/block/loop.c
 @@ -70,7 +70,7 @@
@@ -152,7 +152,7 @@ index 82f21fd4afb0..1ef937d799e4 100644
  	kfree(packages);
  }
 diff --git a/fs/aio.c b/fs/aio.c
-index 50fe29490ec7..adcb7913159d 100644
+index c42f2b5ceeab..8b3f9914802f 100644
 --- a/fs/aio.c
 +++ b/fs/aio.c
 @@ -121,7 +121,7 @@ struct kioctx {
@@ -164,7 +164,7 @@ index 50fe29490ec7..adcb7913159d 100644
  
  	/*
  	 * signals when all in-flight requests are done
-@@ -613,9 +613,9 @@ static void free_ioctx_reqs(struct percpu_ref *ref)
+@@ -624,9 +624,9 @@ static void free_ioctx_reqs(struct percpu_ref *ref)
   * and ctx->users has dropped to 0, so we know no more kiocbs can be submitted -
   * now it's safe to cancel any that need to be.
   */
@@ -176,7 +176,7 @@ index 50fe29490ec7..adcb7913159d 100644
  	struct aio_kiocb *req;
  
  	spin_lock_irq(&ctx->ctx_lock);
-@@ -637,8 +637,8 @@ static void free_ioctx_users(struct percpu_ref *ref)
+@@ -648,8 +648,8 @@ static void free_ioctx_users(struct percpu_ref *ref)
  {
  	struct kioctx *ctx = container_of(ref, struct kioctx, users);
  
@@ -201,7 +201,7 @@ index dc26ce6d840d..53f63f18ecdf 100644
  #include <linux/seq_file.h>
  #include <linux/radix-tree.h>
 diff --git a/include/linux/blkdev.h b/include/linux/blkdev.h
-index 5566d0049c22..c01e5d9597f9 100644
+index 2e009c358884..c2c00a137145 100644
 --- a/include/linux/blkdev.h
 +++ b/include/linux/blkdev.h
 @@ -665,7 +665,7 @@ struct request_queue {

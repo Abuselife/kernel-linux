@@ -1,8 +1,8 @@
 From: Ben Hutchings <ben@decadent.org.uk>
 Date: Sat, 10 Dec 2022 00:06:17 +0100
-Subject: [PATCH 350/353] Revert "percpu: include irqflags.h for
+Subject: [PATCH 348/351] Revert "percpu: include irqflags.h for
  raw_local_irq_save()"
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=5ba2a95c08c9174c34991e920fa5309cfdac7180
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=1304eca00505a00aadfea896bd1af09eb5a414ed
 
 This reverts commit 0d796a9e6a93608b4dd84fbd09f01e912ae34bdc.
 

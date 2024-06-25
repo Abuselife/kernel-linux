@@ -1,7 +1,7 @@
 From: Julien Grall <julien.grall@arm.com>
 Date: Fri, 20 Sep 2019 11:08:35 +0100
-Subject: [PATCH 303/353] lib/ubsan: Don't seralize UBSAN report
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=a0bc1787a3fab1d3bfdfb96e35964b42aac70e5d
+Subject: [PATCH 303/351] lib/ubsan: Don't seralize UBSAN report
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=a7b226113164aa99c79c2b62923ef026e3949204
 
 [ Upstream commit 4702c28ac777b27acb499cbd5e8e787ce1a7d82d ]
 

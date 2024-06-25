@@ -1,8 +1,8 @@
 From: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
-Date: Mon, 31 Oct 2022 16:50:06 +0100
-Subject: [PATCH 349/353] timers: Don't block on ->expiry_lock for
+Date: Mon, 24 Oct 2022 10:17:22 +0200
+Subject: [PATCH 343/351] timers: Don't block on ->expiry_lock for
  TIMER_IRQSAFE timers
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=88b051ee5b1d563d719f5489c76f9628728bc89f
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=851c5bfdc2fc0018402f7afc1e60bbf685f4bd08
 
 Upstream commit c725dafc95f1b37027840aaeaa8b7e4e9cd20516
 
@@ -24,24 +24,26 @@ callback to complete if the timer is flagged with TIMER_IRQSAFE.
 Also add a lockdep assertion for RT kernels to validate that the expiry
 lock mechanism is always invoked in preemptible context.
 
-[ bigeasy: Dropping that lockdep_assert_preemption_enabled() check in
-           backport ]
-
 Reported-by: Mike Galbraith <efault@gmx.de>
 Signed-off-by: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
 Signed-off-by: Thomas Gleixner <tglx@linutronix.de>
 Link: https://lore.kernel.org/r/20201103190937.hga67rqhvknki3tp@linutronix.de
+[bigeasy: The logic in v4.19 is slightly different but the outcome is the
+   same as we must not sleep while waiting for the irqsafe timer to
+   complete. The IRQSAFE timer can not be preempted.
+   The "lockdep annotation" is not available and has been replaced with
+   might_sleep()]
 Signed-off-by: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
 Signed-off-by: Daniel Wagner <wagi@monom.org>
 ---
- kernel/time/timer.c | 11 ++++++++++-
- 1 file changed, 10 insertions(+), 1 deletion(-)
+ kernel/time/timer.c | 9 ++++++++-
+ 1 file changed, 8 insertions(+), 1 deletion(-)
 
 diff --git a/kernel/time/timer.c b/kernel/time/timer.c
-index 603985720f54..8c7bfcee9609 100644
+index c1016f0a0bc0..4cc255a60c23 100644
 --- a/kernel/time/timer.c
 +++ b/kernel/time/timer.c
-@@ -1304,7 +1304,7 @@ static void del_timer_wait_running(struct timer_list *timer)
+@@ -1331,7 +1331,7 @@ static void del_timer_wait_running(struct timer_list *timer)
  	u32 tf;
  
  	tf = READ_ONCE(timer->flags);
@@ -50,7 +52,7 @@ index 603985720f54..8c7bfcee9609 100644
  		struct timer_base *base = get_timer_base(tf);
  
  		/*
-@@ -1388,6 +1388,15 @@ int del_timer_sync(struct timer_list *timer)
+@@ -1417,6 +1417,13 @@ int timer_delete_sync(struct timer_list *timer)
  	 */
  	WARN_ON(in_irq() && !(timer->flags & TIMER_IRQSAFE));
  
@@ -58,10 +60,8 @@ index 603985720f54..8c7bfcee9609 100644
 +	 * Must be able to sleep on PREEMPT_RT because of the slowpath in
 +	 * del_timer_wait_running().
 +	 */
-+#if 0
 +	if (IS_ENABLED(CONFIG_PREEMPT_RT) && !(timer->flags & TIMER_IRQSAFE))
-+		lockdep_assert_preemption_enabled();
-+#endif
++		might_sleep();
 +
  	do {
  		ret = try_to_del_timer_sync(timer);

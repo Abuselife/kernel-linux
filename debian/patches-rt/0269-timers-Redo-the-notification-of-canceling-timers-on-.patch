@@ -1,8 +1,8 @@
 From: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
 Date: Mon, 24 Jun 2019 19:39:06 +0200
-Subject: [PATCH 269/353] timers: Redo the notification of canceling timers on
+Subject: [PATCH 269/351] timers: Redo the notification of canceling timers on
  -RT
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=8c401e4a9b1f447ee7bc7379db42ba7a8c52303f
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=a01e1273e994b3fbe5e111e60753a83c4b15ee7d
 
 [ Upstream commit c71273154c2ad12e13333aada340ff30e826a11b ]
 
@@ -25,20 +25,17 @@ This is an all in one commit of the following patches:
 
 Signed-off-by: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
 Signed-off-by: Steven Rostedt (VMware) <rostedt@goodmis.org>
-[bwh: Dropped the changes in kernel/time/timer.c which were included
- in 4.19.312]
 ---
- fs/timerfd.c                   |  5 +-
- include/linux/hrtimer.h        | 17 ++----
+ fs/timerfd.c                   |  5 ++-
+ include/linux/hrtimer.h        | 17 +++------
  include/linux/posix-timers.h   |  1 +
  kernel/time/alarmtimer.c       |  2 +-
- kernel/time/hrtimer.c          | 36 ++++---------
+ kernel/time/hrtimer.c          | 36 +++++-------------
  kernel/time/itimer.c           |  2 +-
- kernel/time/posix-cpu-timers.c | 23 ++++++++
- kernel/time/posix-timers.c     | 69 ++++++++++--------------
+ kernel/time/posix-cpu-timers.c | 23 ++++++++++++
+ kernel/time/posix-timers.c     | 69 +++++++++++++---------------------
  kernel/time/posix-timers.h     |  2 +
- kernel/time/timer.c            | 96 ++++++++++++++++------------------
- 10 files changed, 118 insertions(+), 135 deletions(-)
+ 9 files changed, 72 insertions(+), 85 deletions(-)
 
 diff --git a/fs/timerfd.c b/fs/timerfd.c
 index 82d0f52414a6..f845093466be 100644

@@ -1,8 +1,8 @@
 From: Peter Zijlstra <peterz@infradead.org>
 Date: Mon, 30 Sep 2019 18:15:44 +0200
-Subject: [PATCH 302/353] locking/rtmutex: Clean ->pi_blocked_on in the error
+Subject: [PATCH 302/351] locking/rtmutex: Clean ->pi_blocked_on in the error
  case
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=b648c8ddf7d9805ca35d70fe6d837b2f380980ff
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=6d7903fac7dfed1a3409eb80ca77e5e994ed660b
 
 [ Upstream commit 0be4ea6e3ce693101be0fbd55a0cc7ce238ab2eb ]
 

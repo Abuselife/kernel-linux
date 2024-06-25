@@ -1,7 +1,7 @@
 From: Daniel Wagner <wagi@monom.org>
 Date: Tue, 17 Feb 2015 09:37:44 +0100
-Subject: [PATCH 280/353] thermal: Defer thermal wakups to threads
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=fc458b9246ce7f2099e8ab2292bb20337d9f3507
+Subject: [PATCH 280/351] thermal: Defer thermal wakups to threads
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=3ad7d50ca8aa102e48accc5e3e058aa205f45e47
 
 [ Upstream commit ad2408dc248fe58536eef5b2b5734d8f9d3a280b ]
 

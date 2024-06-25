@@ -1,8 +1,8 @@
 From: Mike Galbraith <umgwanakikbuti@gmail.com>
 Date: Sat, 27 Feb 2016 09:01:42 +0100
-Subject: [PATCH 250/353] drm,i915: Use local_lock/unlock_irq() in
+Subject: [PATCH 250/351] drm,i915: Use local_lock/unlock_irq() in
  intel_pipe_update_start/end()
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=8a7eda0b0642e03f2f4d26d3f4c36bec6044bdd3
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=432ced98da88a5de7eb2a3478ec3e6ca96351da8
 
 [    8.014039] BUG: sleeping function called from invalid context at kernel/locking/rtmutex.c:918
 [    8.014041] in_atomic(): 0, irqs_disabled(): 1, pid: 78, name: kworker/u4:4

@@ -1,7 +1,7 @@
 From: Scott Wood <swood@redhat.com>
 Date: Sat, 12 Oct 2019 01:52:12 -0500
-Subject: [PATCH 305/353] sched: migrate_enable: Use select_fallback_rq()
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=f53991cbc9e3529f8f927f96797091152ee895f7
+Subject: [PATCH 305/351] sched: migrate_enable: Use select_fallback_rq()
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=53a98de61c12c1fccb5fb6a9e206f6184ab2911b
 
 [ Upstream commit adfa969d4cfcc995a9d866020124e50f1827d2d1 ]
 

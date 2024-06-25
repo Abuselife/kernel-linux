@@ -1,7 +1,7 @@
 From: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
 Date: Fri, 29 Apr 2022 11:02:18 -0500
-Subject: [PATCH 339/353] genirq: Add lost hunk to irq_forced_thread_fn().
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=c9fbd56f69823620a879ee07f91e2004de69bcab
+Subject: [PATCH 339/351] genirq: Add lost hunk to irq_forced_thread_fn().
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=3c2d3e210b4dd817cd60c57dc773cb6ed49e865e
 
 The irq_settings_no_softirq_call() related handling got lost in process,
 here are the missing bits.

@@ -1,7 +1,7 @@
 From: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
 Date: Wed, 22 Dec 2021 20:35:22 +0100
-Subject: [PATCH 338/353] net: Add missing xmit_lock_owner hunks.
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=951d4c3e6e37a9635d5d23337cbe68308350735a
+Subject: [PATCH 338/351] net: Add missing xmit_lock_owner hunks.
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=ccc965df1bde80342af9867f3914c5ca8564c8e6
 
 The patch
 	net: move xmit_recursion to per-task variable on -RT
@@ -17,10 +17,10 @@ Signed-off-by: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
  1 file changed, 13 insertions(+), 16 deletions(-)
 
 diff --git a/include/linux/netdevice.h b/include/linux/netdevice.h
-index 821337d81da2..1bead7088f4d 100644
+index dc0f243bf003..91a2fca65f7e 100644
 --- a/include/linux/netdevice.h
 +++ b/include/linux/netdevice.h
-@@ -3893,17 +3893,17 @@ static inline u32 netif_msg_init(int debug_value, int default_msg_enable_bits)
+@@ -3899,17 +3899,17 @@ static inline u32 netif_msg_init(int debug_value, int default_msg_enable_bits)
  #ifdef CONFIG_PREEMPT_RT_FULL
  static inline void netdev_queue_set_owner(struct netdev_queue *txq, int cpu)
  {
@@ -41,7 +41,7 @@ index 821337d81da2..1bead7088f4d 100644
  		return true;
  	return false;
  }
-@@ -3912,17 +3912,19 @@ static inline bool netdev_queue_has_owner(struct netdev_queue *txq)
+@@ -3918,17 +3918,19 @@ static inline bool netdev_queue_has_owner(struct netdev_queue *txq)
  
  static inline void netdev_queue_set_owner(struct netdev_queue *txq, int cpu)
  {
@@ -64,7 +64,7 @@ index 821337d81da2..1bead7088f4d 100644
  		return true;
  	return false;
  }
-@@ -3931,8 +3933,7 @@ static inline bool netdev_queue_has_owner(struct netdev_queue *txq)
+@@ -3937,8 +3939,7 @@ static inline bool netdev_queue_has_owner(struct netdev_queue *txq)
  static inline void __netif_tx_lock(struct netdev_queue *txq, int cpu)
  {
  	spin_lock(&txq->_xmit_lock);
@@ -74,7 +74,7 @@ index 821337d81da2..1bead7088f4d 100644
  }
  
  static inline bool __netif_tx_acquire(struct netdev_queue *txq)
-@@ -3949,8 +3950,7 @@ static inline void __netif_tx_release(struct netdev_queue *txq)
+@@ -3955,8 +3956,7 @@ static inline void __netif_tx_release(struct netdev_queue *txq)
  static inline void __netif_tx_lock_bh(struct netdev_queue *txq)
  {
  	spin_lock_bh(&txq->_xmit_lock);
@@ -84,7 +84,7 @@ index 821337d81da2..1bead7088f4d 100644
  }
  
  static inline bool __netif_tx_trylock(struct netdev_queue *txq)
-@@ -3958,23 +3958,20 @@ static inline bool __netif_tx_trylock(struct netdev_queue *txq)
+@@ -3964,23 +3964,20 @@ static inline bool __netif_tx_trylock(struct netdev_queue *txq)
  	bool ok = spin_trylock(&txq->_xmit_lock);
  
  	if (likely(ok)) {

@@ -1,8 +1,8 @@
 From: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
 Date: Wed, 10 Apr 2019 11:01:37 +0200
-Subject: [PATCH 262/353] drm/i915: Don't disable interrupts independently of
+Subject: [PATCH 262/351] drm/i915: Don't disable interrupts independently of
  the lock
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=7ac53aadb15e39ff8b797064b95e5ad881c875a6
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=23d567d9202d34d4483a75b2647e8d00ad032418
 
 The locks (timeline->lock and rq->lock) need to be taken with disabled
 interrupts. This is done in __retire_engine_request() by disabling the

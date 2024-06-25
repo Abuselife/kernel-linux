@@ -1,8 +1,8 @@
 From: "Steven Rostedt (VMware)" <rostedt@goodmis.org>
 Date: Sun, 22 Mar 2020 00:00:28 +0100
-Subject: [PATCH 321/353] irq_work: Fix checking of IRQ_WORK_LAZY flag set on
+Subject: [PATCH 321/351] irq_work: Fix checking of IRQ_WORK_LAZY flag set on
  non PREEMPT_RT
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=e54e006c40dbb70d127562872d87ccdd043ad1a5
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=0215b0e82033d3db6b82b95a97675c912d8ebd85
 
 When CONFIG_PREEMPT_RT_FULL is not set, some of the checks for using
 lazy_list are not properly made as the IRQ_WORK_LAZY is not checked. There's

@@ -1,7 +1,7 @@
 From: Thomas Gleixner <tglx@linutronix.de>
 Date: Mon, 18 Jul 2011 17:03:52 +0200
-Subject: [PATCH 045/353] sched: Disable CONFIG_RT_GROUP_SCHED on RT
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=82047f1895f7dd2f2b4b209c572ccd047c6636d3
+Subject: [PATCH 045/351] sched: Disable CONFIG_RT_GROUP_SCHED on RT
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=179996a9ff8d46acf904bccd3726b6f945495dfa
 
 Carsten reported problems when running:
 

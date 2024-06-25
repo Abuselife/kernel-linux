@@ -1,8 +1,8 @@
 From: Thomas Gleixner <tglx@linutronix.de>
 Date: Mon, 31 Oct 2022 16:50:05 +0100
-Subject: [PATCH 348/353] timers: Move clearing of base::timer_running under
+Subject: [PATCH 346/351] timers: Move clearing of base::timer_running under
  base:: Lock
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=8120e1197c9bd1793825d34574352c07dead3f6e
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=e74fa789313090b1cee4b4918e847fcc9ce0f617
 
 Upstream commit bb7262b295472eb6858b5c49893954794027cd84
 
@@ -48,16 +48,15 @@ Link: https://lore.kernel.org/r/87lfea7gw8.fsf@nanos.tec.linutronix.de
 Cc: stable@vger.kernel.org
 Signed-off-by: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
 Signed-off-by: Daniel Wagner <wagi@monom.org>
-[bwh: Adjusted context to apply after Linux 4.19.312]
 ---
  kernel/time/timer.c | 6 ++++--
  1 file changed, 4 insertions(+), 2 deletions(-)
 
 diff --git a/kernel/time/timer.c b/kernel/time/timer.c
-index b859ecf6424b..603985720f54 100644
+index 4cc255a60c23..c51154702b6b 100644
 --- a/kernel/time/timer.c
 +++ b/kernel/time/timer.c
-@@ -1282,8 +1282,10 @@ static inline void timer_base_unlock_expiry(struct timer_base *base)
+@@ -1311,8 +1311,10 @@ static inline void timer_base_unlock_expiry(struct timer_base *base)
  static void timer_sync_wait_running(struct timer_base *base)
  {
  	if (atomic_read(&base->timer_waiters)) {
@@ -68,7 +67,7 @@ index b859ecf6424b..603985720f54 100644
  	}
  }
  
-@@ -1458,14 +1460,14 @@ static void expire_timers(struct timer_base *base, struct hlist_head *head)
+@@ -1504,14 +1506,14 @@ static void expire_timers(struct timer_base *base, struct hlist_head *head)
  		if (timer->flags & TIMER_IRQSAFE) {
  			raw_spin_unlock(&base->lock);
  			call_timer_fn(timer, fn, baseclk);

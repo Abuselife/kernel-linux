@@ -1,7 +1,7 @@
 From: Scott Wood <swood@redhat.com>
 Date: Sat, 27 Jul 2019 00:56:33 -0500
-Subject: [PATCH 298/353] sched: Remove dead __migrate_disabled() check
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=525b63077db62eff9d30e0c12d2a6147a3d6e978
+Subject: [PATCH 298/351] sched: Remove dead __migrate_disabled() check
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=0456f602a8826164c98ad1fbc6eeca580dd55017
 
 [ Upstream commit 14d9272d534ea91262e15db99443fc5995c7c016 ]
 

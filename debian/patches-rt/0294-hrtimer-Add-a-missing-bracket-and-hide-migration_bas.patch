@@ -1,8 +1,8 @@
 From: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
 Date: Wed, 4 Sep 2019 16:55:27 +0200
-Subject: [PATCH 294/353] hrtimer: Add a missing bracket and hide
+Subject: [PATCH 294/351] hrtimer: Add a missing bracket and hide
  `migration_base' on !SMP
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=b0050e363746e7e70ecf88e9bc21456f8f9a67e4
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=00fc6607cc5b26276b986918cb9ac047fcc09158
 
 [ Upstream commit 47b6de0b7f22c28b40275aeede3993d807668c3b ]
 

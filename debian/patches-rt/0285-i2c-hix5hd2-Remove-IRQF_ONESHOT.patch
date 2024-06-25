@@ -1,7 +1,7 @@
 From: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
 Date: Tue, 13 Aug 2019 12:30:37 +0200
-Subject: [PATCH 285/353] i2c: hix5hd2: Remove IRQF_ONESHOT
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=491d263b89740aa0630e9943e209dea86011c382
+Subject: [PATCH 285/351] i2c: hix5hd2: Remove IRQF_ONESHOT
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=43efc983fe01d9cf2c58cf7e9bd727a58462b3bb
 
 [ Upstream commit e88b481f3f86f11e3243e0808a830e5ca5782a9d ]
 

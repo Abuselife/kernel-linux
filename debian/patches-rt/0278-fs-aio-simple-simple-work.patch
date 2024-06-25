@@ -1,7 +1,7 @@
 From: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
 Date: Mon, 16 Feb 2015 18:49:10 +0100
-Subject: [PATCH 278/353] fs/aio: simple simple work
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=17b625dc1c89463d8a9bbab69c881b7522f4596d
+Subject: [PATCH 278/351] fs/aio: simple simple work
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=1af97bf853f781f711f374ad217ea0f85b3500be
 
 [ Upstream commit 1a142116f6435ef070ecebb66d2d599507c10601 ]
 
@@ -32,7 +32,7 @@ Signed-off-by: Steven Rostedt (VMware) <rostedt@goodmis.org>
  1 file changed, 11 insertions(+), 2 deletions(-)
 
 diff --git a/fs/aio.c b/fs/aio.c
-index 1bd934eccbf6..50fe29490ec7 100644
+index 146681fb7e8a..c42f2b5ceeab 100644
 --- a/fs/aio.c
 +++ b/fs/aio.c
 @@ -121,6 +121,7 @@ struct kioctx {
@@ -43,7 +43,7 @@ index 1bd934eccbf6..50fe29490ec7 100644
  
  	/*
  	 * signals when all in-flight requests are done
-@@ -612,9 +613,9 @@ static void free_ioctx_reqs(struct percpu_ref *ref)
+@@ -623,9 +624,9 @@ static void free_ioctx_reqs(struct percpu_ref *ref)
   * and ctx->users has dropped to 0, so we know no more kiocbs can be submitted -
   * now it's safe to cancel any that need to be.
   */
@@ -55,7 +55,7 @@ index 1bd934eccbf6..50fe29490ec7 100644
  	struct aio_kiocb *req;
  
  	spin_lock_irq(&ctx->ctx_lock);
-@@ -632,6 +633,14 @@ static void free_ioctx_users(struct percpu_ref *ref)
+@@ -643,6 +644,14 @@ static void free_ioctx_users(struct percpu_ref *ref)
  	percpu_ref_put(&ctx->reqs);
  }
  

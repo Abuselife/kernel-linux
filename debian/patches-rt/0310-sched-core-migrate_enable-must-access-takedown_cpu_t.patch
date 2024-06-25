@@ -1,8 +1,8 @@
 From: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
 Date: Fri, 29 Nov 2019 17:24:55 +0100
-Subject: [PATCH 310/353] sched/core: migrate_enable() must access
+Subject: [PATCH 310/351] sched/core: migrate_enable() must access
  takedown_cpu_task on !HOTPLUG_CPU
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=a2386b1c4ac6f2120ac2a4b5d848014db57f2418
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=ff9f04b774d298a67b7581fbf7ece761e61ed123
 
 [ Upstream commit a61d1977f692e46bad99a100f264981ba08cb4bd ]
 

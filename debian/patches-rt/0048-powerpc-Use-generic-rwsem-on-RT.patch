@@ -1,7 +1,7 @@
 From: Thomas Gleixner <tglx@linutronix.de>
 Date: Tue, 14 Jul 2015 14:26:34 +0200
-Subject: [PATCH 048/353] powerpc: Use generic rwsem on RT
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=a5ce6641844f99ddfc0a41ecf09baec9e2f2b695
+Subject: [PATCH 048/351] powerpc: Use generic rwsem on RT
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=810b6ad89bc36639f162494f126f5af4a18c7384
 
 Use generic code which uses rtmutex
 

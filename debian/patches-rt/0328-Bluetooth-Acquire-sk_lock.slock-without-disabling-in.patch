@@ -1,8 +1,8 @@
 From: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
 Date: Thu, 28 May 2020 14:35:12 +0200
-Subject: [PATCH 328/353] Bluetooth: Acquire sk_lock.slock without disabling
+Subject: [PATCH 328/351] Bluetooth: Acquire sk_lock.slock without disabling
  interrupts
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=eb7c56fa948d4aee827bb537a4857636b50c0af2
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=76945daa3ecf2fe058a6ab1da7bca4219f996cee
 
 [ Upstream commit e6da0edc24eecef2f6964d92fa9044e1821deace ]
 

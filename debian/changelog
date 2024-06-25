@@ -1058,11 +1058,11 @@ linux (4.19.316-1) UNRELEASED; urgency=medium
 
   [ Ben Hutchings ]
   * Bump ABI to 27
-  * [rt] Update to 4.19.307-rt133:
+  * ovl: fail on invalid uid/gid mapping at copy up (CVE-2023-0386)
+  * [rt] Update to 4.19.315-rt135:
     - Drop "crypto: scompress - serialize RT percpu scratch buffer access
       with a local lock", redundant with changes in 4.19.306
-  * ovl: fail on invalid uid/gid mapping at copy up (CVE-2023-0386)
-  * [rt] Drop patches to timer subsystem that were included in 4.19.312
+    - Drop patches to timer subsystem that were included in 4.19.312
 
  -- Ben Hutchings <benh@debian.org>  Fri, 08 Mar 2024 23:08:32 +0100
 

@@ -1,8 +1,8 @@
 From: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
 Date: Wed, 26 Jun 2019 17:44:13 +0200
-Subject: [PATCH 270/353] Revert "futex: Ensure lock/unlock symetry versus
+Subject: [PATCH 270/351] Revert "futex: Ensure lock/unlock symetry versus
  pi_lock and hash bucket lock"
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=239e514210039f4790d34efb63e0481a4345e241
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=c937f2af228deb9dff5e4be8ae02c338d4c298e4
 
 [ Upstream commit 6a773b70cf105b46298ed3b44e77c102ce31d9ec ]
 

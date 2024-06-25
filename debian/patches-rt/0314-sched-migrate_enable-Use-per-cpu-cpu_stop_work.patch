@@ -1,7 +1,7 @@
 From: Scott Wood <swood@redhat.com>
 Date: Fri, 24 Jan 2020 06:11:46 -0500
-Subject: [PATCH 314/353] sched: migrate_enable: Use per-cpu cpu_stop_work
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=c14fddc0fc3102cda9d8c7da7dd5a26c37b7787c
+Subject: [PATCH 314/351] sched: migrate_enable: Use per-cpu cpu_stop_work
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=1841be502822c40416c249162540d15c66c5b460
 
 [ Upstream commit 2dcd94b443c5dcbc20281666321b7f025f9cc85c ]
 
