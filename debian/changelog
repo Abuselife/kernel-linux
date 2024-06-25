@@ -52,8 +52,9 @@ linux (4.19.309-1) UNRELEASED; urgency=medium
     - [arm64] EDAC/thunderx: Fix possible out-of-bounds string access
       (CVE-2023-52464)
     - [x86] ACPI: video: check for error while searching for backlight device
-      parent
-    - [amd64] ACPI: LPIT: Avoid u32 multiplication overflow
+      parent (CVE-2023-52693)
+    - [amd64] ACPI: LPIT: Avoid u32 multiplication overflow (CVE-2023-52683)
+    - calipso: fix memory leak in netlbl_calipso_add_pass() (CVE-2023-52698)
     - mtd: Fix gluebi NULL pointer dereference caused by ftl notifier
       (CVE-2023-52449)
     - selinux: Fix error priority for bind with AF_UNSPEC on PF_INET6 socket
@@ -64,7 +65,7 @@ linux (4.19.309-1) UNRELEASED; urgency=medium
     - crypto: virtio - Wait for tasklet to complete on device remove
     - crypto: scompress - return proper error code for allocation failure
     - crypto: scompress - Use per-CPU struct instead multiple variables
-    - crypto: scomp - fix req->dst buffer overflow
+    - crypto: scomp - fix req->dst buffer overflow (CVE-2023-52612)
     - blocklayoutdriver: Fix reference leak of pnfs_device_node
     - NFSv4.1/pnfs: Ensure we handle the error NFS4ERR_RETURNCONFLICT
     - bpf, lpm: Fix check prefixlen before walking trie
@@ -83,6 +84,7 @@ linux (4.19.309-1) UNRELEASED; urgency=medium
     - Bluetooth: Fix bogus check for re-auth no supported with non-ssp
     - Bluetooth: btmtkuart: fix recv_buf() return value
     - ip6_tunnel: fix NEXTHDR_FRAGMENT handling in ip6_tnl_parse_tlv_enc_lim()
+      (CVE-2024-26633)
     - RDMA/usnic: Silence uninitialized symbol smatch warnings
     - media: pvrusb2: fix use after free on context disconnection
       (CVE-2023-52445)
@@ -94,18 +96,18 @@ linux (4.19.309-1) UNRELEASED; urgency=medium
     - drm/drv: propagate errors from drm_modeset_register_all()
     - drm/radeon: check the alloc_workqueue return value in radeon_crtc_init()
       (CVE-2023-52470)
-    - drm/amd/pm: fix a double-free in si_dpm_init
+    - drm/amd/pm: fix a double-free in si_dpm_init (CVE-2023-52691)
     - drivers/amd/pm: fix a use-after-free in kv_parse_power_table
       (CVE-2023-52469)
     - gpu/drm/radeon: fix two memleaks in radeon_vm_init
     - watchdog: set cdev owner before adding (regression in 4.19.93)
     - [x86] watchdog/hpwdt: Only claim UNKNOWN NMI if from iLO
     - [arm*] watchdog: bcm2835_wdt: Fix WDIOC_SETTIMEOUT handling
-    - of: Fix double free in of_parse_phandle_with_args_map
+    - of: Fix double free in of_parse_phandle_with_args_map (CVE-2023-52679)
     - binder: fix async space check for 0-sized buffers
     - [x86] Input: atkbd - use ab83 as id when skipping the getid command
     - xen-netback: don't produce zero-size SKB frags (CVE-2023-46838)
-    - binder: fix race between mmput() and do_exit()
+    - binder: fix race between mmput() and do_exit() (CVE-2023-52609)
     - binder: fix unused alloc->free_async_space
     - tick-sched: Fix idle and iowait sleeptime accounting vs CPU hotplug
     - [armhf] usb: phy: mxs: remove CONFIG_USB_OTG condition for
@@ -146,7 +148,8 @@ linux (4.19.309-1) UNRELEASED; urgency=medium
       4.19.296)
     - crypto: api - Disallow identical driver names
     - PM: hibernate: Enforce ordering during image compression/decompression
-    - hwrng: core - Fix page fault dead lock on mmap-ed hwrng
+    - hwrng: core - Fix page fault dead lock on mmap-ed hwrng (CVE-2023-52615)
+    - rpmsg: virtio: Free driver_override when rpmsg_remove() (CVE-2023-52670)
     - nouveau/vmm: don't set addr on the fail path to avoid warning
     - block: Remove special-casing of compound pages
     - [x86] CPU/AMD: Fix disabling XSAVES on AMD family 0x17 due to erratum
@@ -154,13 +157,15 @@ linux (4.19.309-1) UNRELEASED; urgency=medium
       (CVE-2024-26615)
     - vlan: skip nested type that is not IFLA_VLAN_QOS_MAPPING
     - llc: make llc_ui_sendmsg() more robust against bonding changes
-    - llc: Drop support for ETH_P_TR_802_2.
+      (CVE-2024-26636)
+    - llc: Drop support for ETH_P_TR_802_2. (CVE-2024-26635)
     - net/rds: Fix UBSAN: array-index-out-of-bounds in rds_cmsg_recv
       (CVE-2024-23849)
     - tracing: Ensure visibility when inserting an element into tracing_map
+      (CVE-2024-26645)
     - tcp: Add memory barrier to tcp_push()
     - netlink: fix potential sleeping issue in mqueue_flush_file
-    - net/mlx5e: fix a double-free in arfs_create_groups
+    - net/mlx5e: fix a double-free in arfs_create_groups (CVE-2024-35835)
     - netfilter: nf_tables: restrict anonymous set and map names to 16 bytes
     - [armhf] net: fec: fix the unhandled context fault from smmu
     - btrfs: don't warn if discard range is not aligned to sector
@@ -183,14 +188,16 @@ linux (4.19.309-1) UNRELEASED; urgency=medium
     - jfs: fix array-index-out-of-bounds in dbAdjTree (CVE-2023-52601)
     - jfs: fix uaf in jfs_evict_inode (CVE-2023-52600)
     - pstore/ram: Fix crash when setting number of cpus to an odd number
+      (CVE-2023-52619)
     - afs: fix the usage of read_seqbegin_or_lock() in afs_find_server*()
     - rxrpc_find_service_conn_rcu: fix the usage of read_seqbegin_or_lock()
     - jfs: fix array-index-out-of-bounds in diNewExt (CVE-2023-52599)
-    - SUNRPC: Fix a suspicious RCU usage warning
+    - SUNRPC: Fix a suspicious RCU usage warning (CVE-2023-52623)
     - ext4: fix inconsistent between segment fstrim and full fstrim
     - ext4: unify the type of flexbg_size to unsigned int
     - ext4: remove unnecessary check from alloc_flex_gd()
     - ext4: avoid online resizing failures due to oversized flex bg
+      (CVE-2023-52622)
     - scsi: lpfc: Fix possible file string name overflow when updating firmware
     - PCI: Add no PM reset quirk for NVIDIA Spectrum devices
     - bonding: return -ENOMEM instead of BUG in alb_upper_dev_walk
@@ -221,7 +228,7 @@ linux (4.19.309-1) UNRELEASED; urgency=medium
     - [amd64] drm/amdgpu: Drop 'fence' check in 'to_amdgpu_amdkfd_fence()'
     - leds: trigger: panic: Don't register panic notifier if creating the
       trigger failed
-    - blk-mq: fix IO hang from sbitmap wakeup race
+    - blk-mq: fix IO hang from sbitmap wakeup race (CVE-2024-26671)
     - ceph: fix deadlock or deadcode of misusing dget() (CVE-2023-52583)
     - wifi: cfg80211: fix RCU dereference in __cfg80211_bss_update
     - [x86] scsi: isci: Fix an error code problem in isci_io_request_build()
@@ -240,13 +247,14 @@ linux (4.19.309-1) UNRELEASED; urgency=medium
     - [armhf] phy: ti: phy-omap-usb2: Fix NULL pointer dereference for SRP
       (CVE-2024-26600)
     - hwmon: (aspeed-pwm-tacho) mutex for tach reading
-    - [x86] hwmon: (coretemp) Fix out-of-bounds memory access
+    - [x86] hwmon: (coretemp) Fix out-of-bounds memory access (CVE-2024-26664)
     - [x86] hwmon: (coretemp) Fix bogus core_id to attr name mapping
       (regression in 4.19.264)
-    - inet: read sk->sk_family once in inet_recv_error()
+    - inet: read sk->sk_family once in inet_recv_error() (CVE-2024-26679)
     - rxrpc: Fix response to PING RESPONSE ACKs to a dead call
     - tipc: Check the bearer type before calling tipc_udp_nl_bearer_add()
-    - ppp_async: limit MRU to 64K
+      (CVE-2024-26663)
+    - ppp_async: limit MRU to 64K (CVE-2024-26675)
     - netfilter: nft_compat: reject unused compat flag
     - netfilter: nft_compat: restrict match/target protocol to u16
     - USB: serial: qcserial: add new usb-id for Dell Wireless DW5826e
@@ -258,31 +266,36 @@ linux (4.19.309-1) UNRELEASED; urgency=medium
     - hrtimer: Report offline hrtimer enqueue (regression in 4.19.302)
     - btrfs: forbid creating subvol qgroups
     - btrfs: send: return EOPNOTSUPP on unknown flags
-    - ASoC: rt5645: Fix deadlock in rt5645_jack_detect_work()
+    - ASoC: rt5645: Fix deadlock in rt5645_jack_detect_work() (CVE-2024-26722)
     - i40e: Fix waiting for queues of all VSIs to be disabled
     - tracing/trigger: Fix to return error if failed to alloc snapshot
     - mm/writeback: fix possible divide-by-zero in wb_dirty_limits(), again
+      (CVE-2024-26720)
     - HID: wacom: generic: Avoid reporting a serial of '0' to userspace
     - HID: wacom: Do not register input devices until after hid_hw_start
     - USB: hub: check for alternate port before enabling A_ALT_HNP_SUPPORT
     - usb: f_mass_storage: forbid async queue when shutdown happen
     - scsi: Revert "scsi: fcoe: Fix potential deadlock on &fip->ctlr_lock"
-      (regression in 4.19.295)
+      (regression in 4.19.295) (CVE-2024-26917)
+    - nfc: nci: free rx_data_reassembly skb on NCI device cleanup
+      (CVE-2024-26825)
     - xen-netback: properly sync TX responses
     - binder: signal epoll threads of self-work (CVE-2024-26606)
     - ext4: fix double-free of blocks due to wrong extents moved_len
+      (CVE-2024-26704)
     - ring-buffer: Clean ring_buffer_poll_wait() error return
     - [amd64] x86/mm/ident_map: Use gbpages only where full GB page should be
       mapped.
     - ALSA: hda/conexant: Add quirk for SWS JS201D
     - nilfs2: fix data corruption in dsync block recovery for small block sizes
-    - nilfs2: fix hang in nilfs_lookup_dirty_data_buffers()
+      (CVE-2024-26697)
+    - nilfs2: fix hang in nilfs_lookup_dirty_data_buffers() (CVE-2024-26696)
     - pmdomain: core: Move the unused cleanup to a _sync initcall
     - Revert "md/raid5: Wait for MD_SB_CHANGE_PENDING in raid5d" (regression in
       4.19.262)
     - sched/membarrier: reduce the ability to hammer on sys_membarrier
       (CVE-2024-26602)
-    - nilfs2: fix potential bug in end_buffer_async_write
+    - nilfs2: fix potential bug in end_buffer_async_write (CVE-2024-26685)
     - lsm: new security_file_ioctl_compat() hook
     - netfilter: nf_tables: fix pointer math issue in nft_byteorder_eval()
       (CVE-2024-0607)
@@ -298,59 +311,68 @@ linux (4.19.309-1) UNRELEASED; urgency=medium
     - userfaultfd: fix mmap_changing checking in mfill_atomic_hugetlb
     - sched/rt: sysctl_sched_rr_timeslice show default timeslice after reset
     - sched/rt: Disallow writing invalid values to sched_rt_period_us
-    - scsi: target: core: Add TMF to tmr_list handling
+    - scsi: target: core: Add TMF to tmr_list handling (CVE-2024-26845)
     - wifi: cfg80211: fix missing interfaces when dumping
-    - wifi: mac80211: fix race condition on enabling fast-xmit
-    - [x86] fbdev: savage: Error out if pixclock equals zero
-    - [x86] fbdev: sis: Error out if pixclock equals zero
+    - wifi: mac80211: fix race condition on enabling fast-xmit (CVE-2024-26779)
+    - [x86] fbdev: savage: Error out if pixclock equals zero (CVE-2024-26778)
+    - [x86] fbdev: sis: Error out if pixclock equals zero (CVE-2024-26777)
     - ahci: asm1166: correct count of reported ports
     - ext4: avoid allocating blocks from corrupted group in
-      ext4_mb_try_best_found()
+      ext4_mb_try_best_found() (CVE-2024-26773)
     - ext4: avoid allocating blocks from corrupted group in
-      ext4_mb_find_by_goal()
+      ext4_mb_find_by_goal() (CVE-2024-26772)
     - [arm64] regulator: pwm-regulator: Add validity checks in continuous
       .get_voltage
     - [x86] hwmon: (coretemp) Enlarge per package core count limit
     - firewire: core: send bus reset promptly on gap count error
     - virtio-blk: Ensure no requests in virtqueues before deleting vqs.
     - [amd64] IB/hfi1: Fix sdma.h tx->num_descs off-by-one error (regression in
-      4.19.291)
+      4.19.291) (CVE-2024-26766)
     - mm: memcontrol: switch to rcu protection in drain_all_stock()
     - dm-crypt: don't modify the data when using authenticated encryption
+      (CVE-2024-26763)
     - gtp: fix use-after-free and null-ptr-deref in gtp_genl_dump_pdp()
+      (CVE-2024-26754)
     - l2tp: pass correct message length to ip6_append_data (regression in
-      4.19.296)
+      4.19.296) (CVE-2024-26752)
     - usb: gadget: ncm: Avoid dropping datagrams of properly parsed NTBs
+      (CVE-2024-27405)
     - usb: roles: don't get/set_role() when usb_role_switch is unregistered
-    - [amd64] IB/hfi1: Fix a memleak in init_credit_return
+    - [amd64] IB/hfi1: Fix a memleak in init_credit_return (CVE-2024-26839)
     - RDMA/bnxt_re: Return error for SRQ resize
     - RDMA/srpt: Support specifying the srpt_service_guid parameter
+      (CVE-2024-26744)
     - RDMA/ulp: Use dev_name instead of ibdev->name
     - RDMA/srpt: Make debug output more detailed
-    - ipv6: sr: fix possible use-after-free and null-ptr-deref
+    - ipv6: sr: fix possible use-after-free and null-ptr-deref (CVE-2024-26735)
     - PCI/MSI: Prevent MSI hardware interrupt number truncation
     - [arm*] KVM: arm64: vgic-its: Test for valid IRQ in
       its_sync_lpi_pending_table()
     - [arm*] KVM: arm64: vgic-its: Test for valid IRQ in MOVALL handler
     - fs/aio: Restrict kiocb_set_cancel_fn() to I/O submitted via libaio
+      (CVE-2024-26764)
     https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.19.309
     - netlink: Fix kernel-infoleak-after-free in __skb_datagram_iter
+      (CVE-2024-26805
     - tun: Fix xdp_rxq_info's queue_index when detaching
     - lan78xx: enable auto speed configuration for LAN7850 if no EEPROM is
       detected
     - net: usb: dm9601: fix wrong return value in dm9601_mdio_read (regression
       in 4.19.297)
     - Bluetooth: Avoid potential use-after-free in hci_error_reset
+      (CVE-2024-26801)
     - Bluetooth: hci_event: Fix handling of HCI_EV_IO_CAPA_REQUEST (regression
-      in 4.19.297)
+      in 4.19.297) (CVE-2024-27416)
     - Bluetooth: Enforce validation on max value of connection interval
       (regression in 4.19.76)
-    - efi/capsule-loader: fix incorrect allocation size
+    - efi/capsule-loader: fix incorrect allocation size (CVE-2024-27413)
+    - power: supply: bq27xxx-i2c: Do not free non existing IRQ (CVE-2024-27412)
     - gtp: fix use-after-free and null-ptr-deref in gtp_newlink()
-    - wifi: nl80211: reject iftype change with mesh ID change
-    - btrfs: dev-replace: properly validate device names
+      (CVE-2024-26793)
+    - wifi: nl80211: reject iftype change with mesh ID change (CVE-2024-27410)
+    - btrfs: dev-replace: properly validate device names (CVE-2024-26791)
     - mmc: core: Fix eMMC initialization with 1-bit bus connection
-    - cachefiles: fix memory leak in cachefiles_add_cache()
+    - cachefiles: fix memory leak in cachefiles_add_cache() (CVE-2024-26840)
 
   [ Ben Hutchings ]
   * Bump ABI to 27
