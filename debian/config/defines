@@ -164,6 +164,10 @@ initramfs-generators: initramfs-tools initramfs-fallback
 breaks: fwupdate (<< 12-7), wireless-regdb (<< 2019.06.03-1~)
 recommends: apparmor
 
+[packages]
+libc-dev: false
+tools-unversioned: false
+
 [relations]
 # compilers
 gcc-10: gcc-10 <!stage1 !cross !pkg.linux.nokernel>, gcc-10-@gnu-type-package@ <!stage1 cross !pkg.linux.nokernel>
