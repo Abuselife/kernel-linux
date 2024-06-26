@@ -1,9 +1,9 @@
-From 09d6df4cd7bb30b5ebe0dff908a97f8fbd65d870 Mon Sep 17 00:00:00 2001
+From ea6afcd000de9ea9cd3dc0475ce60635b5ef8e32 Mon Sep 17 00:00:00 2001
 From: Thomas Gleixner <tglx@linutronix.de>
 Date: Thu, 25 Aug 2022 16:17:37 +0200
 Subject: [PATCH 06/64] net: Remove the obsolte u64_stats_fetch_*_irq() users
  (net).
-Origin: https://www.kernel.org/pub/linux/kernel/projects/rt/6.1/older/patches-6.1.82-rt27.tar.xz
+Origin: https://www.kernel.org/pub/linux/kernel/projects/rt/6.1/older/patches-6.1.90-rt30.tar.xz
 
 Now that the 32bit UP oddity is gone and 32bit uses always a sequence
 count, there is no need for the fetch_irq() variants anymore.
@@ -88,10 +88,10 @@ index 9ffd40b8270c..bc75fa1e4666 100644
  		u64_stats_add(&stats->rx_packets, rxpackets);
  		u64_stats_add(&stats->rx_bytes, rxbytes);
 diff --git a/net/core/dev.c b/net/core/dev.c
-index 60619fe8af5f..41226d92755b 100644
+index 65284eeec7de..015557786f8e 100644
 --- a/net/core/dev.c
 +++ b/net/core/dev.c
-@@ -10508,12 +10508,12 @@ void dev_fetch_sw_netstats(struct rtnl_link_stats64 *s,
+@@ -10511,12 +10511,12 @@ void dev_fetch_sw_netstats(struct rtnl_link_stats64 *s,
  
  		stats = per_cpu_ptr(netstats, cpu);
  		do {
@@ -327,10 +327,10 @@ index 17a1b731a76b..2be696513629 100644
  		seq_printf(seq, "%3X %8LX %8LX %8LX %16LX %16LX\n",
  			   i, (u64)conns, (u64)inpkts,
 diff --git a/net/netfilter/nf_tables_api.c b/net/netfilter/nf_tables_api.c
-index d3ba947f4376..0e20aa179fc6 100644
+index 1c4b7a8ec2cc..70404fe2d0d6 100644
 --- a/net/netfilter/nf_tables_api.c
 +++ b/net/netfilter/nf_tables_api.c
-@@ -1695,10 +1695,10 @@ static int nft_dump_stats(struct sk_buff *skb, struct nft_stats __percpu *stats)
+@@ -1713,10 +1713,10 @@ static int nft_dump_stats(struct sk_buff *skb, struct nft_stats __percpu *stats)
  	for_each_possible_cpu(cpu) {
  		cpu_stats = per_cpu_ptr(stats, cpu);
  		do {
