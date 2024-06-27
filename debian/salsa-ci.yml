@@ -64,6 +64,7 @@ extract-source:
         quilt \
         rsync
 
+    - source=$(dpkg-parsechangelog -SSource)
     - version=$(dpkg-parsechangelog -SVersion)
     - upstream_version=$(echo $version | sed 's/-[^-]*$//')
 
@@ -71,8 +72,8 @@ extract-source:
     # tarball fom the archive if available or run uscan if not, but
     # uscan is currently excessively slow for us (bug #1003251).
     - |
-      if [ -f ../orig/linux_${upstream_version}.orig.tar.xz ]; then
-          ln -s orig/linux_${upstream_version}.orig.tar.xz ..
+      if [ -f ../orig/${source}_${upstream_version}.orig.tar.xz ]; then
+          ln -s orig/${source}_${upstream_version}.orig.tar.xz ..
       else
           debian/bin/genorig.py https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git
       fi
@@ -101,8 +102,8 @@ extract-source:
     # Put packed source in artifacts
     - dpkg-buildpackage -uc -us -S -sa -d
     - mkdir -p ${WORKING_DIR}
-    - cp ../orig/linux_${upstream_version}.orig.tar.xz ${WORKING_DIR}
-    - mv ../linux_${version}.dsc ../linux_${version}.debian.tar.xz ${WORKING_DIR}
+    - cp ../orig/${source}_${upstream_version}.orig.tar.xz ${WORKING_DIR}
+    - mv ../${source}_${version}.dsc ../${source}_${version}.debian.tar.xz ${WORKING_DIR}
 
     # Move cache back to where GitLab wants it.  Only include
     # tarballs, not unpacked source.
@@ -264,12 +265,12 @@ sign-code:
     # Sign the code and build a source package
     - |
       "$kernel_team_dir"/scripts/debian-test-sign \
-        ${WORKING_DIR}/linux_*_${BUILD_ARCH}.changes \
+        ${WORKING_DIR}/linux*_${BUILD_ARCH}.changes \
         debian/certs/ci-test-sign/ci-test-sign-key.pem \
         debian/certs/ci-test-sign/ci-test-sign.pem
   artifacts:
     paths:
-      - ${WORKING_DIR}/linux-signed-${BUILD_ARCH}_*
+      - ${WORKING_DIR}/linux-signed*-${BUILD_ARCH}_*
   needs:
     - job: build
       artifacts: true
@@ -294,7 +295,7 @@ build-signed:
       apt-get update && eatmydata apt-get install --no-install-recommends -y \
         dpkg-dev
     - |
-      dpkg-source -x ${WORKING_DIR}/linux-signed-${BUILD_ARCH}_*.dsc \
+      dpkg-source -x ${WORKING_DIR}/linux-signed*-${BUILD_ARCH}_*.dsc \
         ${WORKING_DIR}/${SOURCE_DIR}
 
     # Install build-dependencies produced by build job
@@ -313,7 +314,7 @@ build-signed:
     # packages, and (for piuparts) the versioned dependencies produced
     # by the build job
     paths:
-      - ${WORKING_DIR}/linux-signed-${BUILD_ARCH}_*
+      - ${WORKING_DIR}/linux-signed*-${BUILD_ARCH}_*
       - ${WORKING_DIR}/linux-headers-*_${BUILD_ARCH}.deb
       - ${WORKING_DIR}/linux-headers-*-common_*_all.deb
       - ${WORKING_DIR}/linux-image-*_${BUILD_ARCH}.deb
