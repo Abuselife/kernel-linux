@@ -5,6 +5,7 @@ linux-6.1 (6.1.94-1~deb11u1) UNRELEASED; urgency=medium
     - Disable building installer udebs and remove build-dependency on
       kernel-wedge
     - Disable building linux-compiler-gcc-10-*
+    - d/salsa-ci.yml: Set RELEASE to bullseye
 
  -- Ben Hutchings <benh@debian.org>  Thu, 27 Jun 2024 01:41:54 +0200
 
