@@ -1,4 +1,4 @@
-linux (6.1.95-1) UNRELEASED; urgency=medium
+linux (6.1.96-1) UNRELEASED; urgency=medium
 
   * New upstream stable update:
     https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.1.95
@@ -235,6 +235,139 @@ linux (6.1.95-1) UNRELEASED; urgency=medium
     - i2c: at91: Fix the functionality flags of the slave-only interface
     - i2c: designware: Fix the functionality flags of the slave-only interface
     - zap_pid_ns_processes: clear TIF_NOTIFY_SIGNAL along with TIF_SIGPENDING
+    https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.1.96
+    - padata: Disable BH when taking works lock on MT path
+    - io_uring/sqpoll: work around a potential audit memory leak
+    - block/ioctl: prefer different overflow check
+    - batman-adv: bypass empty buckets in batadv_purge_orig_ref()
+    - wifi: ath9k: work around memset overflow warning
+    - af_packet: avoid a false positive warning in packet_setsockopt()
+    - drop_monitor: replace spin_lock by raw_spin_lock
+    - scsi: qedi: Fix crash while reading debugfs attribute
+    - net/sched: fix false lockdep warning on qdisc root lock
+    - net: dsa: realtek: keep default LED state in rtl8366rb
+    - netpoll: Fix race condition in netpoll_owner_active
+    - wifi: mt76: mt7921s: fix potential hung tasks during chip recovery
+    - HID: Add quirk for Logitech Casa touchpad
+    - HID: asus: fix more n-key report descriptors if n-key quirked
+    - Bluetooth: ath3k: Fix multiple issues reported by checkpatch.pl
+    - drm/amd/display: Exit idle optimizations before HDCP execution
+    - [x86] platform/x86: toshiba_acpi: Add quirk for buttons on Z830
+    - [x86] ASoC: Intel: sof_sdw: add JD2 quirk for HP Omen 14
+    - [arm64,armhf] drm/lima: add mask irq callback to gp and pp
+    - [arm64,armhf] drm/lima: mask irqs in timeout path before hard reset
+    - ALSA: hda/realtek: Add quirks for Lenovo 13X
+    - [powerpc*] pseries: Enforce hcall result buffer validity and size
+    - [powerpc*] io: Avoid clang null pointer arithmetic warnings
+    - [x86] platform/x86: p2sb: Don't init until unassigned resources have been
+      assigned
+    - power: supply: cros_usbpd: provide ID table for avoiding fallback match
+    - [arm64] iommu/arm-smmu-v3: Free MSIs in case of ENOMEM
+    - f2fs: remove clear SB_INLINECRYPT flag in default_options
+    - usb: misc: uss720: check for incompatible versions of the Belkin F5U002
+    - [arm64] usb: dwc3: pci: Don't set "linux,phy_charger_detect" property on
+      Lenovo Yoga Tab2 1380
+    - udf: udftime: prevent overflow in udf_disk_stamp_to_time()
+    - PCI/PM: Avoid D3cold for HP Pavilion 17 PC/1972 PCIe Ports
+    - [arm64,armhf] serial: imx: Introduce timeout when waiting on transmitter
+      empty
+    - serial: exar: adding missing CTI and Exar PCI ids
+    - usb: gadget: function: Remove usage of the deprecated ida_simple_xx() API
+    - tty: add the option to have a tty reject a new ldisc
+    - tracing: Build event generation tests only as modules
+    - ALSA: hda/realtek: Remove Framework Laptop 16 from quirks
+    - ALSA/hda: intel-dsp-config: Document AVS as dsp_driver option
+    - ice: move RDMA init to ice_idc.c
+    - ice: avoid IRQ collision to fix init failure on ACPI S3 resume
+    - cipso: fix total option length computation
+    - bpf: Avoid splat in pskb_pull_reason
+    - ALSA: hda/realtek: Enable headset mic on IdeaPad 330-17IKB 81DM
+    - netrom: Fix a memory leak in nr_heartbeat_expiry()
+    - ipv6: prevent possible NULL deref in fib6_nh_init()
+    - ipv6: prevent possible NULL dereference in rt6_probe()
+    - xfrm6: check ip6_dst_idev() return value in xfrm6_get_saddr()
+    - netns: Make get_net_ns() handle zero refcount net
+    - qca_spi: Make interrupt remembering atomic
+    - net: lan743x: disable WOL upon resume to restore full data path operation
+    - net: lan743x: Support WOL at both the PHY and MAC appropriately
+    - net: phy: mxl-gpy: enhance delay time required by loopback disable
+      function
+    - net: phy: mxl-gpy: Remove interrupt mask clearing from config_init
+    - net/sched: act_api: rely on rcu in tcf_idr_check_alloc
+    - net/sched: act_api: fix possible infinite loop in tcf_idr_check_alloc()
+    - tipc: force a dst refcount before doing decryption
+    - sched: act_ct: add netns into the key of tcf_ct_flow_table
+    - ptp: fix integer overflow in max_vclocks_store
+    - net: stmmac: No need to calculate speed divider when offload is disabled
+    - virtio_net: checksum offloading handling fix
+    - octeontx2-pf: Add error handling to VLAN unoffload handling
+    - netfilter: ipset: Fix suspicious rcu_dereference_protected()
+    - seg6: fix parameter passing when calling NF_HOOK() in End.DX4 and End.DX6
+      behaviors
+    - ice: Fix VSI list rule with ICE_SW_LKUP_LAST type
+    - bnxt_en: Restore PTP tx_avail count in case of skb_pad() error
+    - net: usb: rtl8150 fix unintiatilzed variables in
+      rtl8150_get_link_ksettings
+    - regulator: core: Fix modpost error "regulator_get_regmap" undefined
+    - dmaengine: idxd: Fix possible Use-After-Free in irq_process_work_list
+    - dmaengine: ioat: Drop redundant pci_enable_pcie_error_reporting()
+    - dmaengine: ioatdma: Fix leaking on version mismatch
+    - dmaengine: ioat: use PCI core macros for PCIe Capability
+    - dmaengine: ioatdma: Fix error path in ioat3_dma_probe()
+    - dmaengine: ioatdma: Fix kmemleak in ioat_pci_probe()
+    - dmaengine: ioatdma: Fix missing kmem_cache_destroy()
+    - regulator: bd71815: fix ramp values
+    - [arm64] dts: imx93-11x11-evk: Remove the 'no-sdio' property
+    - [arm64] dts: freescale: imx8mm-verdin: enable hysteresis on slow input pin
+    - ACPICA: Revert "ACPICA: avoid Info: mapping multiple BARs. Your kernel is
+      fine."
+    - firmware: psci: Fix return value from psci_system_suspend()
+    - RDMA/mlx5: Add check for srq max_sge attribute
+    - net: stmmac: Assign configured channel value to EXTTS event
+    - net: usb: ax88179_178a: improve reset check
+    - net: do not leave a dangling sk pointer, when socket creation fails
+    - btrfs: retry block group reclaim without infinite loop
+    - cifs: fix typo in module parameter enable_gcm_256
+    - KVM: Fix a data race on last_boosted_vcpu in kvm_vcpu_on_spin()
+    - [arm64] KVM: arm64: Disassociate vcpus from redistributor region on
+      teardown
+    - [x86] KVM: x86: Always sync PIR to IRR prior to scanning I/O APIC routes
+    - ALSA: hda/realtek: fix mute/micmute LEDs don't work for ProBook 445/465
+      G11.
+    - ALSA: hda/realtek: Limit mic boost on N14AP7
+    - drm/i915/mso: using joiner is not possible with eDP MSO
+    - drm/radeon: fix UBSAN warning in kv_dpm.c
+    - drm/amdgpu: fix UBSAN warning in kv_dpm.c
+    - gcov: add support for GCC 14
+    - kcov: don't lose track of remote references during softirqs
+    - mm: mmap: allow for the maximum number of bits for randomizing mmap_base
+      by default
+    - tcp: clear tp->retrans_stamp in tcp_rcv_fastopen_synack()
+    - mm/page_table_check: fix crash on ZONE_DEVICE
+    - i2c: ocores: set IACK bit after core is enabled
+    - dt-bindings: i2c: google,cros-ec-i2c-tunnel: correct path to
+      i2c-controller schema
+    - [armhf] spi: stm32: qspi: Fix dual flash mode sanity test in
+      stm32_qspi_setup()
+    - [arm64] dts: imx8qm-mek: fix gpio number for reg_usdhc2_vmmc
+    - [armhf] spi: stm32: qspi: Clamp stm32_qspi_get_mode() output to
+      CCR_BUSWIDTH_4
+    - perf: script: add raw|disasm arguments to --insn-trace option
+    - perf script: Show also errors for --insn-trace option
+    - [armhf] dts: samsung: smdkv310: fix keypad no-autorepeat
+    - [armhf] dts: samsung: exynos4412-origen: fix keypad no-autorepeat
+    - [armhf] dts: samsung: smdk4412: fix keypad no-autorepeat
+    - pmdomain: ti-sci: Fix duplicate PD referrals
+    - tracing: Add MODULE_DESCRIPTION() to preemptirq_delay_test
+    - [x86] cpu/vfm: Add new macros to work with (vendor/family/model) values
+    - [x86] cpu: Fix x86_match_cpu() to match just X86_VENDOR_INTEL
+    - Revert "kheaders: substituting --sort in archive creation"
+    - kheaders: explicitly define file modes for archived headers
+    - drm/amd/display: revert Exit idle optimizations before HDCP execution
+    - net/sched: unregister lockdep keys in qdisc_create/qdisc_alloc error path
+    - hid: asus: asus_report_fixup: fix potential read out of bounds
+    - Revert "mm: mmap: allow for the maximum number of bits for randomizing
+      mmap_base by default"
 
   [ Salvatore Bonaccorso ]
   * [rt] Drop "drm/i915/gt: Queue and wait for the irq_work item."
