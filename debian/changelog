@@ -373,6 +373,7 @@ linux (6.1.96-1) UNRELEASED; urgency=medium
   * [rt] Drop "drm/i915/gt: Queue and wait for the irq_work item."
   *  Bump ABI to 23
   * Drop now unknown config options for DRM_VMWGFX_FBCON
+  * Refresh "firmware: Remove redundant log messages from drivers"
 
  -- Salvatore Bonaccorso <carnil@debian.org>  Sat, 22 Jun 2024 10:55:52 +0200
 
