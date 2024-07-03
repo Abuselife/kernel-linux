@@ -1,8 +1,8 @@
-linux (6.9.7-1~bpo12+1) UNRELEASED; urgency=medium
+linux (6.9.7-1~bpo12+1) bookworm-backports; urgency=medium
 
   * Rebuild for bookworm-backports
 
- -- Ben Hutchings <benh@debian.org>  Wed, 03 Jul 2024 19:47:36 +0200
+ -- Ben Hutchings <benh@debian.org>  Thu, 04 Jul 2024 01:33:37 +0200
 
 linux (6.9.7-1) unstable; urgency=medium
 
