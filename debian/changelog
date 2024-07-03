@@ -1,3 +1,163 @@
+linux (6.9.7-1~bpo12+1) UNRELEASED; urgency=medium
+
+  * Rebuild for bookworm-backports
+
+ -- Ben Hutchings <benh@debian.org>  Wed, 03 Jul 2024 19:47:36 +0200
+
+linux (6.9.7-1) unstable; urgency=medium
+
+  * New upstream stable update:
+    https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.9.3
+    https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.9.4
+    https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.9.5
+    https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.9.6
+    - [x86] cpu: Provide default cache line size if not enumerated
+      (Closes: #1071378)
+    - NFS: add barriers when testing for NFS_FSDATA_BLOCKED (Closes: #1071501)
+    https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.9.7
+
+  [ Salvatore Bonaccorso ]
+  * [x86] Refresh "intel-iommu: Add option to exclude integrated GPU only"
+  * [x86] Refresh "intel-iommu: Add Kconfig option to exclude iGPU by default"
+  * [rt] Drop "drm/i915/gt: Queue and wait for the irq_work item."
+  * [arm64] Disable RELR.
+    Temporarily disable RELR relocation packing to workaround failing boots
+    on arm64 with recent binutils/2.42.50.20240618-1, cf. #1074111.
+  * lib/python/debian_linux: Fix two E201/E202 whitespace errors
+  * Drop "sched: Do not enable autogrouping by default" patch (Closes: #1070083)
+  * [rt] init: Disable SCHED_AUTOGROUP on RT configurations
+
+  [ Aurelien Jarno ]
+  * [riscv64] crypto: enable CRYPTO_AES_RISCV64, CRYPTO_CHACHA_RISCV64,
+    CRYPTO_GHASH_RISCV64, CRYPTO_SHA256_RISCV64, CRYPTO_SHA512_RISCV64 as
+    modules.
+  * [riscv64] Improve Microchip Polarfire support: enable
+    POLARFIRE_SOC_AUTO_UPDATE and USB_MUSB_POLARFIRE_SOC as modules.
+  * [riscv64] Improve T-Head TH1520 support: enable MMC_SDHCI_OF_DWCMSHC as
+    module.
+  * [riscv64] Improve VisionFive 2 support: enable SND_DESIGNWARE_I2S,
+    SND_SIMPLE_CARD and SND_SOC_JH7110_PWMDAC as modules.
+  * [riscv64] Improve JH7110 support: enable STARFIVE_STARLINK_PMU as module.
+
+  [ Vincent Blut ]
+  * [amd64] drivers/tee: Enable TEE as module (Closes: #1063161)
+
+ -- Salvatore Bonaccorso <carnil@debian.org>  Thu, 27 Jun 2024 20:37:47 +0200
+
+linux (6.9.2-1~exp1) experimental; urgency=medium
+
+  * New upstream release: https://kernelnewbies.org/Linux_6.9
+  * New upstream stable update:
+    https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.9.1
+    https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.9.2
+
+  [ Johannes Schauer Marin Rodrigues ]
+  * New target in debian/rules: "clean-generated" cleans up all auto-generated
+    files inside the ./debian directory
+
+  [ Diederik de Haas ]
+  * [arm64,riscv64] drivers/leds/rgb: Enable LEDS_GROUP_MULTICOLOR as module
+  * [arm64] drivers/leds/rgb: Enable LEDS_PWM_MULTICOLOR as module
+  * [arm*,riscv64] drivers/pps/clients: Enable PPS_CLIENT_GPIO as module
+  * Update to 6.9.2:
+    - Drop patches:
+      - "ntfs: mark it as broken"; ntfs driver removed upstream
+    - Drop patches applied upstream:
+      - "ARM64: Dynamically allocate cpumasks and increase supported CPUs to
+        512"
+      - "tipc: fix UAF in error path"
+      - "tipc: fix a possible memleak in tipc_buf_append"
+    - Refresh patches:
+      - Adjust context in "video: Remove nvidiafb and rivafb"
+      - Adjust context in "Export symbols needed by Android drivers"
+      - Adjust context in "Documentation: Drop sphinx version check"
+      - Adjust context in "firmware_class: Log every success and failure
+        against given device"
+      - Adjust context in "firmware: Remove redundant log messages from drivers"
+      - Adjust context in "af_802154: Disable auto-loading as mitigation
+        against local exploits"
+      - Adjust context in "intel-iommu: Add Kconfig option to exclude iGPU by
+        default"
+      - Adjust context in "x86: Make x32 syscall support conditional on a
+        kernel parameter"
+      - Adjust context in "efi: Lock down the kernel if booted in secure boot
+        mode"
+      - Adjust context in "Revert 'perf build: Fix libunwind feature detection
+        on 32-bit x86'"
+  * tools/rtla: Restore option to set VERSION var to VERSION file's contents
+  * d/rules.d: rtla: Update Makefile for upstream restructuring
+  * d/config: Update with the help of kconfigeditor2:
+    - [x86] arch/x86: Rename RETPOLINE to MITIGATION_RETPOLINE
+    - [amd64] arch/x86: Rename SLS to MITIGATION_SLS
+    - [x86] drivers/acpi: Remove ACPI_CUSTOM_METHOD
+    - drivers/mtd/maps: Remove MTD_INTEL_VR_NOR
+    - drivers/staging/board: Remove STAGING_BOARD
+    - fs/ntfs: Remove NTFS_FS
+    - lib/Kconfig.debug: Rename TEST_STRING_HELPERS to STRING_HELPERS_KUNIT_TEST
+    - net/bluetooth: Remove BT_HS
+    - net/ipv4/netfilter: Remove IP_NF_ARPTABLES
+    - net/sched: Remove NET_ACT_IPT
+  * [rt] Update to 6.9-rt5
+  * [rt] pinctrl: renesas: rzg2l: use spin_{lock,unlock}_irq{save,restore}
+
+  [ Ben Hutchings ]
+  * d/signing_templates/rules.real: Consistently define REAL_VERSION variable
+  * d/signing_templates: Define BUILD_DIR and STAMPS_DIR, and clean those dirs
+  * d/signing_templates/rules.real: Use an intermediate install directory
+  * Revert "Revert "Run dh_movetousr also in signed images."", as this now
+    works
+  * firmware_loader: Remove most Debian-specific logging changes
+    (Closes: #1040738):
+    - Revert "firmware_class: Refer to Debian wiki page when logging missing
+      firmware"
+    - Revert "firmware: Remove redundant log messages from drivers"
+    - Revert "firmware_class: Log every success and failure against given
+      device" (Closes: #857198, #966218)
+    - firmware_loader: Log direct loading failures as info for d-i
+  * d/rules.d/tools/tracing/rtla: Delete redundant sed command
+
+  [ Macpaul Lin ]
+  * [arm64] Enable support for various MediaTek SoCs:
+    - Enable COMMON_CLK_MT8188 and related clocks, COMMON_CLK_MT8365 and
+      related clocks, and COMMON_CLK_MT8195_IPESYS as modules
+    - Enable pin controllers for MT2712, MT6765, MT6779, MT6795, MT6797,
+      MT7622, MT7981, MT7986, MT8167, MT8186, MT8188, MT8192, MT8365,
+      MT8516, MT6397
+    - Enable REGULATOR_MT6357, REGULATOR_MT6360 as modules
+    - Enable CHARGER_MT6360 and TYPEC_MT6360 as modules
+    - Enable REALTEK_PHY, DWMAC_MEDIATEK as modules
+    - Enable MTK_DEVAPC as a module
+
+  [ Alper Nebi Yasak ]
+  * [arm64] Merge and document MediaTek-related changes by Macpaul Lin:
+    - Resolve conflicts with merge requests merged earlier
+    - Clean up config with the help of kconfigeditor2
+    - Change COMMON_CLK_MT8188, COMMON_CLK_MT8365 to be modules
+  * [arm64] Enable more clock drivers for various MediaTek SoCs:
+    - Enable COMMON_CLK_MT2712, COMMON_CLK_MT6779, COMMON_CLK_MT6795,
+      COMMON_CLK_MT7622, COMMON_CLK_MT7986, COMMON_CLK_MT8167,
+      COMMON_CLK_MT8186, COMMON_CLK_MT8192, COMMON_CLK_MT8516,
+      and all their related clocks as modules
+    - Enable COMMON_CLK_MT6765, COMMON_CLK_MT6797, COMMON_CLK_MT7981 as
+      built-in (no module choice) and enable all their related clocks as
+      modules
+
+  [ Vincent Blut ]
+  * [x86] drivers/pinctrl/intel: Enable PINCTRL_METEORLAKE and
+    PINCTRL_METEORPOINT as modules (Closes: #1071551)
+
+  [ Aurelien Jarno ]
+  * [riscv64] Improve support for StarFive VisionFive 2:
+    - Enable SIFIVE_CCACHE
+    - Enable USB_CDNS_SUPPORT, USB_CDNS3, USB_CDNS3_STARFIVE as modules and
+      enable CDNS3_GADGET and CDNS3_HOST options
+    - Enable USB_GADGET as module
+
+  [ Sebastian Andrzej Siewior ]
+  * linux-image: postrm: Remove modules.weakdep on purge.
+
+ -- Ben Hutchings <benh@debian.org>  Wed, 19 Jun 2024 15:34:34 +0200
+
 linux (6.8.12-1~bpo12+1) bookworm-backports; urgency=medium
 
   * Rebuild for bookworm-backports
