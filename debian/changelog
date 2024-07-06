@@ -496,6 +496,8 @@ linux (6.1.97-1) UNRELEASED; urgency=medium
   *  Bump ABI to 23
   * Drop now unknown config options for DRM_VMWGFX_FBCON
   * Refresh "firmware: Remove redundant log messages from drivers"
+  * d/rules.real: Revert workaround to explicitly remove executable bits from
+    dtb files (implemented upstream)
 
  -- Salvatore Bonaccorso <carnil@debian.org>  Sat, 22 Jun 2024 10:55:52 +0200
 
