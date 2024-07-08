@@ -1,4 +1,4 @@
-linux (6.1.96-1) UNRELEASED; urgency=medium
+linux (6.1.97-1) UNRELEASED; urgency=medium
 
   * New upstream stable update:
     https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.1.95
@@ -368,6 +368,128 @@ linux (6.1.96-1) UNRELEASED; urgency=medium
     - hid: asus: asus_report_fixup: fix potential read out of bounds
     - Revert "mm: mmap: allow for the maximum number of bits for randomizing
       mmap_base by default"
+    https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.1.97
+    - usb: typec: ucsi: Never send a lone connector change ack
+    - usb: typec: ucsi: Ack also failed Get Error commands
+    - [x86] ACPI: x86: utils: Add Picasso to the list for forcing
+      StorageD3Enable
+    - [x86] ACPI: x86: Force StorageD3Enable on more products
+    - Input: ili210x - fix ili251x_read_touch_data() return value
+    - pinctrl: fix deadlock in create_pinctrl() when handling -EPROBE_DEFER
+    - [arm64,armhf] pinctrl: rockchip: fix pinmux bits for RK3328 GPIO2-B pins
+    - [arm64,armhf] pinctrl: rockchip: fix pinmux bits for RK3328 GPIO3-B pins
+    - [arm64,armhf] pinctrl: rockchip: use dedicated pinctrl type for RK3328
+    - [arm64,armhf] pinctrl: rockchip: fix pinmux reset in rockchip_pmx_set
+    - [mips*] pci: lantiq: restore reset gpio polarity
+    - dt-bindings: i2c: Drop unneeded quotes
+    - dt-bindings: i2c: atmel,at91sam: correct path to i2c-controller schema
+    - netfilter: nf_tables: use timestamp to check for set element timeout
+      (CVE-2024-27397)
+    - [arm64] ASoC: rockchip: i2s-tdm: Fix trcm mode by setting clock on right
+      mclk
+    - [s390x] pci: Add missing virt_to_phys() for directed DIBV
+    - ASoC: amd: acp: remove i2s configuration check in acp_i2s_probe()
+    - [arm64] ASoC: fsl-asoc-card: set priv->pdev before using it
+    - net: dsa: microchip: fix initial port flush problem
+    - bpf: Fix overrunning reservations in ringbuf
+    - ibmvnic: Free any outstanding tx skbs during scrq reset
+    - net: phy: micrel: add Microchip KSZ 9477 to the device table
+    - net: dsa: microchip: use collision based back pressure mode
+    - xdp: Remove WARN() from __xdp_reg_mem_model()
+    - Fix race for duplicate reqsk on identical SYN
+    - net: dsa: microchip: fix wrong register write when masking interrupt
+    - [powerpc*] restore some missing spu syscalls
+    - tcp: fix tcp_rcv_fastopen_synack() to enter TCP_CA_Loss for failed TFO
+    - netfilter: nf_tables: fully validate NFT_DATA_VALUE on store to data
+      registers
+    - bpf: Take return from set_memory_ro() into account with bpf_prog_lock_ro()
+    - [x86] fpu: Fix AMD X86_BUG_FXSAVE_LEAK fixup
+    - mtd: partitions: redboot: Added conversion of operands to a larger type
+    - wifi: ieee80211: check for NULL in ieee80211_mle_size_ok()
+    - bpf: Add a check for struct bpf_fib_lookup size
+    - bpf: Mark bpf prog stack with kmsan_unposion_memory in interpreter mode
+    - RDMA/restrack: Fix potential invalid address access
+    - net/iucv: Avoid explicit cpumask var allocation on stack
+    - net/dpaa2: Avoid explicit cpumask var allocation on stack
+    - crypto: ecdh - explicitly zeroize private_key
+    - ALSA: emux: improve patch ioctl data validation
+    - media: dvbdev: Initialize sbuf
+    - soc: ti: wkup_m3_ipc: Send NULL dummy message instead of pointer message
+    - drm/radeon/radeon_display: Decrease the size of allocated memory
+    - nvme: fixup comment for nvme RDMA Provider Type
+    - drm/panel: simple: Add missing display timing flags for KOE TX26D202VM0BWA
+    - [arm64] gpio: davinci: Validate the obtained number of IRQs
+    - drm/amd/amdgpu: Fix style errors in amdgpu_drv.c & amdgpu_device.c
+    - drm/amdgpu: Fix pci state save during mode-1 reset
+    - gpiolib: cdev: Disallow reconfiguration without direction (uAPI v1)
+    - randomize_kstack: Remove non-functional per-arch entropy filtering
+    - ima: Fix use-after-free on a dentry's dname.name
+    - [x86] stop playing stack games in profile_pc()
+    - Revert "MIPS: pci: lantiq: restore reset gpio polarity"
+    - [arm64] pinctrl: qcom: spmi-gpio: drop broken pm8008 support
+    - ocfs2: fix DIO failure due to insufficient transaction credits
+    - nfs: drop the incorrect assertion in nfs_swap_rw()
+    - mmc: sdhci-brcmstb: check R1_STATUS for erase/trim/discard
+    - mmc: sdhci-pci: Convert PCIBIOS_* return codes to errnos
+    - mmc: sdhci: Do not invert write-protect twice
+    - mmc: sdhci: Do not lock spinlock around mmc_gpio_get_ro()
+    - iio: xilinx-ams: Don't include ams_ctrl_channels in scan_mask
+    - counter: ti-eqep: enable clock at probe
+    - i2c: testunit: don't erase registers after STOP
+    - i2c: testunit: discard write requests while old command is running
+    - iio: adc: ad7266: Fix variable checking bug
+    - iio: accel: fxls8962af: select IIO_BUFFER & IIO_KFIFO_BUF
+    - net: usb: ax88179_178a: improve link status logs
+    - usb: gadget: printer: SS+ support
+    - usb: gadget: printer: fix races against disable (CVE-2024-25741)
+    - usb: musb: da8xx: fix a resource leak in probe()
+    - usb: atm: cxacru: fix endpoint checking in cxacru_bind()
+    - usb: dwc3: core: remove lock of otg mode during gadget suspend/resume to
+      avoid deadlock
+    - usb: gadget: aspeed_udc: fix device address configuration
+    - usb: ucsi: stm32: fix command completion handling
+    - serial: 8250_omap: Implementation of Errata i2310
+    - serial: imx: set receiver level before starting uart
+    - ALSA: hda/realtek: fix mute/micmute LEDs don't work for EliteBook 645/665
+      G11.
+    - tty: mcf: MCF54418 has 10 UARTS
+    - net: can: j1939: Initialize unused data in j1939_send_one()
+    - net: can: j1939: recover socket queue on CAN bus error during BAM
+      transmission
+    - net: can: j1939: enhanced error handling for tightly received RTS messages
+      in xtp_rx_rts_session_new
+    - cpufreq: intel_pstate: Use HWP to initialize ITMT if CPPC is missing
+    - cpu/hotplug: Fix dynstate assignment in __cpuhp_setup_state_cpuslocked()
+    - irqchip/loongson-liointc: Set different ISRs for different cores
+    - kbuild: Install dtb files as 0644 in Makefile.dtbinst
+    - btrfs: zoned: fix initial free space detection
+    - csky, hexagon: fix broken sys_sync_file_range
+    - drm/nouveau/dispnv04: fix null pointer dereference in nv17_tv_get_ld_modes
+    - drm/amdgpu: avoid using null object of framebuffer
+    - [x86] drm/i915/gt: Fix potential UAF by revoke of fence registers
+    - drm/nouveau/dispnv04: fix null pointer dereference in nv17_tv_get_hd_modes
+    - drm/amdgpu/atomfirmware: fix parsing of vram_info
+    - batman-adv: Don't accept TT entries for out-of-spec VIDs
+    - can: mcp251xfd: fix infinite loop when xmit fails
+    - ata: ahci: Clean up sysfs file on error
+    - ata: libata-core: Fix double free on error
+    - ftruncate: pass a signed offset
+    - syscalls: fix compat_sys_io_pgetevents_time64 usage
+    - syscalls: fix sys_fanotify_mark prototype
+    - Revert "cpufreq: amd-pstate: Fix the inconsistency in max frequency units"
+    - mm/page_alloc: Separate THP PCP into movable and non-movable categories
+    - gfs2: Fix slab-use-after-free in gfs2_qd_dealloc (CVE-2023-52760)
+    - efi: memmap: Move manipulation routines into x86 arch tree
+    - efi: xen: Set EFI_PARAVIRT for Xen dom0 boot on all architectures
+    - [x86] efi/x86: Free EFI memory map only when installing a new one.
+    - [arm64] dts: rockchip: Fix SD NAND and eMMC init on rk3308-rock-pi-s
+    - [arm64] dts: rockchip: Rename LED related pinctrl nodes on
+      rk3308-rock-pi-s
+    - [arm64] dts: rockchip: fix PMIC interrupt pin on ROCK Pi E
+    - [arm64] dts: rockchip: Add sound-dai-cells for RK3368
+    - serial: imx: only set receiver level if it is zero
+    - serial: 8250_omap: Fix Errata i2310 with RX FIFO level check
+    - tracing/net_sched: NULL pointer dereference in perf_trace_qdisc_reset()
 
   [ Salvatore Bonaccorso ]
   * [rt] Drop "drm/i915/gt: Queue and wait for the irq_work item."
