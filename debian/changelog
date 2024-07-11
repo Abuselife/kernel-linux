@@ -1,4 +1,4 @@
-linux (6.1.97-1) UNRELEASED; urgency=medium
+linux (6.1.98-1) UNRELEASED; urgency=medium
 
   * New upstream stable update:
     https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.1.95
@@ -490,6 +490,110 @@ linux (6.1.97-1) UNRELEASED; urgency=medium
     - serial: imx: only set receiver level if it is zero
     - serial: 8250_omap: Fix Errata i2310 with RX FIFO level check
     - tracing/net_sched: NULL pointer dereference in perf_trace_qdisc_reset()
+    https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.1.98
+    - locking/mutex: Introduce devm_mutex_init()
+    - crypto: hisilicon/debugfs - Fix debugfs uninit process issue
+    - [arm64,armhf] drm/lima: fix shared irq handling on driver remove
+    - [powerpc*] Avoid nmi_enter/nmi_exit in real mode interrupt.
+    - media: dvb: as102-fe: Fix as10x_register_addr packing
+    - media: dvb-usb: dib0700_devices: Add missing release_firmware()
+    - IB/core: Implement a limit on UMAD receive List
+    - scsi: qedf: Make qedf_execute_tmf() non-preemptible
+    - crypto: aead,cipher - zeroize key buffer after use
+    - drm/amdgpu: Fix uninitialized variable warnings
+    - drm/amdgpu: Initialize timestamp for some legacy SOCs
+    - drm/amd/display: Check index msg_id before read or write
+    - drm/amd/display: Check pipe offset before setting vblank
+    - drm/amd/display: Skip finding free audio for unknown engine_id
+    - drm/amdgpu: fix uninitialized scalar variable warning
+    - media: dw2102: Don't translate i2c read into write
+    - sctp: prefer struct_size over open coded arithmetic
+    - firmware: dmi: Stop decoding on broken entry
+    - Input: ff-core - prefer struct_size over open coded arithmetic
+    - usb: xhci: prevent potential failure in handle_tx_event() for Transfer
+      events without TRB
+    - wifi: mt76: replace skb_put with skb_put_zero
+    - [arm64,armhf] net: dsa: mv88e6xxx: Correct check for empty list
+    - media: dvb-frontends: tda18271c2dd: Remove casting during div
+    - media: s2255: Use refcount_t instead of atomic_t for num_channels
+    - media: dvb-frontends: tda10048: Fix integer overflow
+    - i2c: i801: Annotate apanel_addr as __ro_after_init
+    - [powerpc*] 64: Set _IO_BASE to POISON_POINTER_DELTA not 0 for CONFIG_PCI=n
+    - orangefs: fix out-of-bounds fsid access
+    - kunit: Fix timeout message
+    - [powerpc*] xmon: Check cpu id in commands "c#", "dp#" and "dx#"
+    - igc: fix a log entry using uninitialized netdev
+    - bpf: Avoid uninitialized value in BPF_CORE_READ_BITFIELD
+    - f2fs: check validation of fault attrs in f2fs_build_fault_attr()
+    - scsi: mpi3mr: Sanitise num_phys
+    - serial: imx: Raise TX trigger level to 8
+    - jffs2: Fix potential illegal address access in jffs2_free_inode
+    - [s390x] pkey: Wipe sensitive data on failure
+    - btrfs: scrub: initialize ret in scrub_simple_mirror() to fix compilation
+      warning
+    - cdrom: rearrange last_media_change check to avoid unintentional overflow
+    - mac802154: fix time calculation in ieee802154_configure_durations()
+    - UPSTREAM: tcp: fix DSACK undo in fast recovery to call tcp_try_to_open()
+    - net/mlx5: E-switch, Create ingress ACL when needed
+    - net/mlx5e: Add mqprio_rl cleanup and free in mlx5e_priv_cleanup()
+    - tcp_metrics: validate source addr length
+    - [s390x] KVM: s390: fix LPSWEY handling
+    - e1000e: Fix S0ix residency on corporate systems
+    - net: allow skb_datagram_iter to be called from any context
+    - net: ntb_netdev: Move ntb_netdev_rx_handler() to call netif_rx() from
+      __netif_rx()
+    - wifi: wilc1000: fix ies_len type in connect path
+    - netfilter: nf_tables: unconditionally flush pending work before notifier
+    - bonding: Fix out-of-bounds read in bond_option_arp_ip_targets_set()
+      (CVE-2024-39487)
+    - inet_diag: Initialize pad field in struct inet_diag_req_v2
+    - [x86] platform/x86: toshiba_acpi: Fix quickstart quirk handling
+    - Revert "igc: fix a log entry using uninitialized netdev"
+    - nilfs2: fix inode number range checks
+    - nilfs2: add missing check for inode numbers on directory entries
+    - mm: optimize the redundant loop of mm_update_owner_next()
+    - mm: avoid overflows in dirty throttling logic
+    - btrfs: fix adding block group to a reclaim list and the unused list during
+      reclaim
+    - f2fs: Add inline to f2fs_build_fault_attr() stub
+    - scsi: mpi3mr: Use proper format specifier in mpi3mr_sas_port_add()
+    - Bluetooth: qca: Fix BT enable failure again for QCA6390 after warm reboot
+    - can: kvaser_usb: Explicitly initialize family in leafimx driver_info
+      struct
+    - fsnotify: Do not generate events for O_PATH file descriptors
+    - Revert "mm/writeback: fix possible divide-by-zero in wb_dirty_limits(),
+      again"
+    - drm/nouveau: fix null pointer dereference in nouveau_connector_get_modes
+    - drm/amdgpu/atomfirmware: silence UBSAN warning
+    - drm: panel-orientation-quirks: Add quirk for Valve Galileo
+    - [powerpc*] pseries: Fix scv instruction crash with kexec
+    - mtd: rawnand: Ensure ECC configuration is propagated to upper layers
+    - mtd: rawnand: Bypass a couple of sanity checks during NAND identification
+    - mtd: rawnand: rockchip: ensure NVDDR timings are rejected
+    - bnx2x: Fix multiple UBSAN array-index-out-of-bounds
+    - [arm64] dts: rockchip: Fix the DCDC_REG2 minimum voltage on Quartz64 Model
+      B
+    - ima: Avoid blocking in RCU read-side critical section
+    - media: dw2102: fix a potential buffer overflow
+    - clk: qcom: gcc-sm6350: Fix gpll6* & gpll7 parents
+    - clk: mediatek: clk-mtk: Register MFG notifier in mtk_clk_simple_probe()
+    - clk: mediatek: mt8183: Only enable runtime PM on mt8183-mfgcfg
+    - i2c: pnx: Fix potential deadlock warning from del_timer_sync() call in isr
+    - ALSA: hda/realtek: Enable headset mic of JP-IK LEAP W502 with ALC897
+    - nvme-multipath: find NUMA path only for online numa-node
+    - dma-mapping: benchmark: avoid needless copy_to_user if benchmark fails
+    - nvme: adjust multiples of NVME_CTRL_PAGE_SIZE in offset
+    - regmap-i2c: Subtract reg size from max_write
+    - [x86] platform/x86: touchscreen_dmi: Add info for GlobalSpace SolT IVW
+      11.6" tablet
+    - [x86] platform/x86: touchscreen_dmi: Add info for the EZpad 6s Pro
+    - nvmet: fix a possible leak when destroy a ctrl during qp establishment
+    - kbuild: fix short log for AS in link-vmlinux.sh
+    - nfc/nci: Add the inconsistency check between the input data length and
+      count
+    - spi: cadence: Ensure data lines set to low during dummy-cycle period
+    - null_blk: Do not allow runt zone with zone capacity smaller then zone size
+    - nilfs2: fix incorrect inode allocation from reserved inodes
 
   [ Salvatore Bonaccorso ]
   * [rt] Drop "drm/i915/gt: Queue and wait for the irq_work item."
