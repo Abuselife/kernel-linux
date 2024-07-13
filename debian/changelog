@@ -602,6 +602,7 @@ linux (6.1.98-1) UNRELEASED; urgency=medium
   * Refresh "firmware: Remove redundant log messages from drivers"
   * d/rules.real: Revert workaround to explicitly remove executable bits from
     dtb files (implemented upstream)
+  * [rt] Update to 6.1.96-rt35
 
  -- Salvatore Bonaccorso <carnil@debian.org>  Sat, 22 Jun 2024 10:55:52 +0200
 

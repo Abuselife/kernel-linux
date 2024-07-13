@@ -1,7 +1,7 @@
-From 90dbe996dbebff20b7ba637a2803e15c1a8df910 Mon Sep 17 00:00:00 2001
+From 68f466471afdb27c9e6fdb4816306a45e2736b07 Mon Sep 17 00:00:00 2001
 From: Clark Williams <clark.williams@gmail.com>
-Date: Tue, 27 Feb 2024 19:54:08 -0600
-Subject: [PATCH 62/64] Linux 6.1.79-rt25 REBASE
+Date: Tue, 2 Jul 2024 15:32:35 -0500
+Subject: [PATCH 64/64] Linux 6.1.96-rt35 REBASE
 Origin: https://www.kernel.org/pub/linux/kernel/projects/rt/6.1/older/patches-6.1.96-rt35.tar.xz
 
 Signed-off-by: Clark Williams <clark.williams@gmail.com>
@@ -10,12 +10,12 @@ Signed-off-by: Clark Williams <clark.williams@gmail.com>
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/localversion-rt b/localversion-rt
-index 9f7d0bdbffb1..c5b71f9a229d 100644
+index c5b71f9a229d..366440d74b77 100644
 --- a/localversion-rt
 +++ b/localversion-rt
 @@ -1 +1 @@
---rt13
-+-rt25
+--rt25
++-rt35
 -- 
 2.45.2
 
