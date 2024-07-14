@@ -1,4 +1,4 @@
-linux (6.1.98-1) UNRELEASED; urgency=medium
+linux (6.1.98-1) bookworm-security; urgency=high
 
   * New upstream stable update:
     https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.1.95
@@ -604,7 +604,7 @@ linux (6.1.98-1) UNRELEASED; urgency=medium
     dtb files (implemented upstream)
   * [rt] Update to 6.1.96-rt35
 
- -- Salvatore Bonaccorso <carnil@debian.org>  Sat, 22 Jun 2024 10:55:52 +0200
+ -- Salvatore Bonaccorso <carnil@debian.org>  Sun, 14 Jul 2024 09:22:50 +0200
 
 linux (6.1.94-1) bookworm; urgency=medium
 
