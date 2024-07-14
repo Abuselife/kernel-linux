@@ -1384,6 +1384,7 @@ linux (5.10.221-1) UNRELEASED; urgency=medium
   * Refresh "fanotify: Taint on use of FANOTIFY_ACCESS_PERMISSIONS"
   * [rt] Refresh "sunrpc: Make svc_xprt_do_enqueue() use"
   * Refresh "firmware: Remove redundant log messages from drivers"
+  * [rt] Update to 5.10.221-rt113
 
  -- Salvatore Bonaccorso <carnil@debian.org>  Thu, 20 Jun 2024 20:30:59 +0200
 
