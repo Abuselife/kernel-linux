@@ -1,4 +1,4 @@
-linux (5.10.221-1) UNRELEASED; urgency=medium
+linux (5.10.221-1) bullseye-security; urgency=high
 
   * New upstream stable update:
     https://www.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.10.219
@@ -1386,7 +1386,7 @@ linux (5.10.221-1) UNRELEASED; urgency=medium
   * Refresh "firmware: Remove redundant log messages from drivers"
   * [rt] Update to 5.10.221-rt113
 
- -- Salvatore Bonaccorso <carnil@debian.org>  Thu, 20 Jun 2024 20:30:59 +0200
+ -- Salvatore Bonaccorso <carnil@debian.org>  Sun, 14 Jul 2024 10:11:44 +0200
 
 linux (5.10.218-1) bullseye-security; urgency=high
 
