@@ -1,3 +1,12 @@
+linux (6.1.99-1) UNRELEASED; urgency=medium
+
+  * New upstream stable update:
+    https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.1.99
+    - Revert "usb: xhci: prevent potential failure in handle_tx_event() for
+      Transfer events without TRB"
+
+ -- Salvatore Bonaccorso <carnil@debian.org>  Mon, 15 Jul 2024 09:37:41 +0200
+
 linux (6.1.98-1) bookworm-security; urgency=high
 
   * New upstream stable update:
