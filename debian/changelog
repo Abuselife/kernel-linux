@@ -103,6 +103,9 @@ linux (5.10.222-1) UNRELEASED; urgency=medium
     - nilfs2: fix kernel bug on rename operation of broken directory
     - i2c: mark HostNotify target address as used
 
+  [ Salvatore Bonaccorso ]
+  * Bump ABI to 32
+
  -- Salvatore Bonaccorso <carnil@debian.org>  Thu, 18 Jul 2024 22:06:52 +0200
 
 linux (5.10.221-1) bullseye-security; urgency=high
