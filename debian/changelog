@@ -80,6 +80,9 @@ linux (6.1.100-1) UNRELEASED; urgency=medium
     - [x86] bhi: Avoid warning in #DB handler due to BHI mitigation
     - kbuild: Make ld-version.sh more robust against version string changes
 
+  [ Salvatore Bonaccorso ]
+  * Bump ABI to 24
+
  -- Salvatore Bonaccorso <carnil@debian.org>  Thu, 18 Jul 2024 23:37:13 +0200
 
 linux (6.1.99-1) bookworm-security; urgency=high
