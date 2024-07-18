@@ -1,3 +1,87 @@
+linux (6.1.100-1) UNRELEASED; urgency=medium
+
+  * New upstream stable update:
+    https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.1.100
+    - Compiler Attributes: Add __uninitialized macro
+    - mm: prevent derefencing NULL ptr in pfn_section_valid()
+    - cachefiles: propagate errors from vfs_getxattr() to avoid infinite loop
+    - cachefiles: narrow the scope of triggering EPOLLIN events in ondemand mode
+    - cachefiles: stop sending new request when dropping object
+    - cachefiles: cancel all requests for the object that is being dropped
+    - cachefiles: wait for ondemand_object_worker to finish when dropping object
+    - cachefiles: cyclic allocation of msg_id to avoid reuse
+    - cachefiles: add missing lock protection when polling
+    - filelock: fix potential use-after-free in posix_lock_inode
+    - fs/dcache: Re-use value stored to dentry->d_flags instead of re-reading
+    - vfs: don't mod negative dentry count when on shrinker list
+    - tcp: fix incorrect undo caused by DSACK of TLP retransmit
+    - net: phy: microchip: lan87xx: reinit PHY after cable test
+    - skmsg: Skip zero length skb in sk_msg_recvmsg
+    - net: fix rc7's __skb_datagram_iter()
+    - i40e: Fix XDP program unloading while removing the driver
+    - net: ethernet: lantiq_etop: fix double free in detach
+    - bpf: Refactor some inode/task/sk storage functions for reuse
+    - bpf: Reduce smap->elem_size
+    - bpf: use bpf_map_kvcalloc in bpf_local_storage
+    - bpf: Remove __bpf_local_storage_map_alloc
+    - bpf: fix order of args in call to bpf_map_kvcalloc
+    - net: ethernet: mtk-star-emac: set mac_managed_pm when probing
+    - ppp: reject claimed-as-LCP but actually malformed packets
+    - ethtool: netlink: do not return SQI value if link is down
+    - udp: Set SOCK_RCU_FREE earlier in udp_lib_get_port().
+    - net/sched: Fix UAF when resolving a clash
+    - net, sunrpc: Remap EPERM in case of connection failure in
+      xs_tcp_setup_socket
+    - [s390x] Mark psw in __load_psw_mask() as __unitialized
+    - firmware: cs_dsp: Fix overflow checking of wmfw header
+    - firmware: cs_dsp: Return error if block header overflows file
+    - firmware: cs_dsp: Validate payload length before processing block
+    - firmware: cs_dsp: Prevent buffer overrun when processing V2 alg headers
+    - firmware: cs_dsp: Use strnlen() on name fields in V1 wmfw files
+    - cifs: fix setting SecurityFlags to true
+    - Revert "sched/fair: Make sure to try to detach at least one movable task"
+    - tcp: use signed arithmetic in tcp_rtx_probe0_timed_out()
+    - tcp: avoid too many retransmit packets (CVE-2024-41007)
+    - USB: serial: option: add Telit generic core-dump composition
+    - USB: serial: option: add Telit FN912 rmnet compositions
+    - USB: serial: option: add Fibocom FM350-GL
+    - USB: serial: option: add support for Foxconn T99W651
+    - USB: serial: option: add Netprisma LCUK54 series modules
+    - USB: serial: option: add Rolling RW350-GL variants
+    - USB: serial: mos7840: fix crash on resume
+    - USB: Add USB_QUIRK_NO_SET_INTF quirk for START BP-850k
+    - usb: gadget: configfs: Prevent OOB read/write in usb_string_copy()
+    - USB: core: Fix duplicate endpoint bug by clearing reserved bits in the
+      descriptor
+    - hpet: Support 32-bit userspace
+    - xhci: always resume roothubs if xHC was reset during resume
+    - ksmbd: discard write access to the directory open
+    - nvmem: rmem: Fix return value of rmem_read()
+    - nvmem: meson-efuse: Fix return value of nvmem callbacks
+    - nvmem: core: only change name to fram for current attribute
+    - [x86] platform/x86: toshiba_acpi: Fix array out-of-bounds access
+    - ALSA: hda/realtek: add quirk for Clevo V5[46]0TU
+    - ALSA: hda/realtek: Enable Mute LED on HP 250 G7
+    - ALSA: hda/realtek: Limit mic boost on VAIO PRO PX
+    - Fix userfaultfd_api to return EINVAL as expected
+    - libceph: fix race between delayed_work() and ceph_monc_stop()
+    - ACPI: processor_idle: Fix invalid comparison with insertion sort for
+      latency
+    - wireguard: selftests: use acpi=off instead of -no-acpi for recent QEMU
+    - wireguard: allowedips: avoid unaligned 64-bit memory accesses
+    - wireguard: queueing: annotate intentional data race in cpu round robin
+    - wireguard: send: annotate intentional data race in checking empty queue
+    - [x86] retpoline: Move a NOENDBR annotation to the SRSO dummy return thunk
+    - bpf: Allow reads from uninit stack
+    - nilfs2: fix kernel bug on rename operation of broken directory
+    - sched: Move psi_account_irqtime() out of update_rq_clock_task() hotpath
+    - i2c: mark HostNotify target address as used
+    - [x86] entry/64: Remove obsolete comment on tracing vs. SYSRET
+    - [x86] bhi: Avoid warning in #DB handler due to BHI mitigation
+    - kbuild: Make ld-version.sh more robust against version string changes
+
+ -- Salvatore Bonaccorso <carnil@debian.org>  Thu, 18 Jul 2024 23:37:13 +0200
+
 linux (6.1.99-1) bookworm-security; urgency=high
 
   * New upstream stable update:
