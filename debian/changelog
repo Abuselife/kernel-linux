@@ -1,3 +1,110 @@
+linux (5.10.222-1) UNRELEASED; urgency=medium
+
+  * New upstream stable update:
+    https://www.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.10.222
+    - Compiler Attributes: Add __uninitialized macro
+    - [arm64,armhf] drm/lima: fix shared irq handling on driver remove
+    - media: dvb: as102-fe: Fix as10x_register_addr packing
+    - media: dvb-usb: dib0700_devices: Add missing release_firmware()
+    - IB/core: Implement a limit on UMAD receive List
+    - scsi: qedf: Make qedf_execute_tmf() non-preemptible
+    - crypto: aead,cipher - zeroize key buffer after use
+    - drm/amdgpu: Initialize timestamp for some legacy SOCs
+    - drm/amd/display: Check index msg_id before read or write
+    - drm/amd/display: Check pipe offset before setting vblank
+    - drm/amd/display: Skip finding free audio for unknown engine_id
+    - media: dw2102: Don't translate i2c read into write
+    - sctp: prefer struct_size over open coded arithmetic
+    - firmware: dmi: Stop decoding on broken entry
+    - Input: ff-core - prefer struct_size over open coded arithmetic
+    - [arm64,armhf] net: dsa: mv88e6xxx: Correct check for empty list
+    - media: dvb-frontends: tda18271c2dd: Remove casting during div
+    - media: s2255: Use refcount_t instead of atomic_t for num_channels
+    - media: dvb-frontends: tda10048: Fix integer overflow
+    - i2c: i801: Annotate apanel_addr as __ro_after_init
+    - [powerpc*] 64: Set _IO_BASE to POISON_POINTER_DELTA not 0 for CONFIG_PCI=n
+    - orangefs: fix out-of-bounds fsid access
+    - kunit: Fix timeout message
+    - [powerpc*] xmon: Check cpu id in commands "c#", "dp#" and "dx#"
+    - bpf: Avoid uninitialized value in BPF_CORE_READ_BITFIELD
+    - jffs2: Fix potential illegal address access in jffs2_free_inode
+    - [s390x] pkey: Wipe sensitive data on failure
+    - UPSTREAM: tcp: fix DSACK undo in fast recovery to call tcp_try_to_open()
+    - tcp_metrics: validate source addr length
+    - wifi: wilc1000: fix ies_len type in connect path
+    - bonding: Fix out-of-bounds read in bond_option_arp_ip_targets_set()
+      (CVE-2024-39487)
+    - inet_diag: Initialize pad field in struct inet_diag_req_v2
+    - nilfs2: fix inode number range checks
+    - nilfs2: add missing check for inode numbers on directory entries
+    - mm: optimize the redundant loop of mm_update_owner_next()
+    - mm: avoid overflows in dirty throttling logic
+    - Bluetooth: qca: Fix BT enable failure again for QCA6390 after warm reboot
+    - can: kvaser_usb: Explicitly initialize family in leafimx driver_info
+      struct
+    - fsnotify: Do not generate events for O_PATH file descriptors
+    - Revert "mm/writeback: fix possible divide-by-zero in wb_dirty_limits(),
+      again"
+    - drm/nouveau: fix null pointer dereference in nouveau_connector_get_modes
+    - drm/amdgpu/atomfirmware: silence UBSAN warning
+    - mtd: rawnand: Bypass a couple of sanity checks during NAND identification
+    - bnx2x: Fix multiple UBSAN array-index-out-of-bounds
+    - bpf, sockmap: Fix sk->sk_forward_alloc warn_on in sk_stream_kill_queues
+    - ima: Avoid blocking in RCU read-side critical section (CVE-2024-40947)
+    - media: dw2102: fix a potential buffer overflow
+    - i2c: pnx: Fix potential deadlock warning from del_timer_sync() call in isr
+    - ALSA: hda/realtek: Enable headset mic of JP-IK LEAP W502 with ALC897
+    - nvme-multipath: find NUMA path only for online numa-node
+    - nvme: adjust multiples of NVME_CTRL_PAGE_SIZE in offset
+    - [x86] platform/x86: touchscreen_dmi: Add info for GlobalSpace SolT IVW
+      11.6" tablet
+    - [x86] platform/x86: touchscreen_dmi: Add info for the EZpad 6s Pro
+    - nvmet: fix a possible leak when destroy a ctrl during qp establishment
+    - kbuild: fix short log for AS in link-vmlinux.sh
+    - nilfs2: fix incorrect inode allocation from reserved inodes
+    - mm: prevent derefencing NULL ptr in pfn_section_valid()
+    - filelock: fix potential use-after-free in posix_lock_inode
+    - fs/dcache: Re-use value stored to dentry->d_flags instead of re-reading
+    - vfs: don't mod negative dentry count when on shrinker list
+    - tcp: fix incorrect undo caused by DSACK of TLP retransmit
+    - net: lantiq_etop: add blank line after declaration
+    - net: ethernet: lantiq_etop: fix double free in detach
+    - ppp: reject claimed-as-LCP but actually malformed packets
+    - ethtool: netlink: do not return SQI value if link is down
+    - udp: Set SOCK_RCU_FREE earlier in udp_lib_get_port().
+    - net/sched: Fix UAF when resolving a clash
+    - [s390x] Mark psw in __load_psw_mask() as __unitialized
+    - tcp: use signed arithmetic in tcp_rtx_probe0_timed_out()
+    - tcp: avoid too many retransmit packets (CVE-2024-41007)
+    - net: ks8851: Fix potential TX stall after interface reopen
+    - USB: serial: option: add Telit generic core-dump composition
+    - USB: serial: option: add Telit FN912 rmnet compositions
+    - USB: serial: option: add Fibocom FM350-GL
+    - USB: serial: option: add support for Foxconn T99W651
+    - USB: serial: option: add Netprisma LCUK54 series modules
+    - USB: serial: option: add Rolling RW350-GL variants
+    - USB: serial: mos7840: fix crash on resume
+    - USB: Add USB_QUIRK_NO_SET_INTF quirk for START BP-850k
+    - usb: gadget: configfs: Prevent OOB read/write in usb_string_copy()
+    - USB: core: Fix duplicate endpoint bug by clearing reserved bits in the
+      descriptor
+    - hpet: Support 32-bit userspace
+    - nvmem: meson-efuse: Fix return value of nvmem callbacks
+    - ALSA: hda/realtek: Enable Mute LED on HP 250 G7
+    - ALSA: hda/realtek: Limit mic boost on VAIO PRO PX
+    - libceph: fix race between delayed_work() and ceph_monc_stop()
+    - wireguard: allowedips: avoid unaligned 64-bit memory accesses
+    - wireguard: queueing: annotate intentional data race in cpu round robin
+    - wireguard: send: annotate intentional data race in checking empty queue
+    - x86/retpoline: Move a NOENDBR annotation to the SRSO dummy return thunk
+    - ipv6: annotate data-races around cnf.disable_ipv6
+    - ipv6: prevent NULL dereference in ip6_output() (CVE-2024-36901)
+    - bpf: Allow reads from uninit stack
+    - nilfs2: fix kernel bug on rename operation of broken directory
+    - i2c: mark HostNotify target address as used
+
+ -- Salvatore Bonaccorso <carnil@debian.org>  Thu, 18 Jul 2024 22:06:52 +0200
+
 linux (5.10.221-1) bullseye-security; urgency=high
 
   * New upstream stable update:
