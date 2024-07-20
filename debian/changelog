@@ -31,6 +31,7 @@ linux (6.10-1~exp2) UNRELEASED; urgency=medium
   * Use zstd in multiple places instead of xz:
     - Compress packages with zstd.
     - Support zstd for firmware loader.
+    - Compress modules with zstd.
 
   [ Ben Hutchings ]
   * d/b/test-patches: Handle kernel release strings without ABI number
