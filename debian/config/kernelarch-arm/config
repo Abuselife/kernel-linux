@@ -148,6 +148,13 @@ CONFIG_THERMAL=y
 CONFIG_CPU_THERMAL=y
 
 ##
+## file: init/Kconfig
+##
+## choice: Kernel compression mode
+CONFIG_KERNEL_XZ=y
+## end choice
+
+##
 ## file: kernel/Kconfig.kexec
 ##
 CONFIG_KEXEC=y
