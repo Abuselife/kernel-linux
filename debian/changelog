@@ -3301,6 +3301,9 @@ linux (6.7.1-1~exp1) experimental; urgency=medium
 
   [ Martin Kepplinger ]
   * [arm64] Enable CSI camera stack for i.MX8M SoCs (Closes: #1055442)
+  * [arm64] enable the Mantix panel of the Librem 5 phone
+  * [arm64] enable audio codec used on the Librem 5 phone
+  * d/config: media: enable the hi846 i2c camera sensor
 
   [ Tim Pambor ]
   * Enable configs for MT8195 Chromebooks:
