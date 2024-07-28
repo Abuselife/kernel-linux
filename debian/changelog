@@ -1,4 +1,4 @@
-linux (6.1.101-1) UNRELEASED; urgency=medium
+linux (6.1.102-1) UNRELEASED; urgency=medium
 
   * New upstream stable update:
     https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.1.100
@@ -190,6 +190,22 @@ linux (6.1.101-1) UNRELEASED; urgency=medium
       fscache_try_get_volume()
     - cachefiles: fix slab-use-after-free in fscache_withdraw_volume()
     - cachefiles: fix slab-use-after-free in cachefiles_withdraw_cookie()
+    https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.1.102
+    - drm/amdgpu: Fix signedness bug in sdma_v4_0_process_trap_irq()
+    - f2fs: avoid dead loop in f2fs_issue_checkpoint()
+    - ocfs2: add bounds checking to ocfs2_check_dir_entry()
+    - jfs: don't walk off the end of ealist
+    - ALSA: hda/realtek: Enable headset mic on Positivo SU C1400
+    - ALSA: hda/realtek: Fix the speaker output on Samsung Galaxy Book Pro 360
+    - [arm64] dts: qcom: msm8996: Disable SS instance in Parkmode for USB
+    - [arm64] dts: qcom: ipq6018: Disable SS instance in Parkmode for USB
+    - [arm64] dts: qcom: sdm630: Disable SS instance in Parkmode for USB
+    - [arm64,armhf] ALSA: pcm_dmaengine: Don't synchronize DMA channel when DMA
+      is paused
+    - filelock: Fix fcntl/close race recovery compat path
+    - btrfs: do not BUG_ON on failure to get dir index for new snapshot
+    - tun: add missing verification for short frame (CVE-2024-41091)
+    - tap: add missing verification for short frame (CVE-2024-41090)
 
   [ Salvatore Bonaccorso ]
   * Bump ABI to 24
