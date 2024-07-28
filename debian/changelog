@@ -1,4 +1,4 @@
-linux (5.10.222-1) UNRELEASED; urgency=medium
+linux (5.10.223-1) UNRELEASED; urgency=medium
 
   * New upstream stable update:
     https://www.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.10.222
@@ -102,6 +102,72 @@ linux (5.10.222-1) UNRELEASED; urgency=medium
     - bpf: Allow reads from uninit stack
     - nilfs2: fix kernel bug on rename operation of broken directory
     - i2c: mark HostNotify target address as used
+    https://www.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.10.223
+    - gcc-plugins: Rename last_stmt() for GCC 14+
+    - filelock: Remove locks reliably when fcntl/close race is detected
+      (CVE-2024-41012)
+    - scsi: qedf: Set qed_slowpath_params to zero before use
+    - ACPI: EC: Abort address space access upon error
+    - ACPI: EC: Avoid returning AE_OK on errors in address space handler
+    - wifi: mac80211: mesh: init nonpeer_pm to active by default in mesh sdata
+    - wifi: mac80211: fix UBSAN noise in ieee80211_prep_hw_scan()
+    - Input: silead - Always support 10 fingers
+    - net: ipv6: rpl_iptunnel: block BH in rpl_output() and rpl_input()
+    - ila: block BH in ila_output()
+    - [arm64] armv8_deprecated: Fix warning in isndep cpuhp starting process
+    - null_blk: fix validation of block size
+    - kconfig: gconf: give a proper initial state to the Save button
+    - kconfig: remove wrong expr_trans_bool()
+    - fs/file: fix the check in find_next_fd()
+    - mei: demote client disconnect warning on suspend to debug
+    - wifi: cfg80211: wext: add extra SIOCSIWSCAN data check
+    - [powerpc*] KVM: PPC: Book3S HV: Prevent UAF in
+      kvm_spapr_tce_attach_iommu_group()
+    - ALSA: hda/realtek: Add more codec ID to no shutup pins list
+    - [mips*] fix compat_sys_lseek syscall
+    - Input: elantech - fix touchpad state on resume for Lenovo N24
+    - Input: i8042 - add Ayaneo Kun to i8042 quirk table
+    - [x86] bytcr_rt5640 : inverse jack detect for Archos 101 cesium
+    - [arm*] ALSA: dmaengine: Synchronize dma channel after drop()
+    - [armhf] ASoC: ti: davinci-mcasp: Set min period size using FIFO config
+    - can: kvaser_usb: fix return value for hif_usb_send_regout
+    - [s390x] sclp: Fix sclp_init() cleanup on failure
+    - btrfs: qgroup: fix quota root leak after quota disable failure
+    - ALSA: hda/relatek: Enable Mute LED on HP Laptop 15-gw0xxx
+    - ALSA: dmaengine_pcm: terminate dmaengine before synchronize
+    - net: usb: qmi_wwan: add Telit FN912 compositions
+    - net: mac802154: Fix racy device stats updates by DEV_STATS_INC() and
+      DEV_STATS_ADD()
+    - [powerpc*] pseries: Whitelist dtl slub object for copying to userspace
+    - [powerpc*] eeh: avoid possible crash when edev->pdev changes
+    - scsi: libsas: Fix exp-attached device scan after probe failure scanned in
+      again after probe failed
+    - Bluetooth: hci_core: cancel all works upon hci_unregister_dev()
+    - fs: better handle deep ancestor chains in is_subdir()
+    - spi: imx: Don't expect DMA for i.MX{25,35,50,51,53} cspi devices
+    - hfsplus: fix uninit-value in copy_name
+    - spi: mux: set ctlr->bits_per_word_mask
+    - [arm*] 9324/1: fix get_user() broken with veneer
+    - ACPI: processor_idle: Fix invalid comparison with insertion sort for
+      latency
+    - bpf: Fix overrunning reservations in ringbuf (CVE-2024-41009)
+    - bpf, skmsg: Fix NULL pointer dereference in sk_psock_skb_ingress_enqueue
+      (CVE-2024-36938)
+    - scsi: core: Fix a use-after-free (CVE-2022-48666)
+    - ext4: fix error code saved on super block during file system abort
+    - ext4: Send notifications on error
+    - drm/amdgpu: Fix signedness bug in sdma_v4_0_process_trap_irq()
+    - net: relax socket state check at accept time. (CVE-2024-36484)
+    - ocfs2: add bounds checking to ocfs2_check_dir_entry()
+    - jfs: don't walk off the end of ealist
+    - ALSA: hda/realtek: Enable headset mic on Positivo SU C1400
+    - ALSA: hda/realtek: Fix the speaker output on Samsung Galaxy Book Pro 360
+    - [arm64] dts: qcom: msm8996: Disable SS instance in Parkmode for USB
+    - [arm*] ALSA: pcm_dmaengine: Don't synchronize DMA channel when DMA is
+      paused
+    - filelock: Fix fcntl/close race recovery compat path
+    - tun: add missing verification for short frame (CVE-2024-41091)
+    - tap: add missing verification for short frame (CVE-2024-41090)
 
   [ Salvatore Bonaccorso ]
   * Bump ABI to 32
