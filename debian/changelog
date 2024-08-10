@@ -1,3 +1,184 @@
+linux (5.10.223-1) UNRELEASED; urgency=medium
+
+  * New upstream stable update:
+    https://www.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.10.222
+    - Compiler Attributes: Add __uninitialized macro
+    - [arm64,armhf] drm/lima: fix shared irq handling on driver remove
+    - media: dvb: as102-fe: Fix as10x_register_addr packing
+    - media: dvb-usb: dib0700_devices: Add missing release_firmware()
+    - IB/core: Implement a limit on UMAD receive List
+    - scsi: qedf: Make qedf_execute_tmf() non-preemptible
+    - crypto: aead,cipher - zeroize key buffer after use
+    - drm/amdgpu: Initialize timestamp for some legacy SOCs
+    - drm/amd/display: Check index msg_id before read or write
+    - drm/amd/display: Check pipe offset before setting vblank
+    - drm/amd/display: Skip finding free audio for unknown engine_id
+    - media: dw2102: Don't translate i2c read into write
+    - sctp: prefer struct_size over open coded arithmetic
+    - firmware: dmi: Stop decoding on broken entry
+    - Input: ff-core - prefer struct_size over open coded arithmetic
+    - [arm64,armhf] net: dsa: mv88e6xxx: Correct check for empty list
+    - media: dvb-frontends: tda18271c2dd: Remove casting during div
+    - media: s2255: Use refcount_t instead of atomic_t for num_channels
+    - media: dvb-frontends: tda10048: Fix integer overflow
+    - i2c: i801: Annotate apanel_addr as __ro_after_init
+    - [powerpc*] 64: Set _IO_BASE to POISON_POINTER_DELTA not 0 for CONFIG_PCI=n
+    - orangefs: fix out-of-bounds fsid access
+    - kunit: Fix timeout message
+    - [powerpc*] xmon: Check cpu id in commands "c#", "dp#" and "dx#"
+    - bpf: Avoid uninitialized value in BPF_CORE_READ_BITFIELD
+    - jffs2: Fix potential illegal address access in jffs2_free_inode
+    - [s390x] pkey: Wipe sensitive data on failure
+    - UPSTREAM: tcp: fix DSACK undo in fast recovery to call tcp_try_to_open()
+    - tcp_metrics: validate source addr length
+    - wifi: wilc1000: fix ies_len type in connect path
+    - bonding: Fix out-of-bounds read in bond_option_arp_ip_targets_set()
+      (CVE-2024-39487)
+    - inet_diag: Initialize pad field in struct inet_diag_req_v2
+    - nilfs2: fix inode number range checks
+    - nilfs2: add missing check for inode numbers on directory entries
+    - mm: optimize the redundant loop of mm_update_owner_next()
+    - mm: avoid overflows in dirty throttling logic
+    - Bluetooth: qca: Fix BT enable failure again for QCA6390 after warm reboot
+    - can: kvaser_usb: Explicitly initialize family in leafimx driver_info
+      struct
+    - fsnotify: Do not generate events for O_PATH file descriptors
+    - Revert "mm/writeback: fix possible divide-by-zero in wb_dirty_limits(),
+      again"
+    - drm/nouveau: fix null pointer dereference in nouveau_connector_get_modes
+    - drm/amdgpu/atomfirmware: silence UBSAN warning
+    - mtd: rawnand: Bypass a couple of sanity checks during NAND identification
+    - bnx2x: Fix multiple UBSAN array-index-out-of-bounds
+    - bpf, sockmap: Fix sk->sk_forward_alloc warn_on in sk_stream_kill_queues
+    - ima: Avoid blocking in RCU read-side critical section (CVE-2024-40947)
+    - media: dw2102: fix a potential buffer overflow
+    - i2c: pnx: Fix potential deadlock warning from del_timer_sync() call in isr
+    - ALSA: hda/realtek: Enable headset mic of JP-IK LEAP W502 with ALC897
+    - nvme-multipath: find NUMA path only for online numa-node
+    - nvme: adjust multiples of NVME_CTRL_PAGE_SIZE in offset
+    - [x86] platform/x86: touchscreen_dmi: Add info for GlobalSpace SolT IVW
+      11.6" tablet
+    - [x86] platform/x86: touchscreen_dmi: Add info for the EZpad 6s Pro
+    - nvmet: fix a possible leak when destroy a ctrl during qp establishment
+    - kbuild: fix short log for AS in link-vmlinux.sh
+    - nilfs2: fix incorrect inode allocation from reserved inodes
+    - mm: prevent derefencing NULL ptr in pfn_section_valid()
+    - filelock: fix potential use-after-free in posix_lock_inode
+    - fs/dcache: Re-use value stored to dentry->d_flags instead of re-reading
+    - vfs: don't mod negative dentry count when on shrinker list
+    - tcp: fix incorrect undo caused by DSACK of TLP retransmit
+    - net: lantiq_etop: add blank line after declaration
+    - net: ethernet: lantiq_etop: fix double free in detach
+    - ppp: reject claimed-as-LCP but actually malformed packets
+    - ethtool: netlink: do not return SQI value if link is down
+    - udp: Set SOCK_RCU_FREE earlier in udp_lib_get_port().
+    - net/sched: Fix UAF when resolving a clash
+    - [s390x] Mark psw in __load_psw_mask() as __unitialized
+    - tcp: use signed arithmetic in tcp_rtx_probe0_timed_out()
+    - tcp: avoid too many retransmit packets (CVE-2024-41007)
+    - net: ks8851: Fix potential TX stall after interface reopen
+    - USB: serial: option: add Telit generic core-dump composition
+    - USB: serial: option: add Telit FN912 rmnet compositions
+    - USB: serial: option: add Fibocom FM350-GL
+    - USB: serial: option: add support for Foxconn T99W651
+    - USB: serial: option: add Netprisma LCUK54 series modules
+    - USB: serial: option: add Rolling RW350-GL variants
+    - USB: serial: mos7840: fix crash on resume
+    - USB: Add USB_QUIRK_NO_SET_INTF quirk for START BP-850k
+    - usb: gadget: configfs: Prevent OOB read/write in usb_string_copy()
+    - USB: core: Fix duplicate endpoint bug by clearing reserved bits in the
+      descriptor
+    - hpet: Support 32-bit userspace
+    - nvmem: meson-efuse: Fix return value of nvmem callbacks
+    - ALSA: hda/realtek: Enable Mute LED on HP 250 G7
+    - ALSA: hda/realtek: Limit mic boost on VAIO PRO PX
+    - libceph: fix race between delayed_work() and ceph_monc_stop()
+    - wireguard: allowedips: avoid unaligned 64-bit memory accesses
+    - wireguard: queueing: annotate intentional data race in cpu round robin
+    - wireguard: send: annotate intentional data race in checking empty queue
+    - x86/retpoline: Move a NOENDBR annotation to the SRSO dummy return thunk
+    - ipv6: annotate data-races around cnf.disable_ipv6
+    - ipv6: prevent NULL dereference in ip6_output() (CVE-2024-36901)
+    - bpf: Allow reads from uninit stack
+    - nilfs2: fix kernel bug on rename operation of broken directory
+    - i2c: mark HostNotify target address as used
+    https://www.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.10.223
+    - gcc-plugins: Rename last_stmt() for GCC 14+
+    - filelock: Remove locks reliably when fcntl/close race is detected
+      (CVE-2024-41012)
+    - scsi: qedf: Set qed_slowpath_params to zero before use
+    - ACPI: EC: Abort address space access upon error
+    - ACPI: EC: Avoid returning AE_OK on errors in address space handler
+    - wifi: mac80211: mesh: init nonpeer_pm to active by default in mesh sdata
+    - wifi: mac80211: fix UBSAN noise in ieee80211_prep_hw_scan()
+    - Input: silead - Always support 10 fingers
+    - net: ipv6: rpl_iptunnel: block BH in rpl_output() and rpl_input()
+    - ila: block BH in ila_output()
+    - [arm64] armv8_deprecated: Fix warning in isndep cpuhp starting process
+    - null_blk: fix validation of block size
+    - kconfig: gconf: give a proper initial state to the Save button
+    - kconfig: remove wrong expr_trans_bool()
+    - fs/file: fix the check in find_next_fd()
+    - mei: demote client disconnect warning on suspend to debug
+    - wifi: cfg80211: wext: add extra SIOCSIWSCAN data check
+    - [powerpc*] KVM: PPC: Book3S HV: Prevent UAF in
+      kvm_spapr_tce_attach_iommu_group()
+    - ALSA: hda/realtek: Add more codec ID to no shutup pins list
+    - [mips*] fix compat_sys_lseek syscall
+    - Input: elantech - fix touchpad state on resume for Lenovo N24
+    - Input: i8042 - add Ayaneo Kun to i8042 quirk table
+    - [x86] bytcr_rt5640 : inverse jack detect for Archos 101 cesium
+    - [arm*] ALSA: dmaengine: Synchronize dma channel after drop()
+    - [armhf] ASoC: ti: davinci-mcasp: Set min period size using FIFO config
+    - can: kvaser_usb: fix return value for hif_usb_send_regout
+    - [s390x] sclp: Fix sclp_init() cleanup on failure
+    - btrfs: qgroup: fix quota root leak after quota disable failure
+    - ALSA: hda/relatek: Enable Mute LED on HP Laptop 15-gw0xxx
+    - ALSA: dmaengine_pcm: terminate dmaengine before synchronize
+    - net: usb: qmi_wwan: add Telit FN912 compositions
+    - net: mac802154: Fix racy device stats updates by DEV_STATS_INC() and
+      DEV_STATS_ADD()
+    - [powerpc*] pseries: Whitelist dtl slub object for copying to userspace
+    - [powerpc*] eeh: avoid possible crash when edev->pdev changes
+    - scsi: libsas: Fix exp-attached device scan after probe failure scanned in
+      again after probe failed
+    - Bluetooth: hci_core: cancel all works upon hci_unregister_dev()
+    - fs: better handle deep ancestor chains in is_subdir()
+    - spi: imx: Don't expect DMA for i.MX{25,35,50,51,53} cspi devices
+    - hfsplus: fix uninit-value in copy_name
+    - spi: mux: set ctlr->bits_per_word_mask
+    - [arm*] 9324/1: fix get_user() broken with veneer
+    - ACPI: processor_idle: Fix invalid comparison with insertion sort for
+      latency
+    - bpf: Fix overrunning reservations in ringbuf (CVE-2024-41009)
+    - bpf, skmsg: Fix NULL pointer dereference in sk_psock_skb_ingress_enqueue
+      (CVE-2024-36938)
+    - scsi: core: Fix a use-after-free (CVE-2022-48666)
+    - ext4: fix error code saved on super block during file system abort
+    - ext4: Send notifications on error
+    - drm/amdgpu: Fix signedness bug in sdma_v4_0_process_trap_irq()
+    - net: relax socket state check at accept time. (CVE-2024-36484)
+    - ocfs2: add bounds checking to ocfs2_check_dir_entry()
+    - jfs: don't walk off the end of ealist
+    - ALSA: hda/realtek: Enable headset mic on Positivo SU C1400
+    - ALSA: hda/realtek: Fix the speaker output on Samsung Galaxy Book Pro 360
+    - [arm64] dts: qcom: msm8996: Disable SS instance in Parkmode for USB
+    - [arm*] ALSA: pcm_dmaengine: Don't synchronize DMA channel when DMA is
+      paused
+    - filelock: Fix fcntl/close race recovery compat path
+    - tun: add missing verification for short frame (CVE-2024-41091)
+    - tap: add missing verification for short frame (CVE-2024-41090)
+
+  [ Salvatore Bonaccorso ]
+  * Bump ABI to 32
+  * fs/nfsd: Enable NFSD_V2 and NFSD_V2_ACL.
+    Re-enable lost NFSv2 kernel support due to upstream backporting of
+    2f3a4b2ac2f2 ("nfsd: allow disabling NFSv2 at compile time") in
+    5.10.220. (Closes: #1076864)
+  * netfilter: ipset: Add list flush to cancel_gc
+
+ -- Salvatore Bonaccorso <carnil@debian.org>  Thu, 18 Jul 2024 22:06:52 +0200
+
 linux (5.10.221-1) bullseye-security; urgency=high
 
   * New upstream stable update:
