@@ -175,6 +175,7 @@ linux (5.10.223-1) UNRELEASED; urgency=medium
     Re-enable lost NFSv2 kernel support due to upstream backporting of
     2f3a4b2ac2f2 ("nfsd: allow disabling NFSv2 at compile time") in
     5.10.220. (Closes: #1076864)
+  * netfilter: ipset: Add list flush to cancel_gc
 
  -- Salvatore Bonaccorso <carnil@debian.org>  Thu, 18 Jul 2024 22:06:52 +0200
 
