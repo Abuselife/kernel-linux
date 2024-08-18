@@ -1,8 +1,8 @@
-From ed322e8ec650d1ca98137aefd14eb46e43659098 Mon Sep 17 00:00:00 2001
+From 8e5910b1f0ed41d7409dbd66882c5c71626da308 Mon Sep 17 00:00:00 2001
 From: Thomas Gleixner <tglx@linutronix.de>
 Date: Fri, 26 Oct 2012 18:50:54 +0100
 Subject: [PATCH 32/64] sched: Add support for lazy preemption
-Origin: https://www.kernel.org/pub/linux/kernel/projects/rt/6.1/older/patches-6.1.90-rt30.tar.xz
+Origin: https://www.kernel.org/pub/linux/kernel/projects/rt/6.1/older/patches-6.1.96-rt35.tar.xz
 
 It has become an obsession to mitigate the determinism vs. throughput
 loss of RT. Looking at the mainline semantics of preemption points
@@ -301,7 +301,7 @@ index c2f1fd95a821..260c08efeb48 100644
  	bool
  
 diff --git a/kernel/sched/core.c b/kernel/sched/core.c
-index 6bd06122850a..b72fc7d336e4 100644
+index d3722ed0745e..1f04ebd741db 100644
 --- a/kernel/sched/core.c
 +++ b/kernel/sched/core.c
 @@ -1040,6 +1040,46 @@ void resched_curr(struct rq *rq)
@@ -447,7 +447,7 @@ index 6bd06122850a..b72fc7d336e4 100644
  	 * The idle tasks have their own, simple scheduling class:
  	 */
 diff --git a/kernel/sched/fair.c b/kernel/sched/fair.c
-index 91c101ecfef9..a7c4684836a7 100644
+index 0de8354d5ad0..0c8d619a175b 100644
 --- a/kernel/sched/fair.c
 +++ b/kernel/sched/fair.c
 @@ -4914,7 +4914,7 @@ check_preempt_tick(struct cfs_rq *cfs_rq, struct sched_entity *curr)
@@ -495,7 +495,7 @@ index 91c101ecfef9..a7c4684836a7 100644
  			return;
  		}
  		hrtick_start(rq, delta);
-@@ -7718,7 +7718,7 @@ static void check_preempt_wakeup(struct rq *rq, struct task_struct *p, int wake_
+@@ -7738,7 +7738,7 @@ static void check_preempt_wakeup(struct rq *rq, struct task_struct *p, int wake_
  	return;
  
  preempt:
@@ -504,7 +504,7 @@ index 91c101ecfef9..a7c4684836a7 100644
  	/*
  	 * Only set the backward buddy when the current task is still
  	 * on the rq. This can happen when a wakeup gets interleaved
-@@ -11883,7 +11883,7 @@ static void task_fork_fair(struct task_struct *p)
+@@ -11898,7 +11898,7 @@ static void task_fork_fair(struct task_struct *p)
  		 * 'current' within the tree based on its new key value.
  		 */
  		swap(curr->vruntime, se->vruntime);
@@ -513,7 +513,7 @@ index 91c101ecfef9..a7c4684836a7 100644
  	}
  
  	se->vruntime -= cfs_rq->min_vruntime;
-@@ -11910,7 +11910,7 @@ prio_changed_fair(struct rq *rq, struct task_struct *p, int oldprio)
+@@ -11925,7 +11925,7 @@ prio_changed_fair(struct rq *rq, struct task_struct *p, int oldprio)
  	 */
  	if (task_current(rq, p)) {
  		if (p->prio > oldprio)
@@ -710,5 +710,5 @@ index bf1965b18099..133f15d3b886 100644
  		trace_seq_printf(s, "%x", entry->preempt_count >> 4);
  	else
 -- 
-2.44.0
+2.45.2
 

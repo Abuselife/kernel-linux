@@ -1,8 +1,8 @@
-From aa40b518ee0bca11c9087364cf111aac90651a0d Mon Sep 17 00:00:00 2001
+From 92b300ee4fad2fc151a0e31e14257bb0bb0acb9a Mon Sep 17 00:00:00 2001
 From: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
 Date: Tue, 19 Jul 2022 20:08:01 +0200
 Subject: [PATCH 19/64] printk: Bring back the RT bits.
-Origin: https://www.kernel.org/pub/linux/kernel/projects/rt/6.1/older/patches-6.1.90-rt30.tar.xz
+Origin: https://www.kernel.org/pub/linux/kernel/projects/rt/6.1/older/patches-6.1.96-rt35.tar.xz
 
 This is a revert of the commits:
 | 07a22b61946f0 Revert "printk: add functions to prefer direct printing"
@@ -86,7 +86,7 @@ index 8c1686e2c233..143653090c48 100644
  	struct	 console *next;
  };
 diff --git a/include/linux/printk.h b/include/linux/printk.h
-index 8c81806c2e99..f8c4e4fa6d7d 100644
+index b1a12916f036..3c4ab778fab6 100644
 --- a/include/linux/printk.h
 +++ b/include/linux/printk.h
 @@ -168,6 +168,9 @@ extern void __printk_safe_exit(void);
@@ -1076,10 +1076,10 @@ index 6d10927a07d8..8e8fd2fb0a5b 100644
 +	}
 +}
 diff --git a/kernel/rcu/tree_stall.h b/kernel/rcu/tree_stall.h
-index 7d15b5b5a235..7b411d663e8f 100644
+index 11a82404a6ce..e99ba5db9a15 100644
 --- a/kernel/rcu/tree_stall.h
 +++ b/kernel/rcu/tree_stall.h
-@@ -648,6 +648,7 @@ static void print_cpu_stall(unsigned long gps)
+@@ -649,6 +649,7 @@ static void print_cpu_stall(unsigned long gps)
  	 * See Documentation/RCU/stallwarn.rst for info on how to debug
  	 * RCU CPU stall warnings.
  	 */
@@ -1087,7 +1087,7 @@ index 7d15b5b5a235..7b411d663e8f 100644
  	trace_rcu_stall_warning(rcu_state.name, TPS("SelfDetected"));
  	pr_err("INFO: %s self-detected stall on CPU\n", rcu_state.name);
  	raw_spin_lock_irqsave_rcu_node(rdp->mynode, flags);
-@@ -682,6 +683,7 @@ static void print_cpu_stall(unsigned long gps)
+@@ -683,6 +684,7 @@ static void print_cpu_stall(unsigned long gps)
  	 */
  	set_tsk_need_resched(current);
  	set_preempt_need_resched();
@@ -1230,5 +1230,5 @@ index 1e8a49dc956e..7c977b945c92 100644
  		return;
  	}
 -- 
-2.44.0
+2.45.2
 
