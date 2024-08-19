@@ -1,4 +1,4 @@
-linux (6.1.105-1) UNRELEASED; urgency=medium
+linux (6.1.106-1) UNRELEASED; urgency=medium
 
   * New upstream stable update:
     https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.1.100
@@ -844,6 +844,49 @@ linux (6.1.105-1) UNRELEASED; urgency=medium
     - i2c: qcom-geni: fix missing clk_disable_unprepare() and
       geni_se_resources_off()
     - btrfs: fix double inode unlock for direct IO sync writes
+    https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.1.106
+    - mptcp: pass addr to mptcp_pm_alloc_anno_list
+    - mptcp: pm: reduce indentation blocks
+    - mptcp: pm: don't try to create sf if alloc failed
+    - mptcp: pm: do not ignore 'subflow' if 'signal' flag is also set
+    - [x86] ASoC: topology: Clean up route loading
+    - [x86] ASoC: topology: Fix route memory corruption
+    - exec: Fix ToCToU between perm check and set-uid/gid usage
+    - nfsd: move reply cache initialization into nfsd startup
+    - nfsd: move init of percpu reply_cache_stats counters back to nfsd_init_net
+    - NFSD: Refactor nfsd_reply_cache_free_locked()
+    - NFSD: Rename nfsd_reply_cache_alloc()
+    - NFSD: Replace nfsd_prune_bucket()
+    - NFSD: Refactor the duplicate reply cache shrinker
+    - NFSD: Rewrite synopsis of nfsd_percpu_counters_init()
+    - NFSD: Fix frame size warning in svc_export_parse()
+    - sunrpc: don't change ->sv_stats if it doesn't exist
+    - nfsd: stop setting ->pg_stats for unused stats
+    - sunrpc: pass in the sv_stats struct through svc_create_pooled
+    - sunrpc: remove ->pg_stats from svc_program
+    - sunrpc: use the struct net as the svc proc private
+    - nfsd: rename NFSD_NET_* to NFSD_STATS_*
+    - nfsd: expose /proc/net/sunrpc/nfsd in net namespaces
+    - nfsd: make all of the nfsd stats per-network namespace
+    - nfsd: remove nfsd_stats, make th_cnt a global counter
+    - nfsd: make svc_stat per-network namespace instead of global
+    - nvme/pci: Add APST quirk for Lenovo N60z laptop
+    - mptcp: fully established after ADD_ADDR echo on MPJ
+    - [x86] drm/i915/gem: Fix Virtual Memory mapping boundaries calculation
+      (CVE-2024-42259)
+    - cgroup: Make operations on the cgroup root_list RCU safe
+    - [x86] drm/i915: Add a function to mmap framebuffer obj
+    - [x86] drm/i915: Fix a NULL vs IS_ERR() bug
+    - [x86] drm/i915/gem: Adjust vma offset for framebuffer mmap offset
+    - binfmt_flat: Fix corruption when not offsetting data start
+    - cgroup: Move rcu_head up near the top of cgroup_root
+    - wifi: cfg80211: restrict NL80211_ATTR_TXQ_QUANTUM values (CVE-2024-42114)
+    - [arm64] KVM: arm64: Don't pass a TLBI level hint when zapping table
+      entries
+    - media: Revert "media: dvb-usb: Fix unexpected infinite loop in
+      dvb_usb_read_remote_control()"
+    - Revert "ata: libata-scsi: Honor the D_SENSE bit for CK_COND=1 and no
+      error"
 
   [ Salvatore Bonaccorso ]
   * Bump ABI to 24
