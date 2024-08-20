@@ -357,6 +357,13 @@ CONFIG_SUNXI_WATCHDOG=m
 CONFIG_STARFIVE_WATCHDOG=m
 
 ##
+## file: init/Kconfig
+##
+## choice: Kernel compression mode
+CONFIG_KERNEL_ZSTD=y
+## end choice
+
+##
 ## file: kernel/Kconfig.kexec
 ##
 CONFIG_KEXEC=y

@@ -1980,6 +1980,9 @@ CONFIG_VBOXSF_FS=m
 ##
 ## file: init/Kconfig
 ##
+## choice: Kernel compression mode
+CONFIG_KERNEL_ZSTD=y
+## end choice
 CONFIG_USELIB=y
 # CONFIG_IRQ_TIME_ACCOUNTING is not set
 CONFIG_SGETMASK_SYSCALL=y

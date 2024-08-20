@@ -186,6 +186,9 @@ CONFIG_DIAG288_WATCHDOG=m
 ##
 ## file: init/Kconfig
 ##
+## choice: Kernel compression mode
+CONFIG_KERNEL_ZSTD=y
+## end choice
 ## choice: Cputime accounting
 CONFIG_VIRT_CPU_ACCOUNTING_NATIVE=y
 ## end choice

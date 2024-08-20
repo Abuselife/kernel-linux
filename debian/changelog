@@ -250,6 +250,11 @@ linux (6.10.1-1~exp1) experimental; urgency=medium
   * [ppc64*] Add additional kernel with 64k page size.
   * Remove unused check for image size.
   * [arm64] Add additional kernel with 16k page size.
+  * Use zstd in multiple places instead of xz:
+    - Compress packages with zstd.
+    - Support zstd for firmware loader.
+    - Compress modules with zstd.
+    - [mips, riscv64, s390x, x86] Compress kernel with zstd.
 
   [ Ben Hutchings ]
   * d/b/test-patches: Handle kernel release strings without ABI number

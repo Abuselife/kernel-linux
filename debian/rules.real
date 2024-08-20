@@ -41,7 +41,7 @@ MAKE_CLEAN = $(setup_env) $(MAKE) KCFLAGS=-fdebug-prefix-map=$(CURDIR)/=
 MAKE_SELF := $(MAKE) -f debian/rules.real $(MAKEOVERRIDES)
 MAKEOVERRIDES =
 
-BUILDDEB_ARGS := -Zxz $(if $(filter pkg.linux.quick,$(DEB_BUILD_PROFILES)),-z0)
+BUILDDEB_ARGS := -Zzstd $(if $(filter pkg.linux.quick,$(DEB_BUILD_PROFILES)),-z0)
 
 ifneq (,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
   THREAD_COUNT = $(subst parallel=,,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
@@ -547,7 +547,7 @@ binary_installer-test:
 
 build_source:
 
-binary_source: BUILDDEB_ARGS = -Zxz -z0
+binary_source: BUILDDEB_ARGS = -Zzstd -z0
 binary_source: $(BUILD_DIR)/$(SOURCE_BASENAME)-source-$(UPSTREAMVERSION).tar.xz $(foreach FEATURESET,$(filter-out none,$(ALL_FEATURESETS)),$(BUILD_DIR)/linux-patch-$(UPSTREAMVERSION)-$(FEATURESET).patch.xz)
 	$(dh_binary_pre)
 	dh_install $^ /usr/src

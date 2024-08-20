@@ -134,6 +134,9 @@ CONFIG_USB_OHCI_HCD=m
 ##
 ## file: init/Kconfig
 ##
+## choice: Kernel compression mode
+CONFIG_KERNEL_ZSTD=y
+## end choice
 CONFIG_SGETMASK_SYSCALL=y
 CONFIG_SYSFS_SYSCALL=y
 
