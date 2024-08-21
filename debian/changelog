@@ -1,4 +1,4 @@
-linux (6.1.106-1) UNRELEASED; urgency=medium
+linux (6.1.106-1) bookworm; urgency=medium
 
   * New upstream stable update:
     https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.1.100
@@ -896,7 +896,7 @@ linux (6.1.106-1) UNRELEASED; urgency=medium
     (closes: #1076576)
   * [arm64] Enable MICROSOFT_MANA.
 
- -- Salvatore Bonaccorso <carnil@debian.org>  Thu, 18 Jul 2024 23:37:13 +0200
+ -- Salvatore Bonaccorso <carnil@debian.org>  Wed, 21 Aug 2024 22:29:42 +0200
 
 linux (6.1.99-1) bookworm-security; urgency=high
 
