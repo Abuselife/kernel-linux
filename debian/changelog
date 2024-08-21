@@ -891,6 +891,11 @@ linux (6.1.106-1) UNRELEASED; urgency=medium
   [ Salvatore Bonaccorso ]
   * Bump ABI to 24
 
+  [ Bastian Blank ]
+  * Backport changes in Microsoft Azure Network Adapter from 6.10.
+    (closes: #1076576)
+  * [arm64] Enable MICROSOFT_MANA.
+
  -- Salvatore Bonaccorso <carnil@debian.org>  Thu, 18 Jul 2024 23:37:13 +0200
 
 linux (6.1.99-1) bookworm-security; urgency=high
