@@ -1,1 +1,5 @@
 #include <md-modules>
+
+# pmem drivers for HTTP boot with u-boot
+of_pmem
+nd_pmem
