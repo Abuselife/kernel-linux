@@ -24,6 +24,13 @@ config = ['arm64/config-page-16k']
 [flavour.description]
 hardware = '64-bit ARMv8 machines with 16k pages'
 
+[[flavour]]
+name = 'arm64-64k'
+[flavour.build]
+config = ['arm64/config-page-64k']
+[flavour.description]
+hardware = '64-bit ARMv8 machines with 64k pages'
+
 [[featureset]]
 name = 'none'
 
