@@ -263,6 +263,7 @@ linux (5.10.224-1) UNRELEASED; urgency=medium
 
   [ Ben Hutchings ]
   * Drop "netfilter: ipset: Add list flush to cancel_gc", included in 5.10.224
+  * [rt] Update to 5.10.223-rt115
 
  -- Ben Hutchings <benh@debian.org>  Fri, 23 Aug 2024 16:44:34 +0200
 

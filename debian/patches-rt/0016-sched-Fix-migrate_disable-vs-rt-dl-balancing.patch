@@ -1,8 +1,7 @@
-From 50e602785d780b8c376c67117be43fb9c615aaa9 Mon Sep 17 00:00:00 2001
 From: Peter Zijlstra <peterz@infradead.org>
 Date: Fri, 23 Oct 2020 12:12:13 +0200
 Subject: [PATCH 016/323] sched: Fix migrate_disable() vs rt/dl balancing
-Origin: https://www.kernel.org/pub/linux/kernel/projects/rt/5.10/older/patches-5.10.221-rt113.tar.xz
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=f3948ef7d213b342e32b2d7d84acedaf49bad464
 
 In order to minimize the interference of migrate_disable() on lower
 priority tasks, which can be deprived of runtime due to being stuck
@@ -490,6 +489,3 @@ index 8237c9ab2bb8..69ef7cac3d29 100644
  #endif
  
  #ifdef CONFIG_CPU_IDLE
--- 
-2.45.2
-

@@ -1,11 +1,10 @@
-From 62cd5936016390e9c4babe98ad60e59d247a9ece Mon Sep 17 00:00:00 2001
 From: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
 Date: Wed, 3 Feb 2021 11:05:23 -0500
 Subject: [PATCH 076/323] tracing: Merge irqflags + preempt counter.
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-Origin: https://www.kernel.org/pub/linux/kernel/projects/rt/5.10/older/patches-5.10.221-rt113.tar.xz
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=20a15ee816ae3f2229436f9f873e21ca77b64252
 
 The state of the interrupts (irqflags) and the preemption counter are
 both passed down to tracing_generic_entry_update(). Only one bit of
@@ -1895,6 +1894,3 @@ index 60ff36f5d7f9..0b07bb07127d 100644
  }
  
  /* uprobe handler */
--- 
-2.45.2
-

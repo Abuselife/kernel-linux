@@ -1,8 +1,7 @@
-From 6b7a31180866c00da900abd757009b5aa6ab9f30 Mon Sep 17 00:00:00 2001
 From: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
 Date: Sat, 23 Jan 2021 21:10:27 +0100
 Subject: [PATCH 065/323] blk-mq: Use llist_head for blk_cpu_done
-Origin: https://www.kernel.org/pub/linux/kernel/projects/rt/5.10/older/patches-5.10.221-rt113.tar.xz
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=7bedbafec77dfbbfd195791172afe87516743e3a
 
 With llist_head it is possible to avoid the locking (the irq-off region)
 when items are added. This makes it possible to add items on a remote
@@ -196,6 +195,3 @@ index a47e1aebaff2..fddff5d85d1e 100644
  	};
  
  	/*
--- 
-2.45.2
-

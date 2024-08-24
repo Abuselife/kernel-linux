@@ -1,8 +1,7 @@
-From 6a8853eab1f60c1e89c3618be044a4ea415c3ce4 Mon Sep 17 00:00:00 2001
 From: John Ogness <john.ogness@linutronix.de>
 Date: Fri, 18 Dec 2020 11:40:08 +0000
 Subject: [PATCH 090/323] printk: introduce a kmsg_dump iterator
-Origin: https://www.kernel.org/pub/linux/kernel/projects/rt/5.10/older/patches-5.10.221-rt113.tar.xz
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=8d451a0843161538594ff029c5cdd2019e1538c1
 
 Rather than store the iterator information into the registered
 kmsg_dump structure, create a separate iterator structure. The
@@ -82,7 +81,7 @@ index 6c3bc4b4da98..ec862846bc82 100644
  	/*
  	 * Outside of a panic context the pollers will continue to run,
 diff --git a/arch/powerpc/xmon/xmon.c b/arch/powerpc/xmon/xmon.c
-index 3de2adc0a807..9f62cca6c594 100644
+index a2883360d07c..a629fe3d820a 100644
 --- a/arch/powerpc/xmon/xmon.c
 +++ b/arch/powerpc/xmon/xmon.c
 @@ -3003,7 +3003,7 @@ print_address(unsigned long addr)
@@ -556,6 +555,3 @@ index fb33db0b143b..cc5f7e0fb157 100644
  	logbuf_unlock_irqrestore(flags);
  }
  EXPORT_SYMBOL_GPL(kmsg_dump_rewind);
--- 
-2.45.2
-

@@ -1,8 +1,7 @@
-From 023b7dd08f9a25628d74ae0b9142dca5040370f9 Mon Sep 17 00:00:00 2001
 From: Peter Zijlstra <peterz@infradead.org>
 Date: Fri, 23 Oct 2020 12:12:06 +0200
 Subject: [PATCH 009/323] sched: Massage set_cpus_allowed()
-Origin: https://www.kernel.org/pub/linux/kernel/projects/rt/5.10/older/patches-5.10.221-rt113.tar.xz
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=b89fe6b1848a9d217de85ee52508cb24bc69a048
 
 Thread a u32 flags word through the *set_cpus_allowed*() callchain.
 This will allow adding behavioural tweaks for future users.
@@ -170,6 +169,3 @@ index a72464d370cd..f0f396cc1bee 100644
  
  #endif
  
--- 
-2.45.2
-

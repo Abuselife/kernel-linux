@@ -1,8 +1,7 @@
-From f1b9a75eb7e1884772aee4fa28530dd8cc5a136c Mon Sep 17 00:00:00 2001
 From: Valentin Schneider <valentin.schneider@arm.com>
 Date: Tue, 8 Jun 2021 00:37:36 -0400
 Subject: [PATCH 295/323] sched: Don't defer CPU pick to migration_cpu_stop()
-Origin: https://www.kernel.org/pub/linux/kernel/projects/rt/5.10/older/patches-5.10.221-rt113.tar.xz
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=2f5b4f9c342bc1a03357f532949a135765d15a9c
 
 commit 475ea6c60279e9f2ddf7e4cf2648cd8ae0608361 upstream.
 
@@ -95,6 +94,3 @@ index d3b9d69171a2..81b342d6629b 100644
  		}
  	}
  	pending = p->migration_pending;
--- 
-2.45.2
-

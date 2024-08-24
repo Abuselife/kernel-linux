@@ -1,8 +1,7 @@
-From f7fc550298b5853942a4a342ae1f4a0be522b03d Mon Sep 17 00:00:00 2001
 From: Peter Zijlstra <peterz@infradead.org>
 Date: Tue, 8 Jun 2021 00:37:35 -0400
 Subject: [PATCH 294/323] sched: Simplify set_affinity_pending refcounts
-Origin: https://www.kernel.org/pub/linux/kernel/projects/rt/5.10/older/patches-5.10.221-rt113.tar.xz
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=03e56e943802bcd65f1f2ce3dd600c941ded0d39
 
 commit 50caf9c14b1498c90cf808dbba2ca29bd32ccba4 upstream.
 
@@ -124,6 +123,3 @@ index 76fa3daf1f60..d3b9d69171a2 100644
  	return 0;
  }
  
--- 
-2.45.2
-

@@ -1,8 +1,7 @@
-From 09663f91c1a21090cb12191fdbf7d528abf09ee7 Mon Sep 17 00:00:00 2001
 From: Thomas Gleixner <tglx@linutronix.de>
 Date: Thu, 12 Oct 2017 17:11:19 +0200
 Subject: [PATCH 170/323] locking/rtmutex: add sleeping lock implementation
-Origin: https://www.kernel.org/pub/linux/kernel/projects/rt/5.10/older/patches-5.10.221-rt113.tar.xz
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=a19c13522d4521966028ce35a67dff09e5679abb
 
 Signed-off-by: Thomas Gleixner <tglx@linutronix.de>
 Signed-off-by: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
@@ -1209,6 +1208,3 @@ index f6d40256c0d4..be5d41ed6ff2 100644
  		put_task_struct(task);
  	}
  }
--- 
-2.45.2
-

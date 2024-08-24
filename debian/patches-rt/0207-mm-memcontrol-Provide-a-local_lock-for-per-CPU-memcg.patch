@@ -1,9 +1,8 @@
-From 795abe9cdb1f6cb6b2d6fcbf4897d0a20d39002f Mon Sep 17 00:00:00 2001
 From: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
 Date: Tue, 18 Aug 2020 10:30:00 +0200
 Subject: [PATCH 207/323] mm: memcontrol: Provide a local_lock for per-CPU
  memcg_stock
-Origin: https://www.kernel.org/pub/linux/kernel/projects/rt/5.10/older/patches-5.10.221-rt113.tar.xz
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=d02ff1e931199d325e249a82468ecc0053486e52
 
 The interrupts are disabled to ensure CPU-local access to the per-CPU
 variable `memcg_stock'.
@@ -139,6 +138,3 @@ index 95fc91a06686..5f3df593b42c 100644
  
  	for_each_node(node) {
  		struct mem_cgroup_tree_per_node *rtpn;
--- 
-2.45.2
-

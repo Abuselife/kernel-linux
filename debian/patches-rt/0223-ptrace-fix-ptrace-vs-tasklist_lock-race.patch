@@ -1,8 +1,7 @@
-From 5027e29959be62ebb55443c38692fa113addfa16 Mon Sep 17 00:00:00 2001
 From: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
 Date: Thu, 29 Aug 2013 18:21:04 +0200
 Subject: [PATCH 223/323] ptrace: fix ptrace vs tasklist_lock race
-Origin: https://www.kernel.org/pub/linux/kernel/projects/rt/5.10/older/patches-5.10.221-rt113.tar.xz
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=e72bab216c3fcc2614b15f5f1db978b18dd4083b
 
 As explained by Alexander Fyodorov <halcy@yandex.ru>:
 
@@ -161,6 +160,3 @@ index 2f689b4fa68b..8ac1f0526476 100644
  			ncsw = p->nvcsw | LONG_MIN; /* sets MSB */
  		task_rq_unlock(rq, p, &rf);
  
--- 
-2.45.2
-

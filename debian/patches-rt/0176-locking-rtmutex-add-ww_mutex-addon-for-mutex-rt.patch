@@ -1,8 +1,7 @@
-From b31ae4e7600fa162b41ec6c924995884e49dd64b Mon Sep 17 00:00:00 2001
 From: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
 Date: Thu, 12 Oct 2017 17:34:38 +0200
 Subject: [PATCH 176/323] locking/rtmutex: add ww_mutex addon for mutex-rt
-Origin: https://www.kernel.org/pub/linux/kernel/projects/rt/5.10/older/patches-5.10.221-rt113.tar.xz
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=01fb55219f34a06d49ddbd130c2c69ecaf5455c3
 
 Signed-off-by: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
 ---
@@ -451,6 +450,3 @@ index a0771c150041..274172d5bb3a 100644
  	/*
  	 * The slowlock() above is guaranteed to return with the rtmutex (for
  	 * ret = 0) is now held, so there can't be a writer active. Increment
--- 
-2.45.2
-

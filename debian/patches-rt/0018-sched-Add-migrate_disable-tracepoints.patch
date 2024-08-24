@@ -1,8 +1,7 @@
-From 0d3c0368fd7a6feeef27e03546dd2daa4d5fedd9 Mon Sep 17 00:00:00 2001
 From: Peter Zijlstra <peterz@infradead.org>
 Date: Fri, 23 Oct 2020 12:12:15 +0200
 Subject: [PATCH 018/323] sched: Add migrate_disable() tracepoints
-Origin: https://www.kernel.org/pub/linux/kernel/projects/rt/5.10/older/patches-5.10.221-rt113.tar.xz
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=cf4663be8f57931a87c447ab42f875e09ec9fd38
 
 XXX write a tracer:
 
@@ -105,6 +104,3 @@ index c916dbc2a016..5dc1ee8dcec2 100644
  				push_task = get_push_task(src_rq);
  			} else {
  				deactivate_task(src_rq, p, 0);
--- 
-2.45.2
-

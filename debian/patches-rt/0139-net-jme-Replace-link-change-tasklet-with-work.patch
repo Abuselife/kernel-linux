@@ -1,8 +1,7 @@
-From f3687a66dd11020ef5a184be442f0baacca9ec12 Mon Sep 17 00:00:00 2001
 From: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
 Date: Tue, 9 Mar 2021 09:42:11 +0100
 Subject: [PATCH 139/323] net: jme: Replace link-change tasklet with work
-Origin: https://www.kernel.org/pub/linux/kernel/projects/rt/5.10/older/patches-5.10.221-rt113.tar.xz
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=88ea310502c1a78cfc49ccc8d24b79b9390cb0a6
 
 The link change tasklet disables the tasklets for tx/rx processing while
 upating hw parameters and then enables the tasklets again.
@@ -83,6 +82,3 @@ index a2c3b00d939d..2af76329b4a2 100644
  	struct tasklet_struct	pcc_task;
  	unsigned long		flags;
  	u32			reg_txcs;
--- 
-2.45.2
-

@@ -1,8 +1,7 @@
-From d0389163126442bb836eee909bc07eb79a88acf2 Mon Sep 17 00:00:00 2001
 From: Thomas Gleixner <tglx@linutronix.de>
 Date: Sun, 17 Jul 2011 21:56:42 +0200
 Subject: [PATCH 226/323] trace: Add migrate-disabled counter to tracing output
-Origin: https://www.kernel.org/pub/linux/kernel/projects/rt/5.10/older/patches-5.10.221-rt113.tar.xz
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=ddc66daa14729570256f23c8d5c9b17d16f9dca0
 
 Signed-off-by: Thomas Gleixner <tglx@linutronix.de>
 ---
@@ -118,6 +117,3 @@ index 753b84c50848..8bd207443f4f 100644
  	return !trace_seq_has_overflowed(s);
  }
  
--- 
-2.45.2
-

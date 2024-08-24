@@ -1,8 +1,7 @@
-From 0eebeffbf0ef3aa2f755c97bbd3386b398040083 Mon Sep 17 00:00:00 2001
 From: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
 Date: Tue, 29 Sep 2020 15:21:17 +0200
 Subject: [PATCH 156/323] locking/rtmutex: Remove cruft
-Origin: https://www.kernel.org/pub/linux/kernel/projects/rt/5.10/older/patches-5.10.221-rt113.tar.xz
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=38a7518654c5c557d459dcc55cb1dae6a30ee5e9
 
 Most of this is around since the very beginning. I'm not sure if this
 was used while the rtmutex-deadlock-tester was around but today it seems
@@ -94,6 +93,3 @@ index ca6fb489007b..e6913103d7ff 100644
  	struct pid		*deadlock_task_pid;
  	struct rt_mutex		*deadlock_lock;
  #endif
--- 
-2.45.2
-

@@ -1,8 +1,7 @@
-From 775a1449aa92cd301e4b4e7fedc6aa9746951bbb Mon Sep 17 00:00:00 2001
 From: Peter Zijlstra <peterz@infradead.org>
 Date: Tue, 17 Nov 2020 12:14:51 +0100
 Subject: [PATCH 022/323] sched: Fix migration_cpu_stop() WARN
-Origin: https://www.kernel.org/pub/linux/kernel/projects/rt/5.10/older/patches-5.10.221-rt113.tar.xz
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=b3b8595214fe6d3c30f8384482ed659568d57cc5
 
 Oleksandr reported hitting the WARN in the 'task_rq(p) != rq' branch
 of migration_cpu_stop(). Valentin noted that using cpu_of(rq) in that
@@ -42,6 +41,3 @@ index d12d91510789..7d67a0e03f9a 100644
  			goto out;
  		}
  
--- 
-2.45.2
-

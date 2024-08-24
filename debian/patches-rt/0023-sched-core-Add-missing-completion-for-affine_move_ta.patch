@@ -1,9 +1,8 @@
-From fac61795f066429c16f97d4ed4298ea587d74ce9 Mon Sep 17 00:00:00 2001
 From: Valentin Schneider <valentin.schneider@arm.com>
 Date: Fri, 13 Nov 2020 11:24:14 +0000
 Subject: [PATCH 023/323] sched/core: Add missing completion for
  affine_move_task() waiters
-Origin: https://www.kernel.org/pub/linux/kernel/projects/rt/5.10/older/patches-5.10.221-rt113.tar.xz
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=9e696074efc474d3519427737c8f0458bfbfa521
 
 Qian reported that some fuzzer issuing sched_setaffinity() ends up stuck on
 a wait_for_completion(). The problematic pattern seems to be:
@@ -74,6 +73,3 @@ index 7d67a0e03f9a..c1e52319669d 100644
  		/*
  		 * When this was migrate_enable() but we no longer have an
  		 * @pending, a concurrent SCA 'fixed' things and we should be
--- 
-2.45.2
-

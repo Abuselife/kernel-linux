@@ -1,11 +1,10 @@
-From adbf550398b9a362a4fe819d96831b2e968067fd Mon Sep 17 00:00:00 2001
 From: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
 Date: Mon, 28 Oct 2013 12:19:57 +0100
 Subject: [PATCH 213/323] wait.h: include atomic.h
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-Origin: https://www.kernel.org/pub/linux/kernel/projects/rt/5.10/older/patches-5.10.221-rt113.tar.xz
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=f2491bd32ee9cff39924bd83cfaeaf8c688c397d
 
 |  CC      init/main.o
 |In file included from include/linux/mmzone.h:9:0,
@@ -37,6 +36,3 @@ index 1663e47681a3..20aae69387aa 100644
  
  typedef struct wait_queue_entry wait_queue_entry_t;
  
--- 
-2.45.2
-

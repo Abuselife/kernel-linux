@@ -1,8 +1,7 @@
-From 5d59b66cac5d9b384c392041457107a6fd85a9ec Mon Sep 17 00:00:00 2001
 From: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
 Date: Wed, 3 Feb 2021 11:05:24 -0500
 Subject: [PATCH 077/323] tracing: Inline tracing_gen_ctx_flags()
-Origin: https://www.kernel.org/pub/linux/kernel/projects/rt/5.10/older/patches-5.10.221-rt113.tar.xz
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=df14bec3a1c416d1e5b0d311f1d40e3dab89a1d0
 
 Inline tracing_gen_ctx_flags(). This allows to have one ifdef
 CONFIG_TRACE_IRQFLAGS_SUPPORT.
@@ -179,6 +178,3 @@ index 27ed42bccd7f..40e5ee987578 100644
  #define TRACE_BUF_SIZE		1024
  
  struct trace_array;
--- 
-2.45.2
-

@@ -1,8 +1,7 @@
-From 09fedc2140c4e79f2bdb8db6a23633d541f07c70 Mon Sep 17 00:00:00 2001
 From: Valentin Schneider <valentin.schneider@arm.com>
 Date: Fri, 23 Oct 2020 12:12:17 +0200
 Subject: [PATCH 020/323] sched: Comment affine_move_task()
-Origin: https://www.kernel.org/pub/linux/kernel/projects/rt/5.10/older/patches-5.10.221-rt113.tar.xz
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=34e8109b2bab62e0e9341778fbea6e3b6c00cd53
 
 Signed-off-by: Valentin Schneider <valentin.schneider@arm.com>
 Signed-off-by: Peter Zijlstra (Intel) <peterz@infradead.org>
@@ -125,6 +124,3 @@ index 3b7bb01eecc0..565d8011c832 100644
  	wait_var_event(&my_pending.refs, !refcount_read(&my_pending.refs));
  
  	return 0;
--- 
-2.45.2
-

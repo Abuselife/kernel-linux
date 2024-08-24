@@ -1,8 +1,7 @@
-From 55de45a9781575b3c0375b731c880f2c86e63c20 Mon Sep 17 00:00:00 2001
 From: Thomas Gleixner <tglx@linutronix.de>
 Date: Sun, 17 Jul 2011 18:51:23 +0200
 Subject: [PATCH 246/323] lockdep: Make it RT aware
-Origin: https://www.kernel.org/pub/linux/kernel/projects/rt/5.10/older/patches-5.10.221-rt113.tar.xz
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=c8e4c1c9e89200a77376eda931712a1ad4cb145a
 
 teach lockdep that we don't really do softirqs on -RT.
 
@@ -73,6 +72,3 @@ index 7471d85f54ae..4fb9e6301018 100644
  
  	if (!debug_locks)
  		print_irqtrace_events(current);
--- 
-2.45.2
-
