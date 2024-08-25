@@ -1,3 +1,11 @@
+linux (6.11~rc4-1~exp2) UNRELEASED; urgency=medium
+
+  [ Emanuele Rocca]
+  * [arm64] Add of_pmem and nd_pmem to arm64 md-modules udeb to support HTTP
+    boot with u-boot
+
+ -- Emanuele Rocca <ema@debian.org>  Thu, 22 Aug 2024 10:11:22 +0200
+
 linux (6.11~rc4-1~exp1) experimental; urgency=medium
 
   * New upstream release candidate
