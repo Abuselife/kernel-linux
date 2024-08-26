@@ -1,4 +1,4 @@
-linux (6.1.106-3) UNRELEASED; urgency=medium
+linux (6.1.106-3) bookworm; urgency=medium
 
   * udp: allow header check for dodgy GSO_UDP_L4 packets.
   * gso: fix dodgy bit handling for GSO_UDP_L4
@@ -6,7 +6,7 @@ linux (6.1.106-3) UNRELEASED; urgency=medium
   * net: drop bad gso csum_start and offset in virtio_net_hdr (Closes: #1079684)
   * Bump ABI to 25
 
- -- Salvatore Bonaccorso <carnil@debian.org>  Mon, 26 Aug 2024 20:54:56 +0200
+ -- Salvatore Bonaccorso <carnil@debian.org>  Mon, 26 Aug 2024 21:47:39 +0200
 
 linux (6.1.106-2) bookworm; urgency=medium
 
