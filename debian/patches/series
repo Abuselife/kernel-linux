@@ -108,6 +108,7 @@ bugfix/all/media-solo6x10-replace-max-a-min-b-c-by-clamp-b-a-c.patch
 bugfix/all/udp-allow-header-check-for-dodgy-GSO_UDP_L4-packets.patch
 bugfix/all/gso-fix-dodgy-bit-handling-for-GSO_UDP_L4.patch
 bugfix/all/net-more-strict-VIRTIO_NET_HDR_GSO_UDP_L4-validation.patch
+bugfix/all/net-drop-bad-gso-csum_start-and-offset-in-virtio_net.patch
 
 # Miscellaneous features
 
