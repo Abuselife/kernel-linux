@@ -1,3 +1,9 @@
+linux (6.1.106-3) UNRELEASED; urgency=medium
+
+  * udp: allow header check for dodgy GSO_UDP_L4 packets.
+
+ -- Salvatore Bonaccorso <carnil@debian.org>  Mon, 26 Aug 2024 20:54:56 +0200
+
 linux (6.1.106-2) bookworm; urgency=medium
 
   * media: solo6x10: replace max(a, min(b, c)) by clamp(b, a, c)

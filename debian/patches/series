@@ -105,6 +105,7 @@ features/arm64/quartz64/arm64-dts-rockchip-Add-SOQuartz-Model-A-baseboard.patch
 bugfix/all/disable-some-marvell-phys.patch
 bugfix/all/fs-add-module_softdep-declarations-for-hard-coded-cr.patch
 bugfix/all/media-solo6x10-replace-max-a-min-b-c-by-clamp-b-a-c.patch
+bugfix/all/udp-allow-header-check-for-dodgy-GSO_UDP_L4-packets.patch
 
 # Miscellaneous features
 
