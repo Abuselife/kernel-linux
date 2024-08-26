@@ -4,6 +4,7 @@ linux (6.1.106-3) UNRELEASED; urgency=medium
   * gso: fix dodgy bit handling for GSO_UDP_L4
   * net: more strict VIRTIO_NET_HDR_GSO_UDP_L4 validation
   * net: drop bad gso csum_start and offset in virtio_net_hdr (Closes: #1079684)
+  * Bump ABI to 25
 
  -- Salvatore Bonaccorso <carnil@debian.org>  Mon, 26 Aug 2024 20:54:56 +0200
 
