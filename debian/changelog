@@ -323,6 +323,7 @@ linux (6.1.107-1) UNRELEASED; urgency=medium
 
   [ Salvatore Bonaccorso ]
   * Bump ABI to 26
+  * [rt] Update to 6.1.107-rt39
 
  -- Salvatore Bonaccorso <carnil@debian.org>  Sat, 31 Aug 2024 13:03:59 +0200
 
