@@ -1,4 +1,4 @@
-linux (6.1.107-1) UNRELEASED; urgency=medium
+linux (6.1.108-1) UNRELEASED; urgency=medium
 
   * New upstream stable update:
     https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.1.107
@@ -320,6 +320,80 @@ linux (6.1.107-1) UNRELEASED; urgency=medium
     - selftests: net: more strict check in net_helper
     - Input: MT - limit max slots
     - tools: move alignment-related macros to new <linux/align.h>
+    https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.1.108
+    - drm/amdgpu: Using uninitialized value *size when calling
+      amdgpu_vce_cs_reloc (CVE-2024-42228)
+    - btrfs: run delayed iputs when flushing delalloc
+    - smb/client: avoid dereferencing rdata=NULL in smb2_new_read_req()
+    - pinctrl: rockchip: correct RK3328 iomux width flag for GPIO2-B pins
+    - pinctrl: single: fix potential NULL dereference in pcs_get_function()
+    - of: Add cleanup.h based auto release via __free(device_node) markings
+    - wifi: wfx: repair open network AP mode
+    - wifi: mwifiex: duplicate static structs used in driver instances
+    - net: mana: Fix race of mana_hwc_post_rx_wqe and new hwc response
+    - mptcp: close subflow when receiving TCP+FIN
+    - mptcp: sched: check both backup in retrans
+    - mptcp: pm: skip connecting to already established sf
+    - mptcp: pm: reset MPC endp ID when re-added
+    - mptcp: pm: send ACK on an active subflow
+    - mptcp: pm: do not remove already closed subflows
+    - mptcp: pm: ADD_ADDR 0 is not a new address
+    - drm/amdgpu: align pp_power_profile_mode with kernel docs
+    - drm/amdgpu/swsmu: always force a state reprogram on init
+    - ata: libata-core: Fix null pointer dereference on error (CVE-2024-41098)
+    - usb: typec: fix up incorrectly backported "usb: typec: tcpm: unregister
+      existing source caps before re-registration"
+    - mmc: Avoid open coding by using mmc_op_tuning()
+    - mmc: mtk-sd: receive cmd8 data when hs400 tuning fail
+    - mptcp: unify pm get_local_id interfaces
+    - mptcp: pm: remove mptcp_pm_remove_subflow()
+    - mptcp: pm: only mark 'subflow' endp as available
+    - mptcp: pm: check add_addr_accept_max before accepting new ADD_ADDR
+    - of: Introduce for_each_*_child_of_node_scoped() to automate of_node_put()
+      handling
+    - thermal: of: Fix OF node leak in thermal_of_trips_init() error path
+    - thermal: of: Fix OF node leak in of_thermal_zone_find() error paths
+    - ASoC: amd: acp: fix module autoloading
+    - ASoC: SOF: amd: Fix for acp init sequence
+    - pinctrl: mediatek: common-v2: Fix broken bias-disable for
+      PULL_PU_PD_RSEL_TYPE
+    - btrfs: fix extent map use-after-free when adding pages to compressed bio
+      (CVE-2024-42314)
+    - soundwire: stream: fix programming slave ports for non-continous port maps
+    - [arm64] phy: xilinx: add runtime PM support
+    - [arm64] phy: xilinx: phy-zynqmp: dynamic clock support for power-save
+    - [arm64] phy: xilinx: phy-zynqmp: Fix SGMII linkup failure on resume
+    - [x86] dmaengine: dw: Add peripheral bus width verification
+    - [x86] dmaengine: dw: Add memory bus width verification
+    - Bluetooth: hci_core: Fix not handling hibernation actions
+    - iommu: Do not return 0 from map_pages if it doesn't do anything
+    - netfilter: nf_tables: restore IP sanity checks for netdev/egress
+    - wifi: iwlwifi: fw: fix wgds rev 3 exact size
+    - ethtool: check device is present when getting link settings
+    - netfilter: nf_tables_ipv6: consider network offset in netdev/egress
+      validation
+    - bonding: implement xdo_dev_state_free and call it after deletion
+    - gtp: fix a potential NULL pointer dereference
+    - sctp: fix association labeling in the duplicate COOKIE-ECHO case
+    - drm/amd/display: avoid using null object of framebuffer
+    - net: busy-poll: use ktime_get_ns() instead of local_clock()
+    - nfc: pn533: Add poll mod list filling check
+    - [arm64] soc: qcom: cmd-db: Map shared memory as WC, not WB
+    - cdc-acm: Add DISABLE_ECHO quirk for GE HealthCare UI Controller
+    - USB: serial: option: add MeiG Smart SRM825L
+    - [armhf] usb: dwc3: omap: add missing depopulate in probe error path
+    - [arm64,armhf] usb: dwc3: core: Prevent USB core invalid event buffer
+      address access
+    - usb: core: sysfs: Unmerge @usb3_hardware_lpm_attr_group in
+      remove_power_attributes()
+    - usb: cdnsp: fix incorrect index in cdnsp_get_hw_deq function
+    - usb: cdnsp: fix for Link TRB with TC
+    - [arm64] phy: zynqmp: Enable reference clock correctly
+    - igc: Fix reset adapter logics when tx mode change
+    - igc: Fix qbv tx latency by setting gtxoffset
+    - scsi: aacraid: Fix double-free on probe failure
+    - apparmor: fix policy_unpack_test on big endian systems
+    - fbdev: offb: fix up missing cleanup.h
 
   [ Salvatore Bonaccorso ]
   * Bump ABI to 26
