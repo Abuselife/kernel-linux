@@ -1,4 +1,4 @@
-linux (6.1.108-1) UNRELEASED; urgency=medium
+linux (6.1.109-1) UNRELEASED; urgency=medium
 
   * New upstream stable update:
     https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.1.107
@@ -394,6 +394,100 @@ linux (6.1.108-1) UNRELEASED; urgency=medium
     - scsi: aacraid: Fix double-free on probe failure
     - apparmor: fix policy_unpack_test on big endian systems
     - fbdev: offb: fix up missing cleanup.h
+    https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.1.109
+    - drm: panel-orientation-quirks: Add quirk for OrangePi Neo
+    - scsi: ufs: core: Bypass quick recovery if force reset is needed
+    - ALSA: hda/generic: Add a helper to mute speakers at suspend/shutdown
+    - ALSA: hda/conexant: Mute speakers at suspend / shutdown
+    - i2c: Fix conditional for substituting empty ACPI functions
+    - dma-debug: avoid deadlock between dma debug vs printk and netconsole
+    - net: usb: qmi_wwan: add MeiG Smart SRM825L
+    - [x86] ASoC: amd: yc: Support mic on Lenovo Thinkpad E14 Gen 6
+    - mptcp: make pm_remove_addrs_and_subflows static
+    - mptcp: pm: fix RM_ADDR ID for the initial subflow
+    - PCI/MSI: Fix UAF in msi_capability_init (CVE-2024-41096)
+    - f2fs: fix to truncate preallocated blocks in f2fs_file_open()
+      (CVE-2024-43859)
+    - mptcp: pm: fullmesh: select the right ID later
+    - mptcp: pm: avoid possible UaF when selecting endp (CVE-2024-44974)
+    - mptcp: pm: reuse ID 0 after delete and re-add
+    - mptcp: pm: fix ID 0 endp usage after multiple re-creations
+    - mptcp: pr_debug: add missing \n at the end
+    - mptcp: avoid duplicated SUB_CLOSED events
+    - drm/amdgpu: Fix uninitialized variable warning in amdgpu_afmt_acr
+    - drm/amd/display: Assign linear_pitch_alignment even for VM
+    - drm/amdgpu: fix overflowed array index read warning
+    - drm/amdgpu/pm: Check the return value of smum_send_msg_to_smc
+    - drm/amd/pm: fix uninitialized variable warning
+    - drm/amd/pm: fix uninitialized variable warning for smu8_hwmgr
+    - drm/amd/pm: fix warning using uninitialized value of max_vid_step
+    - drm/amd/pm: Fix negative array index read
+    - drm/amd/pm: fix the Out-of-bounds read warning
+    - drm/amd/pm: fix uninitialized variable warnings for vega10_hwmgr
+    - drm/amdgpu: avoid reading vf2pf info size from FB
+    - drm/amd/display: Check gpio_id before used as array index
+    - drm/amd/display: Stop amdgpu_dm initialize when stream nums greater than 6
+    - drm/amd/display: Add array index check for hdcp ddc access
+    - drm/amd/display: Check num_valid_sets before accessing reader_wm_sets[]
+    - drm/amd/display: Check msg_id before processing transcation
+    - drm/amd/display: Fix Coverity INTEGER_OVERFLOW within
+      dal_gpio_service_create
+    - drm/amd/display: Spinlock before reading event
+    - drm/amd/display: Ensure index calculation will not overflow
+    - drm/amd/display: Skip inactive planes within
+      ModeSupportAndSystemConfiguration
+    - drm/amd/amdgpu: Check tbo resource pointer
+    - drm/amd/pm: fix uninitialized variable warnings for vangogh_ppt
+    - drm/amdgpu/pm: Fix uninitialized variable warning for smu10
+    - drm/amdgpu/pm: Fix uninitialized variable agc_btc_response
+    - drm/amdgpu: Fix out-of-bounds write warning
+    - drm/amdgpu: Fix out-of-bounds read of df_v1_7_channel_number
+    - drm/amdgpu: fix ucode out-of-bounds read warning
+    - drm/amdgpu: fix mc_data out-of-bounds read warning
+    - apparmor: fix possible NULL pointer dereference
+    - wifi: ath11k: initialize 'ret' in ath11k_qmi_load_file_target_mem()
+    - drm/amdgpu/pm: Check input value for CUSTOM profile mode setting on legacy
+      SOCs
+    - drm/amdgpu: fix dereference after null check
+    - drm/amdgpu: fix the waring dereferencing hive
+    - drm/amd/pm: check specific index for aldebaran
+    - drm/amdgpu: the warning dereferencing obj for nbio_v7_4
+    - drm/amd/pm: check negtive return for table entries
+    - wifi: rtw89: ser: avoid multiple deinit on same CAM
+    - drm/amdgpu: update type of buf size to u32 for eeprom functions
+    - wifi: iwlwifi: remove fw_running op
+    - cpufreq: scmi: Avoid overflow of target_freq in fast switch
+    - PCI: al: Check IORESOURCE_BUS existence during probe
+    - hwspinlock: Introduce hwspin_lock_bust()
+    - RDMA/efa: Properly handle unexpected AQ completions
+    - ionic: fix potential irq name truncation
+    - pwm: xilinx: Fix u32 overflow issue in 32-bit width PWM mode.
+    - rcu/nocb: Remove buggy bypass lock contention mitigation
+    - usbip: Don't submit special requests twice
+    - usb: typec: ucsi: Fix null pointer dereference in trace
+    - fsnotify: clear PARENT_WATCHED flags lazily
+    - regmap: spi: Fix potential off-by-one when calculating reserved size
+    - smack: tcp: ipv4, fix incorrect labeling
+    - net/mlx5e: SHAMPO, Fix incorrect page release
+    - [arm64] drm/meson: plane: Add error handling
+    - [x86] hwmon: (k10temp) Check return value of amd_smn_read()
+    - wifi: cfg80211: make hash table duplicates more survivable
+    - driver: iio: add missing checks on iio_info's callback access
+    - block: remove the blk_flush_integrity call in blk_integrity_unregister
+    - drm/amd/display: added NULL check at start of dc_validate_stream
+    - drm/amd/display: Correct the defined value for
+      AMDGPU_DMUB_NOTIFICATION_MAX
+    - drm/amd/display: Skip wbscl_set_scaler_filter if filter is null
+    - media: uvcvideo: Enforce alignment of frame and interval
+    - virtio_net: Fix napi_skb_cache_put warning (CVE-2024-43835)
+    - Bluetooth: SCO: Fix possible circular locking dependency on
+      sco_connect_cfm
+    - Bluetooth: SCO: fix sco_conn related locking and validity issues
+    - ext4: fix inode tree inconsistency caused by ENOMEM
+    - udf: Limit file size to 4TB
+    - ext4: reject casefold inode flag without casefold feature
+    - ext4: handle redirtying in ext4_bio_write_page()
+    - i2c: Use IS_REACHABLE() for substituting empty ACPI functions
 
   [ Salvatore Bonaccorso ]
   * Bump ABI to 26
