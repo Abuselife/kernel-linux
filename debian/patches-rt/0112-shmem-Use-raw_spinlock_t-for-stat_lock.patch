@@ -1,7 +1,7 @@
 From: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
 Date: Fri, 14 Aug 2020 18:53:34 +0200
 Subject: [PATCH 112/323] shmem: Use raw_spinlock_t for ->stat_lock
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=c7111ffb0a67d47757532340e091d80821817a2f
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=ab87b7fdb61284b8ade0ebd3e08dd7bdba6e3808
 
 Each CPU has SHMEM_INO_BATCH inodes available in `->ino_batch' which is
 per-CPU. Access here is serialized by disabling preemption. If the pool is

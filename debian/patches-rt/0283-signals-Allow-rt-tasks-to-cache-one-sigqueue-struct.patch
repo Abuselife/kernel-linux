@@ -1,7 +1,7 @@
 From: Thomas Gleixner <tglx@linutronix.de>
 Date: Fri, 3 Jul 2009 08:44:56 -0500
 Subject: [PATCH 283/323] signals: Allow rt tasks to cache one sigqueue struct
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=60a7134641445d54be676cbc118e9c8f7b2a3fa1
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=ab8873142c45d0c3a06b9f062b6f82a078ea6029
 
 To avoid allocation allow rt tasks to cache one sigqueue struct in
 task struct.
@@ -65,7 +65,7 @@ index fbe8ae617780..152b81f24099 100644
  	p->utime = p->stime = p->gtime = 0;
  #ifdef CONFIG_ARCH_HAS_SCALED_CPUTIME
 diff --git a/kernel/signal.c b/kernel/signal.c
-index e8819aabe3cd..e1f263cbcf09 100644
+index f6a9067715d7..06fedb210a59 100644
 --- a/kernel/signal.c
 +++ b/kernel/signal.c
 @@ -20,6 +20,7 @@

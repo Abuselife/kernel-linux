@@ -2,7 +2,7 @@ From: John Ogness <john.ogness@linutronix.de>
 Date: Wed, 13 Jan 2021 11:29:53 +0106
 Subject: [PATCH 085/323] printk: consolidate
  kmsg_dump_get_buffer/syslog_print_all code
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=4423b6b663e76aaca9f82a51a09059d731cc30fa
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=47530f172dddb4d2753ed9c4ca8d5a5f44723008
 
 The logic for finding records to fit into a buffer is the same for
 kmsg_dump_get_buffer() and syslog_print_all(). Introduce a helper

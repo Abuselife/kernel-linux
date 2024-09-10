@@ -1,7 +1,7 @@
 From: John Ogness <john.ogness@linutronix.de>
 Date: Mon, 30 Nov 2020 01:42:06 +0106
 Subject: [PATCH 104/323] printk: introduce kernel sync mode
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=15fbfc35bc757f202757f0213362700af74cb86d
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=33d3649e28a33ce37dc539df35c4a81d32252201
 
 When the kernel performs an OOPS, enter into "sync mode":
 

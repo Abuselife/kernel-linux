@@ -2,7 +2,7 @@ From: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
 Date: Tue, 29 Sep 2020 16:05:11 +0200
 Subject: [PATCH 157/323] locking/rtmutex: Remove output from deadlock
  detector.
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=a0f333c6acd1223d47b865d8ee936fe65f45819e
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=a10566df0cc385b613008b181e7083ee4db6c0c1
 
 In commit
   f5694788ad8da ("rt_mutex: Add lockdep annotations")

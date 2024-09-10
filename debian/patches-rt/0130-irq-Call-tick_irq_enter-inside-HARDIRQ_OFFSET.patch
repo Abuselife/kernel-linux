@@ -1,7 +1,7 @@
 From: Frederic Weisbecker <frederic@kernel.org>
 Date: Wed, 2 Dec 2020 12:57:32 +0100
 Subject: [PATCH 130/323] irq: Call tick_irq_enter() inside HARDIRQ_OFFSET
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=5e4b08a8d96ec543f4fb45fcf173f301632fab66
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=3ca2c33209ee3037dfe197277e153b9f492fa2f2
 
 Now that account_hardirq_enter() is called after HARDIRQ_OFFSET has
 been incremented, there is nothing left that prevents us from also

@@ -1,7 +1,7 @@
 From: Anders Roxell <anders.roxell@linaro.org>
 Date: Thu, 14 May 2015 17:52:17 +0200
 Subject: [PATCH 263/323] arch/arm64: Add lazy preempt support
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=24de27e40d88543412cd93a57725aaac1b11bd9b
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=de2412921849ca7a556c48b74fd2b45ee1f37120
 
 arm64 is missing support for PREEMPT_RT. The main feature which is
 lacking is support for lazy preemption. The arch-specific entry code,
@@ -22,7 +22,7 @@ Signed-off-by: Luis Claudio R. Goncalves <lgoncalv@redhat.com>
  6 files changed, 43 insertions(+), 5 deletions(-)
 
 diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
-index 13cf137da999..7681d7b65c7d 100644
+index 9fdf8b036428..432b0c4aa104 100644
 --- a/arch/arm64/Kconfig
 +++ b/arch/arm64/Kconfig
 @@ -173,6 +173,7 @@ config ARM64

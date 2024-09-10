@@ -1,7 +1,7 @@
 From: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
 Date: Tue, 8 Sep 2020 16:57:11 +0200
 Subject: [PATCH 187/323] net: Properly annotate the try-lock for the seqlock
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=fd0e5f055617cf176c6a51192a02bbf677b07ade
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=c6f0ff69a2c50771b7b5fe2bbe9f5d78849a53a5
 
 In patch
    ("net/Qdisc: use a seqlock instead seqcount")

@@ -1,7 +1,7 @@
 From: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
 Date: Wed, 16 Sep 2020 16:15:39 +0200
 Subject: [PATCH 237/323] net: Dequeue in dev_cpu_dead() without the lock
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=b799fb897c688309b4eb9e093b3043106746906e
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=86e69ecd60cc5d76ec24c517cca1a7436fdf4408
 
 Upstream uses skb_dequeue() to acquire lock of `input_pkt_queue'. The reason is
 to synchronize against a remote CPU which still thinks that the CPU is online

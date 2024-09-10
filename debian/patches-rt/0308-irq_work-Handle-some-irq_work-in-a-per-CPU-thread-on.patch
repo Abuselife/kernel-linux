@@ -2,7 +2,7 @@ From: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
 Date: Wed, 24 Nov 2021 17:12:20 +0100
 Subject: [PATCH 308/323] irq_work: Handle some irq_work in a per-CPU thread on
  PREEMPT_RT
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=86f8b0071ad3549c66c04095ff5ca9079e63d4ac
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=363b0672c58344dceb680b8727940370b6241c8d
 
 The irq_work callback is invoked in hard IRQ context. By default all
 callbacks are scheduled for invocation right away (given supported by

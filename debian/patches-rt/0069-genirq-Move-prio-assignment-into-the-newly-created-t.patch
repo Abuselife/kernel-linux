@@ -2,7 +2,7 @@ From: Thomas Gleixner <tglx@linutronix.de>
 Date: Mon, 9 Nov 2020 23:32:39 +0100
 Subject: [PATCH 069/323] genirq: Move prio assignment into the newly created
  thread
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=ebd436ada39dcb1def65e7930a998b65b2a6f3a2
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=43659c93db3bb87a40c2abd3b41b4a9e787bba84
 
 With enabled threaded interrupts the nouveau driver reported the
 following:
@@ -36,7 +36,7 @@ Signed-off-by: Luis Claudio R. Goncalves <lgoncalv@redhat.com>
  1 file changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/kernel/irq/manage.c b/kernel/irq/manage.c
-index 0159925054fa..5ec167fb77b9 100644
+index c7f4f948f17e..c37240bf6df4 100644
 --- a/kernel/irq/manage.c
 +++ b/kernel/irq/manage.c
 @@ -1201,6 +1201,8 @@ static int irq_thread(void *data)

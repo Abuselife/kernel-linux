@@ -1,7 +1,7 @@
 From: John Ogness <john.ogness@linutronix.de>
 Date: Tue, 26 Jan 2021 17:43:19 +0106
 Subject: [PATCH 092/323] printk: remove logbuf_lock
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=5ec47e4e1b45726550568bcf01f4e62f10cd2f0f
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=2c06aa4b1a843b5934d7040044cbb1692c3d268c
 
 Since the ringbuffer is lockless, there is no need for it to be
 protected by @logbuf_lock. Remove @logbuf_lock.

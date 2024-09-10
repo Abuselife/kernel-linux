@@ -1,7 +1,7 @@
 From: Frederic Weisbecker <frederic@kernel.org>
 Date: Wed, 2 Dec 2020 12:57:29 +0100
 Subject: [PATCH 127/323] s390/vtime: Use the generic IRQ entry accounting
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=5cd62ede5e0dd234f27153b1b5827c3dd04bdf06
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=b2f01f57f3bafd90ee4fc565bff355d9efe41a03
 
 s390 has its own version of IRQ entry accounting because it doesn't
 account the idle time the same way the other architectures do. Only
@@ -91,7 +91,7 @@ index eb98d145db9a..f4956d7403b3 100644
   * Sorted add to a list. List is linear searched until first bigger
   * element is found.
 diff --git a/kernel/sched/cputime.c b/kernel/sched/cputime.c
-index e03568c5f584..1d78b835ec8b 100644
+index 0c0c905a61d2..c06dac0d3f3b 100644
 --- a/kernel/sched/cputime.c
 +++ b/kernel/sched/cputime.c
 @@ -417,23 +417,14 @@ void vtime_task_switch(struct task_struct *prev)

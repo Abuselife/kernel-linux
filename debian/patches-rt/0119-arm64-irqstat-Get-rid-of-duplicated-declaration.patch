@@ -1,7 +1,7 @@
 From: Thomas Gleixner <tglx@linutronix.de>
 Date: Fri, 13 Nov 2020 15:02:13 +0100
 Subject: [PATCH 119/323] arm64: irqstat: Get rid of duplicated declaration
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=41d5251386cf5c0397a62408b358ad0f93c50643
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=9dd34737922bf34c7131a7f99cb146f681086cfb
 
 irq_cpustat_t is exactly the same as the asm-generic one. Define
 ack_bad_irq so the generic header does not emit the generic version of it.

@@ -1,7 +1,7 @@
 From: John Ogness <john.ogness@linutronix.de>
 Date: Mon, 30 Nov 2020 01:42:10 +0106
 Subject: [PATCH 108/323] printk: add pr_flush()
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=d62f71326c2dac2392060fadf9df557124c6d135
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=ce20b0539a1552c020a59e7d8f01237aba7b5c91
 
 Provide a function to allow waiting for console printers to catch
 up to the latest logged message.

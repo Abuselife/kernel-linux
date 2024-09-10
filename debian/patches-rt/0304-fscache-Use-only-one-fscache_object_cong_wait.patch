@@ -1,7 +1,7 @@
 From: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
 Date: Tue, 2 Nov 2021 11:52:05 +0100
 Subject: [PATCH 304/323] fscache: Use only one fscache_object_cong_wait.
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=3d72e02597706e8a46827807e0309534a3e2038a
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=2b7c8b557a394f4c8a7e267d571d3dba9deb261b
 
 This is an update of the original patch, removing put_cpu_var() which
 was overseen in the initial patch.

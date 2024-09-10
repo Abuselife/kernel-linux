@@ -1,7 +1,7 @@
 From: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
 Date: Wed, 14 Sep 2016 14:35:49 +0200
 Subject: [PATCH 184/323] fs/dcache: use swait_queue instead of waitqueue
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=d8de8fb6be46485ad41d69e2e0c48ad48349ccb2
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=6c737de23a2020c2a3b7afc5361da033e454849f
 
 __d_lookup_done() invokes wake_up_all() while holding a hlist_bl_lock()
 which disables preemption. As a workaround convert it to swait.
@@ -198,10 +198,10 @@ index 712948e97991..585d0afd1af6 100644
  		if (IS_ERR(child))
  			goto end_instantiate;
 diff --git a/fs/proc/proc_sysctl.c b/fs/proc/proc_sysctl.c
-index aff9593feb73..d1a29668bff8 100644
+index f5c967735335..31a655879dd3 100644
 --- a/fs/proc/proc_sysctl.c
 +++ b/fs/proc/proc_sysctl.c
-@@ -684,7 +684,7 @@ static bool proc_sys_fill_cache(struct file *file,
+@@ -682,7 +682,7 @@ static bool proc_sys_fill_cache(struct file *file,
  
  	child = d_lookup(dir, &qname);
  	if (!child) {

@@ -1,7 +1,7 @@
 From: Thomas Gleixner <tglx@linutronix.de>
 Date: Tue, 3 Nov 2020 10:27:30 +0100
 Subject: [PATCH 041/323] highmem: Get rid of kmap_types.h
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=7281474641bcfcc83879787b7224d822a4476717
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=e28a9743226d9e4f47d1e7d5946794cf5e12eb75
 
 The header is not longer used and on alpha, ia64, openrisc, parisc and um
 it was completely unused anyway as these architectures have no highmem

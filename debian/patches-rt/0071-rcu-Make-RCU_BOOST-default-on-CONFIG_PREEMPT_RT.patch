@@ -1,7 +1,7 @@
 From: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
 Date: Tue, 15 Dec 2020 15:16:45 +0100
 Subject: [PATCH 071/323] rcu: Make RCU_BOOST default on CONFIG_PREEMPT_RT
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=50e8cd853b56545ba398ace72ddd23b55344685d
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=b7851e8ffe4d0366ff242d6e172286db188a0463
 
 On PREEMPT_RT kernels, RCU callbacks are deferred to the `rcuc' kthread.
 This can stall RCU grace periods due to lengthy preemption not only of RCU

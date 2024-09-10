@@ -2,7 +2,7 @@ From: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
 Date: Wed, 28 Oct 2020 18:55:27 +0100
 Subject: [PATCH 066/323] lib/test_lockup: Minimum fix to get it compiled on
  PREEMPT_RT
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=795b14b2a5b30e0dbbead97c4bb8250397813284
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=674eb11f23605333938d1c999250a6a0d4e169bb
 
 On PREEMPT_RT the locks are quite different so they can't be tested as
 it is done below. The alternative is test for the waitlock within

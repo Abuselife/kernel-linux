@@ -1,7 +1,7 @@
 From: Thomas Gleixner <tglx@linutronix.de>
 Date: Tue, 3 Nov 2020 10:27:38 +0100
 Subject: [PATCH 049/323] io-mapping: Provide iomap_local variant
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=e1fa8759e40b1b4411d7d740519fa937c33ba80e
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=f59ca9bde3d404447837a3ecc8a643ae27393d23
 
 Similar to kmap local provide a iomap local variant which only disables
 migration, but neither disables pagefaults nor preemption.

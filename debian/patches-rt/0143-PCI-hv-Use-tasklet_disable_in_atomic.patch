@@ -1,7 +1,7 @@
 From: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
 Date: Tue, 9 Mar 2021 09:42:15 +0100
 Subject: [PATCH 143/323] PCI: hv: Use tasklet_disable_in_atomic()
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=ab6bf16f0cf47f05397f54a7de77a5ca0a6bc1c6
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=e0d5c8ee4bd27de83c643c92bc66cb5becc442d6
 
 The hv_compose_msi_msg() callback in irq_chip::irq_compose_msi_msg is
 invoked via irq_chip_compose_msi_msg(), which itself is always invoked from
@@ -28,7 +28,7 @@ Signed-off-by: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/drivers/pci/controller/pci-hyperv.c b/drivers/pci/controller/pci-hyperv.c
-index 2d6c77dcc815..7daba964f54e 100644
+index d0b3ec237385..b480ab6becf6 100644
 --- a/drivers/pci/controller/pci-hyperv.c
 +++ b/drivers/pci/controller/pci-hyperv.c
 @@ -1518,7 +1518,7 @@ static void hv_compose_msi_msg(struct irq_data *data, struct msi_msg *msg)

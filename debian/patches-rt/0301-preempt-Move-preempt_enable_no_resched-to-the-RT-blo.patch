@@ -2,7 +2,7 @@ From: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
 Date: Wed, 22 Sep 2021 19:34:40 +0200
 Subject: [PATCH 301/323] preempt: Move preempt_enable_no_resched() to the RT
  block
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=0889e16c64c4cc412464554f472f8b2879d3faa6
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=a92531a9de859a09685a108a693d1a1863c9f309
 
 preempt_enable_no_resched() should point to preempt_enable() on
 PREEMPT_RT so nobody is playing any preempt tricks and enables

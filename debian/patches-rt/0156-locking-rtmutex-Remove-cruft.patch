@@ -1,7 +1,7 @@
 From: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
 Date: Tue, 29 Sep 2020 15:21:17 +0200
 Subject: [PATCH 156/323] locking/rtmutex: Remove cruft
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=38a7518654c5c557d459dcc55cb1dae6a30ee5e9
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=5fa7db1ff88be9cd69ea502731a224bdba046444
 
 Most of this is around since the very beginning. I'm not sure if this
 was used while the rtmutex-deadlock-tester was around but today it seems

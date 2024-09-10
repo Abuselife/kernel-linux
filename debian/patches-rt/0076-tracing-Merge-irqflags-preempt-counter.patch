@@ -4,7 +4,7 @@ Subject: [PATCH 076/323] tracing: Merge irqflags + preempt counter.
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=20a15ee816ae3f2229436f9f873e21ca77b64252
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=650e2fc94e00ed0491e4e5d10cf1676066a27cbe
 
 The state of the interrupts (irqflags) and the preemption counter are
 both passed down to tracing_generic_entry_update(). Only one bit of
@@ -78,7 +78,7 @@ Signed-off-by: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
  17 files changed, 286 insertions(+), 307 deletions(-)
 
 diff --git a/include/linux/trace_events.h b/include/linux/trace_events.h
-index dbf0993153d3..6b084a001060 100644
+index 64af1e11ea13..474200844d1c 100644
 --- a/include/linux/trace_events.h
 +++ b/include/linux/trace_events.h
 @@ -152,17 +152,29 @@ enum print_line_t {

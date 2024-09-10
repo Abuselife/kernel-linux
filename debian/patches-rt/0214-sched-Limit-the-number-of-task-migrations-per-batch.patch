@@ -1,7 +1,7 @@
 From: Thomas Gleixner <tglx@linutronix.de>
 Date: Mon, 6 Jun 2011 12:12:51 +0200
 Subject: [PATCH 214/323] sched: Limit the number of task migrations per batch
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=b169f1ba35f82d6d280f0695d2fbce0a5c6c330a
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=79f25d455c9d0681d9813dc98e70b793b5895a39
 
 Put an upper limit on the number of tasks which are migrated per batch
 to avoid large latencies.
@@ -12,7 +12,7 @@ Signed-off-by: Thomas Gleixner <tglx@linutronix.de>
  1 file changed, 4 insertions(+)
 
 diff --git a/kernel/sched/core.c b/kernel/sched/core.c
-index aaeed4b14278..3d7e9ecbd376 100644
+index a251ee38e1ca..ab62c138cbe3 100644
 --- a/kernel/sched/core.c
 +++ b/kernel/sched/core.c
 @@ -65,7 +65,11 @@ const_debug unsigned int sysctl_sched_features =

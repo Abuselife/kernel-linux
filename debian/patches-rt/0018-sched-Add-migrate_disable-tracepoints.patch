@@ -1,7 +1,7 @@
 From: Peter Zijlstra <peterz@infradead.org>
 Date: Fri, 23 Oct 2020 12:12:15 +0200
 Subject: [PATCH 018/323] sched: Add migrate_disable() tracepoints
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=cf4663be8f57931a87c447ab42f875e09ec9fd38
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=240af5bbcef8d136ce2c1a372cb316e2e7b08769
 
 XXX write a tracer:
 
@@ -45,10 +45,10 @@ index c96a4337afe6..e48f584abf5f 100644
  
  /* This part must be outside protection */
 diff --git a/kernel/sched/core.c b/kernel/sched/core.c
-index 452fc1dfb143..b5f35b512577 100644
+index b041cfe48d9e..1077f97526f4 100644
 --- a/kernel/sched/core.c
 +++ b/kernel/sched/core.c
-@@ -1742,6 +1742,8 @@ void migrate_disable(void)
+@@ -1739,6 +1739,8 @@ void migrate_disable(void)
  		return;
  	}
  
@@ -57,7 +57,7 @@ index 452fc1dfb143..b5f35b512577 100644
  	preempt_disable();
  	this_rq()->nr_pinned++;
  	p->migration_disabled = 1;
-@@ -1774,6 +1776,8 @@ void migrate_enable(void)
+@@ -1771,6 +1773,8 @@ void migrate_enable(void)
  	p->migration_disabled = 0;
  	this_rq()->nr_pinned--;
  	preempt_enable();

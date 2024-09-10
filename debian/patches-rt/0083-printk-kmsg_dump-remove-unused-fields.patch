@@ -1,7 +1,7 @@
 From: John Ogness <john.ogness@linutronix.de>
 Date: Mon, 21 Dec 2020 11:19:39 +0106
 Subject: [PATCH 083/323] printk: kmsg_dump: remove unused fields
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=42cd3ae4eb79064bf96d6b54f858ffa676aa3610
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=842aa4d7f85aab839591feff73dff790d5add22d
 
 struct kmsg_dumper still contains some fields that were used to
 iterate the old ringbuffer. They are no longer used. Remove them

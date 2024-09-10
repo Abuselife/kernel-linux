@@ -2,7 +2,7 @@ From: Thomas Gleixner <tglx@linutronix.de>
 Date: Thu, 12 Oct 2017 17:28:34 +0200
 Subject: [PATCH 173/323] locking/rtmutex: add rwsem implementation based on
  rtmutex
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=1aaf7b510a7d8b57c5690626d6e8c053e7c17ab2
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=82e1e33a6548d6a55d86d6f977f7612ae80fc7fb
 
 The RT specific R/W semaphore implementation restricts the number of readers
 to one because a writer cannot block on multiple readers and inherit its
