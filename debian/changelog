@@ -471,6 +471,7 @@ linux (5.10.225-1) UNRELEASED; urgency=medium
   * d/salsa-ci.yml: Remove obsolete lintian error suppressions
   * d/salsa-ci.yml: Run extract-source job in target release, not unstable
   * d/salsa-ci.yml: Set RELEASE to bullseye
+  * d/config: Delete config settings for removed and automatic symbols
 
   [ Mateusz Łukasik ]
   * d/salsa-ci.yml: Add linux-compiler-* packages to build-signed job artifacts
