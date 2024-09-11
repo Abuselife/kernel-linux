@@ -1,3 +1,10 @@
+linux-6.1 (6.1.106-3~deb11u2) bullseye-security; urgency=medium
+
+  * Fix build-dependency on "pahole | dwarves" to be just "dwarves", since
+    stable buildds always try to use the first alternative
+
+ -- Ben Hutchings <benh@debian.org>  Wed, 11 Sep 2024 16:40:27 +0200
+
 linux-6.1 (6.1.106-3~deb11u1) bullseye-security; urgency=high
 
   * Rebuild for bullseye:
