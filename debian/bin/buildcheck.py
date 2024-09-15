@@ -6,13 +6,46 @@ import pathlib
 import sys
 
 from debian_linux.config_v2 import Config
+from debian_linux.debian import Changelog, VersionLinux
 from debian_linux.kconfig import KconfigFile
+
+
+class CheckKernelSize(object):
+    def __init__(self, config, dir, arch, featureset, flavour):
+        self.changelog = Changelog(version=VersionLinux)[0]
+        self.config = config
+        self.dir = dir
+
+    def __call__(self, out):
+        limit = self.config.build.kernel_file_max_size
+        if limit is None:
+            return 0
+
+        image = self.dir / self.config.build.kernel_file
+        size = image.stat().st_size
+        usage = (float(size) / limit) * 100.0
+
+        out.write(f'Image size {size}/{limit}, using {usage:.2f}%.  ')
+
+        if size > limit:
+            out.write('Too large.  Refusing to continue.\n')
+            return 1
+
+        # 1% overhead is desirable in order to cope with growth
+        # through the lifetime of a stable release. Warn if this is
+        # not the case.
+        if usage >= 99.0:
+            out.write(f'Under 1% space in {self.changelog.distribution}.  ')
+        else:
+            out.write('Image fits.  ')
+        out.write('Continuing.\n')
+        return 0
 
 
 class CheckSecureBootConfig:
     def __init__(self, config, dir, *_):
         self.config = config
-        self.dir = pathlib.Path(dir)
+        self.dir = dir
 
     def __call__(self, out):
         fail = 0
@@ -41,11 +74,11 @@ class Main(object):
 
     checks = {
         'setup': [CheckSecureBootConfig],
-        'build': [],
+        'build': [CheckKernelSize],
     }
 
     def __init__(self, dir, arch, featureset, flavour, phase):
-        self.args = dir, arch, featureset, flavour
+        self.args = pathlib.Path(dir), arch, featureset, flavour
         self.phase = phase
 
         config_dirs = [
