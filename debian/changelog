@@ -436,6 +436,49 @@ linux (5.10.225-1) UNRELEASED; urgency=medium
   * Drop "netfilter: ipset: Add list flush to cancel_gc", included in 5.10.224
   * [rt] Update to 5.10.224-rt116
   * Bump ABI to 33
+  * debian/README.source: Tag signatures are automatically verified
+  * d/bin/genorig.py, d/README.source: Only support Git as upstream
+  * d/bin/genorig.py, d/README.source: Add support for remote upstream repos
+  * lintian: Refresh lintian-overrides
+  * d/bin/gencontrol.py, d/lib/python: Use classes for build restriction
+    formulae
+  * d/bin/gencontrol.py, d/rules.real: Replace DEBUG variable with if_package
+  * Introduce pkg.linux.quick build profile for quicker CI builds
+  * d/salsa-ci.yml: Add CI config using some of the common pipeline
+  * d/salsa-ci.yml, d/tests/python: Only run static checks in CI
+  * d/salsa-ci.yml: Run kconfigeditor2 as kconfig static check
+  * d/salsa-ci.yml: Use per-release cache of orig tarballs
+  * d/bin/gencontrol_signed.py: Add support for pkg.linux.quick profile
+  * lintian: Add lintian-overrides to linux-signed-* for non-issues
+  * d/salsa-ci.yml: Don't disable signed code
+  * d/certs: Add certificate and key to enable test signing in CI
+  * d/salsa-ci.yml: Add jobs to build and test the signed packages
+  * d/tests: Remove obsolete dependencies of python test
+  * d/tests: Add kbuild test that builds a trivial OOT module
+  * lintian: Update overrides for lintian 2.115
+  * d/tests: kbuild test case depends on python3
+  * d/tests: Run kbuild test with default flavour if quick flavour not defined
+  * d/lib/python/debian_linux/debian.py: Add Architecture field to TestsControl
+  * d/tests: Restrict kbuild tests to architectures with default or quick
+    flavour
+  * d/tests/kbuild: Fix default-flavour lookup for arches with no featuresets
+  * d/tests/kbuild: Make flavour lookup verbose
+  * d/lib/python/debian_linux, d/templates: Use variable for binary package
+    name
+  * lintian: Update overrides in linux-image-*-dbg for lintian 2.115
+  * [arm64] lintian: Override errors for vdso32.so in linux-image-*-dbg
+  * d/salsa-ci.yml: Use !reference to include scripts from common pipeline
+  * d/salsa-ci.yml: Remove obsolete lintian error suppressions
+  * d/salsa-ci.yml: Run extract-source job in target release, not unstable
+  * d/salsa-ci.yml: Set RELEASE to bullseye
+  * d/config: Delete config settings for removed and automatic symbols
+  * hyperv-daemons: Add lintian-override for depends-on-obsolete-package
+
+  [ Mateusz Łukasik ]
+  * d/salsa-ci.yml: Add linux-compiler-* packages to build-signed job artifacts
+
+  [ Martyn Welch ]
+  * Increase timeout of CI build stage to 3 hours to enable build to complete
 
  -- Ben Hutchings <benh@debian.org>  Fri, 23 Aug 2024 16:44:34 +0200
 
