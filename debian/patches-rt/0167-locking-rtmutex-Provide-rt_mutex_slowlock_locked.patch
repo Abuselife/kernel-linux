@@ -7,16 +7,16 @@ This is the inner-part of rt_mutex_slowlock(), required for rwsem-rt.
 
 Signed-off-by: Thomas Gleixner <tglx@linutronix.de>
 Signed-off-by: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
+[bwh: Keep the extra argument to rt_mutext_handle_deadlock() that was
+ added by "rtmutex: Drop rt_mutex::wait_lock before scheduling",
 ---
  kernel/locking/rtmutex.c        | 67 +++++++++++++++++++--------------
  kernel/locking/rtmutex_common.h |  7 ++++
  2 files changed, 45 insertions(+), 29 deletions(-)
 
-diff --git a/kernel/locking/rtmutex.c b/kernel/locking/rtmutex.c
-index c3f3c23fefef..395a3e8b2463 100644
 --- a/kernel/locking/rtmutex.c
 +++ b/kernel/locking/rtmutex.c
-@@ -1234,35 +1234,16 @@ static void rt_mutex_handle_deadlock(int res, int detect_deadlock,
+@@ -1236,35 +1236,16 @@ static void rt_mutex_handle_deadlock(int
  	}
  }
  
@@ -58,7 +58,7 @@ index c3f3c23fefef..395a3e8b2463 100644
  
  	set_current_state(state);
  
-@@ -1270,16 +1251,16 @@ rt_mutex_slowlock(struct rt_mutex *lock, int state,
+@@ -1272,16 +1253,16 @@ rt_mutex_slowlock(struct rt_mutex *lock,
  	if (unlikely(timeout))
  		hrtimer_start_expires(&timeout->timer, HRTIMER_MODE_ABS);
  
@@ -73,13 +73,13 @@ index c3f3c23fefef..395a3e8b2463 100644
  	if (unlikely(ret)) {
  		__set_current_state(TASK_RUNNING);
 -		remove_waiter(lock, &waiter);
--		rt_mutex_handle_deadlock(ret, chwalk, &waiter);
+-		rt_mutex_handle_deadlock(ret, chwalk, lock, &waiter);
 +		remove_waiter(lock, waiter);
-+		rt_mutex_handle_deadlock(ret, chwalk, waiter);
++		rt_mutex_handle_deadlock(ret, chwalk, lock, waiter);
  	}
  
  	/*
-@@ -1287,6 +1268,34 @@ rt_mutex_slowlock(struct rt_mutex *lock, int state,
+@@ -1289,6 +1270,34 @@ rt_mutex_slowlock(struct rt_mutex *lock,
  	 * unconditionally. We might have to fix that up.
  	 */
  	fixup_rt_mutex_waiters(lock);
@@ -114,8 +114,6 @@ index c3f3c23fefef..395a3e8b2463 100644
  
  	raw_spin_unlock_irqrestore(&lock->wait_lock, flags);
  
-diff --git a/kernel/locking/rtmutex_common.h b/kernel/locking/rtmutex_common.h
-index 37cd6b3bf6f4..b5a2affa59d5 100644
 --- a/kernel/locking/rtmutex_common.h
 +++ b/kernel/locking/rtmutex_common.h
 @@ -15,6 +15,7 @@
@@ -126,7 +124,7 @@ index 37cd6b3bf6f4..b5a2affa59d5 100644
  
  /*
   * This is the control structure for tasks blocked on a rt_mutex,
-@@ -153,6 +154,12 @@ extern bool __rt_mutex_futex_unlock(struct rt_mutex *lock,
+@@ -153,6 +154,12 @@ extern bool __rt_mutex_futex_unlock(stru
  				 struct wake_q_head *wqh);
  
  extern void rt_mutex_postunlock(struct wake_q_head *wake_q);

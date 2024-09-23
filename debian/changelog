@@ -1,4 +1,4 @@
-linux (5.10.225-1) UNRELEASED; urgency=medium
+linux (5.10.226-1) UNRELEASED; urgency=medium
 
   * New upstream stable update:
     https://www.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.10.224
@@ -440,6 +440,191 @@ linux (5.10.225-1) UNRELEASED; urgency=medium
     - usb: core: sysfs: Unmerge @usb3_hardware_lpm_attr_group in
       remove_power_attributes()
     - scsi: aacraid: Fix double-free on probe failure (CVE-2024-46673)
+    https://www.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.10.226
+    - [x86] drm: panel-orientation-quirks: Add quirk for OrangePi Neo
+    - ALSA: hda/conexant: Mute speakers at suspend / shutdown
+    - net: usb: qmi_wwan: add MeiG Smart SRM825L
+    - drm/amdgpu: Fix uninitialized variable warning in amdgpu_afmt_acr
+    - drm/amdgpu: fix overflowed array index read warning
+    - drm/amd/pm: fix uninitialized variable warning for smu8_hwmgr
+    - drm/amd/pm: fix warning using uninitialized value of max_vid_step
+    - drm/amd/pm: fix the Out-of-bounds read warning (CVE-2024-46731)
+    - drm/amdgpu: fix uninitialized scalar variable warning
+    - drm/amd/pm: fix uninitialized variable warnings for vega10_hwmgr
+      (CVE-2024-43905)
+    - drm/amdgpu: avoid reading vf2pf info size from FB
+    - drm/amd/display: Check gpio_id before used as array index
+    - drm/amd/display: Stop amdgpu_dm initialize when stream nums greater than
+      6
+    - drm/amd/display: Add array index check for hdcp ddc access
+    - drm/amd/display: Check num_valid_sets before accessing reader_wm_sets[]
+    - drm/amd/display: Check msg_id before processing transcation
+    - drm/amd/display: Fix Coverity INTEGER_OVERFLOW within
+      dal_gpio_service_create
+    - drm/amdgpu/pm: Fix uninitialized variable agc_btc_response
+    - drm/amdgpu: Fix out-of-bounds write warning (CVE-2024-46725)
+    - drm/amdgpu: Fix out-of-bounds read of df_v1_7_channel_number
+      (CVE-2024-46724)
+    - drm/amdgpu: fix ucode out-of-bounds read warning (CVE-2024-46723)
+    - drm/amdgpu: fix mc_data out-of-bounds read warning (CVE-2024-46722)
+    - [amd64] drm/amdkfd: Reconcile the definition and use of oem_id in struct
+      kfd_topology_device
+    - apparmor: fix possible NULL pointer dereference (CVE-2024-46721)
+    - drm/amdgpu/pm: Check input value for CUSTOM profile mode setting on
+      legacy SOCs
+    - drm/amdgpu: the warning dereferencing obj for nbio_v7_4
+    - drm/amd/pm: check negtive return for table entries
+    - wifi: iwlwifi: remove fw_running op
+    - [arm64] PCI: al: Check IORESOURCE_BUS existence during probe
+    - hwspinlock: Introduce hwspin_lock_bust()
+    - usbip: Don't submit special requests twice
+    - usb: typec: ucsi: Fix null pointer dereference in trace (CVE-2024-46719)
+    - fsnotify: clear PARENT_WATCHED flags lazily
+    - [arm64] drm/meson: plane: Add error handling
+    - wifi: cfg80211: make hash table duplicates more survivable
+    - block: remove the blk_flush_integrity call in blk_integrity_unregister
+    - drm/amd/display: Skip wbscl_set_scaler_filter if filter is null
+      (CVE-2024-46714)
+    - media: uvcvideo: Enforce alignment of frame and interval
+    - block: initialize integrity buffer to zero before writing it to media
+      (CVE-2024-43854)
+    - drm/amd/pm: Fix the null pointer dereference for vega10_hwmgr
+    - bpf, cgroups: Fix cgroup v2 fallback on v1/v2 mixed mode
+    - net: set SOCK_RCU_FREE before inserting socket into hashtable
+    - virtio_net: Fix napi_skb_cache_put warning (CVE-2024-43835)
+    - rcu-tasks: Fix show_rcu_tasks_trace_gp_kthread buffer overflow
+      (CVE-2024-38577)
+    - udf: Limit file size to 4TB
+    - ext4: handle redirtying in ext4_bio_write_page()
+    - bpf, cgroup: Assign cgroup in cgroup_sk_alloc when called from interrupt
+    - sch/netem: fix use after free in netem_dequeue (CVE-2024-46800)
+    - ASoC: dapm: Fix UAF for snd_soc_pcm_runtime object (CVE-2024-46798)
+    - [x86] ALSA: hda/conexant: Add pincfg quirk to enable top speakers on
+      Sirius devices
+    - [x86] ALSA: hda/realtek: add patch for internal mic in Lenovo V145
+    - [x86] ALSA: hda/realtek: Support mute LED on HP Laptop 14-dq2xxx
+    - ata: libata: Fix memory leak for error path in ata_host_alloc()
+    - [arm*] irqchip/gic-v2m: Fix refcount leak in gicv2m_of_init()
+    - Revert "Bluetooth: MGMT/SMP: Fix address type when using SMP over BREDR/
+      LE" (regresion in 5.10.206)
+    - Bluetooth: MGMT: Ignore keys being loaded with invalid type
+    - [arm*] mmc: dw_mmc: Fix IDMAC operation with pages bigger than 4K
+    - [armhf] mmc: sdhci-of-aspeed: fix module autoloading
+    - fuse: update stats for pages in dropped aux writeback list
+    - fuse: use unsigned type for getxattr/listxattr size truncation
+    - [arm64] clk: qcom: clk-alpha-pll: Fix the pll post div mask
+    - [arm64] clk: qcom: clk-alpha-pll: Fix the trion pll postdiv set rate API
+    - can: mcp251x: fix deadlock if an interrupt occurs during mcp251x_open
+      (CVE-2024-46791)
+    - tracing: Avoid possible softlockup in tracing_iter_reset()
+    - ila: call nf_unregister_net_hooks() sooner (CVE-2024-46782)
+    - sched: sch_cake: fix bulk flow accounting logic for host fairness
+    - nilfs2: fix missing cleanup on rollforward recovery error
+      (CVE-2024-46781)
+    - nilfs2: fix state management in error path of log writing function
+    - btrfs: fix use-after-free after failure to create a snapshot
+      (CVE-2022-48733)
+    - mptcp: pm: avoid possible UaF when selecting endp (CVE-2024-44974)
+    - nfsd: move reply cache initialization into nfsd startup
+    - nfsd: move init of percpu reply_cache_stats counters back to
+      nfsd_init_net
+    - NFSD: Refactor nfsd_reply_cache_free_locked()
+    - NFSD: Rename nfsd_reply_cache_alloc()
+    - NFSD: Replace nfsd_prune_bucket()
+    - NFSD: Refactor the duplicate reply cache shrinker
+    - NFSD: simplify error paths in nfsd_svc()
+    - NFSD: Fix frame size warning in svc_export_parse()
+    - sunrpc: don't change ->sv_stats if it doesn't exist
+    - nfsd: stop setting ->pg_stats for unused stats
+    - sunrpc: pass in the sv_stats struct through svc_create_pooled
+    - sunrpc: remove ->pg_stats from svc_program
+    - sunrpc: use the struct net as the svc proc private
+    - nfsd: rename NFSD_NET_* to NFSD_STATS_*
+    - nfsd: expose /proc/net/sunrpc/nfsd in net namespaces
+    - nfsd: make all of the nfsd stats per-network namespace
+    - nfsd: remove nfsd_stats, make th_cnt a global counter
+    - nfsd: make svc_stat per-network namespace instead of global
+    - ALSA: hda: Add input value sanity checks to HDMI channel map controls
+    - [armhf] irqchip/armada-370-xp: Do not allow mapping IRQ 0 and 1
+    - af_unix: Remove put_pid()/put_cred() in copy_peercred().
+    - netfilter: nf_conncount: fix wrong variable type
+    - udf: Avoid excessive partition lengths (CVE-2024-46777)
+    - media: vivid: fix wrong sizeimage value for mplane
+    - wifi: brcmsmac: advertise MFP_CAPABLE to enable WPA3
+    - usb: uas: set host status byte on data completion error
+    - media: vivid: don't set HDMI TX controls if there are no HDMI outputs
+    - [x86] pcmcia: Use resource_size function on resource object
+    - can: bcm: Remove proc entry when dev is unregistered. (CVE-2024-46771)
+    - igb: Fix not clearing TimeSync interrupts for 82580
+    - svcrdma: Catch another Reply chunk overflow case
+    - [x86] platform/x86: dell-smbios: Fix error path in dell_smbios_init()
+    - tcp_bpf: fix return value of tcp_bpf_sendmsg() (CVE-2024-46783)
+    - igc: Unlock on error in igc_io_resume()
+    - drivers/net/usb: Remove all strcpy() uses
+    - net: usb: don't write directly to netdev->dev_addr
+    - usbnet: modern method to get random MAC
+    - gro: remove rcu_read_lock/rcu_read_unlock from gro_receive handlers
+    - gro: remove rcu_read_lock/rcu_read_unlock from gro_complete handlers
+    - fou: Fix null-ptr-deref in GRO. (CVE-2024-46763)
+    - net: bridge: br_fdb_external_learn_add(): always set EXT_LEARN
+    - ASoC: topology: Properly initialize soc_enum values
+    - dm init: Handle minors larger than 255
+    - [x86] iommu/vt-d: Handle volatile descriptor status read
+    - cgroup: Protect css->cgroup write under css_set_lock
+    - devres: Initialize an uninitialized struct member
+    - hwmon: (adc128d818) Fix underflows seen when writing limit attributes
+      (CVE-2024-46759)
+    - hwmon: (lm95234) Fix underflows seen when writing limit attributes
+      (CVE-2024-46758)
+    - hwmon: (nct6775-core) Fix underflows seen when writing limit attributes
+      (CVE-2024-46757)
+    - hwmon: (w83627ehf) Fix underflows seen when writing limit attributes
+      (CVE-2024-46756)
+    - libbpf: Add NULL checks to bpf_object__{prev_map,next_map}
+    - wifi: mwifiex: Do not return unused priv in mwifiex_get_priv_by_id()
+      (CVE-2024-46755)
+    - btrfs: replace BUG_ON with ASSERT in walk_down_proc()
+    - btrfs: clean up our handling of refs == 0 in snapshot delete
+    - PCI: Add missing bridge lock to pci_bus_lock() (CVE-2024-46750)
+    - HID: cougar: fix slab-out-of-bounds Read in cougar_report_fixup
+      (CVE-2024-46747)
+    - Input: uinput - reject requests with unreasonable number of slots
+      (CVE-2024-46745)
+    - usbnet: ipheth: race between ipheth_close and error handling
+    - Squashfs: sanity check symbolic link size (CVE-2024-46744)
+    - of/irq: Prevent device address out-of-bounds read in interrupt map walk
+      (CVE-2024-46743)
+    - lib/generic-radix-tree.c: Fix rare race in __genradix_ptr_alloc()
+    - NFSv4: Add missing rescheduling points in
+      nfs_client_return_marked_delegations
+    - iio: buffer-dmaengine: fix releasing dma channel on error
+    - iio: fix scale application in iio_convert_raw_to_processed_unlocked
+    - iio: adc: ad7124: fix chip ID mismatch
+    - binder: fix UAF caused by offsets overwrite (CVE-2024-46740)
+    - nvmem: Fix return type of devm_nvmem_device_get() in kerneldoc
+    - [x86] uio_hv_generic: Fix kernel NULL pointer dereference in
+      hv_uio_rescind (CVE-2024-46739)
+    - [x86] Drivers: hv: vmbus: Fix rescind handling in uio_hv_generic
+    - [x86] VMCI: Fix use-after-free when removing resource in
+      vmci_resource_remove() (CVE-2024-46738)
+    - clocksource/drivers/timer-of: Remove percpu irq related code
+    - uprobes: Use kzalloc to allocate xol area
+    - perf/aux: Fix AUX buffer serialization (CVE-2024-46713)
+    - nilfs2: replace snprintf in show functions with sysfs_emit
+    - nilfs2: protect references to superblock parameters exposed in sysfs
+      (CVE-2024-46780)
+    - ACPI: processor: Return an error if acpi_processor_get_info() fails in
+      processor_add()
+    - ACPI: processor: Fix memory leaks in error paths of processor_add()
+    - [arm64] acpi: Move get_cpu_for_acpi_id() to a header
+    - [arm64] acpi: Harden get_cpu_for_acpi_id() against missing CPU entry
+    - nvmet-tcp: fix kernel crash if commands allocation fails (CVE-2024-46737)
+    - mmc: cqhci: Fix checking of CQHCI_HALT state
+    - rtmutex: Drop rt_mutex::wait_lock before scheduling
+    - [i386] x86/mm: Fix PTI for i386 some more
+    - net, sunrpc: Remap EPERM in case of connection failure in
+      xs_tcp_setup_socket (CVE-2024-42246)
+    - memcg: protect concurrent access to mem_cgroup_idr (CVE-2024-43892)
 
   [ Ben Hutchings ]
   * Drop "netfilter: ipset: Add list flush to cancel_gc", included in 5.10.224
@@ -482,6 +667,10 @@ linux (5.10.225-1) UNRELEASED; urgency=medium
   * d/config: Delete config settings for removed and automatic symbols
   * hyperv-daemons: Add lintian-override for depends-on-obsolete-package
   * [rt] Update to 5.10.225-rt117
+  * [rt] Refresh patches:
+    - Refresh "locking/rtmutex: Remove output from deadlock detector."
+    - Refresh "locking/rtmutex: Provide rt_mutex_slowlock_locked()"
+    - Refresh "locking/rtmutex: add ww_mutex addon for mutex-rt"
 
   [ Mateusz Łukasik ]
   * d/salsa-ci.yml: Add linux-compiler-* packages to build-signed job artifacts
