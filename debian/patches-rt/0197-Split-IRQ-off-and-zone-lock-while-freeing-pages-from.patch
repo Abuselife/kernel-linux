@@ -2,7 +2,7 @@ From: Peter Zijlstra <peterz@infradead.org>
 Date: Mon, 28 May 2018 15:24:21 +0200
 Subject: [PATCH 197/323] Split IRQ-off and zone->lock while freeing pages from
  PCP list #2
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=8212cb7dfafee44ba90fcf32f1aa2a6c8a66759d
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=b60a1983c16aa319e657c4ce48f9d385383afcb0
 
 Split the IRQ-off section while accessing the PCP list from zone->lock
 while freeing pages.

@@ -1,7 +1,7 @@
 From: Peter Zijlstra <peterz@infradead.org>
 Date: Tue, 8 Jun 2021 00:37:32 -0400
 Subject: [PATCH 291/323] sched: Collate affine_move_task() stoppers
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=fce94a8ebce6a91acadf903c902a713beaace5e8
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=4672569b426001834721105972842a624c927a4e
 
 commit 58b1a45086b5f80f2b2842aa7ed0da51a64a302b upstream.
 

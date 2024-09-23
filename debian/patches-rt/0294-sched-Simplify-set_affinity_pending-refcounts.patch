@@ -1,7 +1,7 @@
 From: Peter Zijlstra <peterz@infradead.org>
 Date: Tue, 8 Jun 2021 00:37:35 -0400
 Subject: [PATCH 294/323] sched: Simplify set_affinity_pending refcounts
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=6158ba20d6d9f20d37d18750d9553359188a6bf7
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=d2eb06120d3d0c749f3989d2b52fc469236f55e3
 
 commit 50caf9c14b1498c90cf808dbba2ca29bd32ccba4 upstream.
 

@@ -1,7 +1,7 @@
 From: Peter Zijlstra <peterz@infradead.org>
 Date: Tue, 8 Jun 2021 00:37:33 -0400
 Subject: [PATCH 292/323] sched: Optimize migration_cpu_stop()
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=7d6476f1a4296af9e37ba1a8169207178e8ff82b
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=e4b40d722aa09dc52ab03d2c6bbaedc679302781
 
 commit 3f1bc119cd7fc987c8ed25ffb717f99403bb308c upstream.
 

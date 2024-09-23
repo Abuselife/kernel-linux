@@ -2,7 +2,7 @@ From: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
 Date: Fri, 29 Oct 2021 10:07:11 +0200
 Subject: [PATCH 302/323] mm: Disable NUMA_BALANCING_DEFAULT_ENABLED and
  TRANSPARENT_HUGEPAGE on PREEMPT_RT
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=b254e9b16088fc477dc58f90d9743b5e074a0192
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=2415191cbb28c8a31976a7fe0f1a90926141a010
 
 TRANSPARENT_HUGEPAGE:
 There are potential non-deterministic delays to an RT thread if a critical

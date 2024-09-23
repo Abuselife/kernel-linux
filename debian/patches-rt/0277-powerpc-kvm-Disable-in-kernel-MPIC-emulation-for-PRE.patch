@@ -2,7 +2,7 @@ From: Bogdan Purcareata <bogdan.purcareata@freescale.com>
 Date: Fri, 24 Apr 2015 15:53:13 +0000
 Subject: [PATCH 277/323] powerpc/kvm: Disable in-kernel MPIC emulation for
  PREEMPT_RT
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=e0a8e023d760ba6e4b0cddc18978b7e0a1858308
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=144524d09d11367085efa9650c0ca1f86f232b0c
 
 While converting the openpic emulation code to use a raw_spinlock_t enables
 guests to run on RT, there's still a performance issue. For interrupts sent in

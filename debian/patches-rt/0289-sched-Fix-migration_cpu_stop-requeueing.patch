@@ -1,7 +1,7 @@
 From: Peter Zijlstra <peterz@infradead.org>
 Date: Tue, 8 Jun 2021 00:37:30 -0400
 Subject: [PATCH 289/323] sched: Fix migration_cpu_stop() requeueing
-Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=fad361f21711e1bf33e63ecea0e4542ec45cc13c
+Origin: https://git.kernel.org/cgit/linux/kernel/git/rt/linux-stable-rt.git/commit?id=bdbda6269c40f3f8ea49b061c1e9116278f2c152
 
 commit 8a6edb5257e2a84720fe78cb179eca58ba76126f upstream.
 
