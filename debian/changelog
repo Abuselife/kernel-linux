@@ -1,3 +1,9 @@
+linux-6.1 (6.1.106-3~deb11u3) bullseye-security; urgency=medium
+
+  * Re-upload to generate signed packages
+
+ -- Ben Hutchings <benh@debian.org>  Tue, 24 Sep 2024 12:24:16 +0200
+
 linux-6.1 (6.1.106-3~deb11u2) bullseye-security; urgency=medium
 
   * Fix build-dependency on "pahole | dwarves" to be just "dwarves", since
