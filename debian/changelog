@@ -414,8 +414,8 @@ linux (5.10.225-1) UNRELEASED; urgency=medium
       pcs_get_function() (CVE-2024-46685)
     - wifi: mwifiex: duplicate static structs used in driver instances
     - ipc: replace costly bailout check in sysvipc_find_ipc() (CVE-2021-3669)
-    - drm/amdkfd: don't allow mapping the MMIO HDP page with large pages
-      (CVE-2024-41011)
+    - [amd64] drm/amdkfd: don't allow mapping the MMIO HDP page with large
+      pages (CVE-2024-41011)
     - media: uvcvideo: Fix integer overflow calculating timestamp
     - ata: libata-core: Fix null pointer dereference on error (CVE-2024-41098)
     - cgroup/cpuset: Prevent UAF in proc_cpuset_show() (CVE-2024-43853)
