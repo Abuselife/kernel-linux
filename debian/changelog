@@ -454,11 +454,15 @@ linux (5.10.226-1) UNRELEASED; urgency=medium
       (CVE-2024-43905)
     - drm/amdgpu: avoid reading vf2pf info size from FB
     - drm/amd/display: Check gpio_id before used as array index
+      (CVE-2024-46818)
     - drm/amd/display: Stop amdgpu_dm initialize when stream nums greater than
-      6
+      6 (CVE-2024-46817)
     - drm/amd/display: Add array index check for hdcp ddc access
+      (CVE-2024-46804)
     - drm/amd/display: Check num_valid_sets before accessing reader_wm_sets[]
+      (CVE-2024-46815)
     - drm/amd/display: Check msg_id before processing transcation
+      (CVE-2024-46814)
     - drm/amd/display: Fix Coverity INTEGER_OVERFLOW within
       dal_gpio_service_create
     - drm/amdgpu/pm: Fix uninitialized variable agc_btc_response
@@ -472,7 +476,7 @@ linux (5.10.226-1) UNRELEASED; urgency=medium
     - apparmor: fix possible NULL pointer dereference (CVE-2024-46721)
     - drm/amdgpu/pm: Check input value for CUSTOM profile mode setting on
       legacy SOCs
-    - drm/amdgpu: the warning dereferencing obj for nbio_v7_4
+    - drm/amdgpu: the warning dereferencing obj for nbio_v7_4 (CVE-2024-46819)
     - drm/amd/pm: check negtive return for table entries
     - wifi: iwlwifi: remove fw_running op
     - [arm64] PCI: al: Check IORESOURCE_BUS existence during probe
@@ -519,6 +523,7 @@ linux (5.10.226-1) UNRELEASED; urgency=medium
     - tracing: Avoid possible softlockup in tracing_iter_reset()
     - ila: call nf_unregister_net_hooks() sooner (CVE-2024-46782)
     - sched: sch_cake: fix bulk flow accounting logic for host fairness
+      (CVE-2024-46828)
     - nilfs2: fix missing cleanup on rollforward recovery error
       (CVE-2024-46781)
     - nilfs2: fix state management in error path of log writing function
@@ -571,6 +576,7 @@ linux (5.10.226-1) UNRELEASED; urgency=medium
     - dm init: Handle minors larger than 255
     - [x86] iommu/vt-d: Handle volatile descriptor status read
     - cgroup: Protect css->cgroup write under css_set_lock
+    - um: line: always fill *error_out in setup_one_line() (CVE-2024-46844)
     - devres: Initialize an uninitialized struct member
     - hwmon: (adc128d818) Fix underflows seen when writing limit attributes
       (CVE-2024-46759)
@@ -585,6 +591,7 @@ linux (5.10.226-1) UNRELEASED; urgency=medium
       (CVE-2024-46755)
     - btrfs: replace BUG_ON with ASSERT in walk_down_proc()
     - btrfs: clean up our handling of refs == 0 in snapshot delete
+      (CVE-2024-46840)
     - PCI: Add missing bridge lock to pci_bus_lock() (CVE-2024-46750)
     - HID: cougar: fix slab-out-of-bounds Read in cougar_report_fixup
       (CVE-2024-46747)
@@ -618,9 +625,10 @@ linux (5.10.226-1) UNRELEASED; urgency=medium
     - ACPI: processor: Fix memory leaks in error paths of processor_add()
     - [arm64] acpi: Move get_cpu_for_acpi_id() to a header
     - [arm64] acpi: Harden get_cpu_for_acpi_id() against missing CPU entry
+      (CVE-2024-46822)
     - nvmet-tcp: fix kernel crash if commands allocation fails (CVE-2024-46737)
     - mmc: cqhci: Fix checking of CQHCI_HALT state
-    - rtmutex: Drop rt_mutex::wait_lock before scheduling
+    - rtmutex: Drop rt_mutex::wait_lock before scheduling (CVE-2024-46829)
     - [i386] x86/mm: Fix PTI for i386 some more
     - net, sunrpc: Remap EPERM in case of connection failure in
       xs_tcp_setup_socket (CVE-2024-42246)
