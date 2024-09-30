@@ -1,4 +1,4 @@
-linux (6.1.111-1) UNRELEASED; urgency=medium
+linux (6.1.112-1) UNRELEASED; urgency=medium
 
   * New upstream stable update:
     https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.1.107
@@ -728,6 +728,80 @@ linux (6.1.111-1) UNRELEASED; urgency=medium
     - [x86] drm/i915/guc: prevent a possible int overflow in wq offsets
     - pinctrl: meteorlake: Add Arrow Lake-H/U ACPI ID
     - [arm64] ASoC: meson: axg-card: fix 'use-after-free'
+    https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.1.112
+    - ALSA: hda/realtek - Fixed ALC256 headphone no sound
+    - ALSA: hda/realtek - FIxed ALC285 headphone no sound
+    - scsi: lpfc: Fix overflow build issue
+    - [x86] hwmon: (asus-ec-sensors) remove VRM temp X570-E GAMING
+    - [armhf] net: ftgmac100: Ensure tx descriptor updates are visible
+    - wifi: iwlwifi: lower message level for FW buffer destination
+    - wifi: iwlwifi: mvm: fix iwl_mvm_scan_fits() calculation
+    - wifi: iwlwifi: mvm: pause TCM when the firmware is stopped
+    - wifi: iwlwifi: mvm: don't wait for tx queues if firmware is dead
+    - wifi: mac80211: free skb on error path in ieee80211_beacon_get_ap()
+    - wifi: iwlwifi: clear trans->state earlier upon error
+    - can: mcp251xfd: mcp251xfd_ring_init(): check TX-coalescing configuration
+    - [x86] ASoC: Intel: soc-acpi-cht: Make Lenovo Yoga Tab 3 X90F DMI match
+      less strict
+    - [x86] ASoC: intel: fix module autoloading
+    - spi: spidev: Add an entry for elgin,jg10309-01
+    - spi: bcm63xx: Enable module autoloading
+    - smb: client: fix hang in wait_for_response() for negproto
+    - [x86] hyperv: Set X86_FEATURE_TSC_KNOWN_FREQ when Hyper-V provides
+      frequency
+    - tools: hv: rm .*.cmd when make clean
+    - block: Fix where bio IO priority gets set
+    - spi: spidev: Add missing spi_device_id for jg10309-01
+    - ocfs2: add bounds checking to ocfs2_xattr_find_entry()
+    - ocfs2: strict bound check before memcmp in ocfs2_xattr_find_entry()
+      (CVE-2024-41016)
+    - xfs: dquot shrinker doesn't check for XFS_DQFLAG_FREEING
+    - xfs: Fix deadlock on xfs_inodegc_worker
+    - xfs: fix extent busy updating
+    - xfs: don't use BMBT btree split workers for IO completion
+    - xfs: fix low space alloc deadlock
+    - xfs: prefer free inodes at ENOSPC over chunk allocation
+    - xfs: block reservation too large for minleft allocation
+    - xfs: fix uninitialized variable access
+    - xfs: quotacheck failure can race with background inode inactivation
+    - xfs: fix BUG_ON in xfs_getbmap()
+    - xfs: buffer pins need to hold a buffer reference
+    - xfs: defered work could create precommits
+    - xfs: fix AGF vs inode cluster buffer deadlock
+    - xfs: collect errors from inodegc for unlinked inode recovery
+    - xfs: fix ag count overflow during growfs
+    - xfs: remove WARN when dquot cache insertion fails
+    - xfs: fix the calculation for "end" and "length"
+    - xfs: load uncached unlinked inodes into memory on demand
+    - xfs: fix negative array access in xfs_getbmap
+    - xfs: fix unlink vs cluster buffer instantiation race
+    - xfs: correct calculation for agend and blockcount
+    - xfs: use i_prev_unlinked to distinguish inodes that are not on the
+      unlinked list
+    - xfs: reload entire unlinked bucket lists
+    - xfs: make inode unlinked bucket recovery work with quotacheck
+    - xfs: fix reloading entire unlinked bucket lists
+    - xfs: set bnobt/cntbt numrecs correctly when formatting new AGs
+    - xfs: journal geometry is not properly bounds checked
+    - netfilter: nft_socket: make cgroupsv2 matching work with namespaces
+    - netfilter: nft_socket: Fix a NULL vs IS_ERR() bug in
+      nft_socket_cgroup_subtree_level()
+    - netfilter: nft_set_pipapo: walk over current view on netlink dump
+      (CVE-2024-27017)
+    - netfilter: nf_tables: missing iterator type in lookup walk
+    - Revert "wifi: cfg80211: check wiphy mutex is held for wdev mutex"
+    - gpiolib: cdev: Ignore reconfiguration without direction
+    - gpio: prevent potential speculation leaks in gpio_device_get_desc()
+      (CVE-2024-44931)
+    - can: mcp251xfd: properly indent labels
+    - can: mcp251xfd: move mcp251xfd_timestamp_start()/stop() into
+      mcp251xfd_chip_start/stop()
+    - btrfs: calculate the right space for delayed refs when updating global
+      reserve
+    - [x86] powercap: RAPL: fix invalid initialization for pl4_supported field
+    - [x86] mm: Switch to new Intel CPU model defines
+    - USB: serial: pl2303: add device id for Macrosilicon MS3020
+    - USB: usbtmc: prevent kernel-usb-infoleak
 
   [ Salvatore Bonaccorso ]
   * Bump ABI to 26
