@@ -1,8 +1,8 @@
-From c0531999866cd46c15d2b7090cfe51713705a9e9 Mon Sep 17 00:00:00 2001
+From 3e63f509b8a643c7e0741e15e5ed00c3685a54db Mon Sep 17 00:00:00 2001
 From: Paolo Abeni <pabeni@redhat.com>
 Date: Mon, 8 May 2023 08:17:44 +0200
 Subject: [PATCH 55/63] revert: "softirq: Let ksoftirqd do its job"
-Origin: https://www.kernel.org/pub/linux/kernel/projects/rt/6.1/older/patches-6.1.107-rt39.tar.xz
+Origin: https://www.kernel.org/pub/linux/kernel/projects/rt/6.1/older/patches-6.1.111-rt42.tar.xz
 
 Due to the mentioned commit, when the ksoftirqd processes take charge
 of softirq processing, the system can experience high latencies.

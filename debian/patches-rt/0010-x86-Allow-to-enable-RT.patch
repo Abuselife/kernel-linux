@@ -1,8 +1,8 @@
-From bafa71fe6cd15dff53ccf2e671857a8eefac3fdc Mon Sep 17 00:00:00 2001
+From 82487f41ec4a8e4dab91f151e65695d35a2fd0ca Mon Sep 17 00:00:00 2001
 From: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
 Date: Wed, 7 Aug 2019 18:15:38 +0200
 Subject: [PATCH 10/63] x86: Allow to enable RT
-Origin: https://www.kernel.org/pub/linux/kernel/projects/rt/6.1/older/patches-6.1.107-rt39.tar.xz
+Origin: https://www.kernel.org/pub/linux/kernel/projects/rt/6.1/older/patches-6.1.111-rt42.tar.xz
 
 Allow to select RT.
 

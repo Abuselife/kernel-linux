@@ -1,9 +1,9 @@
-From 1a2184390701c3aa29e1cc10759f35b7e49b304a Mon Sep 17 00:00:00 2001
+From c7dd79eccca89fd77acee50b3e5a681ba654652f Mon Sep 17 00:00:00 2001
 From: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
 Date: Tue, 26 Mar 2019 18:31:29 +0100
 Subject: [PATCH 48/63] powerpc/stackprotector: work around stack-guard init
  from atomic
-Origin: https://www.kernel.org/pub/linux/kernel/projects/rt/6.1/older/patches-6.1.107-rt39.tar.xz
+Origin: https://www.kernel.org/pub/linux/kernel/projects/rt/6.1/older/patches-6.1.111-rt42.tar.xz
 
 This is invoked from the secondary CPU in atomic context. On x86 we use
 tsc instead. On Power we XOR it against mftb() so lets use stack address

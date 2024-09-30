@@ -1,8 +1,8 @@
-From 16c5c190a20b16a40bd7772d0e44cee69b05f04c Mon Sep 17 00:00:00 2001
+From 905156776c5324bff55b5528542daf9905cc3629 Mon Sep 17 00:00:00 2001
 From: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
 Date: Fri, 11 Oct 2019 13:14:35 +0200
 Subject: [PATCH 44/63] ARM64: Allow to enable RT
-Origin: https://www.kernel.org/pub/linux/kernel/projects/rt/6.1/older/patches-6.1.107-rt39.tar.xz
+Origin: https://www.kernel.org/pub/linux/kernel/projects/rt/6.1/older/patches-6.1.111-rt42.tar.xz
 
 Allow to select RT.
 

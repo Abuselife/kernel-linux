@@ -1,9 +1,9 @@
-From 674ab98d5ce02e74390725cb447dd9921f79b9cf Mon Sep 17 00:00:00 2001
+From f89cf5bb350852e63d9cfd9e453d8ad222f3d37d Mon Sep 17 00:00:00 2001
 From: Thomas Gleixner <tglx@linutronix.de>
 Date: Thu, 25 Aug 2022 16:17:37 +0200
 Subject: [PATCH 06/63] net: Remove the obsolte u64_stats_fetch_*_irq() users
  (net).
-Origin: https://www.kernel.org/pub/linux/kernel/projects/rt/6.1/older/patches-6.1.107-rt39.tar.xz
+Origin: https://www.kernel.org/pub/linux/kernel/projects/rt/6.1/older/patches-6.1.111-rt42.tar.xz
 
 Now that the 32bit UP oddity is gone and 32bit uses always a sequence
 count, there is no need for the fetch_irq() variants anymore.

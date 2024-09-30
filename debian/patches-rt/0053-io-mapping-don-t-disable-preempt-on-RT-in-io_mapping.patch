@@ -1,9 +1,9 @@
-From 979357acf8b1f8e7b60997f9f6149f6dced4fa68 Mon Sep 17 00:00:00 2001
+From d7181077559881acd42e288c3b9f4b6a5717b33b Mon Sep 17 00:00:00 2001
 From: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
 Date: Fri, 10 Mar 2023 17:29:05 +0100
 Subject: [PATCH 53/63] io-mapping: don't disable preempt on RT in
  io_mapping_map_atomic_wc().
-Origin: https://www.kernel.org/pub/linux/kernel/projects/rt/6.1/older/patches-6.1.107-rt39.tar.xz
+Origin: https://www.kernel.org/pub/linux/kernel/projects/rt/6.1/older/patches-6.1.111-rt42.tar.xz
 
 io_mapping_map_atomic_wc() disables preemption and pagefaults for
 historical reasons.  The conversion to io_mapping_map_local_wc(), which

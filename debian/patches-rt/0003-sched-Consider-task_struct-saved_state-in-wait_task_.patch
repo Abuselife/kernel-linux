@@ -1,9 +1,9 @@
-From 67efc1635d9aa2436d3abf6f588a7431c35520de Mon Sep 17 00:00:00 2001
+From c22a72da94511e68c8ee044ed00c955c90c4ab0e Mon Sep 17 00:00:00 2001
 From: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
 Date: Wed, 22 Jun 2022 12:27:05 +0200
 Subject: [PATCH 03/63] sched: Consider task_struct::saved_state in
  wait_task_inactive().
-Origin: https://www.kernel.org/pub/linux/kernel/projects/rt/6.1/older/patches-6.1.107-rt39.tar.xz
+Origin: https://www.kernel.org/pub/linux/kernel/projects/rt/6.1/older/patches-6.1.111-rt42.tar.xz
 
 Ptrace is using wait_task_inactive() to wait for the tracee to reach a
 certain task state. On PREEMPT_RT that state may be stored in

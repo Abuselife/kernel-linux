@@ -1,9 +1,9 @@
-From e97a4a00bf393dc38ec16e70d48fcb50c41200a7 Mon Sep 17 00:00:00 2001
+From dc0f66a023fd18a6de8e03ee02513f279225649b Mon Sep 17 00:00:00 2001
 From: Thomas Gleixner <tglx@linutronix.de>
 Date: Thu, 25 Aug 2022 16:15:44 +0200
 Subject: [PATCH 05/63] net: Remove the obsolte u64_stats_fetch_*_irq() users
  (drivers).
-Origin: https://www.kernel.org/pub/linux/kernel/projects/rt/6.1/older/patches-6.1.107-rt39.tar.xz
+Origin: https://www.kernel.org/pub/linux/kernel/projects/rt/6.1/older/patches-6.1.111-rt42.tar.xz
 
 Now that the 32bit UP oddity is gone and 32bit uses always a sequence
 count, there is no need for the fetch_irq() variants anymore.
@@ -824,10 +824,10 @@ index f4ac2b164b3e..892c6a4f03bb 100644
  	/* Once we successfully copy the stats in, update the data pointer */
  	*data += size;
 diff --git a/drivers/net/ethernet/intel/ice/ice_main.c b/drivers/net/ethernet/intel/ice/ice_main.c
-index 9dbfbc90485e..d342184baa7f 100644
+index 3f01942e4982..9a32f434869e 100644
 --- a/drivers/net/ethernet/intel/ice/ice_main.c
 +++ b/drivers/net/ethernet/intel/ice/ice_main.c
-@@ -6407,10 +6407,10 @@ ice_fetch_u64_stats_per_ring(struct u64_stats_sync *syncp,
+@@ -6424,10 +6424,10 @@ ice_fetch_u64_stats_per_ring(struct u64_stats_sync *syncp,
  	unsigned int start;
  
  	do {
@@ -881,10 +881,10 @@ index ceff537d9d22..4ee849985e2b 100644
  	}
  	spin_unlock(&adapter->stats64_lock);
 diff --git a/drivers/net/ethernet/intel/igb/igb_main.c b/drivers/net/ethernet/intel/igb/igb_main.c
-index 81d9a5338be5..bea1d2b24214 100644
+index f2f719a952f8..948329c0369a 100644
 --- a/drivers/net/ethernet/intel/igb/igb_main.c
 +++ b/drivers/net/ethernet/intel/igb/igb_main.c
-@@ -6660,10 +6660,10 @@ void igb_update_stats(struct igb_adapter *adapter)
+@@ -6664,10 +6664,10 @@ void igb_update_stats(struct igb_adapter *adapter)
  		}
  
  		do {
@@ -897,7 +897,7 @@ index 81d9a5338be5..bea1d2b24214 100644
  		bytes += _bytes;
  		packets += _packets;
  	}
-@@ -6676,10 +6676,10 @@ void igb_update_stats(struct igb_adapter *adapter)
+@@ -6680,10 +6680,10 @@ void igb_update_stats(struct igb_adapter *adapter)
  	for (i = 0; i < adapter->num_tx_queues; i++) {
  		struct igb_ring *ring = adapter->tx_ring[i];
  		do {
@@ -951,7 +951,7 @@ index 2bee9cace598..f7284fa4324a 100644
  	}
  	spin_unlock(&adapter->stats64_lock);
 diff --git a/drivers/net/ethernet/intel/igc/igc_main.c b/drivers/net/ethernet/intel/igc/igc_main.c
-index 39f8f28288aa..43d1f7409ad4 100644
+index 6ae2d0b723c8..c2e74f20472a 100644
 --- a/drivers/net/ethernet/intel/igc/igc_main.c
 +++ b/drivers/net/ethernet/intel/igc/igc_main.c
 @@ -4868,10 +4868,10 @@ void igc_update_stats(struct igc_adapter *adapter)
@@ -1528,10 +1528,10 @@ index 0fb15a17b547..d716e6fe26e1 100644
  
  static void rhine_set_rx_mode(struct net_device *dev)
 diff --git a/drivers/net/ethernet/xilinx/xilinx_axienet_main.c b/drivers/net/ethernet/xilinx/xilinx_axienet_main.c
-index 59d1cfbf7d6b..e8bdec0aad9d 100644
+index b631d80de337..977f100cb53d 100644
 --- a/drivers/net/ethernet/xilinx/xilinx_axienet_main.c
 +++ b/drivers/net/ethernet/xilinx/xilinx_axienet_main.c
-@@ -1306,16 +1306,16 @@ axienet_get_stats64(struct net_device *dev, struct rtnl_link_stats64 *stats)
+@@ -1310,16 +1310,16 @@ axienet_get_stats64(struct net_device *dev, struct rtnl_link_stats64 *stats)
  	netdev_stats_to_stats64(stats, &dev->stats);
  
  	do {
@@ -1937,7 +1937,7 @@ index 8dcd3b6e143b..cfc81e45d461 100644
  		result->xdp_tx_err += xdp_tx_err;
  		result->xdp_packets += packets;
 diff --git a/drivers/net/virtio_net.c b/drivers/net/virtio_net.c
-index 61cc0ed1ddc1..31d16d6b6b55 100644
+index e3e5107adaca..0f1c6f88423f 100644
 --- a/drivers/net/virtio_net.c
 +++ b/drivers/net/virtio_net.c
 @@ -2107,18 +2107,18 @@ static void virtnet_stats(struct net_device *dev,

@@ -1,8 +1,8 @@
-From 6f8a6e73f51a70c697c6575e5ddb5e552c659022 Mon Sep 17 00:00:00 2001
+From 33e805893a80191c3754f67c7befa751cea435fb Mon Sep 17 00:00:00 2001
 From: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
 Date: Thu, 7 Nov 2019 17:49:20 +0100
 Subject: [PATCH 11/63] x86: Enable RT also on 32bit
-Origin: https://www.kernel.org/pub/linux/kernel/projects/rt/6.1/older/patches-6.1.107-rt39.tar.xz
+Origin: https://www.kernel.org/pub/linux/kernel/projects/rt/6.1/older/patches-6.1.111-rt42.tar.xz
 
 Signed-off-by: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
 Signed-off-by: Thomas Gleixner <tglx@linutronix.de>

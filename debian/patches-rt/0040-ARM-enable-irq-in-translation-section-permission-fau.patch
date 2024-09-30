@@ -1,4 +1,4 @@
-From 88b4950d459249b65df6803ddeacdf26b4b18f1e Mon Sep 17 00:00:00 2001
+From f9d15b05f0357ccd1196b23458dc767774b28f7c Mon Sep 17 00:00:00 2001
 From: "Yadi.hu" <yadi.hu@windriver.com>
 Date: Wed, 10 Dec 2014 10:32:09 +0800
 Subject: [PATCH 40/63] ARM: enable irq in translation/section permission fault
@@ -6,7 +6,7 @@ Subject: [PATCH 40/63] ARM: enable irq in translation/section permission fault
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-Origin: https://www.kernel.org/pub/linux/kernel/projects/rt/6.1/older/patches-6.1.107-rt39.tar.xz
+Origin: https://www.kernel.org/pub/linux/kernel/projects/rt/6.1/older/patches-6.1.111-rt42.tar.xz
 
 Probably happens on all ARM, with
 CONFIG_PREEMPT_RT

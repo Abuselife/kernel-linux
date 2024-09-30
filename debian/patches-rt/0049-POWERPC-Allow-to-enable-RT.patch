@@ -1,8 +1,8 @@
-From 7797e3ee99180f1fdaec3c9b8dfb48352172aeb6 Mon Sep 17 00:00:00 2001
+From 394542d5c55c8cf5c12c4d1ad7b42ad983ad7e4a Mon Sep 17 00:00:00 2001
 From: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
 Date: Fri, 11 Oct 2019 13:14:41 +0200
 Subject: [PATCH 49/63] POWERPC: Allow to enable RT
-Origin: https://www.kernel.org/pub/linux/kernel/projects/rt/6.1/older/patches-6.1.107-rt39.tar.xz
+Origin: https://www.kernel.org/pub/linux/kernel/projects/rt/6.1/older/patches-6.1.111-rt42.tar.xz
 
 Allow to select RT.
 

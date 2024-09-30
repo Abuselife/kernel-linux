@@ -1,8 +1,8 @@
-From f8d15e9401e35c7171d091bcbb50f10278dc17f7 Mon Sep 17 00:00:00 2001
+From 65ccffa95d1857e61340936bbba9a4e0a3cc004b Mon Sep 17 00:00:00 2001
 From: John Ogness <john.ogness@linutronix.de>
 Date: Fri, 4 Feb 2022 16:01:17 +0106
 Subject: [PATCH 21/63] serial: 8250: implement write_atomic
-Origin: https://www.kernel.org/pub/linux/kernel/projects/rt/6.1/older/patches-6.1.107-rt39.tar.xz
+Origin: https://www.kernel.org/pub/linux/kernel/projects/rt/6.1/older/patches-6.1.111-rt42.tar.xz
 
 Implement a non-sleeping NMI-safe write_atomic() console function in
 order to support atomic console printing during a panic.

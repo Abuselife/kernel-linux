@@ -1,8 +1,8 @@
-From ea83189e6acd3a702a2d453c1e7ef270a29c9d59 Mon Sep 17 00:00:00 2001
+From 59baa1718d8ce64ccbcf38305613f1c721144a26 Mon Sep 17 00:00:00 2001
 From: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
 Date: Fri, 11 Mar 2022 17:44:57 +0100
 Subject: [PATCH 18/63] locking/lockdep: Remove lockdep_init_map_crosslock.
-Origin: https://www.kernel.org/pub/linux/kernel/projects/rt/6.1/older/patches-6.1.107-rt39.tar.xz
+Origin: https://www.kernel.org/pub/linux/kernel/projects/rt/6.1/older/patches-6.1.111-rt42.tar.xz
 
 The cross-release bits have been removed, lockdep_init_map_crosslock() is
 a leftover.

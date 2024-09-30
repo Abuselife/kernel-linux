@@ -60,4 +60,4 @@
 0060-drm-i915-Do-not-disable-preemption-for-resets.patch
 0061-Linux-6.1.79-rt25-REBASE.patch
 0062-arm-Disable-FAST_GUP-on-PREEMPT_RT-if-HIGHPTE-is-als.patch
-0063-Linux-6.1.107-rt39-REBASE.patch
+0063-Linux-6.1.111-rt42-REBASE.patch

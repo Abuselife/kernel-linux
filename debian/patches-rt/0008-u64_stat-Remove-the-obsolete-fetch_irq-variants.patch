@@ -1,8 +1,8 @@
-From 3360d3787a688f1227ed394a3d62e2f00556e43c Mon Sep 17 00:00:00 2001
+From 9fa1809402674450e87785667bbbf3de976553aa Mon Sep 17 00:00:00 2001
 From: Thomas Gleixner <tglx@linutronix.de>
 Date: Thu, 25 Aug 2022 16:43:46 +0200
 Subject: [PATCH 08/63] u64_stat: Remove the obsolete fetch_irq() variants.
-Origin: https://www.kernel.org/pub/linux/kernel/projects/rt/6.1/older/patches-6.1.107-rt39.tar.xz
+Origin: https://www.kernel.org/pub/linux/kernel/projects/rt/6.1/older/patches-6.1.111-rt42.tar.xz
 
 Now that the 32bit UP oddity is gone and 32bit uses always a sequence
 count, there is no need for the fetch_irq() variants anymore.

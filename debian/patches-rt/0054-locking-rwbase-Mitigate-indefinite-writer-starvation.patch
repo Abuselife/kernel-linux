@@ -1,8 +1,8 @@
-From b85383d88280a4a2dca3729857e5b274333cf718 Mon Sep 17 00:00:00 2001
+From e0313da97715a7aa8cffa0d0af5c81ae791eedc2 Mon Sep 17 00:00:00 2001
 From: Sebastian Andrzej Siewior <bigeasy@linutronix.de>
 Date: Tue, 21 Mar 2023 17:11:40 +0100
 Subject: [PATCH 54/63] locking/rwbase: Mitigate indefinite writer starvation
-Origin: https://www.kernel.org/pub/linux/kernel/projects/rt/6.1/older/patches-6.1.107-rt39.tar.xz
+Origin: https://www.kernel.org/pub/linux/kernel/projects/rt/6.1/older/patches-6.1.111-rt42.tar.xz
 
 On PREEMPT_RT, rw_semaphore and rwlock_t locks are unfair to writers.
 Readers can indefinitely acquire the lock unless the writer fully acquired

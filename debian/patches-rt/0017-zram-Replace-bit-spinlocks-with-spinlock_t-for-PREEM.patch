@@ -1,9 +1,9 @@
-From 0e0aa19fafe20ec8a32065a76ceeaa17955589b7 Mon Sep 17 00:00:00 2001
+From 35c52f17b17a12a07fdaef34c2ed7acdc75916b8 Mon Sep 17 00:00:00 2001
 From: Mike Galbraith <umgwanakikbuti@gmail.com>
 Date: Thu, 31 Mar 2016 04:08:28 +0200
 Subject: [PATCH 17/63] zram: Replace bit spinlocks with spinlock_t for
  PREEMPT_RT.
-Origin: https://www.kernel.org/pub/linux/kernel/projects/rt/6.1/older/patches-6.1.107-rt39.tar.xz
+Origin: https://www.kernel.org/pub/linux/kernel/projects/rt/6.1/older/patches-6.1.111-rt42.tar.xz
 
 The bit spinlock disables preemption on PREEMPT_RT. With disabled preemption it
 is not allowed to acquire other sleeping locks which includes invoking
