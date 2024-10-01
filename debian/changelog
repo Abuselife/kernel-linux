@@ -679,6 +679,9 @@ linux (5.10.226-1) UNRELEASED; urgency=medium
     - Refresh "locking/rtmutex: Remove output from deadlock detector."
     - Refresh "locking/rtmutex: Provide rt_mutex_slowlock_locked()"
     - Refresh "locking/rtmutex: add ww_mutex addon for mutex-rt"
+  * cgroup: Fix locking regression in 5.10.225:
+    - cgroup: Make operations on the cgroup root_list RCU safe
+    - cgroup: Move rcu_head up near the top of cgroup_roo
 
   [ Mateusz Łukasik ]
   * d/salsa-ci.yml: Add linux-compiler-* packages to build-signed job artifacts
