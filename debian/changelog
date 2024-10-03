@@ -1,4 +1,4 @@
-linux (5.10.226-1) UNRELEASED; urgency=medium
+linux (5.10.226-1) bullseye-security; urgency=high
 
   * New upstream stable update:
     https://www.kernel.org/pub/linux/kernel/v5.x/ChangeLog-5.10.224
@@ -697,7 +697,7 @@ linux (5.10.226-1) UNRELEASED; urgency=medium
   [ Martyn Welch ]
   * Increase timeout of CI build stage to 3 hours to enable build to complete
 
- -- Ben Hutchings <benh@debian.org>  Fri, 23 Aug 2024 16:44:34 +0200
+ -- Ben Hutchings <benh@debian.org>  Thu, 03 Oct 2024 23:58:46 +0200
 
 linux (5.10.223-1) bullseye-security; urgency=high
 
