@@ -686,6 +686,10 @@ linux (5.10.226-1) UNRELEASED; urgency=medium
     - Input: goodix - use the new soc_intel_is_byt() helper
     - powercap: RAPL: fix invalid initialization for pl4_supported field
     - x86/mm: Switch to new Intel CPU model defines
+  * bpf: Fix memory accounting regression in 5.10.214:
+    - Revert "bpf: Fix DEVMAP_HASH overflow check on 32-bit arches"
+    - Revert "bpf: Eliminate rlimit-based memory accounting for devmap maps"
+    - bpf: Fix DEVMAP_HASH overflow check on 32-bit arches
 
   [ Mateusz Łukasik ]
   * d/salsa-ci.yml: Add linux-compiler-* packages to build-signed job artifacts
