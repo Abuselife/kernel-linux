@@ -682,6 +682,10 @@ linux (5.10.226-1) UNRELEASED; urgency=medium
   * cgroup: Fix locking regression in 5.10.225:
     - cgroup: Make operations on the cgroup root_list RCU safe
     - cgroup: Move rcu_head up near the top of cgroup_roo
+  * [x86] Fix CPU matching regression in 5.10.221:
+    - Input: goodix - use the new soc_intel_is_byt() helper
+    - powercap: RAPL: fix invalid initialization for pl4_supported field
+    - x86/mm: Switch to new Intel CPU model defines
 
   [ Mateusz Łukasik ]
   * d/salsa-ci.yml: Add linux-compiler-* packages to build-signed job artifacts
