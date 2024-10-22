@@ -846,6 +846,9 @@ linux (6.1.113-1) UNRELEASED; urgency=medium
       (CVE-2024-49854)
     - Revert "iommu/vt-d: Retrieve IOMMU perfmon capability information"
 
+  [ Salvatore Bonaccorso ]
+  * Bump ABI to 27
+
  -- Salvatore Bonaccorso <carnil@debian.org>  Sun, 20 Oct 2024 16:13:19 +0200
 
 linux (6.1.112-1) bookworm-security; urgency=high
