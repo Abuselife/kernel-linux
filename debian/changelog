@@ -1,4 +1,4 @@
-linux (6.1.113-1) UNRELEASED; urgency=medium
+linux (6.1.114-1) UNRELEASED; urgency=medium
 
   * New upstream stable update:
     https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.1.113
@@ -845,6 +845,111 @@ linux (6.1.113-1) UNRELEASED; urgency=medium
     - block, bfq: fix uaf for accessing waker_bfqq after splitting
       (CVE-2024-49854)
     - Revert "iommu/vt-d: Retrieve IOMMU perfmon capability information"
+    https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.1.114
+    - btrfs: fix uninitialized pointer free in add_inode_ref() (CVE-2024-50088)
+    - btrfs: fix uninitialized pointer free on read_alloc_one_name() error
+    - ksmbd: fix user-after-free from session log off (CVE-2024-50086)
+    - ALSA: hda/conexant - Fix audio routing for HP EliteOne 1000 G2
+    - mptcp: pm: fix UaF read in mptcp_pm_nl_rm_addr_or_subflow (CVE-2024-50085)
+    - udf: New directory iteration code
+    - udf: Convert udf_expand_dir_adinicb() to new directory iteration
+    - udf: Move udf_expand_dir_adinicb() to its callsite
+    - udf: Implement searching for directory entry using new iteration code
+    - udf: Provide function to mark entry as deleted using new directory
+      iteration code
+    - udf: Convert udf_rename() to new directory iteration code
+    - udf: Convert udf_readdir() to new directory iteration
+    - udf: Convert udf_lookup() to use new directory iteration code
+    - udf: Convert udf_get_parent() to new directory iteration code
+    - udf: Convert empty_dir() to new directory iteration code
+    - udf: Convert udf_rmdir() to new directory iteration code
+    - udf: Convert udf_unlink() to new directory iteration code
+    - udf: Implement adding of dir entries using new iteration code
+    - udf: Convert udf_add_nondir() to new directory iteration
+    - udf: Convert udf_mkdir() to new directory iteration code
+    - udf: Convert udf_link() to new directory iteration code
+    - udf: Remove old directory iteration code
+    - udf: Handle error when expanding directory
+    - udf: Don't return bh from udf_expand_dir_adinicb()
+    - net: enetc: remove xdp_drops statistic from enetc_xdp_drop()
+    - net: enetc: add missing static descriptor and inline keyword
+    - posix-clock: Fix missing timespec64 check in pc_clock_settime()
+    - [arm64] probes: Remove broken LDR (literal) uprobe support
+    - [arm64] probes: Fix simulate_ldr*_literal()
+    - net: macb: Avoid 20s boot delay by skipping MDIO bus registration for
+      fixed-link PHY
+    - irqchip/gic-v3-its: Fix VSYNC referencing an unmapped VPE on GIC v4.1
+    - fat: fix uninitialized variable
+    - mm/swapfile: skip HugeTLB pages for unuse_vma
+    - devlink: drop the filter argument from devlinks_xa_find_get
+    - devlink: bump the instance index directly when iterating
+    - maple_tree: correct tree corruption on spanning store
+    - drm/shmem-helper: Fix BUG_ON() on mmap(PROT_WRITE, MAP_PRIVATE)
+      (CVE-2024-39497)
+    - [amd64] iommu/vt-d: Fix incorrect pci_for_each_dma_alias() for non-PCI
+      devices
+    - [s390x] sclp: Deactivate sclp after all its users
+    - [s390x] sclp_vt220: Convert newlines to CRLF instead of LFCR
+    - [s390x] KVM: s390: gaccess: Check if guest address is in memslot
+    - [s390x] KVM: s390: Change virtual to physical address access in diag 0x258
+      handler
+    - [x86] cpufeatures: Define X86_FEATURE_AMD_IBPB_RET
+    - [x86] cpufeatures: Add a IBPB_NO_RET BUG flag
+    - [x86] entry: Have entry_ibpb() invalidate return predictions
+    - [x86] bugs: Skip RSB fill at VMEXIT
+    - [x86] bugs: Do not use UNTRAIN_RET with IBPB on entry
+    - blk-rq-qos: fix crash on rq_qos_wait vs. rq_qos_wake_function race
+      (CVE-2024-50082)
+    - io_uring/sqpoll: close race on waiting for sqring entries
+    - scsi: ufs: core: Set SDEV_OFFLINE when UFS is shut down
+    - drm/radeon: Fix encoder->possible_clones
+    - drm/vmwgfx: Handle surface check failure correctly
+    - drm/amdgpu/swsmu: Only force workload setup on init
+    - drm/amdgpu: prevent BO_HANDLES error from being overwritten
+    - iio: dac: ad5770r: add missing select REGMAP_SPI in Kconfig
+    - iio: dac: ltc1660: add missing select REGMAP_SPI in Kconfig
+    - iio: dac: stm32-dac-core: add missing select REGMAP_MMIO in Kconfig
+    - iio: adc: ti-ads8688: add missing select IIO_(TRIGGERED_)BUFFER in Kconfig
+    - iio: hid-sensors: Fix an error handling path in
+      _hid_sensor_set_report_latency()
+    - iio: light: veml6030: fix ALS sensor resolution
+    - iio: light: veml6030: fix IIO device retrieval from embedded device
+    - iio: light: opt3001: add missing full-scale range value
+    - iio: amplifiers: ada4250: add missing select REGMAP_SPI in Kconfig
+    - iio: dac: ad5766: add missing select IIO_(TRIGGERED_)BUFFER in Kconfig
+    - iio: proximity: mb1232: add missing select IIO_(TRIGGERED_)BUFFER in
+      Kconfig
+    - iio: dac: ad3552r: add missing select IIO_(TRIGGERED_)BUFFER in Kconfig
+    - iio: adc: ti-ads124s08: add missing select IIO_(TRIGGERED_)BUFFER in
+      Kconfig
+    - Bluetooth: Call iso_exit() on module unload
+    - Bluetooth: Remove debugfs directory on module init failure
+    - Bluetooth: ISO: Fix multiple init when debugfs is disabled
+      (CVE-2024-50077)
+    - Bluetooth: btusb: Fix regression with fake CSR controllers 0a12:0001
+    - xhci: Fix incorrect stream context type macro
+    - xhci: Mitigate failed set dequeue pointer commands
+    - USB: serial: option: add support for Quectel EG916Q-GL
+    - USB: serial: option: add Telit FN920C04 MBIM compositions
+    - usb: dwc3: Wait for EndXfer completion before restoring GUSB2PHYCFG
+    - parport: Proper fix for array out-of-bounds access (CVE-2024-50074)
+    - [x86] resctrl: Annotate get_mem_config() functions as __init
+    - [x86] apic: Always explicitly disarm TSC-deadline timer
+    - [x86] entry_32: Do not clobber user EFLAGS.ZF
+    - [x86] entry_32: Clear CPU buffers after register restore in NMI return
+    - tty: n_gsm: Fix use-after-free in gsm_cleanup_mux (CVE-2024-50073)
+    - pinctrl: ocelot: fix system hang on level based interrupts
+    - pinctrl: apple: check devm_kasprintf() returned value
+    - irqchip/gic-v4: Don't allow a VMOVP on a dying VPE
+    - irqchip/sifive-plic: Unmask interrupt in plic_irq_enable()
+    - tcp: fix mptcp DSS corruption due to large pmtu xmit (CVE-2024-50083)
+    - mptcp: prevent MPC handshake on port-based signal endpoints
+    - nilfs2: propagate directory read errors from nilfs_find_entry()
+    - [powerpc*] 64: Add big-endian ELFv2 flavour to crypto VMX asm generation
+    - ALSA: hda/conexant - Use cached pin control for Node 0x1d on HP EliteOne
+      1000 G2
+    - udf: Allocate name buffer in directory iterator on heap
+    - udf: Avoid directory type conversion failure due to ENOMEM
 
   [ Salvatore Bonaccorso ]
   * Bump ABI to 27
