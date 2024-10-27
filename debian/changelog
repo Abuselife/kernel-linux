@@ -955,6 +955,7 @@ linux (6.1.114-1) UNRELEASED; urgency=medium
   * Bump ABI to 27
   * d/config: Update with the help of kconfigeditor2
     - mm: Enable Z3FOLD_DEPRECATED instead of Z3FOLD
+  * netfilter: xtables: fix typo causing some targets not to load on IPv6
 
  -- Salvatore Bonaccorso <carnil@debian.org>  Sun, 20 Oct 2024 16:13:19 +0200
 
