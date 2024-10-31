@@ -76,9 +76,6 @@ bugfix/powerpc/powerpc-boot-fix-missing-crc32poly.h-when-building-with-kernel_xz
 bugfix/arm64/arm64-acpi-Add-fixup-for-HPE-m400-quirks.patch
 bugfix/x86/x86-32-disable-3dnow-in-generic-config.patch
 bugfix/x86/platform-x86-toshiba_haps-Fix-missing-newline-in-pr_.patch
-bugfix/x86/input-goodix-use-the-new-soc_intel_is_byt-helper.patch
-bugfix/x86/powercap-rapl-fix-invalid-initialization-for-pl4_supported-field.patch
-bugfix/x86/x86-mm-switch-to-new-intel-cpu-model-defines.patch
 
 # Arch features
 features/arm64/arm64-dts-rockchip-Add-basic-support-for-Kobol-s-Hel.patch
@@ -97,11 +94,6 @@ bugfix/all/fs-add-module_softdep-declarations-for-hard-coded-cr.patch
 debian/makefile-do-not-check-for-libelf-when-building-oot-module.patch
 bugfix/all/partially-revert-net-socket-implement-64-bit-timestamps.patch
 bugfix/all/wireguard-ignore-config_android.patch
-bugfix/all/cgroup-make-operations-on-the-cgroup-root_list-rcu-s.patch
-bugfix/all/cgroup-move-rcu_head-up-near-the-top-of-cgroup_root.patch
-bugfix/all/revert-bpf-fix-devmap_hash-overflow-check-on-32-bit-arches.patch
-bugfix/all/revert-bpf-eliminate-rlimit-based-memory-accounting-for-devmap-maps.patch
-bugfix/all/bpf-fix-devmap_hash-overflow-check-on-32-bit-arches.patch
 
 # Miscellaneous features
 
