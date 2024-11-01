@@ -1,4 +1,4 @@
-linux (6.1.115-1) UNRELEASED; urgency=medium
+linux (6.1.115-1) bookworm; urgency=medium
 
   * New upstream stable update:
     https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.1.113
@@ -1088,7 +1088,7 @@ linux (6.1.115-1) UNRELEASED; urgency=medium
   * d/config: Update with the help of kconfigeditor2
     - mm: Enable Z3FOLD_DEPRECATED instead of Z3FOLD
 
- -- Salvatore Bonaccorso <carnil@debian.org>  Sun, 20 Oct 2024 16:13:19 +0200
+ -- Salvatore Bonaccorso <carnil@debian.org>  Fri, 01 Nov 2024 05:23:37 +0100
 
 linux (6.1.112-1) bookworm-security; urgency=high
 
