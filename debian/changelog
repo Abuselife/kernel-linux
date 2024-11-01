@@ -1,4 +1,4 @@
-linux (6.1.114-1) UNRELEASED; urgency=medium
+linux (6.1.115-1) UNRELEASED; urgency=medium
 
   * New upstream stable update:
     https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.1.113
@@ -950,12 +950,143 @@ linux (6.1.114-1) UNRELEASED; urgency=medium
       1000 G2
     - udf: Allocate name buffer in directory iterator on heap
     - udf: Avoid directory type conversion failure due to ENOMEM
+    https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.1.115
+    - bpf: Use raw_spinlock_t in ringbuf
+    - iio: accel: bma400: Fix uninitialized variable field_value in tap event
+      handling.
+    - bpf: Make sure internal and UAPI bpf_redirect flags don't overlap
+    - bpf: devmap: provide rxq after redirect
+    - bpf: Fix memory leak in bpf_core_apply
+    - RDMA/bnxt_re: Fix incorrect AVID type in WQE structure
+    - RDMA/bnxt_re: Add a check for memory allocation
+    - [x86] resctrl: Avoid overflow in MB settings in bw_validate()
+    - [armhf] dts: bcm2837-rpi-cm3-io3: Fix HDMI hpd-gpio pin
+    - [s390x] pci: Handle PCI error codes other than 0x3a
+    - bpf: fix kfunc btf caching for modules
+    - drm/vmwgfx: Handle possible ENOMEM in vmw_stdu_connector_atomic_check
+    - ALSA: hda/cs8409: Fix possible NULL dereference
+    - RDMA/cxgb4: Fix RDMA_CM_EVENT_UNREACHABLE error for iWARP
+    - RDMA/irdma: Fix misspelling of "accept*"
+    - RDMA/srpt: Make slab cache names unique
+    - ipv4: give an IPv4 dev to blackhole_netdev
+    - RDMA/bnxt_re: Return more meaningful error
+    - RDMA/bnxt_re: Fix a bug while setting up Level-2 PBL pages
+    - [arm64] drm/msm/dpu: make sure phys resources are properly initialized
+    - [arm64] drm/msm/dsi: fix 32-bit signed integer extension in pclk_rate
+      calculation
+    - [arm64] drm/msm: Avoid NULL dereference in msm_disp_state_print_regs()
+    - [arm64] drm/msm: Allocate memory for disp snapshot with kvzalloc()
+    - net: usb: usbnet: fix race in probe failure
+    - drm/amd/amdgpu: Fix double unlock in amdgpu_mes_add_ring
+    - macsec: don't increment counters for an unrelated SA
+    - netdevsim: use cond_resched() in nsim_dev_trap_report_work()
+    - net: ethernet: aeroflex: fix potential memory leak in
+      greth_start_xmit_gbit()
+    - net/smc: Fix searching in list of known pnetids in smc_pnet_add_pnetid
+    - net: xilinx: axienet: fix potential memory leak in axienet_start_xmit()
+    - net: systemport: fix potential memory leak in bcm_sysport_xmit()
+    - [arm64] drm/msm/dpu: Wire up DSC mask for active CTL configuration
+    - [arm64] drm/msm/dpu: don't always program merge_3d block
+    - tcp/dccp: Don't use timer_pending() in reqsk_queue_unlink().
+    - genetlink: hold RCU in genlmsg_mcast()
+    - ravb: Remove setting of RX software timestamp
+    - net: ravb: Only advertise Rx/Tx timestamps if hardware supports it
+    - scsi: target: core: Fix null-ptr-deref in target_alloc_device()
+    - smb: client: fix OOBs when building SMB2_IOCTL request
+    - usb: typec: altmode should keep reference to parent
+    - [s390x] Initialize psw mask in perf_arch_fetch_caller_regs()
+    - Bluetooth: bnep: fix wild-memory-access in proto_unregister
+    - net/mlx5: Remove redundant cmdif revision check
+    - net/mlx5: split mlx5_cmd_init() to probe and reload routines
+    - net/mlx5: Fix command bitmask initialization
+    - net/mlx5: Unregister notifier on eswitch init failure
+    - bpf: Fix iter/task tid filtering
+    - [arm64] uprobe fix the uprobe SWBP_INSN in big-endian
+    - [arm64] probes: Fix uprobes for big-endian kernels
+    - usb: gadget: f_uac2: Replace snprintf() with the safer scnprintf() variant
+    - usb: gadget: f_uac2: fix non-newline-terminated function name
+    - usb: gadget: f_uac2: fix return value for UAC2_ATTRIBUTE_STRING store
+    - usb: gadget: Add function wakeup support
+    - XHCI: Separate PORT and CAPs macros into dedicated file
+    - [arm64,armhf] usb: dwc3: core: Fix system suspend on TI AM62 platforms
+    - tty/serial: Make ->dcd_change()+uart_handle_dcd_change() status bool
+      active
+    - serial: Make uart_handle_cts_change() status param bool active
+    - serial: imx: Update mctrl old_status on RTSD interrupt
+    - block, bfq: fix procress reference leakage for bfqq in merge chain
+    - exec: don't WARN for racy path_noexec check (CVE-2024-50010)
+    - fs/ntfs3: Add more attributes checks in mi_enum_attr() (CVE-2023-45896)
+    - [x86] drm/vboxvideo: Replace fake VLA at end of vbva_mouse_pointer_shape
+      with real VLA
+    - ASoC: codecs: lpass-rx-macro: add missing CDC_RX_BCL_VBAT_RF_PROC2 to
+      default regs values
+    - [arm64] ASoC: fsl_sai: Enable 'FIFO continue on error' FCONT bit
+    - [arm64] Force position-independent veneers
+    - udf: refactor udf_current_aext() to handle error
+    - udf: fix uninit-value use in udf_get_fileshortad
+    - [x86] platform/x86: dell-sysman: add support for alienware products
+    - jfs: Fix sanity check in dbMount
+    - tracing: Consider the NULL character when validating the event length
+    - xfrm: extract dst lookup parameters into a struct
+    - xfrm: respect ip protocols rules criteria when performing dst lookups
+    - be2net: fix potential memory leak in be_xmit()
+    - net: plip: fix break; causing plip to never transmit
+    - [arm64,armhf] net: dsa: mv88e6xxx: Fix error when setting port policy on
+      mv88e6393x
+    - netfilter: xtables: fix typo causing some targets not to load on IPv6
+    - net: wwan: fix global oob in wwan_rtnl_policy
+    - docs: net: reformat driver.rst from a list to sections
+    - net: provide macros for commonly copied lockless queue stop/wake code
+    - net/sched: adjust device watchdog timer to detect stopped queue at right
+      time
+    - net: fix races in netdev_tx_sent_queue()/dev_watchdog()
+    - net: usb: usbnet: fix name regression
+    - net/sched: act_api: deny mismatched skip_sw/skip_hw flags for actions
+      created by classifiers
+    - net: sched: fix use-after-free in taprio_change()
+    - r8169: avoid unsolicited interrupts
+    - posix-clock: posix-clock: Fix unbalanced locking in pc_clock_settime()
+    - Bluetooth: SCO: Fix UAF on sco_sock_timeout
+    - Bluetooth: ISO: Fix UAF on iso_sock_timeout
+    - bpf,perf: Fix perf_event_detach_bpf_prog error handling
+    - ASoC: dt-bindings: davinci-mcasp: Fix interrupts property
+    - ASoC: dt-bindings: davinci-mcasp: Fix interrupt properties
+    - ALSA: firewire-lib: Avoid division by zero in apply_constraint_to_size()
+    - powercap: dtpm_devfreq: Fix error check against dev_pm_qos_add_request()
+    - ALSA: hda/realtek: Update default depop procedure
+    - cpufreq/cppc: Move and rename cppc_cpufreq_{perf_to_khz|khz_to_perf}()
+    - cpufreq: CPPC: fix perf_to_khz/khz_to_perf conversion exception
+    - btrfs: fix passing 0 to ERR_PTR in btrfs_search_dir_index_item()
+    - btrfs: zoned: fix zone unusable accounting for freed reserved extent
+    - drm/amd: Guard against bad data for ATIF ACPI method
+    - ACPI: resource: Add LG 16T90SP to irq1_level_low_skip_override[]
+    - ACPI: PRM: Find EFI_MEMORY_RUNTIME block for PRM handler and context
+    - ACPI: button: Add DMI quirk for Samsung Galaxy Book2 to fix initial lid
+      detection issue
+    - nilfs2: fix kernel bug due to missing clearing of buffer delay flag
+    - openat2: explicitly return -E2BIG for (usize > PAGE_SIZE)
+    - [x86] KVM: nSVM: Ignore nCR3[4:0] when loading PDPTEs from memory
+    - [arm64] KVM: arm64: Don't eagerly teardown the vgic on init error
+    - ALSA: hda/realtek: Add subwoofer quirk for Acer Predator G9-593
+    - xfrm: fix one more kernel-infoleak in algo dumping
+    - hv_netvsc: Fix VF namespace also in synthetic NIC NETDEV_REGISTER event
+    - drm/amd/display: Disable PSR-SU on Parade 08-01 TCON too
+    - selinux: improve error checking in sel_write_load()
+    - serial: protect uart_port_dtr_rts() in uart_shutdown() too
+      (CVE-2024-50058)
+    - net: phy: dp83822: Fix reset pin definitions
+    - [arm64] ASoC: qcom: Fix NULL Dereference in
+      asoc_qcom_lpass_cpu_platform_probe()
+    - [x86] platform/x86: dell-wmi: Ignore suspend notifications
+    - ACPI: PRM: Clean up guid type in struct prm_handler_info
+    - [arm64] uprobes: change the uprobe_opcode_t typedef to fix the sparse
+      warning
+    - xfrm: validate new SA's prefixlen using SA family when sel.family is unset
 
   [ Salvatore Bonaccorso ]
   * Bump ABI to 27
   * d/config: Update with the help of kconfigeditor2
     - mm: Enable Z3FOLD_DEPRECATED instead of Z3FOLD
-  * netfilter: xtables: fix typo causing some targets not to load on IPv6
 
  -- Salvatore Bonaccorso <carnil@debian.org>  Sun, 20 Oct 2024 16:13:19 +0200
 
