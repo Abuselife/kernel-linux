@@ -531,6 +531,9 @@ linux (5.10.228-1) UNRELEASED; urgency=medium
     - [x86] ALSA: hda/conexant - Use cached pin control for Node 0x1d on HP
       EliteOne 1000 G2
 
+  [ Ben Hutchings ]
+  * Bump ABI to 34
+
  -- Ben Hutchings <benh@debian.org>  Thu, 31 Oct 2024 23:32:40 +0100
 
 linux (5.10.226-1) bullseye-security; urgency=high
