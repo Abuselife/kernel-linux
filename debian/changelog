@@ -1,4 +1,4 @@
-linux (6.11.7-1) UNRELEASED; urgency=medium
+linux (6.11.7-1) unstable; urgency=medium
 
   * New upstream stable update:
     https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.11.7
@@ -263,7 +263,7 @@ linux (6.11.7-1) UNRELEASED; urgency=medium
       (CVE-2024-50212)
     - rcu/kvfree: Refactor kvfree_rcu_queue_batch()
 
- -- Salvatore Bonaccorso <carnil@debian.org>  Fri, 08 Nov 2024 17:55:42 +0100
+ -- Salvatore Bonaccorso <carnil@debian.org>  Sat, 09 Nov 2024 20:40:06 +0100
 
 linux (6.11.6-1) unstable; urgency=medium
 
