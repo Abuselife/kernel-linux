@@ -1,3 +1,142 @@
+linux (6.1.116-1) UNRELEASED; urgency=medium
+
+  * New upstream stable update:
+    https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.1.116
+    - cpufreq: Generalize of_perf_domain_get_sharing_cpumask phandle format
+    - cpufreq: Avoid a bad reference count on CPU node (CVE-2024-50012)
+    - mm: remove kern_addr_valid() completely
+    - fs/proc/kcore: avoid bounce buffer for ktext data
+    - fs/proc/kcore: convert read_kcore() to read_kcore_iter()
+    - fs/proc/kcore: reinstate bounce buffer for KCORE_TEXT regions
+    - fs/proc/kcore.c: allow translation of physical memory addresses
+    - cgroup: Fix potential overflow issue when checking max_depth
+    - wifi: iwlegacy: Fix "field-spanning write" warning in il_enqueue_hcmd()
+      (Closes: #1062421)
+    - mac80211: MAC80211_MESSAGE_TRACING should depend on TRACING
+    - wifi: mac80211: skip non-uploaded keys in ieee80211_iter_keys
+    - wifi: ath11k: Fix invalid ring usage in full monitor mode
+    - wifi: brcm80211: BRCM_TRACING should depend on TRACING
+    - RDMA/cxgb4: Dump vendor specific QP details
+    - RDMA/mlx5: Round max_rd_atomic/max_dest_rd_atomic up instead of down
+    - RDMA/bnxt_re: synchronize the qp-handle table array
+    - wifi: iwlwifi: mvm: disconnect station vifs if recovery failed
+    - wifi: iwlwifi: mvm: Fix response handling in iwl_mvm_send_recovery_cmd()
+      (CVE-2024-53059)
+    - [armel,armhf] ASoC: cs42l51: Fix some error handling paths in
+      cs42l51_probe()
+    - macsec: Fix use-after-free while sending the offloading packet
+      (CVE-2024-50261)
+    - net: stmmac: TSO: Fix unbalanced DMA map/unmap for non-paged SKB data
+      (CVE-2024-53058)
+    - ipv4: ip_tunnel: Fix suspicious RCU usage warning in ip_tunnel_init_flow()
+      (CVE-2024-53042)
+    - gtp: allow -1 to be specified as file description from userspace
+    - net/sched: stop qdisc_tree_reduce_backlog on TC_H_ROOT (CVE-2024-53057)
+    - netdevsim: Add trailing zero to terminate the string in
+      nsim_nexthop_bucket_activity_write() (CVE-2024-50259)
+    - bpf: Fix out-of-bounds write in trie_get_next_key() (CVE-2024-50262)
+    - netfilter: Fix use-after-free in get_info() (CVE-2024-50257)
+    - netfilter: nf_reject_ipv6: fix potential crash in nf_send_reset6()
+      (CVE-2024-50256)
+    - Bluetooth: hci: fix null-ptr-deref in hci_read_supported_codecs
+      (CVE-2024-50255)
+    - net: skip offload for NETIF_F_IPV6_CSUM if ipv6 header contains extension
+    - netfilter: nft_payload: sanitize offset and length before calling
+      skb_checksum() (CVE-2024-50251)
+    - iomap: convert iomap_unshare_iter to use large folios
+    - iomap: improve shared block detection in iomap_unshare_iter
+    - iomap: don't bother unsharing delalloc extents
+    - iomap: share iomap_unshare_iter predicate code with fsdax
+    - fsdax: remove zeroing code from dax_unshare_iter
+    - fsdax: dax_unshare_iter needs to copy entire blocks (CVE-2024-50250)
+    - iomap: turn iomap_want_unshare_iter into an inline function
+    - compiler-gcc: be consistent with underscores use for `no_sanitize`
+    - compiler-gcc: remove attribute support check for `__no_sanitize_address__`
+    - afs: Automatically generate trace tag enums
+    - afs: Fix missing subdir edit when renamed between parent dirs
+    - ACPI: CPPC: Make rmw_lock a raw_spin_lock (CVE-2024-50249)
+    - fs/ntfs3: Check if more than chunk-size bytes are written (CVE-2024-50247)
+    - fs/ntfs3: Fix warning possible deadlock in ntfs_set_state
+    - fs/ntfs3: Stale inode instead of bad
+    - fs/ntfs3: Fix possible deadlock in mi_read (CVE-2024-50245)
+    - fs/ntfs3: Additional check in ni_clear() (CVE-2024-50244)
+    - scsi: scsi_transport_fc: Allow setting rport state to current state
+    - net: amd: mvme147: Fix probe banner message
+    - NFS: remove revoked delegation from server's delegation list
+    - misc: sgi-gru: Don't disable preemption in GRU driver
+    - usb: gadget: dummy_hcd: Switch to hrtimer transfer scheduler
+    - usb: gadget: dummy_hcd: Set transfer interval to 1 microframe
+    - usb: gadget: dummy_hcd: execute hrtimer callback in softirq context
+    - USB: gadget: dummy-hcd: Fix "task hung" problem
+    - ALSA: usb-audio: Add quirks for Dell WD19 dock
+    - usbip: tools: Fix detach_port() invalid port error path
+    - usb: phy: Fix API devm_usb_put_phy() can not release the phy
+    - usb: typec: fix unreleased fwnode_handle in typec_port_register_altmodes()
+    - xhci: Fix Link TRB DMA in command ring stopped completion event
+    - xhci: Use pm_runtime_get to prevent RPM on unsupported systems
+    - Revert "driver core: Fix uevent_show() vs driver detach race"
+    - wifi: mac80211: do not pass a stopped vif to the driver in .get_txpower
+      (CVE-2024-50237)
+    - wifi: ath10k: Fix memory leak in management tx (CVE-2024-50236)
+    - wifi: cfg80211: clear wdev->cqm_config pointer on free (CVE-2024-50235)
+    - wifi: iwlegacy: Clear stale interrupts before resuming device
+      (CVE-2024-50234)
+    - iio: adc: ad7124: fix division by zero in ad7124_set_channel_odr()
+      (CVE-2024-50232)
+    - iio: light: veml6030: fix microlux value calculation
+    - nilfs2: fix potential deadlock with newly created symlinks
+      (CVE-2024-50229)
+    - block: fix sanity checks in blk_rq_map_user_bvec
+    - cgroup/bpf: use a dedicated workqueue for cgroup bpf destruction
+      (CVE-2024-53054)
+    - ALSA: hda/realtek: Limit internal Mic boost on Dell platform
+    - cxl/acpi: Move rescan to the workqueue
+    - cxl/port: Fix cxl_bus_rescan() vs bus_rescan_devices()
+    - mm/page_alloc: rename ALLOC_HIGH to ALLOC_MIN_RESERVE
+    - mm/page_alloc: treat RT tasks similar to __GFP_HIGH
+    - mm/page_alloc: explicitly record high-order atomic allocations in
+      alloc_flags
+    - mm/page_alloc: explicitly define what alloc flags deplete min reserves
+    - mm/page_alloc: explicitly define how __GFP_HIGH non-blocking allocations
+      accesses reserves
+    - mm/page_alloc: let GFP_ATOMIC order-0 allocs access highatomic reserves
+    - ocfs2: pass u64 to ocfs2_truncate_inline maybe overflow (CVE-2024-50218)
+    - mctp i2c: handle NULL header address (CVE-2024-53043)
+    - ALSA: hda/realtek: Fix headset mic on TUXEDO Stellaris 16 Gen6 mb1
+    - nvmet-auth: assign dh_key to NULL after kfree_sensitive (CVE-2024-50215)
+    - io_uring: rename kiocb_end_write() local helper
+    - fs: create kiocb_{start,end}_write() helpers
+    - io_uring: use kiocb_{start,end}_write() helpers
+    - io_uring/rw: fix missing NOWAIT check for O_DIRECT start write
+      (CVE-2024-53052)
+    - mm: migrate: try again if THP split is failed due to page refcnt
+    - migrate: convert unmap_and_move() to use folios
+    - migrate: convert migrate_pages() to use folios
+    - mm/migrate.c: stop using 0 as NULL pointer
+    - migrate_pages: organize stats with struct migrate_pages_stats
+    - migrate_pages: separate hugetlb folios migration
+    - migrate_pages: restrict number of pages to migrate in batch
+    - migrate_pages: split unmap_and_move() to _unmap() and _move()
+    - vmscan,migrate: fix page count imbalance on node stats when demoting pages
+    - io_uring: always lock __io_cqring_overflow_flush (Closes: #1087602)
+    - [x86] bugs: Use code segment selector for VERW operand (CVE-2024-50072)
+    - wifi: mac80211: fix NULL dereference at band check in starting tx ba
+      session (CVE-2024-43911)
+    - nilfs2: fix kernel bug due to missing clearing of checked flag
+      (CVE-2024-50230)
+    - wifi: iwlwifi: mvm: fix 6 GHz scan construction (CVE-2024-53055)
+    - mm: shmem: fix data-race in shmem_getattr() (CVE-2024-50228)
+    - mtd: spi-nor: winbond: fix w25q128 regression
+    - drm/amd/display: Add null checks for 'stream' and 'plane' before
+      dereferencing (CVE-2024-43904)
+    - drm/amd/display: Skip on writeback when it's not applicable
+      (CVE-2024-36914)
+    - vt: prevent kernel-infoleak in con_font_get()
+    - mm: avoid gcc complaint about pointer casting
+    - migrate_pages_batch: fix statistics for longterm pin retry
+
+ -- Salvatore Bonaccorso <carnil@debian.org>  Sat, 09 Nov 2024 11:40:21 +0100
+
 linux (6.1.115-1) bookworm; urgency=medium
 
   * New upstream stable update:
