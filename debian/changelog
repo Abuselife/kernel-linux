@@ -135,6 +135,9 @@ linux (6.1.116-1) UNRELEASED; urgency=medium
     - mm: avoid gcc complaint about pointer casting
     - migrate_pages_batch: fix statistics for longterm pin retry
 
+  [ Salvatore Bonaccorso ]
+  * Bump ABI to 28
+
  -- Salvatore Bonaccorso <carnil@debian.org>  Sat, 09 Nov 2024 11:40:21 +0100
 
 linux (6.1.115-1) bookworm; urgency=medium
