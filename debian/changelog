@@ -1,4 +1,4 @@
-linux (6.1.116-1) UNRELEASED; urgency=medium
+linux (6.1.117-1) UNRELEASED; urgency=medium
 
   * New upstream stable update:
     https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.1.116
@@ -134,6 +134,119 @@ linux (6.1.116-1) UNRELEASED; urgency=medium
     - vt: prevent kernel-infoleak in con_font_get()
     - mm: avoid gcc complaint about pointer casting
     - migrate_pages_batch: fix statistics for longterm pin retry
+    https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.1.117
+    - [arm64] dts: rockchip: Fix rt5651 compatible value on rk3399-eaidk-610
+    - [arm64] dts: rockchip: Fix rt5651 compatible value on
+      rk3399-sapphire-excavator
+    - [arm64] dts: rockchip: Remove hdmi's 2nd interrupt on rk3328
+    - [arm64] dts: rockchip: Fix wakeup prop names on PineNote BT node
+    - [arm64] dts: rockchip: Fix bluetooth properties on Rock960 boards
+    - [arm64] dts: rockchip: Remove #cooling-cells from fan on Theobroma lion
+    - [arm64] dts: rockchip: Fix LED triggers on rk3308-roc-cc
+    - [arm64] dts: imx8qm: Fix VPU core alias name
+    - [arm64] dts: imx8qxp: Add VPU subsystem file
+    - [arm64] dts: imx8-ss-vpu: Fix imx8qm VPU IRQs
+    - [arm64] dts: imx8mp: correct sdhc ipg clk
+    - [armhf] ARM: dts: rockchip: Fix the realtek audio codec on rk3036-kylin
+    - HID: core: zero-initialize the report buffer (CVE-2024-50302)
+    - [x86] platform/x86/amd/pmc: Detect when STB is not available
+      (CVE-2024-53072)
+    - sunrpc: handle -ENOTCONN in xs_tcp_setup_socket()
+    - NFSv3: only use NFS timeout for MOUNT when protocols are compatible
+    - NFSv3: handle out-of-order write replies.
+    - nfs: avoid i_lock contention in nfs_clear_invalid_mapping
+    - security/keys: fix slab-out-of-bounds in key_task_permission
+      (CVE-2024-50301)
+    - [arm64] net: enetc: set MAC address to the VF net_device
+    - sctp: properly validate chunk size in sctp_sf_ootb() (CVE-2024-50299)
+    - can: c_can: fix {rx,tx}_errors statistics
+    - ice: change q_index variable type to s16 to store -1 value
+    - i40e: fix race condition by adding filter's intermediate sync state
+      (CVE-2024-53088)
+    - [arm64] net: hns3: fix kernel crash when uninstalling driver
+      (CVE-2024-50296)
+    - net: phy: ti: add PHY_RST_AFTER_CLK_EN flag
+    - net: stmmac: Fix unbalanced IRQ wake disable warning on single irq case
+    - virtio_net: Add hash_key_length check (CVE-2024-53082)
+    - Revert "ALSA: hda/conexant: Mute speakers at suspend / shutdown"
+    - media: stb0899_algo: initialize cfr before using it
+    - media: dvbdev: prevent the risk of out of memory access (CVE-2024-53063)
+    - media: dvb_frontend: don't play tricks with underflow values
+    - media: adv7604: prevent underflow condition when reporting colorspace
+    - scsi: sd_zbc: Use kvzalloc() to allocate REPORT ZONES buffer
+    - ALSA: firewire-lib: fix return value on fail in amdtp_tscm_init()
+    - [armhf] ASoC: stm32: spdifrx: fix dma channel release in
+      stm32_spdifrx_remove
+    - media: ar0521: don't overflow when checking PLL values (CVE-2024-53081)
+    - media: s5p-jpeg: prevent buffer overflows (CVE-2024-53061)
+    - media: cx24116: prevent overflows on SNR calculus (CVE-2024-50290)
+    - media: pulse8-cec: fix data timestamp at pulse8_setup()
+    - media: v4l2-tpg: prevent the risk of a division by zero (CVE-2024-50287)
+    - media: v4l2-ctrls-api: fix error handling for v4l2_g_ctrl()
+    - can: mcp251xfd: mcp251xfd_get_tef_len(): fix length calculation
+    - can: mcp251xfd: mcp251xfd_ring_alloc(): fix coalescing configuration when
+      switching CAN modes
+    - ksmbd: fix slab-use-after-free in ksmbd_smb2_session_create
+      (CVE-2024-50286)
+    - ksmbd: Fix the missing xa_store error check (CVE-2024-50284)
+    - ksmbd: fix slab-use-after-free in smb3_preauth_hash_rsp (CVE-2024-50283)
+    - pwm: imx-tpm: Use correct MODULO value for EPWM mode
+    - drm/amdgpu: Adjust debugfs eviction and IB access permissions
+    - drm/amdgpu: add missing size check in amdgpu_debugfs_gprwave_read()
+      (CVE-2024-50282)
+    - drm/amdgpu: prevent NULL pointer dereference if ATIF is not supported
+      (CVE-2024-53060)
+    - thermal/drivers/qcom/lmh: Remove false lockdep backtrace
+    - dm cache: correct the number of origin blocks to match the target length
+    - dm cache: fix flushing uninitialized delayed_work on cache_ctr error
+      (CVE-2024-50280)
+    - dm cache: fix out-of-bounds access to the dirty bitset when resizing
+      (CVE-2024-50279)
+    - dm cache: optimize dirty bit checking with find_next_bit when resizing
+    - dm cache: fix potential out-of-bounds access on the first resume
+      (CVE-2024-50278)
+    - dm-unstriped: cast an operand to sector_t to prevent potential uint32_t
+      overflow
+    - ALSA: usb-audio: Add quirk for HP 320 FHD Webcam
+    - ALSA: hda/realtek: Fix headset mic on TUXEDO Gemini 17 Gen3
+    - posix-cpu-timers: Clear TICK_DEP_BIT_POSIX_TIMER on clone
+    - nfs: Fix KMSAN warning in decode_getfattr_attrs() (CVE-2024-53066)
+    - net: wwan: t7xx: Fix off-by-one error in t7xx_dpmaif_rx_buf_alloc()
+    - net: vertexcom: mse102x: Fix possible double free of TX skb
+      (CVE-2024-50276)
+    - mptcp: use sock_kfree_s instead of kfree
+    - btrfs: reinitialize delayed ref list after deleting it from the list
+      (CVE-2024-50273)
+    - bnxt_re: avoid shift undefined behavior in bnxt_qplib_alloc_init_hwq
+      (CVE-2024-38540)
+    - Revert "wifi: mac80211: fix RCU list iterations"
+    - net: do not delay dst_entries_add() in dst_release() (CVE-2024-50036)
+    - media: uvcvideo: Skip parsing frames of type UVC_VS_UNDEFINED in
+      uvc_parse_format
+    - filemap: Fix bounds checking in filemap_read() (CVE-2024-50272)
+    - fs/proc: fix compile warning about variable 'vmcore_mmap_ops'
+    - signal: restore the override_rlimit logic (CVE-2024-50271)
+    - usb: musb: sunxi: Fix accessing an released usb phy (CVE-2024-50269)
+    - usb: dwc3: fix fault at system suspend if device was already runtime
+      suspended
+    - usb: typec: fix potential out of bounds in
+      ucsi_ccg_update_set_new_cam_cmd()
+    - USB: serial: io_edgeport: fix use after free in debug printk
+      (CVE-2024-50267)
+    - USB: serial: qcserial: add support for Sierra Wireless EM86xx
+    - USB: serial: option: add Fibocom FG132 0x0112 composition
+    - USB: serial: option: add Quectel RG650V
+    - irqchip/gic-v3: Force propagation of the active state with a read-back
+    - ocfs2: remove entry once instead of null-ptr-dereference in
+      ocfs2_xa_remove()
+    - ucounts: fix counter leak in inc_rlimit_get_ucounts()
+    - [x86] ASoC: amd: yc: fix internal mic on Xiaomi Book Pro 14 2022
+    - net: sched: use RCU read-side critical section in taprio_dump()
+      (CVE-2024-50126)
+    - hv_sock: Initializing vsk->trans to NULL to prevent a dangling pointer
+    - vsock/virtio: Initialization of the dangling pointer occurring in
+      vsk->trans
+    - media: amphion: Fix VPU core alias name
 
   [ Salvatore Bonaccorso ]
   * Bump ABI to 28
