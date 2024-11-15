@@ -1,3 +1,188 @@
+linux (6.11.8-1) UNRELEASED; urgency=medium
+
+  * New upstream stable update:
+    https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.11.8
+    - [arm64] dts: rockchip: Fix rt5651 compatible value on rk3399-eaidk-610
+    - [arm64] dts: rockchip: Fix rt5651 compatible value on
+      rk3399-sapphire-excavator
+    - [arm64] dts: rockchip: Move L3 cache outside CPUs in RK3588(S) SoC dtsi
+    - [arm64] dts: rockchip: Start cooling maps numbering from zero on ROCK 5B
+    - [arm64] dts: rockchip: Designate Turing RK1's system power controller
+    - [arm64] firmware: qcom: scm: fix a NULL-pointer dereference
+    - [arm64] EDAC/qcom: Make irq configuration optional
+    - [arm64] dts: rockchip: Remove hdmi's 2nd interrupt on rk3328
+    - [arm64] dts: rockchip: Fix wakeup prop names on PineNote BT node
+    - [arm64] dts: rockchip: Fix reset-gpios property on brcm BT nodes
+    - [arm64] dts: rockchip: fix i2c2 pinctrl-names property on
+      anbernic-rg353p/v
+    - [arm64] dts: rockchip: Drop regulator-init-microvolt from two boards
+    - [arm64] dts: rockchip: Fix bluetooth properties on rk3566 box demo
+    - [arm64] dts: rockchip: Fix bluetooth properties on Rock960 boards
+    - [arm64] dts: rockchip: Add DTS for FriendlyARM NanoPi R2S Plus
+    - [arm64] dts: rockchip: Remove undocumented supports-emmc property
+    - [arm64] dts: rockchip: Remove #cooling-cells from fan on Theobroma lion
+    - [arm64] dts: rockchip: Fix LED triggers on rk3308-roc-cc
+    - [arm64] dts: rockchip: remove num-slots property from
+      rk3328-nanopi-r2s-plus
+    - [arm64] firmware: arm_scmi: Fix slab-use-after-free in scmi_bus_notifier()
+    - [arm64] firmware: qcom: scm: Return -EOPNOTSUPP for unsupported SHM bridge
+      enabling
+    - [arm64] dts: rockchip: remove orphaned pinctrl-names from pinephone pro
+    - [arm64] dts: rockchip: Correct GPIO polarity on brcm BT nodes
+    - HID: core: zero-initialize the report buffer
+    - [x86] platform/x86/amd/pmc: Detect when STB is not available
+    - sunrpc: handle -ENOTCONN in xs_tcp_setup_socket()
+    - NFSv3: only use NFS timeout for MOUNT when protocols are compatible
+    - NFS: Fix attribute delegation behaviour on exclusive create
+    - NFS: Further fixes to attribute delegation a/mtime changes
+    - nfs: avoid i_lock contention in nfs_clear_invalid_mapping
+    - security/keys: fix slab-out-of-bounds in key_task_permission
+    - [arm64] net: enetc: set MAC address to the VF net_device
+    - dt-bindings: net: xlnx,axi-ethernet: Correct phy-mode property value
+    - sctp: properly validate chunk size in sctp_sf_ootb()
+    - [arm64] net: enetc: allocate vf_state during PF probes
+    - can: c_can: fix {rx,tx}_errors statistics
+    - ice: change q_index variable type to s16 to store -1 value
+    - i40e: fix race condition by adding filter's intermediate sync state
+    - e1000e: Remove Meteor Lake SMBUS workarounds
+    - [arm64] net: hns3: fix kernel crash when uninstalling driver
+    - net: phy: ti: add PHY_RST_AFTER_CLK_EN flag
+    - net: stmmac: Fix unbalanced IRQ wake disable warning on single irq case
+    - netfilter: nf_tables: wait for rcu grace period on net_device removal
+    - virtio_net: Support dynamic rss indirection table size
+    - virtio_net: Add hash_key_length check
+    - virtio_net: Sync rss config to device when virtnet_probe
+    - virtio_net: Update rss when set queue
+    - net: arc: fix the device for dma_map_single/dma_unmap_single
+    - net: arc: rockchip: fix emac mdio node support
+    - rxrpc: Fix missing locking causing hanging calls
+    - net/smc: do not leave a dangling sk pointer in __smc_create()
+    - drivers: net: ionic: add missed debugfs cleanup to ionic_probe() error
+      path
+    - Revert "ALSA: hda/conexant: Mute speakers at suspend / shutdown"
+    - media: stb0899_algo: initialize cfr before using it
+    - media: dvbdev: prevent the risk of out of memory access
+    - media: dvb_frontend: don't play tricks with underflow values
+    - media: adv7604: prevent underflow condition when reporting colorspace
+    - scsi: sd_zbc: Use kvzalloc() to allocate REPORT ZONES buffer
+    - ALSA: firewire-lib: fix return value on fail in amdtp_tscm_init()
+    - [armhf] ASoC: stm32: spdifrx: fix dma channel release in
+      stm32_spdifrx_remove
+    - [amd64] ASoC: SOF: sof-client-probes-ipc4: Set param_size extension bits
+    - media: dvb-core: add missing buffer index check
+    - media: mgb4: protect driver against spectre
+    - media: ar0521: don't overflow when checking PLL values
+    - media: s5p-jpeg: prevent buffer overflows
+    - media: cx24116: prevent overflows on SNR calculus
+    - media: av7110: fix a spectre vulnerability
+    - media: pulse8-cec: fix data timestamp at pulse8_setup()
+    - media: vivid: fix buffer overwrite when using > 32 buffers
+    - media: v4l2-tpg: prevent the risk of a division by zero
+    - media: v4l2-ctrls-api: fix error handling for v4l2_g_ctrl()
+    - can: m_can: m_can_close(): don't call free_irq() for IRQ-less devices
+    - can: mcp251xfd: mcp251xfd_get_tef_len(): fix length calculation
+    - can: mcp251xfd: mcp251xfd_ring_alloc(): fix coalescing configuration when
+      switching CAN modes
+    - can: {cc770,sja1000}_isa: allow building on x86_64
+    - ksmbd: fix slab-use-after-free in ksmbd_smb2_session_create
+    - ksmbd: check outstanding simultaneous SMB operations
+    - ksmbd: Fix the missing xa_store error check
+    - ksmbd: fix slab-use-after-free in smb3_preauth_hash_rsp
+    - pwm: imx-tpm: Use correct MODULO value for EPWM mode
+    - tpm: Lock TPM chip in tpm_pm_suspend() first
+    - rpmsg: glink: Handle rejected intent request better
+    - drm/amd/pm: always pick the pptable from IFWI
+    - drm/amd/display: Fix brightness level not retained over reboot
+    - drm/imagination: Add a per-file PVR context list
+    - drm/imagination: Break an object reference loop
+    - drm/amd/pm: correct the workload setting
+    - drm/amd/display: parse umc_info or vram_info based on ASIC
+    - drm/panthor: Lock XArray when getting entries for the VM
+    - drm/panthor: Be stricter about IO mapping flags
+    - drm/amdgpu: Adjust debugfs eviction and IB access permissions
+    - drm/amdgpu: add missing size check in amdgpu_debugfs_gprwave_read()
+    - drm/amdgpu: Adjust debugfs register access permissions
+    - drm/amdgpu: Fix DPX valid mode check on GC 9.4.3
+    - drm/amdgpu: prevent NULL pointer dereference if ATIF is not supported
+    - [arm64] thermal/drivers/qcom/lmh: Remove false lockdep backtrace
+    - KEYS: trusted: dcp: fix NULL dereference in AEAD crypto operation
+    - dm cache: correct the number of origin blocks to match the target length
+    - dm cache: fix flushing uninitialized delayed_work on cache_ctr error
+    - dm cache: fix out-of-bounds access to the dirty bitset when resizing
+    - dm cache: optimize dirty bit checking with find_next_bit when resizing
+    - dm cache: fix potential out-of-bounds access on the first resume
+    - dm-unstriped: cast an operand to sector_t to prevent potential uint32_t
+      overflow
+    - dm: fix a crash if blk_alloc_disk fails
+    - mptcp: no admin perm to list endpoints
+    - ALSA: usb-audio: Add quirk for HP 320 FHD Webcam
+    - scsi: ufs: core: Start the RTC update work later
+    - nfs: Fix KMSAN warning in decode_getfattr_attrs()
+    - tracing: Fix tracefs mount options
+    - net: wwan: t7xx: Fix off-by-one error in t7xx_dpmaif_rx_buf_alloc()
+    - net: vertexcom: mse102x: Fix possible double free of TX skb
+    - mptcp: use sock_kfree_s instead of kfree
+    - [arm64] sve: Discard stale CPU state when handling SVE traps
+    - [arm64] smccc: Remove broken support for SMCCCv1.3 SVE discard hint
+    - mm/slab: fix warning caused by duplicate kmem_cache creation in
+      kmem_buckets_create
+    - [ppc64el] KVM: PPC: Book3S HV: Mask off LPCR_MER for a vCPU before running
+      it to avoid spurious interrupts
+    - btrfs: fix the length of reserved qgroup to free
+    - btrfs: fix per-subvolume RO/RW flags with new mount API
+    - btrfs: reinitialize delayed ref list after deleting it from the list
+    - [amd64] platform/x86/amd/pmf: Relocate CPU ID macros to the PMF header
+    - [amd64] platform/x86/amd/pmf: Update SMU metrics table for 1AH family
+      series
+    - [amd64] platform/x86/amd/pmf: Add SMU metrics table support for 1Ah family
+      60h model
+    - media: uvcvideo: Skip parsing frames of type UVC_VS_UNDEFINED in
+      uvc_parse_format
+    - filemap: Fix bounds checking in filemap_read()
+    - i2c: designware: do not hold SCL low when I2C_DYNAMIC_TAR_UPDATE is not
+      set
+    - clk: qcom: gcc-x1e80100: Fix USB MP SS1 PHY GDSC pwrsts flags
+    - clk: qcom: clk-alpha-pll: Fix pll post div mask when width is not set
+    - fs/proc: fix compile warning about variable 'vmcore_mmap_ops'
+    - objpool: fix to make percpu slot allocation more robust
+    - signal: restore the override_rlimit logic
+    - mm/damon/core: avoid overflow in damon_feed_loop_next_input()
+    - mm/damon/core: handle zero {aggregation,ops_update} intervals
+    - mm/damon/core: handle zero schemes apply interval
+    - mm/mlock: set the correct prev on failure
+    - mm/thp: fix deferred split unqueue naming and locking
+    - [amd64] thunderbolt: Add only on-board retimers when
+      !CONFIG_USB4_DEBUGFS_MARGINING
+    - usb: musb: sunxi: Fix accessing an released usb phy
+    - usb: dwc3: fix fault at system suspend if device was already runtime
+      suspended
+    - usb: typec: qcom-pmic: init value of hdr_len/txbuf_len earlier
+    - usb: typec: fix potential out of bounds in
+      ucsi_ccg_update_set_new_cam_cmd()
+    - USB: serial: io_edgeport: fix use after free in debug printk
+    - USB: serial: qcserial: add support for Sierra Wireless EM86xx
+    - USB: serial: option: add Fibocom FG132 0x0112 composition
+    - USB: serial: option: add Quectel RG650V
+    - [amd64] thunderbolt: Fix connection issue with Pluggable UD-4VPD dock
+    - [arm*] staging: vchiq_arm: Use devm_kzalloc() for drv_mgmt allocation
+    - [arm*] staging: vchiq_arm: Use devm_kzalloc() for vchiq_arm_state
+      allocation
+    - irqchip/gic-v3: Force propagation of the active state with a read-back
+    - ocfs2: remove entry once instead of null-ptr-dereference in
+      ocfs2_xa_remove()
+    - ucounts: fix counter leak in inc_rlimit_get_ucounts()
+    - [arm64] firmware: qcom: scm: Refactor code to support multiple dload mode
+    - [arm64] firmware: qcom: scm: suppress download mode error
+    - block: rework bio splitting
+    - block: fix queue limits checks in blk_rq_map_user_bvec for real
+    - [amd64] ASoC: amd: yc: fix internal mic on Xiaomi Book Pro 14 2022
+    - [amd64,arm64] hv_sock: Initializing vsk->trans to NULL to prevent a
+      dangling pointer
+    - vsock/virtio: Initialization of the dangling pointer occurring in
+      vsk->trans
+
+ -- Salvatore Bonaccorso <carnil@debian.org>  Fri, 15 Nov 2024 22:11:53 +0100
+
 linux (6.11.7-1) unstable; urgency=medium
 
   * New upstream stable update:
