@@ -232,6 +232,9 @@ linux (6.11.9-1) UNRELEASED; urgency=medium
     - mm: krealloc: Fix MTE false alarm in __do_krealloc
     - 9p: fix slab cache name creation for real
 
+  [ Ben Hutchings ]
+  * d/b/gencontrol.py: Fix generation of debian/tests/control
+
  -- Salvatore Bonaccorso <carnil@debian.org>  Fri, 15 Nov 2024 22:11:53 +0100
 
 linux (6.11.7-1) unstable; urgency=medium
