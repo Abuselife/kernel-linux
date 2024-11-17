@@ -1,4 +1,4 @@
-linux (6.11.9-1) UNRELEASED; urgency=medium
+linux (6.11.9-1) unstable; urgency=medium
 
   * New upstream stable update:
     https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.11.8
@@ -235,7 +235,7 @@ linux (6.11.9-1) UNRELEASED; urgency=medium
   [ Ben Hutchings ]
   * d/b/gencontrol.py: Fix generation of debian/tests/control
 
- -- Salvatore Bonaccorso <carnil@debian.org>  Fri, 15 Nov 2024 22:11:53 +0100
+ -- Salvatore Bonaccorso <carnil@debian.org>  Sun, 17 Nov 2024 20:36:11 +0100
 
 linux (6.11.7-1) unstable; urgency=medium
 
