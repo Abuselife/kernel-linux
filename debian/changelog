@@ -1,4 +1,4 @@
-linux (6.11.8-1) UNRELEASED; urgency=medium
+linux (6.11.9-1) UNRELEASED; urgency=medium
 
   * New upstream stable update:
     https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.11.8
@@ -180,6 +180,57 @@ linux (6.11.8-1) UNRELEASED; urgency=medium
       dangling pointer
     - vsock/virtio: Initialization of the dangling pointer occurring in
       vsk->trans
+    https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.11.9
+    - smb: client: Fix use-after-free of network namespace.
+    - nvme/host: Fix RCU list traversal to use SRCU primitive
+    - 9p: v9fs_fid_find: also lookup by inode if not found dentry
+    - 9p: Avoid creating multiple slab caches with the same name
+    - nvmet-passthru: clear EUID/NGUID/UUID while using loop target
+    - pinctrl: intel: platform: Add Panther Lake to the list of supported
+    - nvme: tcp: avoid race between queue_lock lock and destroy
+    - block: Fix elevator_get_default() checking for NULL q->tag_set
+    - HID: multitouch: Add support for B2402FVA track point
+    - HID: multitouch: Add quirk for HONOR MagicBook Art 14 touchpad
+    - [arm64] iommu/arm-smmu: Clarify MMU-500 CPRE workaround
+    - nvme: disable CC.CRIME (NVME_CC_CRIME)
+    - bpf: use kvzmalloc to allocate BPF verifier environment
+    - crypto: api - Fix liveliness check in crypto_alg_tested
+    - [arm64,armhf] crypto: marvell/cesa - Disable hash algorithms
+    - [s390x] ap: Fix CCA crypto card behavior within protected execution
+      environment
+    - sound: Make CONFIG_SND depend on INDIRECT_IOMEM instead of UML
+    - drm/vmwgfx: Limit display layout ioctl array size to
+      VMWGFX_NUM_DISPLAY_UNITS
+    - RDMA/siw: Add sendpage_ok() check to disable MSG_SPLICE_PAGES
+    - ALSA: hda/tas2781: Add new quirk for Lenovo, ASUS, Dell projects
+    - nvme-multipath: defer partition scanning
+    - [powerpc*] powernv: Free name on error in opal_event_init()
+    - net: phy: mdio-bcm-unimac: Add BCM6846 support
+    - nvme-loop: flush off pending I/O while shutting down loop controller
+    - nvme: make keep-alive synchronous operation
+    - virtio_pci: Fix admin vq cleanup by using correct info pointer
+    - bpf: Add sk_is_inet and IS_ICSK check in tls_sw_has_ctx_tx/rx
+    - bpf: Fix mismatched RCU unlock flavour in bpf_out_neigh_v6
+    - [x86] ASoC: Intel: avs: Update stream status in a separate thread
+    - ASoC: codecs: Fix error handling in aw_dev_get_dsp_status function
+    - [amd64] ASoC: amd: yc: Add quirk for ASUS Vivobook S15 M3502RA
+    - [amd64] ASoC: amd: yc: Fix non-functional mic on ASUS E1404FA
+    - [x86] ASoC: Intel: soc-acpi: lnl: Add match entry for TM2 laptops
+    - netfs: Downgrade i_rwsem for a buffered write
+    - fs: Fix uninitialized value issue in from_kuid and from_kgid
+    - afs: Fix lock recursion
+    - HID: i2c-hid: Delayed i2c resume wakeup for 0x0d42 Goodix touchpad
+    - HID: multitouch: Add quirk for Logitech Bolt receiver w/ Casa touchpad
+    - HID: lenovo: Add support for Thinkpad X1 Tablet Gen 3 keyboard
+    - ASoC: codecs: lpass-rx-macro: fix RXn(rx,n) macro for DSM_CTL and SEC7
+      regs
+    - [riscv64] KVM: use raw_spinlock for critical section in imsic
+    - ASoC: rt722-sdca: increase clk_stop_timeout to fix clock stop issue
+    - ASoC: fsl_micfil: Add sample rate constraint
+    - net: usb: qmi_wwan: add Fibocom FG132 0x0112 composition
+    - bpf: Check validity of link->type in bpf_link_show_fdinfo()
+    - mm: krealloc: Fix MTE false alarm in __do_krealloc
+    - 9p: fix slab cache name creation for real
 
  -- Salvatore Bonaccorso <carnil@debian.org>  Fri, 15 Nov 2024 22:11:53 +0100
 
