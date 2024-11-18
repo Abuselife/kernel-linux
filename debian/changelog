@@ -1,4 +1,4 @@
-linux (6.1.117-1) UNRELEASED; urgency=medium
+linux (6.1.118-1) UNRELEASED; urgency=medium
 
   * New upstream stable update:
     https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.1.116
@@ -247,6 +247,48 @@ linux (6.1.117-1) UNRELEASED; urgency=medium
     - vsock/virtio: Initialization of the dangling pointer occurring in
       vsk->trans
     - media: amphion: Fix VPU core alias name
+    https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.1.118
+    - Revert "Bluetooth: fix use-after-free in accessing skb after sending it"
+    - Revert "Bluetooth: hci_sync: Fix overwriting request callback"
+    - Revert "Bluetooth: af_bluetooth: Fix deadlock"
+    - Revert "Bluetooth: hci_core: Fix possible buffer overflow"
+    - Revert "Bluetooth: hci_conn: Consolidate code for aborting connections"
+      (Closes: #1086447)
+    - 9p: Avoid creating multiple slab caches with the same name
+    - nvme: tcp: avoid race between queue_lock lock and destroy
+    - block: Fix elevator_get_default() checking for NULL q->tag_set
+    - HID: multitouch: Add support for B2402FVA track point
+    - HID: multitouch: Add quirk for HONOR MagicBook Art 14 touchpad
+    - nvme: disable CC.CRIME (NVME_CC_CRIME)
+    - bpf: use kvzmalloc to allocate BPF verifier environment
+    - crypto: api - Fix liveliness check in crypto_alg_tested
+    - [arm*] crypto: marvell/cesa - Disable hash algorithms
+    - sound: Make CONFIG_SND depend on INDIRECT_IOMEM instead of UML
+    - drm/vmwgfx: Limit display layout ioctl array size to
+      VMWGFX_NUM_DISPLAY_UNITS
+    - nvme-multipath: defer partition scanning (CVE-2024-53093)
+    - [powerpc*] powernv: Free name on error in opal_event_init()
+    - nvme: make keep-alive synchronous operation
+    - bpf: Fix mismatched RCU unlock flavour in bpf_out_neigh_v6
+    - fs: Fix uninitialized value issue in from_kuid and from_kgid
+    - HID: multitouch: Add quirk for Logitech Bolt receiver w/ Casa touchpad
+    - HID: lenovo: Add support for Thinkpad X1 Tablet Gen 3 keyboard
+    - net: usb: qmi_wwan: add Fibocom FG132 0x0112 composition
+    - md/raid10: improve code of mrdev in raid10_sync_request
+    - io_uring: fix possible deadlock in io_register_iowq_max_workers()
+      (CVE-2024-41080)
+    - uprobes: encapsulate preparation of uprobe args buffer
+    - uprobe: avoid out-of-bounds memory access of fetching args
+      (CVE-2024-50067)
+    - drm/amdkfd: amdkfd_free_gtt_mem clear the correct pointer (CVE-2024-49991)
+    - ext4: fix timer use-after-free on failed mount (CVE-2024-49960)
+    - Bluetooth: L2CAP: Fix uaf in l2cap_connect (CVE-2024-49950)
+    - mm: krealloc: Fix MTE false alarm in __do_krealloc
+    - [x86] platform/x86: x86-android-tablets: Fix use after free on
+      platform_device_register() errors (CVE-2024-49986)
+    - fs/ntfs3: Fix general protection fault in run_is_mapped_full
+      (CVE-2024-50243)
+    - 9p: fix slab cache name creation for real
 
   [ Salvatore Bonaccorso ]
   * Bump ABI to 28
