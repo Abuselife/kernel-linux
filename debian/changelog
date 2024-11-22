@@ -371,6 +371,8 @@ linux (6.1.119-1) UNRELEASED; urgency=medium
 
   [ Salvatore Bonaccorso ]
   * Bump ABI to 28
+  * [x86] Revert "x86: Increase brk randomness entropy for 64-bit systems"
+    (Closes: #1085762)
 
  -- Salvatore Bonaccorso <carnil@debian.org>  Sat, 09 Nov 2024 11:40:21 +0100
 
