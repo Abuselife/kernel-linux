@@ -1,4 +1,4 @@
-linux (6.1.118-1) UNRELEASED; urgency=medium
+linux (6.1.119-1) UNRELEASED; urgency=medium
 
   * New upstream stable update:
     https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.1.116
@@ -289,9 +289,90 @@ linux (6.1.118-1) UNRELEASED; urgency=medium
     - fs/ntfs3: Fix general protection fault in run_is_mapped_full
       (CVE-2024-50243)
     - 9p: fix slab cache name creation for real
+    https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.1.119
+    - netlink: terminate outstanding dump on socket close
+    - [arm64,armhf] drm/rockchip: vop: Fix a dereferenced before check warning
+    - mptcp: error out earlier on disconnect
+    - net/mlx5: fs, lock FTE when checking if active
+    - net/mlx5e: kTLS, Fix incorrect page refcounting
+    - net/mlx5e: CT: Fix null-ptr-deref in add rule err flow
+    - virtio/vsock: Fix accept_queue memory leak
+    - Bluetooth: hci_event: Remove code to removed CONFIG_BT_HS
+    - Bluetooth: hci_core: Fix calling mgmt_device_connected
+    - net/sched: cls_u32: replace int refcounts with proper refcounts
+    - net: sched: cls_u32: Fix u32's systematic failure to free IDR entries for
+      hnodes.
+    - bonding: add ns target multicast address to slave device
+    - [armel,armhf] 9419/1: mm: Fix kernel memory mapping for xip kernels
+    - [x86] mm: Fix a kdump kernel failure on SME system when CONFIG_IMA_KEXEC=y
+    - mm: fix NULL pointer dereference in alloc_pages_bulk_noprof
+    - ocfs2: uncache inode which has failed entering the group
+    - vdpa/mlx5: Fix PA offset with unaligned starting iotlb map
+    - ima: fix buffer overrun in ima_eventdigest_init_common
+    - [x86] KVM: nVMX: Treat vpid01 as current if L2 is active, but with VPID
+      disabled
+    - [x86] KVM: x86: Unconditionally set irr_pending when updating APICv state
+    - [x86] KVM: VMX: Bury Intel PT virtualization (guest/host mode) behind
+      CONFIG_BROKEN
+    - nilfs2: fix null-ptr-deref in block_touch_buffer tracepoint
+    - ALSA: hda/realtek - Fixed Clevo platform headset Mic issue
+    - ALSA: hda/realtek: fix mute/micmute LEDs for a HP EliteBook 645 G10
+    - ocfs2: fix UBSAN warning in ocfs2_verify_volume()
+    - nilfs2: fix null-ptr-deref in block_dirty_buffer tracepoint
+    - Revert "mmc: dw_mmc: Fix IDMAC operation with pages bigger than 4K"
+    - mmc: sunxi-mmc: Fix A100 compatible description
+    - drm/bridge: tc358768: Fix DSI command tx
+    - drm/amd: Fix initialization mistake for NBIO 7.7.0
+    - staging: vchiq_arm: Get the rid off struct vchiq_2835_state
+    - staging: vchiq_arm: Use devm_kzalloc() for vchiq_arm_state allocation
+    - fs/ntfs3: Additional check in ntfs_file_release (CVE-2024-50242)
+    - Bluetooth: ISO: Fix not validating setsockopt user input (CVE-2024-35964)
+    - lib/buildid: Fix build ID parsing logic
+    - cxl/pci: fix error code in __cxl_hdm_decode_init()
+    - media: dvbdev: fix the logic when DVB_DYNAMIC_MINORS is not set
+    - NFSD: initialize copy->cp_clp early in nfsd4_copy for use by trace point
+    - NFSD: Async COPY result needs to return a write verifier
+    - NFSD: Limit the number of concurrent async COPY operations
+      (CVE-2024-49974)
+    - NFSD: Initialize struct nfsd4_copy earlier
+    - NFSD: Never decrement pending_async_copies on error
+    - mptcp: cope racing subflow creation in mptcp_rcv_space_adjust
+    - mptcp: define more local variables sk
+    - mptcp: add userspace_pm_lookup_addr_by_id helper
+    - mptcp: update local address flags when setting it
+    - mptcp: hold pm lock when deleting entry
+    - mptcp: drop lookup_by_id in lookup_addr
+    - mptcp: pm: use _rcu variant under rcu_read_lock
+    - ksmbd: fix slab-out-of-bounds in smb_strndup_from_utf16() (CVE-2024-26954)
+    - ksmbd: fix potencial out-of-bounds when buffer offset is invalid
+      (CVE-2024-26952)
+    - net: add copy_safe_from_sockptr() helper
+    - nfc: llcp: fix nfc_llcp_setsockopt() unsafe copies
+    - fs/9p: fix uninitialized values during inode evict (CVE-2024-36923)
+    - ipvs: properly dereference pe in ip_vs_add_service (CVE-2024-42322)
+    - net/sched: taprio: extend minimum interval restriction to entire cycle too
+      (CVE-2024-36244)
+    - net: fec: remove .ndo_poll_controller to avoid deadlocks (CVE-2024-38553)
+    - mm: revert "mm: shmem: fix data-race in shmem_getattr()"
+    - mm: avoid unsafe VMA hook invocation when error arises on mmap hook
+    - mm: unconditionally close VMAs on error
+    - mm: refactor arch_calc_vm_flag_bits() and arm64 MTE handling
+    - mm: resolve faulty mmap_region() error path behaviour
+    - drm/amd: check num of link levels when update pcie param (CVE-2023-52812)
+    - char: xillybus: Prevent use-after-free due to race condition
+      (CVE-2022-45888)
+    - null_blk: Remove usage of the deprecated ida_simple_xx() API
+    - null_blk: fix null-ptr-dereference while configuring 'power' and
+      'submit_queues' (CVE-2024-36478)
+    - null_blk: Fix return value of nullb_device_power_store()
+    - parisc: fix a possible DMA corruption (CVE-2024-44949)
+    - char: xillybus: Fix trivial bug with mutex
+    - net: Make copy_safe_from_sockptr() match documentation
 
   [ Salvatore Bonaccorso ]
   * Bump ABI to 28
+  * [x86] Revert "x86: Increase brk randomness entropy for 64-bit systems"
+    (Closes: #1085762)
 
  -- Salvatore Bonaccorso <carnil@debian.org>  Sat, 09 Nov 2024 11:40:21 +0100
 
