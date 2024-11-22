@@ -28,6 +28,8 @@ linux (6.12-1~exp1) UNRELEASED; urgency=medium
 
   [ Uwe Kleine-König ]
   * [arm64] Enable Texas Instruments ADS8688 driver (TI_ADS8688) as a module.
+  * [amd64] Enable support for Motorcomm phys, needed e.g. on Tuxedo's
+    InfinityBook Pro Intel Gen9 (Closes: #1086955)
 
  -- Aurelien Jarno <aurel32@debian.org>  Wed, 13 Nov 2024 06:14:56 +0100
 
