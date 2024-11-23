@@ -1,4 +1,4 @@
-linux (6.11.10-1) UNRELEASED; urgency=medium
+linux (6.11.10-1) unstable; urgency=medium
 
   * New upstream stable update:
     https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.11.10
@@ -94,7 +94,7 @@ linux (6.11.10-1) UNRELEASED; urgency=medium
     - net: sched: u32: Add test case for systematic hnode IDR leaks
     - media: dvbdev: fix the logic when DVB_DYNAMIC_MINORS is not set
 
- -- Salvatore Bonaccorso <carnil@debian.org>  Sat, 23 Nov 2024 09:03:37 +0100
+ -- Salvatore Bonaccorso <carnil@debian.org>  Sat, 23 Nov 2024 14:37:39 +0100
 
 linux (6.11.9-1) unstable; urgency=medium
 
