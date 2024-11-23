@@ -1,3 +1,101 @@
+linux (6.11.10-1) UNRELEASED; urgency=medium
+
+  * New upstream stable update:
+    https://www.kernel.org/pub/linux/kernel/v6.x/ChangeLog-6.11.10
+    - netlink: terminate outstanding dump on socket close
+    - sctp: fix possible UAF in sctp_v6_available()
+    - [arm64,armhf] drm/rockchip: vop: Fix a dereferenced before check warning
+    - net: fix data-races around sk->sk_forward_alloc
+    - mptcp: error out earlier on disconnect
+    - mptcp: cope racing subflow creation in mptcp_rcv_space_adjust
+    - net/mlx5: Fix msix vectors to respect platform limit
+    - net/mlx5: fs, lock FTE when checking if active
+    - net/mlx5e: kTLS, Fix incorrect page refcounting
+    - net/mlx5e: clear xdp features on non-uplink representors
+    - net/mlx5e: CT: Fix null-ptr-deref in add rule err flow
+    - net/mlx5e: Disable loopback self-test on multi-PF netdev
+    - [amd64] drm/i915/gsc: ARL-H and ARL-U need a newer GSC FW.
+    - virtio/vsock: Fix accept_queue memory leak
+    - vsock: Fix sk_error_queue memory leak
+    - virtio/vsock: Improve MSG_ZEROCOPY error handling
+    - Revert "RDMA/core: Fix ENODEV error for iWARP test over vlan"
+    - drivers: perf: Fix wrong put_cpu() placement
+    - Bluetooth: hci_core: Fix calling mgmt_device_connected
+    - Bluetooth: btintel: Direct exception event to bluetooth stack
+    - [arm64] drm/panthor: Fix handling of partial GPU mapping of BOs
+    - net: sched: cls_u32: Fix u32's systematic failure to free IDR entries for
+      hnodes.
+    - net: phylink: ensure PHY momentary link-fails are handled
+    - [arm64] net: stmmac: dwmac-mediatek: Fix inverted handling of
+      mediatek,mac-wol
+    - net: Make copy_safe_from_sockptr() match documentation
+    - stmmac: dwmac-intel-plat: fix call balance of tx_clk handling routines
+    - drm/vmwgfx: avoid null_ptr_deref in vmw_framebuffer_surface_create_handle
+    - net: ti: icssg-prueth: Fix 1 PPS sync
+    - bonding: add ns target multicast address to slave device
+    - [armel,armhf] 9419/1: mm: Fix kernel memory mapping for xip kernels
+    - [armel,armhf] fix cacheflush with PAN
+    - tools/mm: fix compile error
+    - Revert "drm/amd/pm: correct the workload setting"
+    - drm/amd/display: Run idle optimizations at end of vblank handler
+    - drm/amd/display: Change some variable name of psr
+    - drm/amd/display: Fix Panel Replay not update screen correctly
+    - [x86] CPU/AMD: Clear virtualized VMLOAD/VMSAVE on Zen4 client
+    - [x86] mm: Fix a kdump kernel failure on SME system when CONFIG_IMA_KEXEC=y
+    - [x86] stackprotector: Work around strict Clang TLS symbol requirements
+    - mm: fix NULL pointer dereference in alloc_pages_bulk_noprof
+    - ocfs2: uncache inode which has failed entering the group
+    - sched/task_stack: fix object_is_on_stack() for KASAN tagged pointers
+    - fs/proc/task_mmu: prevent integer overflow in pagemap_scan_get_args()
+    - mm/mremap: fix address wraparound in move_page_tables()
+    - mm: revert "mm: shmem: fix data-race in shmem_getattr()"
+    - ima: fix buffer overrun in ima_eventdigest_init_common
+    - evm: stop avoidably reading i_writecount in evm_file_release
+    - [x86] KVM: nVMX: Treat vpid01 as current if L2 is active, but with VPID
+      disabled
+    - [x86] KVM: x86: Unconditionally set irr_pending when updating APICv state
+    - [x86] KVM: VMX: Bury Intel PT virtualization (guest/host mode) behind
+      CONFIG_BROKEN
+    - nilfs2: fix null-ptr-deref in block_touch_buffer tracepoint
+    - nommu: pass NULL argument to vma_iter_prealloc()
+    - tpm: Disable TPM on tpm2_create_primary() failure (Closes: #1087331)
+    - mm: page_alloc: move mlocked flag clearance into free_pages_prepare()
+    - ALSA: hda/realtek - Fixed Clevo platform headset Mic issue
+    - ALSA: hda/realtek - update set GPIO3 to default for Thinkpad with ALC1318
+    - ALSA: hda/realtek: fix mute/micmute LEDs for a HP EliteBook 645 G10
+    - mptcp: update local address flags when setting it
+    - mptcp: hold pm lock when deleting entry
+    - mptcp: pm: use _rcu variant under rcu_read_lock
+    - ocfs2: fix UBSAN warning in ocfs2_verify_volume()
+    - nilfs2: fix null-ptr-deref in block_dirty_buffer tracepoint
+    - Revert "drm/amd/display: parse umc_info or vram_info based on ASIC"
+    - btrfs: fix incorrect comparison for delayed refs
+    - [arm64] firmware: arm_scmi: Skip opp duplicates
+    - [arm64] firmware: arm_scmi: Report duplicate opps as firmware bugs
+    - mmc: sunxi-mmc: Fix A100 compatible description
+    - pmdomain: imx93-blk-ctrl: correct remove path
+    - pmdomain: arm: Use FLAG_DEV_NAME_FW to ensure unique names
+    - pmdomain: core: Add GENPD_FLAG_DEV_NAME_FW flag
+    - nouveau: fw: sync dma after setup is called.
+    - nouveau: handle EBUSY and EAGAIN for GSP aux errors.
+    - nouveau/dp: handle retries for AUX CH transfers with GSP.
+    - drm/amd: Fix initialization mistake for NBIO 7.7.0
+    - drm/amdgpu: fix check in gmc_v9_0_get_vm_pte()
+    - drm/amdgpu: Fix video caps for H264 and HEVC encode maximum size
+    - drm/amd/pm: print pp_dpm_mclk in ascending order on SMU v14.0.0
+    - drm/amdgpu: enable GTT fallback handling for dGPUs only
+    - drm/amdgpu/mes12: correct kiq unmap latency
+    - drm/amd/display: Adjust VSDB parser for replay feature
+    - drm/amd/display: Require minimum VBlank size for stutter optimization
+    - drm/amd/display: Handle dml allocation failure to avoid crash
+    - drm/amd/display: Fix failure to read vram info due to static BP_RESULT
+    - mm: refactor arch_calc_vm_flag_bits() and arm64 MTE handling
+    - lib/buildid: Fix build ID parsing logic
+    - net: sched: u32: Add test case for systematic hnode IDR leaks
+    - media: dvbdev: fix the logic when DVB_DYNAMIC_MINORS is not set
+
+ -- Salvatore Bonaccorso <carnil@debian.org>  Sat, 23 Nov 2024 09:03:37 +0100
+
 linux (6.11.9-1) unstable; urgency=medium
 
   * New upstream stable update:
