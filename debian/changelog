@@ -6,6 +6,9 @@ linux (6.13~rc1-1~exp1) UNRELEASED; urgency=medium
   * Re-enable compressing all modules: (closes: #1089515)
     - Set MODULE_COMPRESS.
 
+  [ Salvatore Bonaccorso ]
+  * [rt] Update to 6.13-rc1-rt1
+
  -- Bastian Blank <waldi@debian.org>  Sun, 08 Dec 2024 11:10:22 +0100
 
 linux (6.12.3-1) unstable; urgency=medium
